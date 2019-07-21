@@ -1,1 +1,22 @@
-dpua.github.io
+<?
+header('Content-Type: text/html; charset=utf-8');
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Telegram канал</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="telegramform.js"></script>
+</head>
+<body>
+<div class="form__wrapper">
+      <form id="form-contact" method="POST" class="form-element" autocomplete="off">
+        <p class="form-title">Закажите обратный звонок и наш консультант свяжется с вами</p>
+        <p class="form-message"></p>
+          <input name="name" type="text" class="form-input__name" tabindex="0" placeholder="Введите ваше имя" required>
+          <input name="phone" type="tel" class="form-input__phone" tabindex="0" pattern="^[ 0-9]+$" placeholder="Введите ваш телефон" required>
+          <input name="theme" type="hidden" class="form-input__theme"  value="Заявка с сайта">
+          <input type="submit" class="form-input__button" value="Отправить">
+      </form>
+    </div>
+</body>
