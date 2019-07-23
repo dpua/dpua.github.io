@@ -6,8 +6,8 @@ echo"121321321231321231321231321';
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Telegram канал</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="telegramform.js"></script>
+<script src="jquery.min.js"></script>
+<!--script src="telegramform.js"></script-->
 <script src="bootstrap.min.js"></script>
 <script src="moment-with-locales.js"></script>
 <script src="jquery.mask.min.js"></script>
@@ -133,14 +133,13 @@ textarea { color: #8f8f8f; resize: vertical; height-min: 60px; border: none;}
     </div>
 <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-      <!--input id="аааааdatepicker" type="Phone" class="form-control" name="Phone" placeholder="12/12/2012" required="required"-->
 <select name="timepicker" id="timepicker" name="time"  class="form-control">
 </select>
     </div>
 	<div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-cutlery"></i></span>
-      <!--input id="аааааdatepicker" type="Phone" class="form-control" name="Phone" placeholder="12/12/2012" required="required"-->
-<select name="timepicker" id="cutlerypicker" name="cutlery" class="form-control">
+
+<select name="cutlerypicker" id="cutlerypicker" class="form-control">
 <option value="1-2 чел.">Столик на двоих</option>
 <option value="3-4 чел.">Столик на 3-4 чел.</option>
 <option value="5-8 чел.">Компания 5-8 чел.</option>
@@ -149,7 +148,6 @@ textarea { color: #8f8f8f; resize: vertical; height-min: 60px; border: none;}
     </div>
 	<div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-      <!--input id="аааааdatepicker" type="Phone" class="form-control" name="Phone" placeholder="12/12/2012" required="required"-->
 <textarea cols="30" id="guest__wish" name="text" placeholder="Ваши пожелания к брони" rows="3" class="form-control" maxlength="240"></textarea>
     </div>
 	
@@ -226,7 +224,53 @@ $(document).ready(function(){
 	
 	
 	
-	
+	      <script>
+            $(document).ready(function () {
+    $(".form-element").submit(function () {
+        var formID = $(this).attr('id');
+        var formNm = $('#' + formID);
+        var message = $(formNm).find(".form-message");
+        var formTitle = $(formNm).find(".form-title");
+		var mess='Имя: '+$('#name').val()+' /n 
+		 Телефон: '+$('#phone-number').val()+' /n 
+		 Дата: '+$('#datepicker').val()+' /n 
+		 Время: '+$('#timepicker').val()+' /n 
+		 Чел: '+$('#cutlerypicker').val()+' /n 
+		 Коммент: '+$('#guest__wish').val()+' /n ';
+		
+		
+		
+		
+		
+        $.ajax({
+            type: "POST",
+            url: 'https://api.telegram.org/bot876530454:AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY/sendMessage?chat_id=-362609574&parse_mode=html&text='+mess.serialize(),
+            data: formNm.serialize(),
+            success: function (data) {
+              // Вывод сообщения об успешной отправке
+              message.html(data);
+              formTitle.css("display","none");
+              setTimeout(function(){
+                formTitle.css("display","block");
+                message.html('');
+                $('input').not(':input[type=submit], :input[type=hidden]').val('');
+              }, 3000);
+            },
+            error: function (jqXHR, text, error) {
+                // Вывод сообщения об ошибке отправки
+                message.html(error);
+                formTitle.css("display","none");
+                setTimeout(function(){
+                  formTitle.css("display","block");
+                  message.html('');
+                  $('input').not(':input[type=submit], :input[type=hidden]').val('');
+                }, 3000);
+            }
+        });
+        return false;
+    });
+});
+      </script>
 	
 	
 	
