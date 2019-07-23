@@ -210,7 +210,7 @@ $(document).ready(function(){
 
           <input type="submit" class="btn btn-default" style="
     width: 100%;
-" value="Забронировать" onClick="submit()">
+" value="Забронировать">
       </form>
 
 <!--h3 class="dashed_ center">Это бесплатно glyphicon glyphicon-map-marker</h3-->
@@ -227,23 +227,51 @@ $(document).ready(function(){
 	      <script>
             $(document).ready(function () {
     $(".form-element").submit(function () {
-
-	submit();
+var formNm = $('#form-contact');// + formID);
+        var message = $(formNm).find(".form-message");
+        var formTitle = $(formNm).find(".form-title");
+		var mess='Имя: '+$('#name').val()+' \n Телефон: '+$('#phone-number').val()+' \n Дата: '+$('#datepicker').val()+' \n  Время: '+$('#timepicker').val()+' \n Чел: '+$('#cutlerypicker').val()+' \n <br>+<br>  Коммент: '+$('#guest__wish').val()+' \n ';
+		
+		
+		
+		
+		
+        $.ajax({
+            type: "POST",
+            url: 'https://api.telegram.org/bot876530454:AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY/sendMessage?chat_id=-362609574&parse_mode=html&text='+mess,
+            data: formNm.serialize(),
+            success: function (data) {
+              // Вывод сообщения об успешной отправке
+              message.html(data);
+              formTitle.css("display","none");
+              setTimeout(function(){
+                formTitle.css("display","block");
+                message.html('');
+                $('input').not(':input[type=submit], :input[type=hidden]').val('');
+              }, 3000);
+            },
+            error: function (jqXHR, text, error) {
+                // Вывод сообщения об ошибке отправки
+                message.html(error);
+                formTitle.css("display","none");
+                setTimeout(function(){
+                  formTitle.css("display","block");
+                  message.html('');
+                  $('input').not(':input[type=submit], :input[type=hidden]').val('');
+                }, 3000);
+            }
+        });
+        return false;
 	});
 });
 
 
 		function submit(){
-        var formID = $(this).attr('id');
-        var formNm = $('#' + formID);
+        //var formID = $(this).attr('id');
+        var formNm = $('#form-contact');// + formID);
         var message = $(formNm).find(".form-message");
         var formTitle = $(formNm).find(".form-title");
-		var mess='Имя: '+$('#name').val()+' /n 
-		 Телефон: '+$('#phone-number').val()+' /n 
-		 Дата: '+$('#datepicker').val()+' /n 
-		 Время: '+$('#timepicker').val()+' /n 
-		 Чел: '+$('#cutlerypicker').val()+' /n 
-		 Коммент: '+$('#guest__wish').val()+' /n ';
+		var mess='Имя: '+$('#name').val()+' /n Телефон: '+$('#phone-number').val()+' /n Дата: '+$('#datepicker').val()+' /n  Время: '+$('#timepicker').val()+' /n Чел: '+$('#cutlerypicker').val()+' /n  Коммент: '+$('#guest__wish').val()+' /n ';
 		
 		
 		
