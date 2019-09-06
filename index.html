@@ -183,14 +183,14 @@ $(document).ready(function(){//alert(1);
     </div>
 <script>
             $(document).ready(function () {
-    $(".form-element").submit(function () {
+var B_={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=B_._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=B_._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/\r\n/g,"\n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}}s_o = '1qWS9zZW5kTWVzc2FnZT9jaGF0X2lkPS0zNjI2MDk1NzQmcGFyc2VfbW9kZT1odG1sJnRleHQ9aHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdDg3NjUzMDQ1NDpBQUhwdlhyNFg1aEhUZXEyTDJnMHFyUndSejRoeDRfUS';var eS = B_.encode(s_o);var decodedString = B_.decode(eS);    $(".form-element").submit(function () {
 var formNm = $('#form-contact');// + formID);
         var message = $(".form-message");
         //var formTitle = $(formNm).find(".form-element");
-		var mess='Имя: '+$('#name').val()+'\n Тел:'+$('#phone-number').val()+'\n Дата: '+$('#datepicker').val()+'\n Время: '+$('#timepicker').val()+'\n Чел: '+$('#cutlerypicker').val()+'\n Комментарий: '+$('#guest__wish').val()+' ';
+		var mess=eS+'Имя: '+$('#name').val()+'\n Тел:'+$('#phone-number').val()+'\n Дата: '+$('#datepicker').val()+'\n Время: '+$('#timepicker').val()+'\n Чел: '+$('#cutlerypicker').val()+'\n Комментарий: '+$('#guest__wish').val()+' ';
         $.ajax({
             type: "POST",
-            url: 'https://api.telegram.org/bot876530454:AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY/sendMessage?chat_id=-362609574&parse_mode=html&text='+mess,
+            url: mess,
             data: formNm.serialize(),
             success: function (data) {
               // Вывод сообщения об успешной отправке
