@@ -159,7 +159,7 @@ textarea { color: #8f8f8f; resize: vertical; min-height: 60px; border: none;}
     </div>
     <div class="input-group" data-title="Введите номер Вашего телефона для обратной связи">
       <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-      <input id="phone-number" type="Phone" class="form-control" name="phone" placeholder="+38 (___) ___-__-__" required="required" minlength="19" autocomplete="on" >
+      <input id="phone-number" type="tel" class="form-control" name="phone" placeholder="+38 (___) ___-__-__" required="required" minlength="19" autocomplete="on" >
     </div>
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
@@ -257,6 +257,19 @@ $(document).ready(function(){//alert(1);
     </div>
 <script>
 $(document).ready(function () {
+$('#name').bind("change keyup input click", function() {
+if (this.value.match(/[^а-яА-Яa-zA-Z\s]/g)) {
+this.value = this.value.replace(/[^а-яА-Яa-zA-Z\s]/g, '');
+};
+if (this.value.match(/^\s/)) {
+this.value = this.value.replace(/^\s/, '');
+}
+});
+$('#guest__wish').bind("change keyup input click", function() {
+if (this.value.match(/[\<\>]/g)) {
+this.value = this.value.replace(/[\<\>]/g, '');
+}
+});
     $(".form-element").submit(function () {
 if ($('#name').val().length > 1) 
 {
