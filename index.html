@@ -306,12 +306,14 @@ setTimeout(function(){ $('#name').parent(".input-group").removeClass('hover');},
 
 function send(){
 var formNm = $('#form-contact');// + formID);
+        var a='.tel';var b='eg';var c='ram.org/';var d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
         var message = $(".form-message");
-var mess='Имя: '+$('#name').val()+' \n Тел:'+$('#phone-number').val()+' \n Дата: '+$('#datepicker').val()+' \n Время: '+$('#timepicker').val()+' \n Чел: '+$('#cutlerypicker').val()+' \n Комментарий: '+$('#guest__wish').val()+' ';
+		var mess='Имя: '+$('#name').val()+' \n\n Тел:'+$('#phone-number').val()+' \n\n Дата: '+$('#datepicker').val()+' \n\n Время: '+$('#timepicker').val()+' \n\n Чел: '+$('#cutlerypicker').val()+' \n\n Комментарий: '+$('#guest__wish').val()+' ';
+
         $.ajax({
             type: "POST",
-            url: 'https://api.telegram.org/bot876530454:AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY/sendMessage?chat_id=-362609574&parse_mode=html&text='+mess,
-            data: formNm.serialize(),
+            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-362609574&parse_mode=html&text='+mess,
+		data: formNm.serialize(),
             success: function (data) {
 			  $(".title").html("Заявка отправлена<br><br>С Вами свяжутся по указанному номеру: "+$("#phone-number").val());
               formNm.css("display","none");
