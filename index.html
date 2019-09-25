@@ -428,7 +428,8 @@ con();
 
 
 
-$.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
+//$.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
+$.getJSON('https://ipinfo.io/json', function(data) {
   $('#clear_lS').html(JSON.stringify(data, null, 2));
 });
 </script>
