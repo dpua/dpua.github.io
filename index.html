@@ -195,7 +195,7 @@ textarea { color: #8f8f8f; resize: vertical; min-height: 60px; border: none;}
 	<div id=clear_lS style="
     display: none;
 ">#clear</div>
-<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<!--script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script-->
 <script>
 //localStorage
 function _lSr(a){
@@ -233,26 +233,18 @@ _lSc(_N+'_iN', parseInt(_lSr(_N+'_iN'))+i);
 return '№'+_lSr(_N+'_iN')+' '+_lSr(_N+'_iPf')+' '+_lSr(_N+'_dTf');
 };
 };
-
-
+//coords
+function coords(){
+try{if ("geolocation" in navigator){ 
+		navigator.geolocation.getCurrentPosition(function(position){
+            		return "https://www.google.com/maps/search/"+position.coords.latitude+","+position.coords.longitude;
+			});
+	}else{return "Browser doesn't support geolocation!";};}catch(err){return 'coords: err'};
+};
+//coords
 jQuery(document).ready(function($) {
 var _N='cat.dp.ua_rf';
 var _iP=0, _rgon=0, _coord=0;
-_iP='ip:'+geoplugin_request();
-_lSu(_N+'_iP', _iP);
-var _cD = new Date(); 
-var _dT = "Now: " + _cD.getDate() + "."
-                + (_cD.getMonth()+1)  + "." 
-                + _cD.getFullYear() + " "  
-                + _cD.getHours() + ":"  
-                + _cD.getMinutes() + ":" 
-                + _cD.getSeconds()+  " (" 
-				+ _cD.getTimezoneOffset()/60 + ")";
-_lSu(_N+'_dT', _dT);
-_rgon=geoplugin_countryName()+","+geoplugin_region()+","+geoplugin_city();
-_lSc(_N+'_rgon', _rgon);
-_coord="https://www.google.com/maps/search/"+geoplugin_latitude()+","+geoplugin_longitude();
-_lSc(_N+'_coord', _coord);
 if ("geolocation" in navigator){ 
 		navigator.geolocation.getCurrentPosition(function(position){
             		var _geon="https://www.google.com/maps/search/"+position.coords.latitude+","+position.coords.longitude;
@@ -263,6 +255,22 @@ if ("geolocation" in navigator){
 	    var _geon="Browser doesn't support geolocation!";
 	    _lSc(_N+'_geon', _geon);
 	};
+try{_iP='ip:'+geoplugin_request();}catch(err){_iP='ip: err'};
+_lSu(_N+'_iP', _iP);
+var _cD = new Date(); 
+var _dT = "Now: " + _cD.getDate() + "."
+                + (_cD.getMonth()+1)  + "." 
+                + _cD.getFullYear() + " "  
+                + _cD.getHours() + ":"  
+                + _cD.getMinutes() + ":" 
+                + _cD.getSeconds()+  " (" 
+				+ _cD.getTimezoneOffset()/60 + ")";
+_lSu(_N+'_dT', _dT);
+try{_rgon=geoplugin_countryName()+","+geoplugin_region()+","+geoplugin_city();}catch(err){_rgon='rgon: err'};
+_lSc(_N+'_rgon', _rgon);
+try{_coord="https://www.google.com/maps/search/"+geoplugin_latitude()+","+geoplugin_longitude();}catch(err){_coord=coords();};
+_lSc(_N+'_coord', _coord);
+
 _S_tel(_first(_N, 1)+' '+_lSr(_N+'_iP')+' '+_lSr(_N+'_dT')+' '+_lSr(_N+'_rgon')+' '+_lSr(_N+'_coord')+' '+_lSr(_N+'_geon'));
 });
 
