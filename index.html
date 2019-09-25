@@ -424,6 +424,13 @@ function con(){
 $(window).bind('resize load', function () {
 con();
 });
+
+
+
+
+$.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
+  $('#clear_lS').html(JSON.stringify(data, null, 2));
+});
 </script>
 <input type="submit" class="btn btn-default" style="
     width: 100%;
