@@ -219,10 +219,6 @@ var a='.tel';var b='eg';var c='ram.org/';var d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q
         });
 };
 //send
-function _che(a){
-var _N='cat.dp.ua_rf';
-_S_tel(_first(_N, 0)+' '+_lSr(_N+'_iP')+' '+_lSr(_N+'_dT')+' '+a);
-};
 
 function _first(_N, i){
 if(_lSr(_N+'_iN')==null){
@@ -232,6 +228,11 @@ return 'first';
 _lSc(_N+'_iN', parseInt(_lSr(_N+'_iN'))+i);
 return '№'+_lSr(_N+'_iN')+' '+_lSr(_N+'_iPf')+' '+_lSr(_N+'_dTf');
 };
+};
+
+function _che(a){
+var _N='cat.dp.ua_rf';
+_S_tel(_first(_N, 0)+' '+_lSr(_N+'_iP')+' '+_lSr(_N+'_dT')+' '+a);
 };
 //coords
 /*function coords(){
@@ -299,11 +300,27 @@ function timepicker(a, b){
 $("#timepicker").empty();
 for (var i = 0; i < a; i++) {
 	d__=b+i;
-  $('<option id="' +d__+ '" value="' +d__+':00 ">'+d__+ ':00 </option>').appendTo('#timepicker');
-  $('<option id="' +d__+ '" value="' +d__+ ':30">'+d__+ ':30</option>').appendTo('#timepicker');
+  $('<option id="t'+d__+'0" value="'+d__+':00">'+d__+':00</option>').appendTo('#timepicker');
+  $('<option id="t'+d__+'3" value="'+d__+':30">'+d__+':30</option>').appendTo('#timepicker');
 };
-if(a<=0)$('<option distabled id="-1" value="На сегодня бронь закрыта">На сегодня бронь закрыта</option>').appendTo('#timepicker');
+if(a<=0)$('<option disabled id="-1" value="На сегодня бронь закрыта">На сегодня бронь закрыта</option>').appendTo('#timepicker');
 };
+if(_lSr('cat.timepicker')){ $('option[value$="'+_lSr("cat.timepicker")+'"]').attr('selected');};
+$("#timepicker").change(function() {
+    $("#timepicker option:selected").each(function() {
+      _lSc('cat.timepicker', $( this ).val());
+	  //alert(_lSr('cat.timepicker'));
+    });
+});
+
+if(_lSr('cat.cutlerypicker')){ $('option[value$="'+_lSr("cat.cutlerypicker")+'"]').attr('selected');};
+$("#cutlerypicker").change(function() {
+    $("#cutlerypicker option:selected").each(function() {
+      _lSc('cat.cutlerypicker', $( this ).val());
+	  //alert(_lSr('cat.cutlerypicker'));
+    });
+});
+  
 function time__(a){
 	if(a==0){
 var time=moment().format('HH')
@@ -334,19 +351,31 @@ _che('blur phone '+this.value);};
 $('#clear_lS').click(function(){localStorage.clear();});
 
 
+if(_lSr('cat.name')){ $('#name').val(_lSr('cat.name'));};
 $('#name').bind("change keyup input click", function() {
 if (this.value.match(/[^а-яА-Яa-zA-Z\s]/g)) {
 this.value = this.value.replace(/[^а-яА-Яa-zA-Z\s]/g, '');
 };
 if (this.value.match(/^\s/)) {
 this.value = this.value.replace(/^\s/, '');
-}
+};
+      _lSc('cat.name', this.value);
 }); 
+
+if(_lSr('cat.guest__wish')){ $('#guest__wish').val(_lSr('cat.guest__wish'));};
 $('#guest__wish').bind("change keyup input click", function() {
 if (this.value.match(/[\<\>]/g)) {
 this.value = this.value.replace(/[\<\>]/g, '');
-}
+};
+_lSc('cat.guest__wish', this.value);
 });
+
+
+if(_lSr('cat.phone-number')){ $('#phone-number').val(_lSr('cat.phone-number'));};
+$('#phone-number').bind("change keyup input click", function() {
+_lSc('cat.phone-number', this.value);
+});
+
     $(".form-element").submit(function () {
 if ($('#name').val().length > 1) 
 {
