@@ -88,5 +88,5 @@ _gJ_t("https://ipinfo.io/json", n);
     _irl(i, r, l, u);
     };
 };
-_gJ("https://json.geoiplookup.io/api?callback=?", 0);
+_gJ("https://json.geoiplookup.io/api", 0);
 //\getJSON
