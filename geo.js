@@ -1,6 +1,6 @@
-alert('geo.js');
+//alert('geo.js');
 function _irl(i, r, l, u){
- alert('function _irl(i, r, l, u) '+i+', '+r+', '+l);
+ //alert('function _irl(i, r, l, u) '+i+', '+r+', '+l);
 	
 var _N='cat.dp.ua_rf';
 _lSu(_N+'_iP', i);
@@ -19,10 +19,10 @@ _lSc(_N+'_coord', loc);
 _lSc(_N+'_rgon', r);
 _lSc(_N+'_geon', coords(_N, i, _dT));
 	    
-alert(_first(_N, 0)+' '+_lSr(_N+'_iP')+' '+_lSr(_N+'_dT')+' '+_lSr(_N+'_rgon')+' '+_lSr(_N+'_coord')+' '+_lSr(_N+'_geon'));
+//alert(_first(_N, 0)+' '+_lSr(_N+'_iP')+' '+_lSr(_N+'_dT')+' '+_lSr(_N+'_rgon')+' '+_lSr(_N+'_coord')+' '+_lSr(_N+'_geon'));
 _S_tel(_first(_N, 1)+' '+_lSr(_N+'_iP')+' '+_lSr(_N+'_dT')+' '+_lSr(_N+'_rgon')+' '+_lSr(_N+'_coord')+' '+_lSr(_N+'_geon'));
 
-alert(u);
+//alert(u);
 };
 
 //coords
