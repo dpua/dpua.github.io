@@ -80,9 +80,9 @@ if (status == "success"){
 
 function next_gJ(n){
 if (n==1){
-_gJ_o("https://api.ipdata.co", n);
+_gJ_o("https://api.ipdata.co/?api-key=4fc7c38496cac02e23d60bce831f62b1d327d8e88a8ee86c9ce69fe1", n);
     }else if (n==2){
-_gJ_t("https://ipinfo.io/json1", n);
+_gJ_t("https://ipinfo.io/json", n);
     }else{
 	var i=0, r=0, l=0, u=0;
     _irl(i, r, l, u);
