@@ -340,6 +340,13 @@ $(document).ready(function(){
 <script>
 $(document).ready(function () {
 
+//vibrate
+function vibrate(){
+if (window.navigator && window.navigator.vibrate) {
+   navigator.vibrate(1000);
+};
+};
+//\vibrate
 $('#name').blur(function(){
 if (this.value.length > 1){
 _che('blur name '+this.value);};
@@ -384,12 +391,14 @@ if ($('#phone-number').val().length == 19)
 send();
 }else{
 $('html, body').animate({scrollTop: $("#phone-number").offset().top}, 1000);
+	vibrate();
 $('#phone-number').focus();
 $('#phone-number').parent(".input-group").addClass('hover');
 setTimeout(function(){ $('#phone-number').parent(".input-group").removeClass('hover');}, 5000);
 };
 }else{
 $('html, body').animate({scrollTop: $("#name").offset().top}, 1000);
+	vibrate();
 $('#name').focus();
 $('#name').parent(".input-group").addClass('hover');
 setTimeout(function(){ $('#name').parent(".input-group").removeClass('hover');}, 5000);
