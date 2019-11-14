@@ -858,10 +858,10 @@ function send(){
 var formNm = $('#form-contact');
 var a='.tel';var b='eg';var c='ram.org/';var d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
         var message = $(".form-message");
-		var mess='Сияние Имя: '+$('#name').val()+' Тел:'+$('#phone-number').val()+' ';
+		var mess='Сияние Имя: '+$('#name').val()+' Тел:'+$('#phone-number').val()+' https://dpua.github.io/shining/';
         $.ajax({
             type: "POST",
-            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-362609574&parse_mode=html&text='+mess,
+            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-322075631&parse_mode=html&text='+mess,
             data: formNm.serialize(),
             success: function (data) {
 			  message.html("Заявка отправлена<br><br>С Вами свяжутся по указанному номеру: "+$("#phone-number").val());
