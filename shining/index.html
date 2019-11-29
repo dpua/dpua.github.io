@@ -657,11 +657,15 @@ display: none;
 
 }
 .form {
-	padding: 70px 10vh;
+	padding: 70px 5%;
 }
+@media (max-width: 992px){
+#form-contact {
+    width: min-content;
+}}
 @media (max-width: 415px){
 .form {
-	padding: 70px 0px;
+	padding: 70px 1%;
 }}
 
 @media (min-width: 768px){
@@ -734,7 +738,7 @@ margin: 0px auto;
     display: table;
 	    border: 1px solid grey;
     border-radius: 40px;
-    padding-left: 20px;
+    /*padding-left: 20px;*/
 
 }
 .titleform {
@@ -836,7 +840,7 @@ input, select{
 }    
 .input-group {
     margin: 0px;
-    padding: 12px 0px 0px 12px;
+    padding: 12px 0px 0px 22px;
     height: 54px;
     color: black;
     font-family: poppins,sans-serif;
