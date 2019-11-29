@@ -30,7 +30,7 @@ padding: 0px;
     width: 100%;
 }
 #tb{
-background: url(./orig3X.jpg) no-repeat center fixed;
+background: url(./img/orig3X.jpg) no-repeat center fixed;
 webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -120,7 +120,7 @@ var _m_id = _m.map(function(){
 var _m_rel;
 for (var i = 0; i < _m_id.length; i++) {
 	_m_rel=$('#'+_m_id[i]).attr('rel');
-	$('#nav').append('<a href="#'+_m_id[i]+'" id="m_'+_m_id[i]+'">'+_m_rel+'</a>');
+	$('#nav ul').append('<a href="#'+_m_id[i]+'" id="m_'+_m_id[i]+'">'+_m_rel+'</a>');
 };
 };
 
@@ -282,10 +282,10 @@ $(window).resize( setHeight ); // обновляем при изменении �
 	</script>
 </head>
 <body>
-
 <header id="tb" _id=m rel='"Сияние"' class=m>
 
-	<div class=child></div>
+
+	<div class=child style="white-space: nowrap;"><div class=mass1 style="display: inline-block;"></div></div>
 <!-- Top Baner -->
 
 <div id="tbcc" style="text-shadow: 0 0 5px #424242, 0 0 15px #424242, 0 0 25px #424242;">
@@ -305,6 +305,22 @@ $(window).resize( setHeight ); // обновляем при изменении �
 
 </div>
 <style>
+.mass1 {
+    font-size: 14px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+	width: 100%;
+    /*margin: -100px;*/
+    display: block;
+    height: 100vh;
+    background: red;
+    padding: 7px;
+	transform: skew(10deg)
+	translate(1%, 1%)
+	rotate(36deg);    
+	z-index: -1;
+	}
 img.dark-shadow{
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 1));
   width: 50vh;
@@ -391,9 +407,8 @@ p.b {
 </style>
 </header>
 
-<!-- Top Navi -->
-	<div id="scy" class="scyf">
-	<div id=mass style="
+<!-- Top Navi -->	
+<div id=mass style="
     font-size: 14px;
     position: fixed;
     top: 50px;
@@ -401,9 +416,114 @@ p.b {
     background: #00000054;
     padding: 7px;
 "></div>
+
+
+
+	<div id="scy" class="scyf">
 	<nav id="nav">
+	<ul class=navhide></ul>
 	</nav>
+	<div class="navtoggler close"><span></span><span></span><span></span></div>
 	</div>
+	<script>
+	$('#scy').on("click",".active", function (event) {
+        event.preventDefault();
+        $(this).removeClass("active").addClass("close");
+		$("#nav ul").removeClass("navshow").addClass("navhide");  
+    });
+	$('#scy').on("click",".close", function (event) {
+        event.preventDefault();
+        $(this).removeClass("close").addClass("active");
+		$("#nav ul").addClass("navshow").removeClass("navhide");
+    });
+	</script>
+<style>
+#scy {
+height: 42px;
+}
+ul {
+    margin: 0px;
+	padding: 0px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+	}
+.navtoggler {
+    padding: 5px;
+    display: table;
+	position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.navtoggler.close span {
+    width: 25px;
+    margin: 5px;
+    display: block;
+    height: 2px;
+    background: #fff;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.navtoggler span {
+    width: 25px;
+    margin: 5px;
+    display: block;
+    height: 2px;
+    background: #fff;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.navtoggler.active span:first-of-type {
+    -webkit-transform: rotate(45deg) translate3d(5px,5px,0);
+    transform: rotate(45deg) translate3d(5px,5px,0);
+}
+.navtoggler.active span:nth-of-type(2) {
+    -webkit-transform: translate3d(-200px,0px,0);
+    transform: translate3d(-200px,0px,0);
+    opacity: 0;
+}
+.navtoggler.active span:last-of-type {
+    -webkit-transform: rotate(-45deg) translate3d(5px,-5px,0px);
+    transform: rotate(-45deg) translate3d(5px,-5px,0px);
+}
+@media (min-width: 700px){
+.navtoggler {
+display: none;
+}
+}
+@media (max-width: 700px){
+#nav ul {
+    background: #323232;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 45px 45px 10px 10px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+	box-shadow: 100px 0px 100px 100px black;
+	opacity: 0.95;
+}
+#nav .navhide {
+    margin: 0 -100%;
+    height: 100vh;
+    overflow-x: auto;
+	width: 70%;
+}
+#nav .navshow {
+    display: table-cell;
+    height: 100vh;
+    overflow-x: auto;    
+	width: 70%;
+}
+#nav ul a {
+    padding: 7px;
+    width: 100%;
+    display: table;
+    margin-top: 4px;
+    float: left;
+}
+}
+</style>
 <!--/ Top Navi -->
 
 <div class="icon-box-items">
@@ -536,12 +656,21 @@ p.b {
     line-height: 1.1;
 
 }
+.form {
+	padding: 70px 10vh;
+}
+@media (max-width: 415px){
+.form {
+	padding: 70px 0px;
+}}
+
 @media (min-width: 768px){
 .row article {
     -ms-flex: 0 0 48%;
     flex: 0 0 48%;
     max-width: 48%;
 }}
+
 @media (min-width: 992px){
 .row article {
     -ms-flex: 0 0 23%;
@@ -580,7 +709,6 @@ text-align: center!important;
 	color: #2e324a;
     font-family: "Open Sans", sans-serif;
 	display: table;
-	padding: 70px 10vh;
 	width: 100%;
 	box-shadow: 0px 10px 40px -20px black inset;
 }
