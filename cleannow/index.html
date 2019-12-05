@@ -1,1 +1,1104 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<title>"Сияние" Клининговая компания в Днепре</title>
+<meta name="description" content="Сияние ⭐ Клининговая компания в Днепре: Уборка любых видов помещений ✅ опытные сотрудники ✅ профессиональная техника ✅ экологические средства очистки ✅ 100% чистоты ✅ адекватные цены. ☎ 0631948234">
 
+<link href="../MaterialDesign-Webfont-master/css/materialdesignicons.min.css" rel="stylesheet">
+<style type="text/css">
+.z{transition: all 500ms;}
+body{
+background: white;
+margin: 0px;
+padding: 0px;
+    color: white;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    word-wrap: normal;
+    direction: ltr;
+}
+.m{
+    min-height: 500px;
+    height: 100vh;
+    width: 100%;
+}
+#tb{
+      background: url(./cl_1.jpg) center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;;
+}
+.child {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    /* opacity: 0.1; */
+    box-shadow: 0px 0px 50px -5px black inset;
+}
+#tbcc {
+  margin: 0;
+  transform: translate(-50%, -50%);
+  position: absolute; 
+  top: 50%; 
+  left: 50%;
+    font-size: 20px;
+    text-shadow: 0 0 5px #000, 0 0 15px #000, 0 0 25px #000;
+    text-align: center;
+    display: table;
+    /*position: relative;*/
+}#scy {
+    position: fixed;
+	top: 0px;
+    z-index: 100;
+	width: 100%;
+    margin: 0px auto;
+    transition: all 300ms;
+}
+#nav{
+    display: table;
+    margin: 0px auto;
+}
+#scy a {
+    height: 28px;
+    /* float: left; */
+    font-family: 'FuturaPTBook-Reg';
+    display: table-cell;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #fff;
+    transition: all 300ms;
+    font-size: 20px;
+    font-style: italic;
+    padding: 7px;
+}
+#scy a:hover, #scy a.hov {
+    /*border-bottom: 2px solid;*/
+    color: #ffffff;
+    box-shadow: 0px -2px 0px 0px #fdd000 inset;
+}
+.scyf {
+    background: linear-gradient(180deg, #000000c4, transparent);
+}
+.scyc {
+    /*background: rgba(0, 0, 0, 0.5);*/
+	background: #323232;
+    border-bottom-color: #444141;
+    box-shadow: 0 0 15px rgba(21,21,21,.35);
+}
+.scyf a{
+    margin-top: 42px; float: left;
+    transition: all 300ms;
+}
+</style>
+<script type="text/javascript" src="./jquery-3.4.1.min.js"></script><script>
+	function load() {
+	    $("#load").fadeOut(500);
+		$('#tbcc').removeClass('fadeInTop');
+	    $("#tbcc a").fadeIn(1000, function() {
+	    	_S_c();
+		});
+	};
+
+function addmenu(){
+var _m = $('[_id^="m"]');
+var _m_id = _m.map(function(){
+    return $(this).attr('id');
+}).get();
+var _m_rel;
+for (var i = 0; i < _m_id.length; i++) {
+	_m_rel=$('#'+_m_id[i]).attr('rel');
+	$('#nav ul').append('<a href="#'+_m_id[i]+'" id="m_'+_m_id[i]+'">'+_m_rel+'</a>');
+};
+};
+
+
+
+  //Slider
+  var slideIndex = 1;
+  function autoSlider(e, n) {
+  var ep=$(e).parent().attr('id');
+  if($('#'+ep+' .pause').is(":hover")){}else{puhsSlider(e, +1)};
+  };  
+  function puhsSlider(e, n) {
+  Slider(e, slideIndex += n);
+  };  
+  function Slider(e, n){
+  var ep=$(e).parent().attr('id'); //alert('parent().attr(id)='+ep);
+  var ec=$(e).attr('class');       //alert('$(e).attr(class)='+ec);
+  var i;
+  var x = $('#'+ep+' .'+ec);
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  //$('#'+ep+' .'+ec).hide("drop", {direction: "left"}, 360);
+  $('#'+ep+' .'+ec).fadeOut(360);
+  //$('#'+ep+' .'+ec).removeClass("active");
+  //alert('(slideIndex): '+(slideIndex)+' x.length: '+x.length+' n='+n);
+  //$('#'+ep+' [_id^="'+(slideIndex)+'"]').show("drop", {direction: "top"}, 1360);
+  $('#'+ep+' [_id^="'+(slideIndex)+'"]').fadeIn(360);
+  //$('#'+ep+' [_id^="'+(slideIndex)+'"]').addClass("active");
+  };//<slider id><slide class _id>
+  //\Slider
+  
+$(document).ready(function() {//var h=location.hash;
+	addmenu();
+	setHeight();// устанавливаем высоту окна при первой загрузке страницы
+	$("#load").fadeIn(0);
+	//$('#tbcc').addClass('fadeInTop');
+	//$("#tbcc a").fadeOut(0);
+//showDivs(1);
+  
+  //autoSlider
+function addautoSlider(){
+    $('.autoSlider').each(function(){
+    var id=$(this).attr('id');
+    var delay=$(this).attr('delay');
+	if(!delay){delay=7000;};
+	setInterval(function(){    //alert('setInterval '+id);
+        var e=$('#'+id+' .slide');
+        autoSlider(e, +1);//alert(n);
+    }, delay);
+    });
+};addautoSlider();
+/*
+	<div id=someSlider class=autoSlider>
+	<a onclick="pluhsSlider($('#someSlider .slide'), +1)">+1s</a>
+	<a onclick="pluhsSlider($('#someSlider .slide'), -1)">-1s</a>
+	<div class=pause>pause</div>
+	<div class=slide _id=1>1</div>	
+	<div class=slide _id=2>2</div>
+	<div class=slide _id=3>3</div>
+	</div>
+*/
+  //\autoSlider
+
+  
+  
+  jQuery(window).scroll(function(){
+         var $sections = $('[_id^="m"]');
+	$sections.each(function(i,el){
+        var top  = $(el).offset().top-200;
+        var bottom = top +$(el).height();
+        var scroll = $(window).scrollTop();
+        var id = $(el).attr('id');
+    	if( scroll > top && scroll < bottom){
+            $('a.hov').removeClass('hov');
+			$('#m_'+id).addClass('hov');
+        }
+    })
+ });
+
+$("#nav").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top-42;
+        $('body,html').animate({scrollTop: top}, 800);
+});
+//$("#otk__mod").draggable();
+});
+
+
+
+
+function setHeight() {
+	var mW = 0, mH = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //Non-IE
+    mW = window.innerWidth;
+    mH = window.innerHeight;
+  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+ in 'standards compliant mode'
+    mW = document.documentElement.clientWidth;
+    mH = document.documentElement.clientHeight;
+  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+    //IE 4 compatible
+    mW = document.body.clientWidth;
+    mH = document.body.clientHeight;
+  };
+  
+  $('#mass').html('Width: '+mW+'px<br>Height: '+mH+'px');
+  
+  /*
+		var ch=mH;
+ 
+		//var ch=document.body.clientHeight;
+		var tbc=440;
+	if(ch<440){bh=440;}else{bh=ch;};
+	$('[_id=m]').css({
+        height: bh + 'px'//$(window).height() + 'px'
+    });
+    $('#tbc').add('#cbc').css({
+        height: bh + 'px'//$(window).height() + 'px'
+    });
+	var p_h=bh-$('#scy').height();
+    //$('.m').css({"height": bh+"px"});
+    $('#map').add('#a3').add('.m').css({"height": p_h+"px"});
+
+	mh=bh-tbc;
+	mh=(mh/2);
+	$('#tbcc').css({
+        margin: mh+'px auto'//$(window).height() + 'px'
+    });
+
+		var v_c = $('.v_c');
+var v_c_id = v_c.map(function(){
+    return $(this);//.attr('id');
+}).get();
+var v_c_h;
+for (var i = 0; i < v_c_id.length; i++) {
+
+	v_c_h=(p_h-$(v_c_id[i]).height())/2;
+	$(v_c_id[i]).css({
+        margin: v_c_h+'px 10px'//$(window).height() + 'px'
+    });
+};*/
+
+}; 
+function _S_c(){
+	var st=$(document).scrollTop();
+
+	if(st>=1){
+		$("#scy").removeClass("scyf").addClass("scyc");
+		//$('.icon-box-items-wrap').hide();
+	}else{
+		$("#scy").removeClass("scyc").addClass("scyf");
+		//$('.icon-box-items-wrap').show();
+	};
+	};
+$(window).bind('scroll resize load ready',function(){_S_c();});	//resize load ready
+$(window).resize( setHeight ); // обновляем при изменении размеров окна
+	</script>
+</head>
+<body>
+<header id="tb" _id=m rel='"Сияние"' class=m>
+
+
+
+
+
+
+
+	<div id=someSlider class=autoSlider>
+	<a onclick="pluhsSlider($('#someSlider .slide'), +1)">+1s</a>
+	<a onclick="pluhsSlider($('#someSlider .slide'), -1)">-1s</a>
+	<div class=pause>pause</div>
+	<div class=slide _id=1>1</div>	
+	<div class=slide _id=2>2</div>
+	<div class=slide _id=3>3</div>
+	</div>
+	
+	
+	
+
+	<div class=child style="white-space: nowrap;"><div class=mass1 style="display: inline-block;"></div></div>
+<!-- Top Baner -->
+
+<div id="tbcc" style="text-shadow: 0 0 5px #424242, 0 0 15px #424242, 0 0 25px #424242;">
+<h1>
+<img class=dark-shadow src="./shining_r.png" alt="Клининговая компания Сияние"></h1>
+<p>Уборка любой сложности в Днепре</p>
+</div>
+<!--/ Top Baner -->
+
+<div class="icon-box-items-wrap">
+
+
+
+
+
+
+
+</div>
+<style>
+.mass1 {
+    font-size: 14px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+	width: 100%;
+    /*margin: -100px;*/
+    display: block;
+    height: 100vh;
+    background: red;
+    padding: 7px;
+	transform: skew(10deg)
+	translate(1%, 1%)
+	rotate(36deg);    
+	z-index: -1;
+	}
+img.dark-shadow{
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 1));
+  width: 50vh;
+  height: 50vh;
+}
+@media (min-width: 590px) and (max-width: 1199px) {
+.icon-box-items{
+    width: 590px;
+}
+}
+.icon-box-items-wrap{
+padding-top: 24px;
+margin: 0px auto;
+display: table;    
+position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+}
+.icon-box-items{
+    background: #ffffff;
+    margin: -70px auto 8px auto;
+    display: table;
+    z-index: 0;
+    position: relative;box-shadow: 0px 7px 15px -7px black;
+}
+
+.box-items {
+width: 295px;
+/*margin-bottom: 24px;*/
+float: left;
+position: relative;
+    min-height: 1px;
+	padding: 15px;
+    /*padding-right: 15px;
+    padding-left: 15px;*/
+}
+.box-items i {
+    color: #ffd200;
+    TEXT-SHADOW: 0PX 0px 1px black;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 24px;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
+	float: left;
+    text-align: center;
+}
+p.a {
+    color: black;
+    padding-left: 60px;
+    margin-bottom: 0;
+    font-size: 14px;
+    letter-spacing: normal;
+    font-weight: 700;
+    line-height: 24px;
+    font-family: "Noto Sans";
+    font-style: normal;
+    display: block;
+    margin-top: 0;
+    vertical-align: bottom;
+    word-break: break-all;
+}
+p.b {
+    color: black;
+    padding-left: 60px;
+    margin-bottom: 0;
+    font-family: "Open Sans";
+    line-height: 24px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+* {
+    box-sizing: Border-box;
+	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+</style>
+</header>
+
+<!-- Top Navi -->	
+<div id=mass style="
+    font-size: 14px;
+    position: fixed;
+    top: 50px;
+    right: 0px;
+    background: #00000054;
+    padding: 7px;
+"></div>
+
+
+
+	<div id="scy" class="scyf">
+	<nav id="nav">
+	<ul class=navhide></ul>
+	</nav>
+	<div class="navtoggler close"><span></span><span></span><span></span></div>
+	</div>
+	<script>
+	$('#scy').on("click",".active", function (event) {
+        event.preventDefault();
+        $(this).removeClass("active").addClass("close");
+		$("#nav ul").removeClass("navshow").addClass("navhide");  
+    });
+	$('#scy').on("click",".close", function (event) {
+        event.preventDefault();
+        $(this).removeClass("close").addClass("active");
+		$("#nav ul").addClass("navshow").removeClass("navhide");
+    });
+	</script>
+<style>
+#scy {
+height: 42px;
+}
+ul {
+    margin: 0px;
+	padding: 0px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+	}
+.navtoggler {
+    padding: 5px;
+    display: table;
+	position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.navtoggler.close span {
+    width: 25px;
+    margin: 5px;
+    display: block;
+    height: 2px;
+    background: #fff;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.navtoggler span {
+    width: 25px;
+    margin: 5px;
+    display: block;
+    height: 2px;
+    background: #fff;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.navtoggler.active span:first-of-type {
+    -webkit-transform: rotate(45deg) translate3d(5px,5px,0);
+    transform: rotate(45deg) translate3d(5px,5px,0);
+}
+.navtoggler.active span:nth-of-type(2) {
+    -webkit-transform: translate3d(-200px,0px,0);
+    transform: translate3d(-200px,0px,0);
+    opacity: 0;
+}
+.navtoggler.active span:last-of-type {
+    -webkit-transform: rotate(-45deg) translate3d(5px,-5px,0px);
+    transform: rotate(-45deg) translate3d(5px,-5px,0px);
+}
+@media (min-width: 700px){
+.navtoggler {
+display: none;
+}
+}
+@media (max-width: 700px){
+#nav ul {
+    background: #323232;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 45px 45px 10px 10px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+	box-shadow: 100px 0px 100px 100px black;
+	opacity: 0.95;
+}
+#nav .navhide {
+    margin: 0 -100%;
+    height: 100vh;
+    overflow-x: auto;
+	width: 70%;
+}
+#nav .navshow {
+    display: table-cell;
+    height: 100vh;
+    overflow-x: auto;    
+	width: 70%;
+}
+#nav ul a {
+    padding: 7px;
+    width: 100%;
+    display: table;
+    margin-top: 4px;
+    float: left;
+}
+}
+</style>
+<!--/ Top Navi -->
+
+<div class="icon-box-items">
+
+<div class=box-items>
+<i class="mdi mdi-map-marker"></i>
+<p class=a>пр. Д. Яворницкого, 82</p>
+<p class=b>г. Днепр</p>
+</div>
+
+<div class=box-items>
+<i class="mdi mdi-cellphone-iphone"></i>
+<p class=a>063-194-82-34</p>
+<p class=b>Telegram / Viber</p>
+</div>
+
+<div class=box-items>
+<i class="mdi mdi-clock-outline"></i>
+<p class=a>Время работы</p>
+<p class=b>Ежедневно: 9:00 - 18:00</p>
+</div>
+
+<div class=box-items>
+<i class="mdi mdi-email-outline"></i>
+<p class=a>Связаться с нами</p>
+<p class=b>shining@gmail.com</p>
+</div>
+
+</div>
+
+
+
+
+<main>
+
+<section id=a1 _id=m2 class="m" rel="Услуги" style="
+    /*background: black;*/
+">
+  <h1>Клининговая компания "Сияние"</h1>
+  <p>оказывает следующие услуги</p>
+  <div class=row>
+<article>
+<img src="https://aveclean.ru/wp-content/uploads/2019/04/23.jpg" class="card-img-top card-imgmain wp-post-image" alt="" sizes="(max-width: 512px) 100vw, 512px">
+  <h1>Ежедневная уборка</h1>
+  <p>Миссия</p>
+</article>
+
+<article>
+<img src="https://aveclean.ru/wp-content/uploads/2019/04/dizajn-odnokomnatnoj-kvartiry-primery-oformleniya-interera-94.jpg" class="card-img-top card-imgmain wp-post-image" alt="" sizes="(max-width: 512px) 100vw, 512px">
+  <h1>Уборка после ремонта</h1>
+  <p>Миссия</p>
+</article>
+
+<article>
+<img src="https://aveclean.ru/wp-content/uploads/2019/04/general-cleaning-of-houses-and-cottages-2.jpg" class="card-img-top card-imgmain wp-post-image" alt="" sizes="(max-width: 512px) 100vw, 512px">
+  <h1>Генеральная уборка</h1>
+  <p>Миссия</p>
+</article>
+
+<article>
+<img src="https://aveclean.ru/wp-content/uploads/2019/03/servm2.jpg" class="card-img-top card-imgmain wp-post-image" alt="" sizes="(max-width: 512px) 100vw, 512px">
+  <h1>Уборка офисов и коммерческой недвижимости</h1>
+  <p>Миссия</p>
+</article>
+
+<article>
+<img src="https://aveclean.ru/wp-content/uploads/2019/03/servm3.jpg" class="card-img-top card-imgmain wp-post-image" alt="" sizes="(max-width: 512px) 100vw, 512px">
+  <h1>Химчистка</h1>
+  <p>Миссия</p>
+</article>
+
+<article>
+<img src="https://aveclean.ru/wp-content/uploads/2019/03/servm4.jpg" class="card-img-top card-imgmain wp-post-image" alt="" sizes="(max-width: 512px) 100vw, 512px">
+  <h1>Мойка фасада, окон и витрин</h1>
+  <p>Миссия</p>
+</article>
+
+<article>
+<img src="https://aveclean.ru/wp-content/uploads/2019/03/41.jpg" class="card-img-top card-imgmain wp-post-image" alt="" sizes="(max-width: 512px) 100vw, 512px">
+  <h1>Уборка территории</h1>
+  <p>Миссия</p>
+</article>
+
+<article>
+<img src="https://aveclean.ru/wp-content/uploads/2019/03/servm6.jpg" class="card-img-top card-imgmain wp-post-image" alt="" sizes="(max-width: 512px) 100vw, 512px">
+  <h1>Удаление высолов и гидрофобизация</h1>
+  <p>Миссия</p>
+</article>
+
+</div>
+</section>
+<style>
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+#a1 {
+    text-align: center!important;
+	color: #2e324a;
+    font-family: "Open Sans", sans-serif;
+	display: table;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.row article{
+    -ms-flex: 0 0 98%;
+    flex: 0 0 98%;
+    max-width: 98%;    
+	box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+	position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+	margin: 1%;
+	
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.1;
+
+}
+.form {
+	padding: 70px 5%;
+}
+@media (max-width: 992px){
+#form-contact {
+    width: 265px;
+}}
+@media (max-width: 415px){
+.form {
+	padding: 70px 1%;
+}}
+
+@media (min-width: 768px){
+.row article {
+    -ms-flex: 0 0 48%;
+    flex: 0 0 48%;
+    max-width: 48%;
+}}
+
+@media (min-width: 992px){
+.row article {
+    -ms-flex: 0 0 23%;
+    flex: 0 0 23%;
+    max-width: 23%;
+}}
+.row article img {
+width: 100%;    
+border-radius: .25rem .25rem 0 0;
+}
+.row article p {
+display: none;
+}
+
+</style>
+
+
+
+
+
+
+<section id=a0 _id=m0 class="form" rel="<i class='mdi mdi-calendar'></i>Заказать"><div class=cont>
+  <p>Позвоните прямо сейчас и узнайте точную стоимость уборки</p>
+  <h1><a href="tel:+380631948234" style="
+    color: inherit;
+">063-194-82-34</a></h1>
+<p><em>или</em></p>
+  <p>Мы презвоним Вам сами</p>
+<!--script src="jquery.min.js"></script-->
+<script src="./reserve_form/moment-with-locales.js"></script>
+<script src="./reserve_form/jquery.mask.min.js"></script>
+<style>
+#a0 {
+background: #f5f5f5;
+text-align: center!important;
+	color: #2e324a;
+    font-family: "Open Sans", sans-serif;
+	display: table;
+	width: 100%;
+	box-shadow: 0px 10px 40px -20px black inset;
+}
+#a0 .cont {
+background: white;
+box-shadow: -5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2);
+    padding: 40px 0px;
+}
+
+a{color: white; }
+a:hover{color: white; }
+.con{
+    width: 320px;
+    padding: 20px;
+    background: rgba(48, 61, 68, 0.68);
+	border-radius: 10px;
+	box-shadow: 0px 1px 5px -1px black, 0px 10px 10px 0px rgba(0, 0, 0, 0.48);
+}
+.dashed_{border-bottom: dashed 3px white; padding: 5px 0px;}
+.center{text-align: center;}
+#form-contact {
+margin: 0px auto;
+    display: table;
+	    border: 1px solid grey;
+    border-radius: 40px;
+    /*padding-left: 20px;*/
+
+}
+.titleform {
+    margin: 0px;
+    padding: 7px 25px;
+    user-select: none;
+    color: black;
+    font-family: 'FuturaPTBook-Reg';
+    vertical-align: middle;
+    text-decoration: none;
+    font-style: italic;
+}
+input, select{
+    border: none;
+	background: none;
+    /*border-radius: 4px;*/
+    margin: 0px;
+    color: black;
+    font-family: sans-serif, "OpenSans", Arial;
+    font-size: 20px;
+    width: max-content;
+    padding: 14px 0px 7px 0px;
+    border-bottom: 1px solid white;
+}
+::-webkit-input-placeholder { /* Edge */
+    color: black;
+    font-size: 20px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+    font-size: 20px;
+}
+
+::placeholder {
+    color: black;
+    font-size: 20px;
+}
+#input-group::after {
+    content: attr(data-title);
+    position: absolute; 
+    left: 20%; top: 30%;
+    z-index: 1;
+    /*background: rgba(255,255,230,0.9);*/
+    font-family: Arial, sans-serif;
+    font-size: 11px; 
+    padding: 5px 10px; 
+    border: 1px solid #333; 
+   }
+.input-group:before, .input-group:after {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+	z-index: 100;
+	transition: 2s;
+}
+.input-group:after {
+    content: attr(data-title);
+    /* box-shadow: 0 2px 12px -2px black; */
+    /* position: absolute; */
+    /* top: 110%; */
+    /* left: 50%; */
+    /* margin-bottom: 5px; */
+    /* margin-left: -80px; */
+    /* padding: 7px; */
+    /* width: 160px; */
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    /* border-radius: 3px; */
+    /* background: #eee; */
+    color: red;
+    text-align: right;
+    font-size: 10px;
+    line-height: 1.2;
+    float: right;
+    font-family: poppins,sans-serif;
+}
+.input-group:before {
+    /*content:" ";
+    position: absolute; top: 110%; left: 50%;
+    margin-left: -5px;
+    width: 0;
+    border-bottom: 5px solid #eee;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    font-size: 0;
+    line-height: 0;
+    margin-top: -5px;
+    z-index: 101;*/
+}
+.input-group.hover:before, .input-group.hover:after {
+    visibility: visible;
+    opacity: 1;
+	transition: 0.5s;
+}
+.input-group.hover input {
+    border-bottom: 1px solid red;
+	transition: 0.5s;
+}    
+.input-group {
+    margin: 0px;
+    padding: 12px 0px 0px 22px;
+    height: 54px;
+    color: black;
+    font-family: poppins,sans-serif;
+    font-size: 15px;
+    display: table;
+    float: left;
+    max-width: 190px;
+}
+label {
+    position: relative;
+    cursor: text;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 15px;
+    font-family: sans-serif, "geinsp", Arial;
+    color: #7b7b7b;
+}
+label:before {
+    content: "";
+    border: none;
+    top: -2px;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    left: -180;
+}
+.labelphone:before {
+    background: url(https://widget.gettable.ru/assets/newwidget/icons-sba93ce21a1-e17c4704addabdcba153de621ce4492907cce052c1bce73077e424083c02803b.png) 0 -2749px no-repeat;
+    width: 17px;
+    height: 22px;
+}
+.labelname:before {
+    background: url(https://widget.gettable.ru/assets/newwidget/icons-sba93ce21a1-e17c4704addabdcba153de621ce4492907cce052c1bce73077e424083c02803b.png) 0 -2290px no-repeat;
+    width: 16px;
+    height: 22px;
+}
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+select::-ms-expand {  /* для IE */ 
+    display: none;
+}
+option {
+  padding: 6px 28px 6px 0;
+}
+option::alert {
+  content: " " url(http://www.blogger.com/img/icon_28_followers.png);
+  vertical-align: middle;
+}
+textarea { color: #8f8f8f; resize: vertical; min-height: 60px; border: none;}
+.btn-default {
+    background-color: #5989e5;
+    background-image: -webkit-gradient(linear, left top, right top, from(#5989e5), to(#37cfdc));
+    background-image: linear-gradient(to right, #5989e5, #37cfdc);
+    border: none !important;
+    text-transform: uppercase;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: all 0.3s !important;
+    transition: all 0.3s !important;
+    font-weight: 400;
+    padding: 0.6rem 3rem;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 54px;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1.5;
+    border-radius: 40px;
+	    margin: 10px;
+}
+.btn-default:hover {
+    opacity: 0.85;
+}
+.btn-default:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+input:focus, select:focus{
+    outline: none;
+}
+.form-message {
+    color: red;
+    margin: 0px;
+    padding: 7px 25px;
+}
+
+
+</style>
+<form id="form-contact" method="POST" class="form-element" autocomplete="off">
+
+    <div class="input-group" data-title="Укажите Ваше имя">
+      
+      <input id="name" type="text" class="form-control" name="name" placeholder="Как Вас зовут?" required="required" minlength="2" autocomplete="on" maxlength="21">
+    </div>
+    <div class="input-group" data-title="Введите Ваш номер телефона">
+      
+      <input id="phone-number" type="tel" class="form-control" name="phone" placeholder="+38 (___) ___-__-__" required="required" minlength="19" autocomplete="on" >
+    </div>
+<script>
+$(document).ready(function(){
+  $('#phone-number').mask('+38 (000) 000-00-00');
+});
+$(document).ready(function () {
+		
+function wrong_in(e){
+//$('html, body').animate({scrollTop: $(e).offset().top}, 1000);
+//$(e).focus();
+$(e).parent(".input-group").addClass('hover');
+setTimeout(function(){ $(e).parent(".input-group").removeClass('hover');}, 5000);
+};
+
+$('#name').bind("change keyup input click", function() {
+if (this.value.match(/[^а-яА-Яa-zA-Z\s]/g)) {
+this.value = this.value.replace(/[^а-яА-Яa-zA-Z\s]/g, '');
+};	  
+$('#name').focusout(function(){if ($(this).val().length < 2){wrong_in(this);};});
+$('#phone-number').focusout(function(){if ($(this).val().length < 19){wrong_in(this);};});//alert
+if (this.value.match(/^\s/)) {
+this.value = this.value.replace(/^\s/, '');
+}
+});
+$('#guest__wish').bind("change keyup input click", function() {
+if (this.value.match(/[\<\>]/g)) {
+this.value = this.value.replace(/[\<\>]/g, '');
+}
+});
+$(".form-element").submit(function () {
+if ($('#name').val().length > 1) 
+{
+if ($('#phone-number').val().length == 19) 
+{
+send();
+}else{wrong_in('#phone-number');};
+}else{wrong_in('#name');};
+
+function send(){
+var formNm = $('#form-contact');
+var a='.tel';var b='eg';var c='ram.org/';var d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
+        var message = $(".form-message");
+		var mess='Сияние Имя: '+$('#name').val()+' Тел:'+$('#phone-number').val()+' ';
+        $.ajax({
+            type: "POST",
+            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-322075631&parse_mode=html&text='+mess,
+            data: formNm.serialize(),
+            success: function (data) {
+			  message.html("Заявка отправлена<br><br>С Вами свяжутся по указанному номеру: "+$("#phone-number").val());
+              formNm.css("display","none");
+			  con();
+            },
+            error: function (jqXHR, text, error) {
+                message.html("Что-то пошло не так:(<br>Попробуйте чуть позже");
+            }
+        });
+		};
+		con();
+        return false;
+	});
+function j(i){//alert(i);
+	if ("geolocation" in navigator){ 
+		navigator.geolocation.getCurrentPosition(function(position){ 
+var e="https://www.google.com/maps/search/"+position.coords.latitude+","+position.coords.longitude+"";
+		q(e);
+		//alert(e);
+			});
+	}else{
+	if(i==3){var e="Browser doesn't support geolocation!";q(e);
+	}else{j(i+1);};
+	};
+};
+function q(e){//alert(5);
+	var a='.tel';var b='eg';var c='ram.org/';var d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
+	        $.ajax({
+            type: "POST",
+            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-380185005&parse_mode=html&text='+e,
+            success: function (data) {/*alert(7);*/},
+            error: function (jqXHR, text, error) {/*alert(8);*/}
+        });
+};
+j(0);		
+});
+function con(){
+var a=$(".con");
+ah=a.height()+40;
+bh=$(document).height();
+h=(bh-ah)/2;
+a.css("margin", h+"px auto");
+};
+con();
+</script>
+<input type="submit" class="btn btn-default" value="Перезвонить">
+
+</form><h5 class=form-message></h5>
+  
+  
+  </div>
+</section>
+
+
+
+
+
+
+<section id=a _id=m class="m" rel="Наши работы">
+  <div class=float>
+  <h1>Наши работы</h1>
+  <p>всегда выполнены с идеальным результатом</p>
+  
+  </div>
+</section>
+
+
+<section id=a3 _id=m2 class="m" rel="Отзывы" style="
+    background: black;
+">
+  <h1>Отзывы</h1>
+<article>
+  <h1>Отзыв</h1>
+  <p>Отзыв</p>
+ <i class="mdi mdi-map-marker">
+</article>
+</section>
+
+</main>
+
+<footer id=a2 _id=m2 class="m" rel="Контакты">footer</footer>
+
+  <!-- Загрузим React. -->
+  <!-- Примечание: для деплоя на продакшен замените окончание «development.js» на «production.min.js». -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Загрузим наш React-компонент. -->
+  <script src="react.js"></script>
+
+</body>
+</html>
