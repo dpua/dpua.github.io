@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang=ru>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -8,8 +8,8 @@
 	<meta name="description" content="Cat Cafe - кофейня, дегустационный зал кофе и чая.">
 	<meta name="keywords" content="Cat Caf, cat cafe, catcafe, кэткафе, кэт кафе, кэт кафе Днепропетровск,  кофейня кэт кафе в Днепропетровске, кофе, чай, кофейни, кофе латте, капучино, американо, смузи, мохито, лимонад, текила, маргарита, эспрессо, экспрессо, экспресо, ристретто, ристрето, американо, капучино, латте, айс, десерты, Coffee, Coffee Drinks, Caffe, Caffe Latte, Latte, Mocha, Macchiato, Espresso, Expresso, Espreso, Iced Coffee, Coffee at home, Home page, Home">
 
-<!--
-<link rel="icon" href="/images/favicons/favicon.ico" type="image/x-icon">
+
+	<link rel="icon" href="/images/favicons/favicon.ico" type="image/x-icon">
 <link href="/images/favicons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
 <link href="/images/favicons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
 <link href="/images/favicons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
@@ -26,7 +26,7 @@
 <link href="/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <meta content="#434d61" name="msapplication-TileColor">
 <meta content="/images/favicons/mstile-144x144.png" name="msapplication-TileImage">
--->
+
 
 <!--[if lt IE 9]>
   <script src="./html5shiv.min.js"></script>
@@ -149,7 +149,7 @@ $('meta[itemprop="ratingValue"]').attr('content', a);
 <header>
 <!-- Top Baner -->
 <div id="tb" _id=m rel='"Cat Cafe"'>
-<div id="tbc" style="background: url(images/bg.jpg) no-repeat center fixed;
+<div id="tbc" style="background: url(images/bg.webp) no-repeat center fixed;
     webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -292,7 +292,7 @@ width: 100%;
 	min-width: 960px;
     position: relative;
     z-index: 10;
-	background: url(images/bg_2.jpg);
+	background: url(images/bg_.webp);
 }.m_c{
     width: 960px;
     height: 100%;
@@ -328,7 +328,7 @@ width: 100%;
 
 
 	#a1{
-	background: url(images/IMG_1.jpg) no-repeat center fixed;
+	background: url(images/IMG_1.webp) no-repeat center fixed;
     webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -363,7 +363,7 @@ width: 100%;
     color: white;
     text-shadow: 0 0 3px black;
 }.sl1{
-    background: url(images/IMG_1.jpg) no-repeat center center;
+    background: url(images/IMG_1.webp) no-repeat center center;
 	}
 ._cbc{
     width: 100%;
@@ -387,7 +387,7 @@ width: 100%;
 	position: absolute;
     top: 10px;
     bottom: 10px;
-    background: url(images/IMG_3_2.jpg) repeat;
+    background: url(images/IMG_3_2.webp) repeat;
 	}
 .fr{float: right;
     width: 400px;}
@@ -1207,7 +1207,7 @@ var data = [
 
 $.each(data, function(i, e) {
   var e=data;
-  var a = '<div rel="'+e[i].n+'" class="modal"><div class="b p"></div><div class="b n"></div><div class=mod_p><div class=imgmod style="background: url(otk/'+e[i].n+'_1.jpg)no-repeat center center; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div><div class=mod><strong>'+e[i].t+'</strong>'+e[i].p+'<br></div> </div><div class=mc><img src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false"></div> </div>';
+  var a = '<div rel="'+e[i].n+'" class="modal"><div class="b p"></div><div class="b n"></div><div class=mod_p><div class=imgmod style="background: url(images/'+e[i].n+'_1.webp)no-repeat center center; webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div><div class=mod><strong>'+e[i].t+'</strong>'+e[i].p+'<br></div> </div><div class=mc><img src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png" draggable="false"></div> </div>';
   $("#otk__mod").append(a);
 });
 };
