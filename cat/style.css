@@ -358,7 +358,7 @@ z-index: 14;
 .hide{display: none;}
 .show{display: table;}
 .modal{
-	margin: -600px auto;
+	margin: -550px auto;
     width: 600px;
     padding: 0px;
     background: #fff;
