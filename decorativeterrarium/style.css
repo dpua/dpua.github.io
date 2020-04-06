@@ -528,7 +528,7 @@ line-height: 317px;
 text-align: center;
 color: rgba(239, 216, 201, 0.45);
 }
-#work p {
+#work h3 {
 margin-top: 100px;
 margin-bottom: 40px;
 width: 472px;
@@ -948,7 +948,7 @@ margin-top: 80px;}
     width: 326px;
 height: 449px;
 }
-#work p {margin-top: 35px;
+#work h3 {margin-top: 35px;
     margin-bottom: 15px;
     font-size: 16px;
     line-height: 104.5%;
@@ -1257,7 +1257,7 @@ background: url('./images/jazminttquaynor-105210-unsplash.png') left -150px top 
 	#work .cont {
     align-items: center;
 }
-#work p {
+#work h3 {
     font-size: 16px;
     line-height: 104.5%;
     margin: 5px 0 17px 0;
