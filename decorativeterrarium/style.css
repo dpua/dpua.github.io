@@ -1,0 +1,1528 @@
+body{
+/*background: url('./images/m_Surface_Book.webp') no-repeat red;
+    background-size: 1500px 4558px;
+backdrop-filter: grayscale(1);*/
+     background: white no-repeat center center fixed; 
+    margin: 0px;
+    padding: 0px;
+	    opacity: 1;
+	}
+footer, nav, header, section, aside, main {display: block}
+h2{    
+margin: 0px;
+font-family: Cinzel;
+font-style: normal;
+font-weight: normal;
+font-size: 40px;
+line-height: 44px;
+text-align: center;
+color: rgba(75, 78, 91, 0.7);}
+header {padding: 12px 0 0 0;
+background: url('./images/jazminttquaynor-105210-unsplash.png') left -30px bottom -55px no-repeat,
+                url('./images/jazminttquaynor-105210-unsplash (1).png') right -80px bottom no-repeat; 
+				height: 815px;}
+a {
+	display: block;
+	text-decoration: none
+	}
+
+#nav {
+    margin: 28px 0px;/*175px;*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navtoggler { display: none;}
+.logo {
+/*background-image: url("images/Union.svg");
+margin: 28px 0 0 175px;
+position: absolute;*/
+color: #72747C;
+width: 105px;
+height: 49px;
+}
+a object {pointer-events: none;}
+#nav .emptygrow {/*
+-webkit-flex-grow: 1; 
+flex-grow: 1;*/
+flex: 2 1 175px;
+    max-width: 177px;
+}
+#nav .empty {/*
+-webkit-flex-grow: 1; 
+flex-grow: 1;*/
+flex: 1 2 400px;
+}
+#nav .topmenu {
+display: flex;
+justify-content: space-around;
+width: 491px;
+}
+nav  li {
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 104.5%;
+text-align: center;
+color: #72747C;
+ }
+nav  a {
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 104.5%;
+text-align: center;
+color: #72747C;
+position: relative;
+ }
+.topmenu .hov::before, .topmenu a:hover::before {
+content: "";
+width: 26px;
+height: 0px;
+    border-bottom: 1px solid #575353;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 21px auto;
+}
+#nav .sub::after {
+    content: "";
+    border: solid #72747C;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 0px;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    top: 4px;
+    right: -12px;
+}
+
+.right::after  {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left::after  {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up, #nav .subs:hover .sub::after, #nav .sub:hover::after {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+	margin: 3px 0px;
+	 -webkit-transition: .0s ease-out;
+     -webkit-transition-delay: 0s;
+     -o-transition: .0s ease-out;
+     -o-transition-delay: 0s;
+     -moz-transition: .0s ease-out;
+     -moz-transition-delay: 0s;
+     transition: .0s ease-out;
+	transition-delay: 0s;
+}
+.s:hover~.d {
+  color: red;
+}
+
+.down, #nav .sub::after {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+	 -webkit-transition: .0s ease-out;
+     -webkit-transition-delay: 0.5s;
+     -o-transition: .0s ease-out;
+     -o-transition-delay: 0.5s;
+     -moz-transition: .0s ease-out;
+     -moz-transition-delay: 0.5s;
+     transition: .0s ease-out;
+     transition-delay: 0.5s;
+}
+
+ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+}
+.submenu {
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    padding: 20px 100px;
+    margin: 7px 0;
+}
+#nav .submenu {
+  visibility: hidden;
+}
+#nav ul li:hover .submenu {
+  visibility: visible;
+}
+.submenu li a {
+    display: flex;
+    align-items: center;
+}
+.submenu li a:hover{text-decoration: underline;}
+.submenu li a:hover::before {display: none}
+	
+
+.submenu li {
+    width: 330px;
+    height: 110px;
+    /* box-sizing: border-box; */
+    margin: 10px;
+    display: inline-table;
+}
+.img1 {
+    background: url('./images/images (3).jpg');
+}
+.img2 {
+    background: url('./images/il_570xN.jpg');
+}
+.img3 {
+    background: url('./images/Desktop-Glass-Planter-Bulb-Vase-with-Classic-Solid-Wooden-Stand-and-Metal-Swivel-Holder-for-Hydroponics.jpg');
+}
+.submenu .img {
+    min-width: 110px;
+    min-height: 110px;
+    border: 3.94183px solid rgba(238, 214, 202, 0.4);
+    box-sizing: border-box;
+	background-size: cover;
+}
+.submenu p {
+font-family: Cinzel;
+font-style: normal;
+font-weight: normal;
+font-size: 19px;
+line-height: 110.13%;
+/* or 21px */
+
+
+color: rgba(75, 78, 91, 0.7);
+    text-align: left;
+    margin: 20px;
+	}
+
+ul.icongrp {
+    list-style: none;
+    margin: 0px 0px 0px 25px;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+}
+.icongrp object {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background-size: cover;
+  margin: 6px 16px 0px 9px;
+}
+.icon-search {
+  background-image: url('./images/search.svg');
+}
+.icon-search:hover,
+.icon-search:focus {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+.icon-mail {
+  background-image: url('./images/mail.svg');
+}
+.icon-mail:hover,
+.icon-mail:focus {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+.icon-shop {
+  background-image: url('./images/shop.svg');
+}
+.icon-shop:hover,
+.icon-shop:focus {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+.grp22::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 39px;
+    height: 45px;
+    margin: -7px 5px;
+    background: url(./images/polygon.svg) no-repeat;
+}
+
+
+#block1 {
+margin: 100px auto;
+width: 494px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+#block1 h1 {
+margin: 46px 0 33px 0;
+font-family: Cinzel;
+font-style: normal;
+font-weight: normal;
+font-size: 70px;
+line-height: 77px;
+text-align: center;
+color: rgba(75, 78, 91, 0.75);
+}
+#block1 .img4 {pointer-events: none;
+position: absolute;
+margin: 20px -460px;
+}
+#block1 .img4:before {
+    content: '';
+    width: 692px;
+    height: 692px;
+    opacity: 0.15;
+    transform: matrix(0.3, -0.95, -0.95, -0.3, -120, -60);
+    background: url(./images/untitled.svg) no-repeat;
+    background-size: 692px;
+    position: absolute;
+    z-index: -1;
+}/*#block1 .img4:before {
+z-index: -1;
+    content: '';
+    position: absolute;
+    width: 892px;
+    height: 892px;
+    background: url(./images/Polygon3.svg) no-repeat;
+    transform: rotate(47deg);
+    left: -400px;
+    top: 100px;
+    opacity: 0.15;
+}*/
+
+#block1 p {
+width: 375px;
+height: 59px;
+font-family: Roboto;
+font-style: Thin;
+font-weight: 200;
+font-size: 16px;
+line-height: 104.5%;
+/* or 17px */
+
+text-align: center;
+
+color: #9E9D9B;
+margin: 0px;}
+#block1 a {
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 104.5%;
+/* or 17px */
+text-align: center;
+color: #72747C;
+margin: 52px;
+padding: 1px 0px 0px 36px;
+}
+#block1 a span {
+color: white;
+    margin: 0px -1px;
+    padding: 7px 30px 8px 2px;
+background: #575353;
+box-shadow: 2px 2px 8px rgba(19, 3, 113, 0.15);
+}	
+
+
+
+
+#partners h2{
+margin: -63px 0 19px 0;}
+#partners .contblock {
+    width: 100%;
+    height: 123px;
+    padding: 14px 0 0 0;
+    background: #F9F1EC;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .arrow{
+width: 39px;
+height: 39px;
+border: 0.5px solid #575353;
+box-sizing: border-box;
+margin: 22px 32px 0 32px;
+} .arrow::after {
+    content: "";
+    border: solid #72747C;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 0px;
+    width: 6px;
+    height: 6px;
+    margin: 15px;
+}
+
+.right {float: right;}
+.left {float: left;}
+#partnersblock a:nth-child(1){
+width: 145px;
+height: 89px;
+background: url(./images/b89f8d3122134eeb3b3045027ea92b69.png);
+}
+#partnersblock a:nth-child(2){
+width: 107px;
+height: 20px;
+background: url(./images/ALLERO.png);
+}
+#partnersblock a:nth-child(3){
+width: 92px;
+height: 90px;
+background: url(./images/пп.png);
+}
+#partnersblock a:nth-child(4){
+width: 87px;
+height: 108px;
+background: url(./images/и.png);
+}
+#partnersblock a:nth-child(5){
+width: 145px;
+height: 89px;
+background: url(./images/b89f8d3122134eeb3b3045027ea92b69.png);
+}
+#partnersblock a:nth-child(6){
+width: 93px;
+height: 89px;
+background: url(./images/глш.png);
+}
+#partnersblock  {
+    margin: 28px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#partnersblock  a {
+    margin: 0 28px;
+mix-blend-mode: darken;
+opacity: 0.5;
+}
+
+
+#products {
+    margin-top: 92px;
+}
+#products .contblock {
+    padding: 35px;
+    margin: 33px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#products .cont {
+	margin: 0 10px;
+    width: 242px;
+    height: 398px;
+    padding: 41px 50px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(7, 10, 87, 0.1);
+    /*width: 494px;*/
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+}
+#products .cont .img {
+width: 242px;
+height: 249px;
+border: 10px solid rgba(238, 214, 202, 0.4);
+box-sizing: border-box;
+background-size: cover;
+}
+#products .cont:nth-child(2){/*
+width: 380px;
+height: 560px;*/    
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+
+/*width: 276px;
+    height: 446px;
+    padding: 57px 52px;
+background: #FFFFFF;*/
+}
+#products .arrow {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    transform: scale(0.85);
+    margin: 10px 24px;
+}
+
+#products .arrow.hide {
+display: none;
+}
+/*
+#products .cont:nth-child(3){
+}
+#products .cont:nth-child(2) .img {
+width: 275px;
+height: 279px;
+}
+*/
+#products .cont h3{
+font-family: Cinzel;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 26px;
+text-align: center;
+color: rgba(75, 78, 91, 0.7);
+}#products .cont p{
+margin: 0px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 104.5%;
+/* or 17px */
+text-align: center;
+color: #C3C4C9;
+}
+
+#work {background: url('./images/jazminttquaynor-105210-unsplash.png') left bottom 50px no-repeat;
+    margin-top: 60px; 
+    display: flex;
+  flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#work div {width: 50%;}
+#work .cont {
+    display: flex;
+	flex-direction: column;
+    align-items: flex-end;
+}
+#work .img {
+overflow-x: hidden;
+}
+	
+#work img { left: 73px; 
+    position: relative;}
+#work blockquote {
+margin-right: 14px;
+}
+#work blockquote:before {
+content: "\201C";
+margin: -45px -50px;
+position: absolute;
+font-family: Cinzel;
+font-style: normal;
+font-weight: normal;
+font-size: 288px;
+line-height: 317px;
+text-align: center;
+color: rgba(239, 216, 201, 0.45);
+}
+#work p {
+margin-top: 100px;
+margin-bottom: 40px;
+width: 472px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 26px;
+line-height: 104.5%;
+/* or 27px */
+text-align: right;
+color: #4B4E5B;
+}
+#work footer {
+float: right;
+text-align: right; 
+padding: 7px 0;
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 1.5;
+/* or 17px */
+color: #89898D;
+border-top: 1px solid rgba(75, 78, 91, 0.5);
+width: 210px;
+}
+cite{font-style: inherit;}
+
+
+
+
+#achievements {    margin-top: 53px;}
+#achievements .contblock {
+    margin: 46px 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}#achievements .block {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+}
+#achievements .cont {
+    /*width: 494px;*/
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+}
+#achievements .cont::after {
+    content: "";
+    width: 53px;
+    height: 0px;
+    border-bottom: 1px solid #EED6CA;
+    margin: 18px auto;
+}
+#achievements object {
+    width: 31px;
+    height: 31px;
+}
+#achievements h3{
+font-family: Abel;
+font-style: normal;
+font-weight: normal;
+font-size: 55px;
+line-height: 57px;
+text-align: center;
+text-transform: uppercase;
+color: #4B4E5B;
+    margin: inherit;
+}#achievements p{
+font-family: Abel;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 25px;
+text-align: center;
+text-transform: uppercase;
+color: #4B4E5B;
+    margin: inherit;
+}
+
+
+#sales {
+    font-family: Cinzel;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: lowercase;
+    color: rgba(75, 78, 91, 0.7);
+    position: absolute;
+    right: 0px;
+    margin: 53px 180px;
+	}
+#glass div, #glass img {width: 50%;}
+#glass  {background: url('./images/jazminttquaynor-105210-unsplash (1).png') right  bottom -330px no-repeat; 
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#glass .cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#glass h2{    
+width: 520px;
+margin: 20px 105px 30px 0px;
+font-family: Cinzel;
+font-style: normal;
+font-weight: normal;
+font-size: 52.32px;
+line-height: 58px;
+text-align: center;
+text-transform: lowercase;
+color: rgba(75, 78, 91, 0.7);
+}
+#glass p{
+    width: 520px;
+    margin-right: 90px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 22px;
+line-height: 104.5%;
+/* or 23px */
+text-align: center;
+color: #C3C4C9;
+}
+
+
+
+
+#reviews { background: url('./images/jazminttquaynor-105210-unsplash.png') left -130px top -30px no-repeat; 
+    /*margin-top: 60px; */
+    display: flex;
+  flex-direction: row;
+    justify-content: center;
+    align-items: center;
+	}
+#reviews h2 { 
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+#reviews .fif { width: 50%;}
+#reviews .cont {/*
+    display: flex;
+	flex-direction: column;
+    align-items: center;*/
+    width: 580px;
+    height: 492px;
+    float: right;
+    margin: 30px;
+}
+#reviews blockquote:before {
+content: "\201C";
+margin: -105px -20px;
+position: absolute;
+font-family: Cinzel;
+font-style: normal;
+font-weight: normal;
+font-size: 221.596px;
+line-height: 244px;
+text-align: center;
+color: rgba(239, 216, 201, 0.45);
+}
+#reviews blockquote {
+	width: 254.8px;
+}
+#reviews p {
+margin-top: 0;
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 124.5%;
+/* or 20px */
+color: #4B4E5B;
+margin: 0 0 55px 0;
+}
+#reviews footer {
+padding: 7px 0;
+width: 254.8px;
+color: #89898D;
+border-top: 1px solid rgba(75, 78, 91, 0.5);
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 104.5%;
+}
+#reviews .reviews { 
+    margin-top: 100px;
+    display: flex;
+  flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#reviews .ellipse {
+    width: 241px;
+    height: 241px;
+    border: 8.39721px solid rgba(239, 216, 201, 0.5);
+    border-radius: 50%;
+    box-sizing: border-box;
+	background: url(./images/michael-dam-258165-unsplash.jpg) center border-box;
+    background-size: cover;
+    margin-bottom: 124px;
+}
+#reviews .arrowb {
+    margin-top: 70px;
+    width: 126px;
+    display: table;
+}
+#reviews .arrow {
+margin: 0;
+}
+
+
+
+
+
+
+
+#footer {
+padding: 80px 10px 32px 10px;
+}
+#footer::before {
+    content: "";
+    width: 999px;
+    height: 0px;
+    border: 1px solid #DFDFDF;
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    /* bottom: 0; */
+    right: 0;
+    margin: -30px auto;
+}
+#footer .logo {
+margin-top: 12px;
+}/*
+#footer .footermenu {
+display: flex;
+justify-content: space-around;
+align-items: center;
+    width: 850px;
+    margin: 0 auto;
+    padding-left: 50px;
+}*/
+
+#footer .footermenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 850px;
+    margin: 0 auto;
+    padding: 7px 20px;
+}#footer .block {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+}
+#footer .blockl { margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 244px;
+}  
+
+
+
+.span a span {
+    color: white;
+    margin: 0px -1px;
+    padding: 7px 30px 8px 2px;
+    background: #575353;
+    box-shadow: 2px 2px 8px rgba(19, 3, 113, 0.15);
+}
+
+.span a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 104.5%;
+    text-align: center;
+    color: #72747C;
+}
+
+
+/*(min-width:376px) and (max-width:768px)*/
+@media screen and (min-width:768px) and (max-width:1499px) {
+body{
+/*background: url('./images/iPad mini - 1.jpg') no-repeat red;
+backdrop-filter: grayscale(1);    
+background-size: 768px 3093px;*/
+    /* background: white no-repeat center center fixed; */
+	}
+	header {    height: 770px;
+        background-size: 300px;}
+#nav {
+margin: 14px 0px;}
+.icongrp object {
+    margin: 6px 16px 0px 6px;
+}	
+ul.icongrp {
+    margin: 0px 0px 0px 10px;}
+.grp22 object {
+    margin: 6px 11px 0px 11px;
+}
+#nav .empty {
+    flex: 2 1 130px;
+}
+#nav .emptygrow {
+    flex: 2 1 25px;
+}
+.logo {
+margin-left: 10px;}	
+	
+#block1 {
+    margin: 33px 7%;
+    width: 394px;
+    float: right;
+    position: absolute;
+    /* top: 50%; */
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-30%, 0%);
+}
+#block1 h1 {
+    font-size: 40px;
+line-height: 110.13%;}
+#block1 p {
+    width: 345px;
+height: max-content;}
+#block1 .img4 {
+    position: absolute;
+margin: 90px -320px;}
+#block1 .img4 img {
+    width: 430px;
+}
+#block1 .img4:before {
+    content: '';
+    width: 500px;
+    height: 500px;
+    background-size: 500px;
+    margin: 90px;
+}
+.arrow {
+    margin: 0px 32px;
+}
+
+
+
+h2 {
+    font-size: 28px;
+    line-height: 110.13%;
+}
+#partners h2 {
+    margin: -45px 0 19px 0;
+}
+#partnersblock {
+ margin: 0px;}
+	#partnersblock a {
+    margin: 0 19px;
+}	#partnersblock a:nth-child(5), #partnersblock a:nth-child(6) {
+    display: none;
+}
+#partners .contblock {
+    height: 100px;
+padding: 0;}
+#products {
+    margin-top: 64px;
+}
+
+#products .cont {
+	margin: 0 5px;
+    width: 242px;
+    height: 248px;
+    padding: 32px;
+}
+#products .arrow {transform: scale(0.6);    margin: 0px 5px;}
+#products .cont .img {
+width: 157px;
+height: 162px;
+border: 6.5px solid rgba(238, 214, 202, 0.4);
+box-sizing: border-box;}
+
+
+#products .cont h3 {font-size: 16px;
+line-height: 110.13%;
+}
+
+#products .cont p {
+font-size: 12px;
+line-height: 104.5%;}
+
+#work blockquote {
+    left: 40px;
+    position: relative;
+}
+
+#work {background: url('./images/jazminttquaynor-105210-unsplash.png') left -100px bottom 50px no-repeat;
+margin-top: 80px;}
+#work img {
+    left: 83px;
+    width: 326px;
+height: 449px;
+}
+#work p {margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 104.5%;
+width: 260px;}
+#work .cont {
+    align-items: flex-end;
+}
+#work blockquote:before {
+    font-size: 180px;
+    line-height: 110.13%;
+    margin: -55px 0px;
+}
+
+#achievements {
+    margin-top: 40px;
+}
+#achievements h3 {
+    font-size: 38px;
+line-height: 40px;}
+#achievements p {
+    font-size: 17px;
+line-height: 17px;}
+#achievements .contblock {
+margin: 36px 35px;}
+#achievements object {
+    width: 25px;
+    height: 25px;
+}
+#achievements .cont::after {
+width: 35px;}
+
+#sales {
+    font-size: 14px;
+    line-height: 110%;
+    margin: 18px 3%;
+}
+
+#glass {
+	background: url('./images/jazminttquaynor-105210-unsplash (1).png') right -10px bottom -480px no-repeat; 
+margin-top: 60px;}
+#glass h2 {
+    font-size: 32px;
+    line-height: 110%;
+    margin: 10px;
+    width: 300px;}
+#glass p {
+    font-size: 16px;
+    line-height: 104.5%;
+    margin: 10px;
+width: 300px;}
+#reviews  {		background: url('./images/jazminttquaynor-105210-unsplash.png') left -200px top -50px no-repeat;}
+
+#reviews .ellipse {
+width: 111px;
+height: 111px;
+border: 3.8676px solid rgba(239, 216, 201, 0.5);
+}
+#reviews .cont {
+    width: 355px;
+    height: auto;
+    float: right;
+    margin: 0 15px;
+}
+#reviews h2 {
+    margin-block-start: 1.83em;
+}
+#reviews p {
+    font-size: 14px;
+line-height: 124.5%;
+    margin: 0 0 20px 0;}
+
+#reviews footer {
+width: 141px;
+    padding: 8px 0;}
+#reviews blockquote {
+    width: 230px;
+    margin: 10px;
+}
+#reviews .arrowb {
+margin-top: 45px;}
+#reviews .reviews {    align-items: end;
+    margin-top: 70px;}	
+	#reviews blockquote:before {
+    margin: -55px -10px;
+    font-size: 180px;
+    line-height: 110.13%;
+}
+
+footer nav a, footer nav a span {
+    font-size: 14px;
+line-height: 104.5%;}
+#footer {
+    padding: 50px 10px 12px 10px;
+}
+#footer .logo {
+    margin: 0px;
+    width: auto;
+    height: auto;
+}
+#footer object {
+    pointer-events: none;
+    width: 78px;
+}
+#footer::before {
+    width: 556px;
+    margin: -10px auto;
+}
+footer a:hover::before {
+    border-bottom: 0px ;
+    margin: 0;
+}
+
+
+#footer .footermenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 7px 20px;
+    width: auto;
+}#footer .block {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 245px;
+}
+#footer .blockl { margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 176px;
+}  
+
+
+}
+
+
+
+
+/*(max-width:375px)*/
+@media (max-width:768px) {
+body{
+/*background: url('./images/X - 1.jpg') no-repeat red;
+backdrop-filter: grayscale(1);
+    background-size: 375px 4662px;*/
+	}
+
+	
+	header {
+		background: url('./images/jazminttquaynor-105210-unsplash.png') left -200px bottom 50px no-repeat, url('./images/jazminttquaynor-105210-unsplash (1).png') right -300px top 40% no-repeat;
+    height: 859px;
+}
+	
+.navtoggler {
+    padding: 5px;
+    display: table;
+    cursor: pointer;
+margin: 0 0 0 8px;
+}
+.navtoggler.close span {
+    width: 18px;
+    margin: 4px;
+    display: block;
+    height: 1px;
+    background: #72747C;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}#nav {
+margin: 4px 0 0 10px;}
+#nav .topmenu {display: none;}	
+.logo {
+    width: auto;
+    height: auto;
+}	
+.logo object {
+    width: 80px;
+}	
+.icongrp object {
+    width: 16px;
+    height: 16px;
+    margin: 6px 9px 0px 9px;
+}	
+#nav .empty {
+    flex: 1 2 0px;
+}#nav .emptygrow {
+    flex: 2 1 5px;
+    max-width: 5px;
+}.grp22::before {
+    content: '';
+
+    width: 29px;
+    height: 35px;
+    margin: -5px 6px;
+    background-size: cover;
+}
+	#block1 {
+    margin: 10px auto;
+    width: 350px;}
+	#block1 h1 {
+    font-size: 40px;
+    line-height: 110.13%;
+    margin: 46px 0 0px 0;}
+	#block1 .img4 {
+    position: relative;
+    margin: 0px;
+    width: 346px;
+    height: 377px;
+}
+#block1 .img4:before {
+    content: '';
+    width: 392px;
+    height: 392px;
+    opacity: 0.15;
+    transform: matrix(0.3, -0.95, -0.95, -0.3, -120, -60);
+    background: url(./images/untitled.svg) no-repeat;
+    background-size: 392px;
+    position: absolute;
+    z-index: -1;
+}
+		#block1 img {
+    width: 346px;
+    height: 377px;
+}
+	#block1 p {
+    font-size: 16px;
+    line-height: 104.5%;
+    width: auto;}
+	#block1 a {
+    margin: 33px;}
+	h2 {
+    font-size: 28px;
+    line-height: 110.13%;}
+	#partners h2 {
+    margin: -50px 0 19px 0;
+}
+	
+	#partnersblock a:nth-child(3), #partnersblock a:nth-child(4), #partnersblock a:nth-child(5), #partnersblock a:nth-child(6) {
+    display: none;
+}
+	#partners .contblock {
+    height: auto;
+    padding: 0;}
+	.right {
+    margin: 95px 38px;
+}
+.left {
+    margin: 95px -38px;
+}#partnersblock {
+margin: 8px 0px;}
+.arrow {
+position: absolute;}
+	#products .contblock {
+    padding: 0px;
+    flex-direction: column;}
+	#products .cont, #products .cont:nth-child(2){
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+	transform: scale(1);}
+	#products {
+    margin-top: 133px;
+}
+#products .cont {
+    width: 181px;
+    height: 290px;
+    margin: 10px;
+    padding: 37px 33px;}
+	#products .cont .img {
+    width: 178.75px;
+    height: 181.35px;
+    border: 6.5px solid rgba(238, 214, 202, 0.4);}
+	#products .cont h3 {
+    font-size: 19px;
+    line-height: 110.13%;}
+	#products .cont p {
+    font-size: 14px;
+    line-height: 104.5%;}
+	#products .arrow {
+    transform: scale(0.65);
+    margin: 5px 7px;
+}
+#products .arrow.hide {
+display: block;
+}
+	#work {
+
+background: url('./images/jazminttquaynor-105210-unsplash.png') left -150px top 50px no-repeat;
+    margin-top: 40px;
+    flex-direction: column-reverse;}
+	#work div {
+    width: 100%;
+}
+#work img {
+    left: 0;
+    right: 0;
+    position: absolute;
+    width: 237px;
+    height: 326px;
+    margin: 0 auto;
+    transform: translate(95px, 0%);
+    z-index: -1;
+}#work .img {
+    height: 326px;
+    position: relative;
+}
+	#work .cont {
+    align-items: center;
+}
+#work p {
+    font-size: 16px;
+    line-height: 104.5%;
+    margin: 5px 0 17px 0;
+    width: 234px;
+}
+	#work blockquote:before {
+    margin: -55px -5px;
+    font-size: 180px;
+    line-height: 110.13%;
+}
+#work blockquote {
+    margin: 17px auto;
+}
+	#achievements {
+    margin-top: 45px;
+}#achievements h3 {
+    font-size: 38.2848px;
+line-height: 40px;}
+	#achievements p {
+    font-size: 16.7061px;
+    line-height: 17px;}
+#achievements .block {
+margin: 15px 0;}
+#achievements .contblock {
+    margin: 32px 5px;
+    flex-direction: column;
+    align-items: stretch;
+}
+	#achievements object {
+    width: 20px;
+    height: 20px;
+}
+	
+	#glass {
+	background: url('./images/jazminttquaynor-105210-unsplash (1).png') right -150px bottom -550px no-repeat; 
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+	#glass div, #glass img {
+    width: 100%;
+}
+	#sales {
+    font-size: 14px;
+    line-height: 110.13%;
+    margin: 10px 10px;
+}
+	
+	#glass h2 {
+    font-size: 32px;
+    line-height: 110.13%;
+    width: auto;
+    margin: 25px 10px;}
+	#glass p {
+    font-size: 16px;
+    line-height: 104.5%;
+    width: 261px;
+    margin: 0 auto;
+    margin-right: auto;}
+	
+	#reviews {
+		background: url('./images/jazminttquaynor-105210-unsplash.png') left -220px bottom 220px no-repeat;
+    margin-top: 30px;
+    flex-direction: column-reverse;
+}
+#reviews .fif {
+    width: 100%;
+}
+	#reviews .cont {
+    width: 351px;
+    height: auto;
+    float: none;
+    margin: 0px auto;
+    margin-top: 36px;
+    padding-top: 35px;
+}
+	#reviews .reviews {
+		align-items: end;
+    margin-top: 0px;}
+	#reviews p {    margin: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 124.5%;}
+	#reviews .ellipse {
+    margin-bottom: 0;
+    width: 111px;
+    height: 111px;
+    border: 3.8676px solid rgba(239, 216, 201, 0.5);
+}
+	#reviews blockquote {
+    width: 216px;
+    margin: 7px auto;
+}#reviews footer {
+    width: 141px;
+}#reviews .arrowb {
+    margin-top: 20px;
+    width: 110px;
+    display: table;
+    float: right;
+}
+	#reviews .arrow {
+    margin: 2px;
+    position: relative;
+}
+	#reviews blockquote:before {
+    font-size: 180px;
+    line-height: 110.13%;
+    margin: -50px -10px;
+
+}
+	
+	#footer {
+    padding: 50px 10px 32px 10px;
+    width: auto;
+}
+	
+#footer .footermenu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    width: auto;
+}#footer .block {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-direction: column;
+    width: 107px;
+    height: 68px;
+}
+#footer .blockl {
+    width: 80px;
+    position: absolute;
+    margin: -15px 10px;
+    left: 0;
+}
+#footer a, .span a {
+    font-size: 14px;
+line-height: 104.5%;}
+	.span a span {
+    color: white;
+    margin: 0px -1px;
+    padding: 4px 35px 4px 2px;
+    background: #575353;
+    box-shadow: 2px 2px 8px rgba(19, 3, 113, 0.15);
+}
+	#footer::before {
+    content: "";
+    width: 100%;
+    height: 0px;
+    border: 1px solid #DFDFDF;
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    /* bottom: 0; */
+    right: 0;
+    margin: -30px auto;
+}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+jlkjkljlkjlkj {
+width: 241px;
+height: 241px;
+left: 481px;
+top: 3943px;
+
+border: 8.39721px solid rgba(239, 216, 201, 0.5);
+box-sizing: border-box;}
+
+
+.svgpolygon {
+ background: url(./images/svgpolygon.svg) no-repeat;
+  background-size: cover;
+  display: inline-block;
+}
+
+
+
+.container:before, .container:after{
+ content: '';
+ width: 300px;
+ height: 300px;
+ position: absolute;
+ top: 0;
+ left: 0;
+ background: #1b70d5;
+ opacity: .1;
+ transition: 1s;
+}
+.container:before{
+ transform: translateX(-125%) rotate(45deg);
+}
+.container:after{
+ transform: translateX(195%) rotate(45deg);
+}
+.text{
+ position: absolute;
+ top: 20%;
+ color: #ffffff;
+ text-align: center;
+ z-index: 10;
+}
+.text h1{
+ margin-bottom: 20px;
+ font-size: 30px;
+ transform: scale(0);
+ transition: .5s;
+}
+.text p{
+ font-size: 18px;
+ margin: 0 100px;
+ text-align: justify;
+ transform: scale(2);
+ transition: .5s;
+ opacity: 0;
+}
+a.bt{
+ position: absolute;
+ top: 100%;
+ left: 37%;
+ color: #ffffff;
+ text-decoration: none;
+ text-transform: uppercase;
+ border: 2px solid #ffffff;
+ padding:10px 30px;
+ border-radius: 8px;
+ opacity: 0;
+ transition: .2s ease-in-out;
+ overflow: hidden;
+}
+a.bt:before{
+ content: '';
+ position: absolute;
+ top: -8px;
+ left: -75px;
+ height: 50px;
+ width: 50px;
+ background: linear-gradient(90deg,rgba(255,255,255,.1), rgba(255,255,255,.5));
+ transform: skewX(-45deg);
+}
