@@ -1,11 +1,14 @@
 body{
-/*background: url('./images/m_Surface_Book.webp') no-repeat red;
-    background-size: 1500px 4558px;
-backdrop-filter: grayscale(1);*/
-     background: white no-repeat center center fixed; 
+background: url('./images/backgroundGroup1.svg') left  top  no-repeat,
+            url('./images/backgroundGroup2.svg') right top 316px no-repeat,
+			url('./images/backgroundGroup3.svg') left  top 1090px  no-repeat,
+            url('./images/backgroundGroup4.svg') left 320px top 1014px no-repeat,
+			url('./images/backgroundGroup5.svg') right top 1099px no-repeat,
+			url('./images/backgroundGroup6.svg') left top 2343px no-repeat,
+            url('./images/backgroundGroup7.svg') right top 2182px no-repeat; 
     margin: 0px;
     padding: 0px;
-	    opacity: 1;
+	opacity: 1;
 	}
 footer, nav, header, section, aside, main {display: block}
 h2{    
@@ -18,8 +21,8 @@ line-height: 44px;
 text-align: center;
 color: rgba(75, 78, 91, 0.7);}
 header {padding: 12px 0 0 0;
-background: url('./images/jazminttquaynor-105210-unsplash.png') left -30px bottom -55px no-repeat,
-                url('./images/jazminttquaynor-105210-unsplash (1).png') right -80px bottom no-repeat; 
+background: url('./images/jazminttquaynor-105210-unsplash.png') left  bottom  no-repeat,
+                url('./images/jazminttquaynor-105210-unsplash (1).png') right bottom no-repeat; 
 				height: 815px;}
 a {
 	display: block;
@@ -279,7 +282,7 @@ color: rgba(75, 78, 91, 0.75);
 position: absolute;
 margin: 20px -460px;
 }
-#block1 .img4:before {
+#block1 .img4:before {/*
     content: '';
     width: 692px;
     height: 692px;
@@ -289,7 +292,7 @@ margin: 20px -460px;
     background-size: 692px;
     position: absolute;
     z-index: -1;
-}/*#block1 .img4:before {
+*/}/*#block1 .img4:before {
 z-index: -1;
     content: '';
     position: absolute;
@@ -832,6 +835,13 @@ align-items: center;
 /*(min-width:376px) and (max-width:768px)*/
 @media screen and (min-width:768px) and (max-width:1499px) {
 body{
+background: url('./images/backgroundGroup1-1.svg') left top 120px no-repeat,
+            url('./images/backgroundGroup2-1.svg') right top 315px no-repeat,
+			url('./images/backgroundGroup3-1.svg') left  top 966px  no-repeat,
+            url('./images/backgroundGroup4.svg') left -1320px top 1014px no-repeat,
+			url('./images/backgroundGroup5.svg') right -160px top 975px no-repeat,
+			url('./images/backgroundGroup6-1.svg') left top 1896px no-repeat,
+            url('./images/backgroundGroup7-1.svg') right top 1819px no-repeat; 
 /*background: url('./images/iPad mini - 1.jpg') no-repeat red;
 backdrop-filter: grayscale(1);    
 background-size: 768px 3093px;*/
@@ -880,12 +890,12 @@ margin: 90px -320px;}
 #block1 .img4 img {
     width: 430px;
 }
-#block1 .img4:before {
+#block1 .img4:before {/*
     content: '';
     width: 500px;
     height: 500px;
     background-size: 500px;
-    margin: 90px;
+    margin: 90px;*/
 }
 .arrow {
     margin: 0px 32px;
@@ -1091,7 +1101,13 @@ footer a:hover::before {
 
 /*(max-width:375px)*/
 @media (max-width:768px) {
-body{
+body{background: url('./images/backgroundGroup1-1.svg') left -25px top 65px no-repeat,
+            url('./images/backgroundGroup2-1.svg') right -50px top 530px no-repeat,
+			url('./images/backgroundGroup3-2.svg') left top 1104px no-repeat,
+            url('./images/backgroundGroup4.svg') left -1320px top 1014px no-repeat,
+			url('./images/backgroundGroup5.svg') right -100px top 1442px no-repeat,
+			url('./images/backgroundGroup6-1.svg') left -50px top 2791px no-repeat,
+            url('./images/backgroundGroup7-12.svg') right top 3062px no-repeat; 
 /*background: url('./images/X - 1.jpg') no-repeat red;
 backdrop-filter: grayscale(1);
     background-size: 375px 4662px;*/
@@ -1139,7 +1155,6 @@ margin: 4px 0 0 10px;}
     max-width: 5px;
 }.grp22::before {
     content: '';
-
     width: 29px;
     height: 35px;
     margin: -5px 6px;
@@ -1158,7 +1173,7 @@ margin: 4px 0 0 10px;}
     width: 346px;
     height: 377px;
 }
-#block1 .img4:before {
+#block1 .img4:before {/*
     content: '';
     width: 392px;
     height: 392px;
@@ -1167,7 +1182,7 @@ margin: 4px 0 0 10px;}
     background: url(./images/untitled.svg) no-repeat;
     background-size: 392px;
     position: absolute;
-    z-index: -1;
+    z-index: -1;*/
 }
 		#block1 img {
     width: 346px;
