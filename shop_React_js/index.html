@@ -1,1 +1,563 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add React in One Minute</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.css" />
+    <script src="./nouislider.min.js"></script>
+	
+	
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+  </head>
+  <body>
+  
+  
+root
+    <div id="root"></div>
+
+<!--filter-->
+<div class="catalog_sidebar">
+  Континент
+  <ul class="catalog_list">
+    <li class="item">
+      <input type="checkbox" id="room-1" value="Австралия">
+      <label for="room-1" class="filter-item" >
+        Австралия        
+      </label>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="room-2" value="Африка">
+      <label for="room-2" class="filter-item" >
+        Африка        
+      </label>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="room-3" value="Азия">
+      <label for="room-3" class="filter-item" >
+        Азия      
+      </label>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="room-4" value="Северная_Америка">
+      <label for="room-4" class="filter-item" >
+        Северная_Америка      
+      </label>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="room-5" value="Южная_Америка">
+      <label for="room-5" class="filter-item" >
+        Южная_Америка       
+      </label>
+    </li>
+  </ul>
+  
+  Сорт
+  <ul class="catalog_list">
+    <li class="item">      
+      <input type="checkbox" id="area-1" value="арабика">
+      <label for="area-1" class="filter-item" >
+        Арабика        
+      </label>
+    </li>
+    <li class="item">
+      <input type="checkbox" id="area-2" value="робуста">
+      <label for="area-2" class="filter-item" >
+        Робуста       
+      </label>
+    </li>
+  </ul>
+  
+  
+<p>
+  <label for="amount">Цена:</label>
+  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;"> грн.
+</p>
+  <div class="slider-wrapper">
+    <div id="range"></div>
+  </div>
+  
+  <br>
+  <div class="filter-res">
+    Выбрано <span class="filter-slect">0</span> из <span class="filter-all">0</span> 
+  </div>
+  
+</div>
+<!--/filter-->
+
+
+
+
+
+<!-- catalog_content -->
+<div class="catalog_content">
+ <select onchange="sorteds(this.value, this.selectedIndex)">
+  <option value="tabindex">tabindex</option>
+  <option value="tabindex">tabindex-revers</option>
+  <option value="data-price">data-price</option>
+  <option value="data-price">data-price-revers</option>
+  <option value="data-name">data-name</option>
+  <option value="data-name">data-name-revers</option>
+</select>
+
+<div id=basketCart></div>
+
+<button onclick="zaq()">zaq()</button>
+
+    <ul id="productData"></ul>
+<button id="checkout">Оформить заказ</button>
+<button id="clear_cart">Очистить корзину</button>
+<div id="cart_content"></div>
+</div>	
+<!-- /catalog_content -->
+
+
+<!--	item_box
+<div class="item_box">
+  <h3 class="item_title">Samsung Galaxy S10</h3>
+  <p>Цена: <span class="item_price">20</span>$</p>
+  <button class="add_item" data-id="7">Добавить в корзину</button>
+</div>
+<div class="item_box">
+  <h3 class="item_title">LG Optimus G E100500</h3>
+  <p>Цена: <span class="item_price">100</span>$</p>
+  <button class="add_item" data-id="2">Добавить в корзину</button>
+</div>
+  <div class="item_box">
+  <h3 class="item_title">Nokia 2110</h3>
+  <p>Цена: <span class="item_price">1000</span>$</p>
+  <button class="add_item" data-id="5">Добавить в корзину</button>
+</div>
+<button id="checkout">Оформить заказ</button>
+<button id="clear_cart">Очистить корзину</button>
+<div id="cart_content"></div>
+-->
+<script>
+function loadShop(a){
+
+//max & min price
+var min = Number(productData[0].price);
+var max = Number(productData[0].price);
+for (i = 0; i < productData.length; i++) {
+var a=Number(productData[i].price);
+      if(a < min){min = a;};
+      if(a > max){max = a;};
+  };
+  var range = document.getElementById('range');
+  range.setAttribute('min', min);
+  range.setAttribute('max', max);
+/*
+    $( "#range" ).slider({
+      range: true,
+      min: min,
+      max: max,
+      values: [ min, max ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#range" ).slider( "values", 0 ) +
+      " - $" + $( "#range" ).slider( "values", 1 ) );
+	  */
+
+  
+ alert('min='+min+'  max='+max);
+//\max & min price
+ 
+//работа с корзиной
+var d = document,
+    itemBox = d.querySelectorAll('.goods-item'), // блок каждого товара
+    cartCont = d.getElementById('cart_content'); // блок вывода данных корзины
+// Функция кроссбраузерной установка обработчика событий
+function addEvent(elem, type, handler){
+  if(elem.addEventListener){
+    elem.addEventListener(type, handler, false);
+  } else {
+    elem.attachEvent('on'+type, function(){ handler.call( elem ); });
+  }
+  return false;
+}
+// Получаем данные из LocalStorage
+function getCartData(){
+  return JSON.parse(localStorage.getItem('cart'));
+}
+// Записываем данные в LocalStorage
+function setCartData(o){
+  localStorage.setItem('cart', JSON.stringify(o));
+  return false;
+}
+// Добавляем товар в корзину
+function addToCart(e){
+  this.disabled = true; // блокируем кнопку на время операции с корзиной
+  var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
+      parentBox = this.parentNode, // родительский элемент кнопки "Добавить в корзину"
+      itemId = this.getAttribute('data-id'), // ID товара
+      itemTitle = parentBox.querySelector('.goods-item__title').innerHTML, // название товара
+      itemPrice = parentBox.querySelector('.goods-item__price').innerHTML; // стоимость товара
+  if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
+    cartData[itemId][2] += 1;
+  } else { // если товара в корзине еще нет, то добавляем в объект
+    cartData[itemId] = [itemTitle, itemPrice, 1];
+  }
+  if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
+    this.disabled = false; // разблокируем кнопку после обновления LS
+	reloadCart();
+  }
+ return false;
+}
+// Обновляем количество товаров в корзине
+function reloadCart(e){
+  var cartData = getCartData(), // получаем данные корзины
+      basketCart = document.getElementById('basketCart'); // блок корзины
+  if(cartData !== null){
+	itemsN = 0;
+    for(var items in cartData){
+        itemsN += cartData[items][2];
+    }
+	///////
+    basketCart.innerHTML = 'В корзине'+itemsN;
+  } else {
+    // если в корзине пусто, то сигнализируем об этом
+    basketCart.innerHTML = 'В корзине пусто!';
+  }
+ return false;
+}
+// Устанавливаем обработчик события на каждую кнопку "Добавить в корзину"
+for(var i = 0; i < itemBox.length; i++){
+  addEvent(itemBox[i].querySelector('.add-item'), 'click', addToCart);
+}
+// Открываем корзину со списком добавленных товаров
+function openCart(e){
+  var cartData = getCartData(), // вытаскиваем все данные корзины
+      totalItems = '';
+  // если что-то в корзине уже есть, начинаем формировать данные для вывода
+  if(cartData !== null){
+   totalItems = '<table class="shopping_list"><tr><th>Наименование</th><th>Цена</th><th>Кол-во</th></tr>';
+    for(var items in cartData){
+      totalItems += '<tr>';
+      for(var i = 0; i < cartData[items].length; i++){
+        totalItems += '<td>' + cartData[items][i] + '</td>';
+      }
+      totalItems += '</tr>';
+    }
+    totalItems += '</table>';
+	///////
+	let json = JSON.stringify(cartData);
+
+    data1 = typeof json; // мы получили строку!
+
+    data2 = json;
+	cartCont.innerHTML = totalItems+"// data1: "+data1+"// data2: "+data2;    
+    //cartCont.innerHTML = totalItems+"//"+cartData;
+  } else {
+    // если в корзине пусто, то сигнализируем об этом
+    cartCont.innerHTML = 'В корзине пусто!';
+  }
+  return false;
+}
+/* Открыть корзину */
+addEvent(d.getElementById('checkout'), 'click', openCart);
+/* Очистить корзину */
+addEvent(d.getElementById('clear_cart'), 'click', function(e){
+  localStorage.removeItem('cart');
+  cartCont.innerHTML = 'Корзина очишена.';
+});
+reloadCart();//Отобразить количество товаров в корзине
+//\работа с корзиной
+
+
+
+
+
+
+
+//jquery filterAll
+var filterAll = $('.filter-all'),
+    boxs = $('.goods-item'),
+    length = boxs.length;
+filterAll.text(length);  
+$(".filter-slect").text(length);
+var count_box;
+
+var filter =   filter = new RegExp($(":checkbox:checked")
+                         .map(function() {
+						   alert('/2/-'+this.value);
+                           return this.value;
+                         }).get().join("|") );
+                         
+$('input:checkbox').on('load change', function() {
+
+  
+  
+  filter = new RegExp($(":checkbox:checked")
+                         .map(function() {
+						   alert('/3/-'+this.value);
+                           return this.value;
+                         }).get().join("|") );
+  
+  $('.goods-item').each(function() {
+    var $this = $(this);
+
+    //alert($this.attr("class")+"-"+$this.data('price')+"-"+$this.data('name')+"-"+$this.data('grade')+"-/-");
+    if(filter.test($this.attr("class")) ) {  
+        $this.show();  
+    }else{
+       $this.hide();   
+    } 
+    if(filter.source == ""){
+       $this["show"]; 
+    }
+  });    
+  //alert( "2/// $" + $( "#range" ).slider( "values", 0 ) +" - $" + $( "#range" ).slider( "values", 1 ) );
+  /*var values = [];
+ values[0] = $(".noUi-handle.noUi-handle-lower").attr("aria-valuetext");
+ values[1] = $(".noUi-handle.noUi-handle-upper").attr("aria-valuetext"); 
+  range_change( values  );*/   
+  range_change($( "#range" ).slider( "values", 0 ), $( "#range" ).slider( "values", 1 ));  
+  
+  count_box();  
+});
+
+// Range Slider
+/*
+var range = document.getElementById('range'),
+    t = [],
+    maximum = max;//parseInt(range.attributes.max.value, 10),
+    minimum = min;//parseInt(range.attributes.min.value, 10),
+    delta = (maximum - minimum) / 4,
+    options = {
+      min: [minimum],
+      "25%": [minimum + delta * 1, 1e6],
+      "50%": [minimum + delta * 2, 1e6],
+      "75%": [minimum + delta * 3, 1e6],
+      max: [maximum]
+    };
+
+//console.log(minimum + delta * 1, 1e6);
+
+t.push(parseInt(range.attributes.min.value, 10)), 
+  t.push(parseInt(range.attributes.max.value, 10));
+var n = parseInt(range.attributes.max.value, 10); 
+// i = parseInt(range.attributes.min.value, 10),
+
+noUiSlider.create(
+  range, 
+  {
+    range: options,
+    start: t,
+    connect: !0,
+    pips: {
+      mode: "range",
+      density: 2
+    }
+  }
+);
+
+$(".noUi-value-horizontal").each(function() {
+  var range = $(this).text().split("").slice(0, -6).join("");
+  $(this).html(range);
+});
+
+function range_change(values, handle){ 
+ $('.goods-item').each(function() {
+    var $this = $(this);
+        price = $this.data('price');
+    
+    var val1 =  values[0];
+    var val2 =  values[1]; 
+     
+     
+    if(price <= val2 && price >= val1 && filter.test($this.attr("class")) ) {
+      $this.show();
+    }else {
+      $this.hide();
+    } 
+    
+  }); 
+}
+range.noUiSlider.on('change', function(values, handle){ 
+ range_change(values, handle); 
+ count_box(); 
+});
+*/
+
+    $( "#range" ).slider({
+      range: true,
+      min: min,
+      max: max,
+      values: [ min, max ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        range_change(ui.values[ 0 ], ui.values[ 1 ]); 
+        count_box(); 
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#range" ).slider( "values", 0 ) +
+      " - $" + $( "#range" ).slider( "values", 1 ) );
+	  
+function range_change(n, x){ 
+ $('.goods-item').each(function() {
+    var $this = $(this);
+        price = $this.data('price');
+    
+    var val1 =  n;
+    var val2 =  x; 
+     
+     
+    if(price <= val2 && price >= val1 && filter.test($this.attr("class")) ) {
+      $this.show();
+    }else {
+      $this.hide();
+    } 
+  }); 
+};
+function count_box() {
+   countbox = $('#productData').find(".goods-item:visible").length; 
+   $(".filter-slect").text(countbox);
+}/*
+$('#amount').oninput = function(){ alert('inp2');
+ range_change(); 
+ count_box(); 
+};*/
+	  
+
+
+
+//   var filterSelect = $('.filter-select'),
+//     boxs = $('.goods-item'),
+//     length = boxs.length;
+//     filterSelect.text(length);
+//\//jquery filterAll
+
+
+
+
+
+
+};
+
+
+
+
+</script>
+
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Load our React component. -->	
+    <script type="text/babel">
+ReactDOM.render(
+  <h1>Привет, магазин!</h1>,
+  document.getElementById('root')
+);
+
+
+
+
+
+const productData = [
+    {
+        id: 1,
+        name: "Эфиопия",
+		suffix: "Йоргачев",
+		text: "text",
+		price: "20",
+		grade: "арабика",
+		country: "Эфиопия",
+		continent: "Африка",
+		flag: ""
+    },
+    {
+        id: 2,
+        name: "Коста-Рика",
+		text: "text",
+		price: "120",
+		grade: "арабика",
+		country: "Эфиопия",
+		continent: "Северная_Америка",
+		flag: ""
+    },
+    {
+        id: 3,
+        name: "Бурунди",
+		text: "text",
+		price: "30",
+		grade: "арабика",
+		country: "Эфиопия",
+		continent: "Африка",
+		flag: ""
+    },
+    {
+        id: 4,
+        name: "Бразилия",
+		text: "text",
+		price: "200",
+		grade: "робуста",
+		country: "Эфиопия",
+		continent: "Южная_Америка",
+		flag: ""
+    },
+    {
+        id: 5,
+        name: "Колумбия",
+		text: "text",
+		price: "55",
+		grade: "арабика",
+		country: "Эфиопия",
+		continent: "Южная_Америка",
+		flag: ""
+    }
+]
+
+const productDataComponents = productData.map(data => <li key={data.id} id={'product_'+data.id} className={'goods-item '+data.grade+' '+data.country+' '+data.continent} tabIndex={data.id} data-price={data.price} data-name={data.name} data-grade={data.grade}><div className="goods-item__img" title={data.name}></div><a className="goods-item__title" href={'product_'+data.id}>{data.name}</a><p className="goods-item__price">{data.price}</p>{data.grade}<br/>{data.country}<br/>{data.continent}<br/><button className="add-item" data-id={data.id}><span className="add-item__icons">shopping_cart</span> в корзину</button></li>)
+ReactDOM.render(
+  productDataComponents,
+  document.getElementById('productData')
+),loadShop(1);
+
+
+
+
+</script>
+
+
+
+
+<script> 
+//Скрипт сортировки товаов
+function sorteds(e, i){
+// e - передаваемый атрибут сортировки (цена, название, ...) 
+// i - индкес реверса (четный=А-Я, нечетный=Я-А)
+  const resultEl = document.getElementById('productData');  //контейнер
+  const elements = document.querySelectorAll('.goods-item');  //объекты сортировки
+if(e=='data-name'){  //Сортировка массива в алфавитном порядке
+  const sorted = [...elements].sort((a, b) => {
+    const getName = (el) => el.getAttribute(e).replace(/ /g, "");
+    if(i % 2){return getName(b).localeCompare(getName(a));}else{ return getName(a).localeCompare(getName(b));};
+  });
+  resultEl.innerHTML = null;
+  sorted.forEach(el => resultEl.appendChild(el));
+}else{  //Сортировка массива в числовом порядке
+  const sorted = [...elements].sort((a, b) => {
+    const getPrice = (el) => parseInt(el.getAttribute(e).replace(/ /g, ""));
+        if(i % 2){return getPrice(b) - getPrice(a);}else{return getPrice(a) - getPrice(b);};
+  });
+  resultEl.innerHTML = null;
+  sorted.forEach(el => resultEl.appendChild(el));
+};
+};
+//Скрипт сортировки товаов
+  </script>
+</body>
+</html>
 

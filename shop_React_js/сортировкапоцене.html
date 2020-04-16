@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add React in One Minute</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+	#main { display: flex;  text-align:center; flex-direction: column;}
+	.order { border: 1px solid green; }
+	.order::after { content: 'data-price: ' attr(data-price) ' ';  color: red;}
+	.order::before { content: 'data-name: ' attr(data-name) ' ' ;  color: red;}
+	</style>
+  </head>
+  <body>
+  
+  
+  
+  
+  <div id=main class=results-container>tabindex
+  <div class=order tabindex="5" data-price=500 data-name=e>5</div>
+  <div class=order tabindex="1" data-price=500 data-name=c>1</div>
+  <div class=order tabindex="4" data-price=40 data-name=b>4</div>
+  <div class=order tabindex="3" data-price=100 data-name=d>3</div>
+  <div class=order tabindex="2" data-price=200 data-name=a>2</div>
+  </div>
+  <div data-sort=tabindex class=sorting__price>sorting__price_tabindex</div>
+  <div data-sort=data-price class=sorting__price>sorting__price_data-price</div>
+  <div data-sort=data-name class=sorting__price>sorting__price_data-name</div>
+
+
+<select onchange="sorteds(this.value, this.selectedIndex)">
+  <option value="tabindex" data-val=0>tabindex</option>
+  <option value="tabindex" data-val=1>tabindex-revers</option>
+  <option value="data-price" data-val=0>data-price</option>
+  <option value="data-price" data-val=1>data-price-revers</option>
+  <option value="data-name" data-val=0>data-name</option>
+  <option value="data-name" data-val=1>data-name-revers</option>
+</select>
+  <script>
+  
+function sorteds(e, i){
+// e - передаваемый атрибут сортировки (цена, название, ...) 
+// i - индкес реверса (четный=А-Я, нечетный=Я-А)
+  const resultEl = document.querySelector(".results-container");
+  const elements = document.querySelectorAll('.order');  //объекты сортировки
+if(e=='data-name'){  //Сортировка массива в алфавитном порядке
+  const sorted = [...elements].sort((a, b) => {
+    const getName = (el) => el.getAttribute(e).replace(/ /g, "");
+    if(i % 2){return getName(b).localeCompare(getName(a));}else{ return getName(a).localeCompare(getName(b));};
+  });
+  resultEl.innerHTML = null;
+  sorted.forEach(el => resultEl.appendChild(el));
+}else{  //Сортировка массива в числовом порядке
+  const sorted = [...elements].sort((a, b) => {
+    const getPrice = (el) => parseInt(el.getAttribute(e).replace(/ /g, ""));
+        if(i % 2){return getPrice(b) - getPrice(a);}else{return getPrice(a) - getPrice(b);};
+  });
+  resultEl.innerHTML = null;
+  sorted.forEach(el => resultEl.appendChild(el));
+};
+};
+/*
+  [].forEach.call(elems, function(e) {
+   	attr = e.getAttribute(a);
+    e.style.order = attr;
+  });*/
+  
+  
+  
+var elems = document.querySelectorAll('.order');
+
+for (var i = 0; i < elems.length; i++) {
+  elems[i].addEventListener("click", highlightThis, true);
+}
+
+function highlightThis() {
+  this.style.backgroundColor = '';
+  this.style.backgroundColor = 'yellow';
+  alert(this.getAttribute("tabindex"));
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const productData = [
+    {
+        id: 1,
+        name: "Эфиопия",
+		suffix: "Йоргачев",
+		text: "text",
+		price: "20"
+    },
+    {
+        id: 2,
+        name: "Коста-Рика",
+		text: "text",
+		price: "120"
+    },
+    {
+        id: 3,
+        name: "Бурунди",
+		text: "text",
+		price: "30"
+    },
+    {
+        id: 4,
+        name: "Бразилия",
+		text: "text",
+		price: "200"
+    },
+    {
+        id: 5,
+        name: "Колумбия",
+		text: "text",
+		price: "55"
+    }
+];
+
+var max = min = Number(productData[0].price);
+for (i = 0; i < productData.length; i++) {
+var a=Number(productData[i].price);
+      if(a < min){min = a;};
+      if(a > max){max = a;};
+  };
+ alert('min='+min+'  max='+max);
+
+  </script>
+ 
+</body>
+</html>
+
