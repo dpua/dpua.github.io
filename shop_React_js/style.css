@@ -1,35 +1,44 @@
-div.sticky {
+body {font-family: 'Roboto',sans-serif;}
+.sticky_top {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    bottom: 0;
-    background-color: yellow;
-    padding: 50px;
-    font-size: 20px;
+    padding: 10px;
+	margin: 0;
+    z-index: 99;
 }
 
 
 main {
+	margin: 0 auto;
     display: flex;
 	width: 100%;
-	max-width: 1000px;
+	max-width: 1360px;
 	border: 1px solid red;
 }
 #productData {
     display: flex;
-	flex-direction: row;
-	align-items: stretch;
-	align-self: stretch;
-	flex-wrap:wrap;
+    flex-direction: row;
+	Justify-content: space-around;
+    align-items: stretch;
+    align-self: stretch;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 .goods-item {
 	width: 270px;
-    border: 5px solid #fff;
-	display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     box-shadow: 1px 1px 10px -5px black;
     border-radius: 5px;
 	margin: 5px;
+}
+.goods-item:hover {
+    box-shadow: 1px 1px 15px -5px black;
+	
 }
 .goods-item__img{
 	background: url('./images/product.jpg');
@@ -105,7 +114,7 @@ a:hover {
 .catalog_sidebar {
 	float: left;
     width: 200px;
-    padding: 10px;
+    padding: 0px;
     border: 1px solid gray;
     border-radius: 3px;
 }
@@ -194,10 +203,65 @@ input[type="checkbox"]:checked+label,
 
 
 /* catalog_content */
-.catalog_content {
-	float: left;
-    width: auto;
-    padding: 10px;
+
+.input_group{    
+    height: 30px;
+	position: relative;
+    display: table;
+    border-collapse: separate;
+	margin-bottom: 15px;
+	
+	
+}
+.input_group__addon{
+	
+    font-size: 12px;
+    height: 42px;
+	border-right: 0;
+	padding: 5px 10px;
+	line-height: 1.5;
+    border-radius: 7px;
+	font-weight: 400;
+	color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+	width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+	display: table-cell;
+	max-width: 100%;
+    margin-bottom: 5px;
+	
+	
+}
+.input_group__control{
+	display: table-cell;
+    height: 42px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 7px;
+    position: relative;
+    z-index: 2;
+    float: left;
+	max-width: 100%;
+    margin-bottom: 0;
+    border: 1px solid #ccc;
+	box-shadow: -1px 2px 10px -5px black inset;
+}
+.input_group :last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.input_group :first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.catalog_content { 
+    width: inherit;
+    padding: 0px;
     border: 1px solid gray;
     border-radius: 3px;
 }

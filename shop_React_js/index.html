@@ -21,12 +21,11 @@
   
 root
     <div id="root"></div>
-	
-	<div class="sticky">I will stick to the screen when you reach my scroll position</div>
 
 <main>
 <!--filter-->
-<div class="catalog_sidebar">
+<div class="catalog_sidebar">  
+<div class="sticky_top"><!--sticky-->
   Континент
   <ul class="catalog_list">
     <li class="item">
@@ -99,7 +98,7 @@ root
   <div class="filter-res">
     Выбрано <span class="filter-slect">0</span> из <span class="filter-all">0</span> 
   </div>
-  
+  </div><!--/sticky-->
 </div>
 <!--/filter-->
 
@@ -109,7 +108,12 @@ root
 
 <!-- catalog_content -->
 <div class="catalog_content">
- <select onchange="sorteds(this.value, this.selectedIndex)">
+
+<div class="sticky_top"><!--sticky-->
+
+<div class=input_group>
+<label class="input_group__addon" for="input-sort"><i class="fa fa-sort"></i> <span class="hidden-xs hidden-sm hidden-md">Сортировать:</span></label>
+ <select class="input_group__control" onchange="sorteds(this.value, this.selectedIndex)">
   <option value="tabindex">Рейтинг (низкий)</option>
   <option selected="selected" value="tabindex">Рейтинг (высокий)</option>
   <option value="data-price">Цена (по возрастанию)</option>
@@ -117,12 +121,12 @@ root
   <option value="data-name">Наименование (А -> Я)</option>
   <option value="data-name">Наименование (Я -> А)</option>
 </select>
-
+</div>
 <div id=basketCart></div>
 <button id="checkout">Оформить заказ</button>
 <button id="clear_cart">Очистить корзину</button>
 <div id="cart_content"></div>
-
+</div><!--sticky-->
 
     <ul id="productData"></ul>
 </div>	
@@ -234,8 +238,10 @@ function reloadCart(e){
         itemsP += (cartData[items][1] * cartData[items][2]);
 		
     }
-	///////
+	
     basketCart.innerHTML = 'В корзине '+itemsN+'шт. на сумму '+itemsP+'грн.';
+	
+	
   } else {
     // если в корзине пусто, то сигнализируем об этом
     basketCart.innerHTML = 'В корзине пусто!';
