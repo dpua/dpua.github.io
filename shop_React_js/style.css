@@ -1,7 +1,30 @@
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    background-color: yellow;
+    padding: 50px;
+    font-size: 20px;
+}
+
+
+main {
+    display: flex;
+	width: 100%;
+	max-width: 1000px;
+	border: 1px solid red;
+}
 #productData {
     display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	align-self: stretch;
+	flex-wrap:wrap;
 }
 .goods-item {
+	width: 270px;
+    border: 5px solid #fff;
 	display: block;
     text-align: center;
     box-shadow: 1px 1px 10px -5px black;
@@ -11,8 +34,9 @@
 .goods-item__img{
 	background: url('./images/product.jpg');
 	background-size: cover;
-	height: 120px;
-	width: 90px;
+	height: 270px;
+	width: 100%;
+    display: table;
     position: relative;
 }
 .goods-item__img::before {
@@ -157,6 +181,15 @@ input[type="checkbox"]:checked+label,
   text-align: center;
   font-family: monospace;
 }
+.amount input {
+	border: none;
+    background: rgba(255, 0, 0, 0);
+    width: 3em;
+    text-align: end;
+}
+
+.ui-slider-handle:nth-of-type(1){ margin-left: -5px}
+.ui-slider-handle:nth-of-type(2){ margin-right: -5px}
 /*\filter*/
 
 
