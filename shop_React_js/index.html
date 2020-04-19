@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <title>Add React in One Minute</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./fonts/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
 	
 	
 	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
@@ -18,15 +19,82 @@
   </head>
   <body>
   
-  
-root
-    <div id="root"></div>
+ <header id=fixed>
+    
+	<nav id="nav" class="">
+	<a href="#" class="logo"><object type="image/svg+xml" data="./images/Union.svg"></object></a>
+	<div class="empty"></div>
+	<ul class="topmenu">
+	<li><a href="#" class="hov">Home</a></li>
+	<li class="subs"><a href="#" class="sub">Catalog</a>
+      <ul class="submenu">
+        <li><a href=""><div class="img img1"></div><p>Terrarium Decoration</p></a></li>
+        <li><a href=""><div class="img img2"></div><p>Glass Geometric Terrarium</p></a></li>
+        <li><a href=""><div class="img img1"></div><p>Terrarium Decoration</p></a></li>
+        <li><a href=""><div class="img img3"></div><p>Dahey Glass Planter</p></a></li>
+        <li><a href=""><div class="img img1"></div><p>Terrarium Decoration</p></a></li>
+        <li><a href=""><div class="img img3"></div><p>Dahey Glass Planter</p></a></li>
+      </ul>
+    </li>
+	<li><a href="#" class="">About</a></li>
+	<li><a href="#" class="">Blog</a></li>
+	<li><a href="#" class="">Contacrs</a></li>
+	</ul>
+	<ul class="icongrp">
+        <li><a href="#"><object type="image/svg+xml" data="./images/search.svg"></object></a></li>
+        <li><a href="#"><object type="image/svg+xml" data="./images/mail.svg"></object></a></li>
+        <li><span id=basketCart class="basket_cart">
+  <i class="fa fa-shopping-cart"></i> 
+  <span class="new-alert" >99</span>
+  <div class="basket_cart__sub">
+    <div id="basketCart_info" class=btn_group__btn></div>
+    <button class=btn_group__btn id="checkout">Оформить заказ</button>
+    <button class=btn_group__btn id="clear_cart">Очистить корзину</button>
+	<div id="cart_content"></div>
+  </div>
+</span></li>
+	</ul>
+	<div class="navtoggler close"><span></span><span></span><span></span></div>
+	</nav> 
+<script>
+function scroll(e){
+var el = document.getElementById('fixed');
+if (pageYOffset > 1){
+el.classList.add("fixed");
+el.classList.remove("absolute");
+}else{
+el.classList.add("absolute");
+el.classList.remove("fixed");
+};
+};
+window.addEventListener('scroll', function() {scroll();});
+scroll();
+</script>
 
+	
+</header>
+
+<a id=showScroll>aaaaaaa</a>
+
+
+    <div id="root"></div>
+<!-- <nav class="sticky_top"> -->
+<!-- <span id=basketCart class="basket_cart"> -->
+  <!-- <i class="fa fa-shopping-cart"></i>  -->
+  <!-- <span class="new-alert" >99</span> -->
+  <!-- <div class="basket_cart__sub"> -->
+    <!-- <div id="basketCart_info" class=btn_group__btn></div> -->
+    <!-- <button class=btn_group__btn id="checkout">Оформить заказ</button> -->
+    <!-- <button class=btn_group__btn id="clear_cart">Очистить корзину</button> -->
+	<!-- <div id="cart_content"></div> -->
+  <!-- </div> -->
+<!-- </span> -->
+<!-- </nav> -->
 <main>
 <!--filter-->
 <div class="catalog_sidebar">  
-<div class="sticky_top"><!--sticky-->
-  Континент
+<div class="sticky_top_befor"><!--sticky-->
+  <p>Континент:</p>
   <ul class="catalog_list">
     <li class="item">
       <input type="checkbox" id="room-1" value="Австралия">
@@ -60,7 +128,7 @@ root
     </li>
   </ul>
   
-  Сорт
+  <p>Сорт:</p>
   <ul class="catalog_list">
     <li class="item">      
       <input type="checkbox" id="area-1" value="арабика">
@@ -94,7 +162,6 @@ root
     <div id="range"></div>
   </div>
   
-  <br>
   <div class="filter-res">
     Выбрано <span class="filter-slect">0</span> из <span class="filter-all">0</span> 
   </div>
@@ -109,23 +176,40 @@ root
 <!-- catalog_content -->
 <div class="catalog_content">
 
-<div class="sticky_top"><!--sticky-->
+<div class="sticky_top_befor flex_row"><!--sticky-->
+
+<div class="flex_row">
+	<button type="button" id="list-view" class="btn_group__btn" data-toggle="tooltip" title="Список"><i class="fa fa-th-list"></i></button>
+	<button type="button" id="grid-view" class="btn_group__btn btn_group__btn_active" data-toggle="tooltip" title="Сетка" ><i class="fa fa-th"></i></button>
+</div>
+
+
+<div class="flex_row">
+<div class=input_group>
+<label class="input_group__addon" for="input-limit"><i class="fa fa-eye"></i> <span class="hidden-xs hidden-sm hidden-md">Показывать:</span></label>
+ <select id="input-limit" class="input_group__control" onchange="goodslimit(this.value, this.selectedIndex)">
+  <option value="12">12</option>
+  <option value="25e">25</option>
+  <option value="50">50</option>
+  <option value="75">75</option>
+  <option selected="selected" value="100">100</option>
+</select>
+</div>
 
 <div class=input_group>
 <label class="input_group__addon" for="input-sort"><i class="fa fa-sort"></i> <span class="hidden-xs hidden-sm hidden-md">Сортировать:</span></label>
- <select class="input_group__control" onchange="sorteds(this.value, this.selectedIndex)">
-  <option value="tabindex">Рейтинг (низкий)</option>
-  <option selected="selected" value="tabindex">Рейтинг (высокий)</option>
+ <select id="input-sort" class="input_group__control" onchange="sorteds(this.value, this.selectedIndex)">
+  <option value="data-rating">Рейтинг (низкий)</option>
+  <option value="data-rating">Рейтинг (высокий)</option>
   <option value="data-price">Цена (по возрастанию)</option>
   <option value="data-price">Цена (по убыванию)</option>
   <option value="data-name">Наименование (А -> Я)</option>
   <option value="data-name">Наименование (Я -> А)</option>
+  <option selected="selected" value="tabindex">По умолчанию</option>
+  <!-- <option value="tabindex">index (высокий)</option> -->
 </select>
 </div>
-<div id=basketCart></div>
-<button id="checkout">Оформить заказ</button>
-<button id="clear_cart">Очистить корзину</button>
-<div id="cart_content"></div>
+</div>
 </div><!--sticky-->
 
     <ul id="productData"></ul>
@@ -229,7 +313,9 @@ function addToCart(e){
 // Обновляем количество товаров в корзине
 function reloadCart(e){
   var cartData = getCartData(), // получаем данные корзины
-      basketCart = document.getElementById('basketCart'); // блок корзины
+      basketCart = document.getElementById('basketCart'), // блок корзины
+	  basketCart_info = document.getElementById('basketCart_info'), 
+	  basketAlert = basketCart.querySelector('.new-alert');
   if(cartData !== null){
 	var itemsN = 0,
 	    itemsP = 0;
@@ -239,12 +325,17 @@ function reloadCart(e){
 		
     }
 	
-    basketCart.innerHTML = 'В корзине '+itemsN+'шт. на сумму '+itemsP+'грн.';
+    //basketCart.setAttribute('title','В корзине '+itemsN+'шт. на сумму '+itemsP+'грн.');
+	
+	basketCart_info.innerHTML = 'В корзине '+itemsN+'шт. на сумму '+itemsP+'грн.';
+	basketAlert.innerHTML = itemsN;
 	
 	
   } else {
     // если в корзине пусто, то сигнализируем об этом
-    basketCart.innerHTML = 'В корзине пусто!';
+	//basketCart.setAttribute('title','В корзине пусто!');
+	basketAlert.innerHTML = null;
+    basketCart_info.innerHTML = 'В корзине пусто!';
   }
  return false;
 }
@@ -520,7 +611,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Африка",
-		flag: ""
+		flag: "",
+		rating: 1
     },
     {
         id: 2,
@@ -530,7 +622,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Северная_Америка",
-		flag: ""
+		flag: "",
+		rating: 1
     },
     {
         id: 3,
@@ -540,7 +633,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Африка",
-		flag: ""
+		flag: "",
+		rating: 1
     },
     {
         id: 4,
@@ -550,7 +644,8 @@ const productData = [
 		grade: "робуста",
 		country: "Эфиопия",
 		continent: "Южная_Америка",
-		flag: ""
+		flag: "",
+		rating: 1
     },
     {
         id: 5,
@@ -560,7 +655,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Южная_Америка",
-		flag: ""
+		flag: "",
+		rating: 1
     },
 	{
         id: 6,
@@ -571,7 +667,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Африка",
-		flag: ""
+		flag: "",
+		rating: 1
     },
     {
         id: 7,
@@ -581,7 +678,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Северная_Америка",
-		flag: ""
+		flag: "",
+		rating: 1
     },
     {
         id: 8,
@@ -591,7 +689,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Африка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
     {
         id: 9,
@@ -601,7 +700,8 @@ const productData = [
 		grade: "робуста",
 		country: "Эфиопия",
 		continent: "Южная_Америка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
     {
         id: 10,
@@ -611,7 +711,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Южная_Америка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
 	{
         id: 11,
@@ -622,7 +723,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Африка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
     {
         id: 12,
@@ -632,7 +734,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Северная_Америка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
     {
         id: 13,
@@ -642,7 +745,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Африка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
     {
         id: 14,
@@ -652,7 +756,8 @@ const productData = [
 		grade: "робуста",
 		country: "Эфиопия",
 		continent: "Южная_Америка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
     {
         id: 15,
@@ -662,7 +767,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Южная_Америка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
 	{
         id: 16,
@@ -673,7 +779,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Африка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
     {
         id: 17,
@@ -683,7 +790,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Северная_Америка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
     {
         id: 18,
@@ -693,7 +801,8 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Африка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
     {
         id: 19,
@@ -703,7 +812,8 @@ const productData = [
 		grade: "робуста",
 		country: "Эфиопия",
 		continent: "Южная_Америка",
-		flag: ""
+		flag: "",
+		rating: 5
     },
     {
         id: 20,
@@ -713,11 +823,12 @@ const productData = [
 		grade: "арабика",
 		country: "Эфиопия",
 		continent: "Южная_Америка",
-		flag: ""
+		flag: "",
+		rating: 5
     }
 ]
 
-const productDataComponents = productData.map(data => <li key={data.id} id={'product_'+data.id} className={'goods-item '+data.grade+' '+data.country+' '+data.continent} tabIndex={data.id} data-price={data.price} data-name={data.name} data-grade={data.grade}><div className="goods-item__img" title={data.name}></div><a className="goods-item__title" href={'product_'+data.id}>{data.name}</a><p className="goods-item__price">{data.price}</p>{data.grade}<br/>{data.country}<br/>{data.continent}<br/><button className="add-item" data-id={data.id}><span className="add-item__icons">shopping_cart</span> в корзину</button></li>)
+const productDataComponents = productData.map(data => <li key={data.id} id={'product_'+data.id} className={'goods-item '+data.grade+' '+data.country+' '+data.continent} tabIndex={data.id}  data-rating={data.rating} data-price={data.price} data-name={data.name} data-grade={data.grade}><div className="goods-item__img" title={data.name}></div><a className="goods-item__title" href={'product_'+data.id}>{data.name}</a><p className="goods-item__price">{data.price}</p>{data.grade}<br/>{data.country}<br/>{data.continent}<br/><button className="add-item" data-id={data.id}><i className="fa fa-cart-plus"></i> в корзину</button></li>)
 ReactDOM.render(
   productDataComponents,
   document.getElementById('productData')
@@ -732,6 +843,9 @@ ReactDOM.render(
 
 
 <script> 
+function goodslimit(e, i){
+alert('goodslimit('+e+', '+i+')');
+};
 //Скрипт сортировки товаов
 function sorteds(e, i){
 // e - передаваемый атрибут сортировки (цена, название, ...) 
