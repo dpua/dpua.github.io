@@ -475,14 +475,14 @@ var count_box;
 //проверка на континент после сортировки по цене
 var filter =   filter = new RegExp($("#continent :checkbox:checked")
                          .map(function() {
-						   alert('/2/-'+this.value);
+						   //alert('/2/-'+this.value);
                            return this.value;
                          }).get().join("|") );
 						 
 //проверка на сорт после сортировки по цене
 var filtergrade = filtergrade = new RegExp($("#grade :checkbox:checked")
                          .map(function() {
-						   alert('/grade/-'+this.value);
+						   //alert('/grade/-'+this.value);
                            return this.value;
                          }).get().join("|") );
                          
@@ -492,14 +492,14 @@ $('input:checkbox').on('load change', function() {
   //проверка на континент
   filter = new RegExp($("#continent :checkbox:checked")
                          .map(function() {
-						   alert('/continent/-'+this.value);
+						   //alert('/continent/-'+this.value);
                            return this.value;
                          }).get().join("|") );
 						 
 	//проверка на сорт					   
    filtergrade = new RegExp($("#grade :checkbox:checked")
                          .map(function() {
-						   alert('/grade/-'+this.value);
+						   //alert('/grade/-'+this.value);
                            return this.value;
                          }).get().join("|") );
   
