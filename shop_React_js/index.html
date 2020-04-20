@@ -165,7 +165,7 @@ scroll();
 <div class="catalog_sidebar">  
 <div class="sticky_top_befor"><!--sticky-->
   <p>Континент:</p>
-  <ul class="catalog_list">
+  <ul id=continent class="catalog_list">
     <li class="item">
       <input type="checkbox" id="room-1" value="Австралия">
       <label for="room-1" class="filter-item" >
@@ -199,7 +199,7 @@ scroll();
   </ul>
   
   <p>Сорт:</p>
-  <ul class="catalog_list">
+  <ul id=grade class="catalog_list">
     <li class="item">      
       <input type="checkbox" id="area-1" value="арабика">
       <label for="area-1" class="filter-item" >
@@ -472,33 +472,59 @@ filterAll.text(length);
 $(".filter-slect").text(length);
 var count_box;
 
-var filter =   filter = new RegExp($(":checkbox:checked")
+//проверка на континент после сортировки по цене
+var filter =   filter = new RegExp($("#continent :checkbox:checked")
                          .map(function() {
-						   //alert('/2/-'+this.value);
+						   alert('/2/-'+this.value);
+                           return this.value;
+                         }).get().join("|") );
+						 
+//проверка на сорт после сортировки по цене
+var filtergrade = filtergrade = new RegExp($("#grade :checkbox:checked")
+                         .map(function() {
+						   alert('/grade/-'+this.value);
                            return this.value;
                          }).get().join("|") );
                          
 $('input:checkbox').on('load change', function() {
 
   
-  
-  filter = new RegExp($(":checkbox:checked")
+  //проверка на континент
+  filter = new RegExp($("#continent :checkbox:checked")
                          .map(function() {
-						   //alert('/3/-'+this.value);
+						   alert('/continent/-'+this.value);
+                           return this.value;
+                         }).get().join("|") );
+						 
+	//проверка на сорт					   
+   filtergrade = new RegExp($("#grade :checkbox:checked")
+                         .map(function() {
+						   alert('/grade/-'+this.value);
                            return this.value;
                          }).get().join("|") );
   
   $('.goods-item').each(function() {
     var $this = $(this);
 
+						   //alert('/4-filter/-'+filter);
+						   //alert('/4-filtergrade/-'+filtergrade);
     //alert($this.attr("class")+"-"+$this.data('price')+"-"+$this.data('name')+"-"+$this.data('grade')+"-/-");
-    if(filter.test($this.attr("class")) ) {  
-        $this.show();  
+	
+       //$this.hide(); 
+	   
+    if(filter.test($this.attr("class"))) { //товат прошедший проверку на континент
+       if(filtergrade.test($this.attr("class"))){$this.show(); //товат прошедший проверку на сорт
+	        }else{
+	            $this.hide();
+			};
+        //$this.show();  
     }else{
        $this.hide();   
     } 
-    if(filter.source == ""){
+    if(filter.source == ""){//alert('filter.source == ""');
+       if(filtergrade.source == ""){//alert('filtergrade.source == ""');
        $this["show"]; 
+    }
     }
   });    
   //alert( "2/// $" + $( "#range" ).slider( "values", 0 ) +" - $" + $( "#range" ).slider( "values", 1 ) );
@@ -615,7 +641,7 @@ function range_change(n, x){
     var val2 =  x; 
      
      
-    if(price <= val2 && price >= val1 && filter.test($this.attr("class")) ) {
+    if(price <= val2 && price >= val1 && filter.test($this.attr("class")) && filtergrade.test($this.attr("class"))) {
       $this.show();
     }else {
       $this.hide();
@@ -702,7 +728,7 @@ const productData = [
         name: "Бурунди",
 		text: "text",
 		price: "30",
-		grade: "арабика",
+		grade: "робуста",
 		country: "Эфиопия",
 		continent: "Африка",
 		flag: "",
@@ -737,9 +763,9 @@ const productData = [
 		suffix: "Сидамо",
 		text: "text",
 		price: "20",
-		grade: "арабика",
+		grade: "робуста",
 		country: "Эфиопия",
-		continent: "Африка",
+		continent: "Азия",
 		flag: "",
 		rating: 1
     },
