@@ -234,7 +234,7 @@ scroll();
   
   <div class="filter-res">
     Выбрано <span class="filter-slect">0</span> из <span class="filter-all">0</span> 
-  </div>
+  </div>       <div id="filter-range"></div>
   </div><!--/sticky-->
 </div>
 <!--/filter-->
@@ -257,12 +257,13 @@ scroll();
 <div class="flex_row">
 <div class=input_group>
 <label class="input_group__addon" for="input-limit"><i class="fa fa-eye"></i> <span class="hidden-xs hidden-sm hidden-md">Показывать:</span></label>
- <select id="input-limit" class="input_group__control" onchange="goodslimit(this.value, this.selectedIndex)">
-  <option value="12">12</option>
-  <option value="25e">25</option>
+ <select id="input-limit" class="input_group__control" onchange="goodslimit(this.value)">
+  <option value="8">8</option>
+  <option selected="selected" value="12">12</option>
+  <option value="25">25</option>
   <option value="50">50</option>
   <option value="75">75</option>
-  <option selected="selected" value="100">100</option>
+  <option value="100">100</option>
 </select>
 </div>
 
@@ -282,7 +283,14 @@ scroll();
 </div>
 </div><!--sticky-->
 
-    <ul id="productData"></ul>
+    <ul id="productData" class=productData_grid-view></ul>
+	<div class=info_empty><span>Такого кофе нет!<br>Попробуй настроить фильтры иначе:)</span></div>
+<div class="flex_centr">
+<div id=pagecontrol class="input_group">
+
+</div>
+</div>
+
 </div>	
 <!-- /catalog_content -->
 </main>
@@ -649,9 +657,39 @@ function range_change(n, x){
   }); 
 };
 function count_box() {
-   countbox = $('#productData').find(".goods-item:visible").length; 
+   countbox = $('#productData').find(".goods-item:visible").length;   
    $(".filter-slect").text(countbox);
-}
+   if(!countbox){$('.info_empty').show()}else{$('.info_empty').hide()};
+   
+   var numGoodsOfPage=$('#input-limit').val();//количество товаров на странице
+   goodslimit(numGoodsOfPage); //формирование списка страниц по количеству товаров
+
+};
+
+
+
+count_box();
+
+
+
+
+///////////////////////////
+var params = window
+    .location
+    .search
+    .replace('?','')
+    .split('&')
+    .reduce(
+        function(p,e){
+            var a = e.split('=');
+            p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+            return p;
+        },
+        {}
+    );
+console.log( params['data']);
+///////////////////////////
+
 
 /*
 //$('#amount').oninput = function(){ alert('inp2');
@@ -675,7 +713,72 @@ function count_box() {
 
 };
 
+function changePage(e, curentPage, numOfPages){
+   //e - количество товаров на странице
+   //curentPage - текущая страница
+   //numOfPages - количество страниц
+   //проверка1//var datas='changePage('+e+', '+curentPage+', '+numOfPages+') ';
+   var zaq = $('#productData').find(".goods-item:visible");
+   var numPage = '';
+   var dis ='';//class="disabled"
+   
+   //добавляем кнопки переходов по страницам
+   if(numOfPages>1){
+		for (var i = 0; i < numOfPages; i++) { 
+		   var p=(1+i);   
+		   dis=(curentPage==p)?dis='disabled':dis ='';
+		   numPage +='<a class="input_group__addon '+dis+'"  href="#page='+p+'" onclick="changePage('+e+', '+p+', '+numOfPages+')">'+p+'</a>'};
+   };
 
+   var minP = ((curentPage-1)*e);
+   var maxP = (minP+e);      
+   //проверка1// var countbox_range = 'first/<br> ';
+   var a='hide';
+   for (var i = 0; i < zaq.length; i++) {
+        zaq[i].classList.remove('hide');
+        a = (i<minP)?a='hide':(i>=maxP)?a='hide':a='show'/*show*/;
+        zaq[i].classList.add(a);
+        //проверка1//countbox_range = countbox_range + i+' / '+zaq[i].id+' / '+a+'/ <br>';
+   };
+   $("#pagecontrol").html(numPage);
+   //проверка1//$("#filter-range").html(datas+' / '+numPage+' minP='+minP+' maxP='+maxP+' numOfPages'+numOfPages+' '+countbox_range);
+};
+
+
+function goodslimit(e){// e - количество товаров на странице
+       e=parseInt(e);
+   var curentPage=parseInt(window.location.hash.replace("#page=",""));
+       if(curentPage==(-(37*18))){document.getElementById("productData").innerHTML = "<br><br>\u0422\u044b\u0020\u0448\u043e\u002c\u0020\u0442\u044e\u002d\u0442\u044e\u003f"};
+       curentPage=(!curentPage)?1:(curentPage <= 0)?1:curentPage;//если не заданно, = 0, или меньше 0, то 1
+   var zaq = $('#productData').find(".goods-item:visible");
+   var numOfPages=Math.ceil(zaq.length/e);  //округление в большую сторону
+	   numOfPages=(numOfPages<=0)?1:numOfPages;//если = и меньше 0, то 1
+       curentPage=(curentPage<=numOfPages)?curentPage:numOfPages;//определяем текушюю страницу
+	   location.hash = "page="+curentPage;//установить новый хэш текущей страници
+   changePage(e, curentPage, numOfPages);
+   //e - количество товаров на странице
+   //curentPage - текущая страница
+   //numOfPages - количество страниц
+};
+
+
+//переключатели вида товаров (список-таблица)
+var list_view = document.getElementById("list-view");
+var grid_view = document.getElementById("grid-view");
+var prod_view = document.getElementById("productData");
+list_view.onclick = function(event) { 
+	this.classList.add('btn_group__btn_active');
+	grid_view.classList.remove('btn_group__btn_active');
+	prod_view.classList.remove('productData_grid-view');
+	prod_view.classList.add('productData_list-view');
+};
+grid_view.onclick = function(event) { 
+	this.classList.add('btn_group__btn_active');
+	list_view.classList.remove('btn_group__btn_active');
+	prod_view.classList.remove('productData_list-view');
+	prod_view.classList.add('productData_grid-view');
+};
+//\переключатели вида товаров (список-таблица)
 
 
 </script>
@@ -931,7 +1034,7 @@ const productData = [
 
 /* const productDataComponents = productData.map(data => <li key={data.id} id={'product_'+data.id} className={'goods-item '+data.grade+' '+data.country+' '+data.continent} tabIndex={data.id}  data-rating={data.rating} data-price={data.price} data-name={data.name} data-grade={data.grade}><div className="goods-item__img" title={data.name} data-suffix={data.suffix} data-grade={data.grade}></div><a className="goods-item__title" href={'product_'+data.id}>{data.name}</a> {data.continent}  {data.grade}<p className="goods-item__price">{data.price}<i>грн.</i></p><button className="add-item" data-id={data.id}><i className="fa fa-cart-plus"></i> в корзину</button></li>) */
 
-const productDataComponents = productData.map(data => <li key={data.id} id={'product_'+data.id} className={'goods-item '+data.grade+' '+data.country+' '+data.continent} tabIndex={data.id}  data-rating={data.rating} data-price={data.price} data-name={data.name} data-grade={data.grade}><div className="goods-item__title"><p className='suffix'>{data.suffix}</p><a href={'product_'+data.id}>{data.name}</a><p>{data.continent}<br />100% {data.grade}</p></div><button className="add-item" data-id={data.id} value={data.price} title='Добавить в корзину'><p className="goods-item__price">{data.price}<i>грн.</i><br /><span className="fa fa-cart-arrow-down"></span></p></button></li>)
+const productDataComponents = productData.map(data => <li key={data.id} id={'product_'+data.id} className={'goods-item '+data.grade+' '+data.country+' '+data.continent} tabIndex={data.id}  data-rating={data.rating} data-price={data.price} data-name={data.name} data-grade={data.grade}><div className="goods-item__img"><div className="goods-item__title"><p className='suffix'>{data.suffix}</p><a href={'product_'+data.id}>{data.name}</a><p>{data.continent}<br />100% {data.grade}</p></div><button className="add-item" data-id={data.id} value={data.price} title='Добавить в корзину'><p className="goods-item__price">{data.price}<i>грн.</i><br /><span className="fa fa-cart-arrow-down"></span></p></button></div><div className="goods-item__list_view"><h2>{data.name} {data.suffix}</h2><span className="stars_rating" data-rating={data.rating}>{data.rating}</span><p>{data.text}</p><p>Номер товара: {data.id}</p></div></li>)
 ReactDOM.render(
   productDataComponents,
   document.getElementById('productData')
@@ -946,9 +1049,6 @@ ReactDOM.render(
 
 
 <script> 
-function goodslimit(e, i){
-alert('goodslimit('+e+', '+i+')');
-};
 //Скрипт сортировки товаов
 function sorteds(e, i){
 // e - передаваемый атрибут сортировки (цена, название, ...) 

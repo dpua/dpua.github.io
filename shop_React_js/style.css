@@ -10,6 +10,10 @@ body {
 }
 
 
+
+
+
+
 @media screen and (max-width: 1499px) and (min-width: 768px){
 .logo {
     margin-left: 10px;
@@ -235,32 +239,34 @@ main {
 }
 #productData {
     display: flex;
-    flex-direction: row;
-	Justify-content: space-around;
     align-items: stretch;
     align-self: stretch;
-    flex-wrap: wrap;
     margin: 0;
     padding: 0;
+}.productData_grid-view{
+    flex-direction: row;
+	Justify-content: space-around;
+    flex-wrap: wrap;
+}.productData_grid-view .goods-item__list_view{display: none;}
+.productData_list-view{
+	flex-direction: column;
+    justify-content: flex-start;
+}.productData_list-view .goods-item__list_view{
+	display: block;
+    padding: 10px;
+    margin: 20px
+	}
+
+
+.info_empty {
+    text-align: center;
+    margin: 100px 10px;
 }
 .goods-item {    
-    background: url(./images/pack-kraft.png);
-    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
-    background-size: cover;
-    height: 423px;
-    width: 270px;
     display: flex;
-    padding-top: 170px;
-    padding-bottom: 20px;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
     /* box-shadow: 1px 1px 10px -5px black; */
-    border-radius: 5px;
+    /* border-radius: 5px; */
     margin: 5px;
-}
-.goods-item:hover {
-    filter: drop-shadow(0 1px 5px rgba(0,0,0,0.6));
 }
 /* .goods-item__img{ */
 	/* background: url('./images/product.jpg'); */
@@ -272,11 +278,19 @@ main {
 /* } */
 
 .goods-item__img {
+	background: url(./images/pack-kraft.png);
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
     background-size: cover;
     height: 423px;
-    width: 100%;
-    display: table;
-    position: relative;
+    width: 270px;
+    display: flex;
+    padding-top: 170px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}.goods-item:hover .goods-item__img {
+    filter: drop-shadow(0 1px 5px rgba(0,0,0,0.6));
 }
 .goods-item__title {
     /* overflow: hidden; */
@@ -358,6 +372,12 @@ a:hover {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     text-shadow: none;
+}
+a.disabled {
+pointer-events: none; /* делаем элемент неактивным для взаимодействия */
+cursor: default; /*  курсор в виде стрелки */
+color: #888;/* цвет текста серый */
+box-shadow: 0 10px 20px -10px #777 inset;
 }
 .btn_group__btn{    
     color: #777;
@@ -606,13 +626,12 @@ input[type="checkbox"]:checked+label:before {
     margin: 5px 10px;
 }
 .input_group__addon{
-	
     font-size: 12px;
     height: 30px;
 	border-right: 0;
 	padding: 5px 10px;
 	line-height: 1.5;
-    border-radius: 7px;
+    border-radius: 0;
 	font-weight: 400;
 	color: #555;
     text-align: center;
@@ -624,16 +643,14 @@ input[type="checkbox"]:checked+label:before {
 	display: table-cell;
 	max-width: 100%;
     margin-bottom: 5px;
-	
-	
 }
-.input_group__control{
+.input_group__control {
 	display: table-cell;
     height: 30px;
     padding: 5px 10px;
     font-size: 12px;
     line-height: 1.5;
-    border-radius: 7px;
+    border-radius: 0;
     position: relative;
     z-index: 2;
     float: left;
@@ -643,13 +660,13 @@ input[type="checkbox"]:checked+label:before {
 	cursor: pointer;
 	/* box-shadow: -1px 2px 10px -5px black inset; */
 }
-.input_group :last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
 .input_group :first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+.input_group :last-child {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
 .catalog_content { 
@@ -659,3 +676,28 @@ input[type="checkbox"]:checked+label:before {
     border-radius: 3px;
 }
 /* /catalog_content */
+
+
+.flex_centr {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+
+
+
+.hide {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  max-height: 0;
+  width: 0;
+  max-width: 0;
+  padding: 0;
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+}
