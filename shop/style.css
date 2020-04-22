@@ -283,12 +283,19 @@ main {
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
     display: flex;
     z-index: 100;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+#close_infobox_b {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
 }
 #close_infobox{
     display: table;
@@ -299,7 +306,7 @@ main {
     font-size: 20px;
     margin: 10px;
     box-shadow: 0 0 10px black;
-	cursor: pointer;
+	cursor: pointer;    z-index: 1;
 }
 #close_infobox:hover {
     color: white;
@@ -313,7 +320,7 @@ main {
     font-size: 20px;
     margin: 10px;
     box-shadow: 0 0 10px black;
-    overflow: auto;
+    overflow: auto;    z-index: 1;
 }
 #inftext > * {margin: 10px;}
 .show_form {

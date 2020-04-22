@@ -903,6 +903,7 @@ var prod_view = document.getElementById("product_"+e);
 </form>
 
 </div>
+<div id=close_infobox_b ></div>
 </div>
 <script>
 //form
@@ -1024,13 +1025,13 @@ var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
 
 //infobox
 function ifobox(e, i, f){//i - секунди закрытия
-var infobox = document.getElementById("infobox"),
+var info_box = document.getElementById("infobox"),
     form = document.getElementById("form-contact"),
-	close_infobox = document.getElementById("close_infobox");;
+	close_infobox = document.getElementById("close_infobox");
 		form.classList.add('hide_info');
 		form.classList.remove('show_form');
-		infobox.classList.add('show_info');
-		infobox.classList.remove('hide_info');
+		info_box.classList.add('show_info');
+		info_box.classList.remove('hide_info');
 	document.getElementById("inftext").innerHTML = e;
 	if(f){
 		form.classList.add('show_form');
@@ -1039,25 +1040,30 @@ var infobox = document.getElementById("infobox"),
 	if(i>0){
 		close_infobox.classList.add('hide_info');
 		setTimeout(  () => {
-			infobox.classList.add('hide_info');
-			infobox.classList.remove('show_info');
+			info_box.classList.add('hide_info');
+			info_box.classList.remove('show_info');
 			close_infobox.classList.remove('hide_info');
 		},
 	  i * 1000
 	);};
 };
+var info_box = document.getElementById("infobox");
 var close_infobox = document.getElementById("close_infobox");
 close_infobox.onclick = function(event) { 
-var infobox = document.getElementById("infobox");
-    infobox.classList.add('hide_info');
-    infobox.classList.remove('show_info');
+    info_box.classList.add('hide_info');
+    info_box.classList.remove('show_info');
+};
+var close_infobox_b = document.getElementById("close_infobox_b");
+close_infobox_b.onclick = function(event) { 
+    info_box.classList.add('hide_info');
+    info_box.classList.remove('show_info');
 };
 
 // top nav
 
 var navContacts = document.getElementById("contacts");
 navContacts.onclick = function(event) { 
-ifobox('<a class="fa fa-phone" href="tel:+380953835669"> +380 95 383 56 69</a> | <a class="fa fa-envelope" href="mailto:cat.cafe@mail.com?subject=Cat Cafe coffee shop"> cat.cafe@mail.com</a> <br> <a class="fa fa-phone" href="tel:+380989802631"> +380 98 980 26 31</a> | <a class="fa fa-envelope" href="mailto:dp.ua@mail.com?subject=Cat Cafe coffee shop"> dp.ua@mail.com</a> <br> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21161.4075472678!2d35.0150485174101!3d48.47233870728136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6da935ff1f341940!2sCat%20Cafe!5e0!3m2!1sru!2sua!4v1587561167183!5m2!1sru!2sua" width="600" height="450" frameborder="0" style="border:0;margin: 5px 0 -5px 0" allowfullscreen="" aria-hidden="false" tabindex="0">', 0);
+ifobox('<nav><a class="fa fa-phone" href="tel:+380953835669"> +380 95 383 56 69</a> | <a class="fa fa-envelope" href="mailto:cat.cafe@mail.com?subject=Cat Cafe coffee shop"> cat.cafe@mail.com</a> <br> <a class="fa fa-phone" href="tel:+380989802631"> +380 98 980 26 31</a> | <a class="fa fa-envelope" href="mailto:dp.ua@mail.com?subject=Cat Cafe coffee shop"> dp.ua@mail.com</a> </nav> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21161.4075472678!2d35.0150485174101!3d48.47233870728136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6da935ff1f341940!2sCat%20Cafe!5e0!3m2!1sru!2sua!4v1587561167183!5m2!1sru!2sua" width="600" height="450" frameborder="0" style="border:0;margin: 5px 0 -5px 0" allowfullscreen="" aria-hidden="false" tabindex="0">', 0);
 };
 var navAbout = document.getElementById("about");
 navAbout.onclick = function(event) { 
