@@ -99,8 +99,9 @@
 </a>
 	<div class="empty"></div>
 	<ul class="topmenu">
-	<li><a href="#" class="hov">Home</a></li>
-	<li class="subs"><a href="#" class="sub">Catalog</a>
+	<li><a href="#Home">Главная</a></li>
+	<li><a href="#Shop" class="hov">Магазин</a></li>
+	<!--li class="subs"><a href="#" class="sub">Catalog</a>
       <ul class="submenu">
         <li><a href=""><div class="img img1"></div><p>Terrarium Decoration</p></a></li>
         <li><a href=""><div class="img img2"></div><p>Glass Geometric Terrarium</p></a></li>
@@ -109,14 +110,28 @@
         <li><a href=""><div class="img img1"></div><p>Terrarium Decoration</p></a></li>
         <li><a href=""><div class="img img3"></div><p>Dahey Glass Planter</p></a></li>
       </ul>
-    </li>
-	<li><a href="#" class="">About</a></li>
-	<li><a href="#" class="">Blog</a></li>
-	<li><a href="#" class="">Contacrs</a></li>
+    </li-->
+	<li><a id=about href="#About" class="">О нас</a></li>
+	<li><a id=contacts href="#Contacts" class="">Контакты</a></li>
 	</ul>
+	
+	<!-- <a href="https://www.instagram.com/cat.cafe.dp/" class="fa fa-instagram" target=top> instagram </a>   -->
+<!-- <a href="https://www.facebook.com/cat.cafe.dp/" class="fa fa-facebook" target=top> facebook </a>   -->
+<!-- <a href="https://ru.foursquare.com/v/cat-cafe/53e12f3f498ece002b49b0f7" class="fa fa-foursquare" target=top> foursquare </a>   -->
+<!-- <a href="https://www.tripadvisor.ru/Restaurant_Review-g298045-d7307470-Reviews-Cat_Cafe-Dnipro_Dnipropetrovsk_Oblast.html?m=19905"  class="fa fa-tripadvisor" target=top> tripadvisor </a> -->
+
 	<ul class="icongrp">
-        <li><a href="#"><object type="image/svg+xml" data="./images/search.svg"></object></a></li>
-        <li><a href="#"><object type="image/svg+xml" data="./images/mail.svg"></object></a></li>
+		<li>
+			<a href="https://www.instagram.com/cat.cafe.dp/" class="fa fa-instagram" target=top title=instagram></a> 
+		</li><li> 
+			<a href="https://www.facebook.com/cat.cafe.dp/" class="fa fa-facebook" target=top title=facebook></a>  
+		</li><li>
+			<a href="https://ru.foursquare.com/v/cat-cafe/53e12f3f498ece002b49b0f7" class="fa fa-foursquare" target=top title=foursquare></a>
+		</li><li>
+			<a href="https://www.tripadvisor.ru/Restaurant_Review-g298045-d7307470-Reviews-Cat_Cafe-Dnipro_Dnipropetrovsk_Oblast.html?m=19905"  class="fa fa-tripadvisor" target=top title=tripadvisor></a>
+		</li>
+        
+
         <li><span id=basketCart class="basket_cart">
   <i class="fa fa-shopping-cart"></i> 
   <span class="new-alert" >99</span>
@@ -389,7 +404,7 @@ function addToCart(e){
   }
   if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
     this.disabled = false; // разблокируем кнопку после обновления LS
-	ifobox('Добавлен в корзину!', 2);
+	ifobox('<p>Добавлен в корзину!</p>', 2);
 	reloadCart();
   }
  return false;
@@ -488,7 +503,7 @@ var options = {
   } else {
     // если в корзине пусто, то сигнализируем об этом
     //cartCont.innerHTML = 'В корзине пусто!';
-	  ifobox('В корзине пусто!', 2);//вызываем диалоговое окно с сообщением
+	  ifobox('<p>В корзине пусто!</p>', 2);//вызываем диалоговое окно с сообщением
   }
   return false;
 }
@@ -498,7 +513,7 @@ addEvent(d.getElementById('checkout'), 'click', openCart);
 addEvent(d.getElementById('clear_cart'), 'click', function(e){
   localStorage.removeItem('cart');
   reloadCart();
-  ifobox('Корзина очищена.', 2);//вызываем диалоговое окно с сообщением
+  ifobox('<p>Корзина очищена.</p>', 2);//вызываем диалоговое окно с сообщением
   //cartCont.innerHTML = 'Корзина очищена.';
 });
 reloadCart();//Отобразить количество товаров в корзине
@@ -859,7 +874,7 @@ grid_view.onclick = function(event) {
 //Показать карточку товара
 function show_good(e){
 e.preventDefault();
-var e = this.getAttribute('data-id')
+var e = this.getAttribute('data-id');
 var prod_view = document.getElementById("product_"+e);
     prod_view.classList.toggle('productData_show_good');
 	return false;
@@ -882,11 +897,9 @@ var prod_view = document.getElementById("product_"+e);
       <span class="input-group-addon"><i class="fa fa-phone"></i></span>
       <input id="phone-number" type="tel" class="form-control" name="phone" placeholder="+38 (___) ___-__-__" required="required" minlength="19" autocomplete="on" >
     </div>
-	<div class="input-group">
 		<input type="hidden" id="guest__wish"  autocomplete="off">
-    </div>
 	</fieldset>
-    <button type="submit" class=btn_group__btn >Заказать</button>
+    <button type="submit" class=btn_group__btn>Заказать <i class="fa fa-paper-plane"></i></button>
 </form>
 
 </div>
@@ -991,7 +1004,7 @@ var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
 		var mess='Имя: '+$('#name').val()+' \n\n Тел:'+$('#phone-number').val()+' \n\n  Заказ: '+$('#guest__wish').val()+' ';
         $.ajax({
             type: "POST",
-            url: '/https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-362609574&parse_mode=html&text=shop:'+window.location.href+' '+mess,
+            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-362609574&parse_mode=html&text=shop:'+window.location.href+' '+mess,
             data: formNm.serialize(),
             success: function (data) {
 			  //$(".title")
@@ -999,7 +1012,7 @@ var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
               //formNm.css("display","none");
             },
             error: function (jqXHR, text, error) {
-				ifobox('Что-то пошло не так:(<br>Попробуйте чуть позже', 2);
+				ifobox('<p>Что-то пошло не так:(<br>Попробуйте чуть позже</p>', 2);
             }
         });
 		};
@@ -1012,7 +1025,8 @@ var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
 //infobox
 function ifobox(e, i, f){//i - секунди закрытия
 var infobox = document.getElementById("infobox"),
-    form = document.getElementById("form-contact");
+    form = document.getElementById("form-contact"),
+	close_infobox = document.getElementById("close_infobox");;
 		form.classList.add('hide_info');
 		form.classList.remove('show_form');
 		infobox.classList.add('show_info');
@@ -1022,19 +1036,34 @@ var infobox = document.getElementById("infobox"),
 		form.classList.add('show_form');
 		form.classList.remove('hide_info');
 	};
-	if(i>0){setTimeout(  () => {
-		infobox.classList.add('hide_info');
-		infobox.classList.remove('show_info');
+	if(i>0){
+		close_infobox.classList.add('hide_info');
+		setTimeout(  () => {
+			infobox.classList.add('hide_info');
+			infobox.classList.remove('show_info');
+			close_infobox.classList.remove('hide_info');
 		},
 	  i * 1000
 	);};
 };
-var close_ = document.getElementById("close_infobox");
-close_.onclick = function(event) { 
+var close_infobox = document.getElementById("close_infobox");
+close_infobox.onclick = function(event) { 
 var infobox = document.getElementById("infobox");
     infobox.classList.add('hide_info');
     infobox.classList.remove('show_info');
 };
+
+// top nav
+
+var navContacts = document.getElementById("contacts");
+navContacts.onclick = function(event) { 
+ifobox('<a class="fa fa-phone" href="tel:+380953835669"> +380 95 383 56 69</a> | <a class="fa fa-envelope" href="mailto:cat.cafe@mail.com?subject=Cat Cafe coffee shop"> cat.cafe@mail.com</a> <br> <a class="fa fa-phone" href="tel:+380989802631"> +380 98 980 26 31</a> | <a class="fa fa-envelope" href="mailto:dp.ua@mail.com?subject=Cat Cafe coffee shop"> dp.ua@mail.com</a> <br> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21161.4075472678!2d35.0150485174101!3d48.47233870728136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6da935ff1f341940!2sCat%20Cafe!5e0!3m2!1sru!2sua!4v1587561167183!5m2!1sru!2sua" width="600" height="450" frameborder="0" style="border:0;margin: 5px 0 -5px 0" allowfullscreen="" aria-hidden="false" tabindex="0">', 0);
+};
+var navAbout = document.getElementById("about");
+navAbout.onclick = function(event) { 
+ifobox('<p style="text-align: justify;width: 420px;">У нас представлен широкий ассортимент моносортов арабики - более чем из тридцати стран. Это, прежде всего, всеми узнаваемые и любимые Арабика Колумбия, Бразилия, Гватемала, Коста-Рика, Индия, а также эксклюзивные сорта Арабики из Эфиопии, Кении, Бали, Бурунди.<br> </p>', 0);
+};
+//\top nav
 </script>
 
 

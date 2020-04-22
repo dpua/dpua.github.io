@@ -122,7 +122,11 @@ ul.icongrp {
     margin: 0px 0px 0px 25px;
     padding: 0;
     display: flex;
+    align-items: center;
     justify-content: left;
+}
+ul.icongrp  a {
+    padding: 5px;
 }
 #nav ul li:hover .submenu {
     visibility: visible;
@@ -304,26 +308,33 @@ main {
 .inftext {
     display: block;
     background: white;
-    border-radius: 3px;
-    padding: 8px 10px;
+    border-radius: 5px;
+    /* padding: 8px 10px; */
     font-size: 20px;
     margin: 10px;
     box-shadow: 0 0 10px black;
     overflow: auto;
-}.show_form {
+}
+#inftext > * {margin: 10px;}
+.show_form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 1;
 }
 .hide_info{
 	display: none;
+    opacity: 0;
 }
 /*form*/
 fieldset {
-    width: 100%;
-        margin: 5px;
-    padding: 0;
+    /* margin: 5px; */
+    /* padding: 0; */
+	width: 100%;
+    margin: 20px 0;
+    padding: 0 10px;
+    border: none;
     border: none;
 }
 .input-group {
@@ -657,7 +668,7 @@ box-shadow: 0 10px 20px -10px #777 inset;
 
 .basket_cart {
 	position: relative;
-    cursor: pointer; 
+    cursor: pointer;  
     padding: 7px;
     margin: 0 10px;
     color: #777;
@@ -669,10 +680,11 @@ box-shadow: 0 10px 20px -10px #777 inset;
     font-weight: bold;
     line-height: 19px;
     position: absolute;
-    right: -11px;
+    /* right: -11px; */
     text-shadow: none;
-    top: 50%;
-    margin-top: -22px;
+    /* top: 50%; */
+    /* margin-top: -22px; */
+    margin-top: -12px;
     width: 20px;
     height: 20px;
     text-align: center;
@@ -713,7 +725,9 @@ display: none;
     position: absolute;
     z-index: 99;
 }
-.basket_cart__sub {
+.basket_cart__sub {    
+	border-radius: 5px;
+    /* overflow: hidden; */
     font-size: 14px;
     line-height: 1.5;
     position: absolute;
@@ -732,6 +746,7 @@ display: none;
 .basket_cart__sub button, button[type=submit] {
     width: 100%;    
 	border-top: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
     font-size: 16px;
 }
 .basket_cart__sub button:hover, button[type=submit]:hover {
