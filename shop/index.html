@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Add React in One Minute</title>
+    <title>Cat Cafe coffee shop</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="./fonts/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
@@ -389,6 +389,7 @@ function addToCart(e){
   }
   if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
     this.disabled = false; // разблокируем кнопку после обновления LS
+	ifobox('Добавлен в корзину!', 2);
 	reloadCart();
   }
  return false;
@@ -452,7 +453,7 @@ var options = {
 	  itemsP = 0;
   // если что-то в корзине уже есть, начинаем формировать данные для вывода
   if(cartData !== null){
-   totalItems = '<table class="shopping_list"><tr><th>Наименование</th><th class=tal>Кол-во</th><th class=tal>Цена</th></tr>';
+   totalItems = '<table class="shopping_list"><tr><th>Наименование</th><th class=tal>Кол-во</th><th class=tal>Цена</th><th class=tal>Сумма</th></tr>';
     for(var items in cartData){
 	stringItems += ' /№'+items+','+cartData[items][1]+'шт.,'+cartData[items][2]+'грн./';
         itemsN += cartData[items][1];
@@ -462,10 +463,10 @@ var options = {
 	    var ta=(i>0)?'tar':'tal';
         totalItems += '<td class='+ta+'>' + cartData[items][i] + '</td>';
       }
-      totalItems += '</tr>';
+      totalItems += '<th class=tar>'+itemsP+'</th></tr>';
     }
 	stringItems += ' /Всего:'+itemsN+'шт.,'+itemsP+'грн./ ';
-    totalItems += '<tr><th>Всего:</th><th>'+itemsN+'шт.</th><th>'+itemsP+'грн.</th></tr></table>';
+    totalItems += '<tr><th>Всего:</th><th class=tar>'+itemsN+'шт.</th><th class=tar colspan="2">'+itemsP+'грн.</th></tr></table>';
 	
 	
 	document.getElementById('guest__wish').value = stringItems;
@@ -487,7 +488,7 @@ var options = {
   } else {
     // если в корзине пусто, то сигнализируем об этом
     //cartCont.innerHTML = 'В корзине пусто!';
-	  ifobox('В корзине пусто!', 1);//вызываем диалоговое окно с сообщением
+	  ifobox('В корзине пусто!', 2);//вызываем диалоговое окно с сообщением
   }
   return false;
 }
@@ -497,7 +498,7 @@ addEvent(d.getElementById('checkout'), 'click', openCart);
 addEvent(d.getElementById('clear_cart'), 'click', function(e){
   localStorage.removeItem('cart');
   reloadCart();
-  ifobox('Корзина очищена.', 1);//вызываем диалоговое окно с сообщением
+  ifobox('Корзина очищена.', 2);//вызываем диалоговое окно с сообщением
   //cartCont.innerHTML = 'Корзина очищена.';
 });
 reloadCart();//Отобразить количество товаров в корзине
@@ -885,7 +886,7 @@ var prod_view = document.getElementById("product_"+e);
 		<input type="hidden" id="guest__wish"  autocomplete="off">
     </div>
 	</fieldset>
- <input type="submit" class="btn btn-default" value="Заказать">
+    <button type="submit" class=btn_group__btn >Заказать</button>
 </form>
 
 </div>
@@ -937,7 +938,7 @@ if(_lSr(a)==null){localStorage.setItem(a+'f', d);localStorage.setItem(a, d);}els
 //localStorage
 //send
 function _S_tel(e){
-var a='.tel';var b='eg';var c='ram.org/';var d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
+var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
 	        $.ajax({
             type: "POST",
             url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-380185005&parse_mode=html&text=shop:'+window.location.href+' '+e,
@@ -985,12 +986,12 @@ setTimeout(function(){ $('#name').parent(".input-group").removeClass('hover');},
 };
 function send(){
 var formNm = $('#form-contact');
-var a='.tel';var b='eg';var c='ram.org/';var d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
+var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
         var message = $(".form-message");
 		var mess='Имя: '+$('#name').val()+' \n\n Тел:'+$('#phone-number').val()+' \n\n  Заказ: '+$('#guest__wish').val()+' ';
         $.ajax({
             type: "POST",
-            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-362609574&parse_mode=html&text=shop:'+window.location.href+' '+mess,
+            url: '/https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-362609574&parse_mode=html&text=shop:'+window.location.href+' '+mess,
             data: formNm.serialize(),
             success: function (data) {
 			  //$(".title")
@@ -998,7 +999,7 @@ var a='.tel';var b='eg';var c='ram.org/';var d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q
               //formNm.css("display","none");
             },
             error: function (jqXHR, text, error) {
-                message.html("Что-то пошло не так:(<br>Попробуйте чуть позже");
+				ifobox('Что-то пошло не так:(<br>Попробуйте чуть позже', 2);
             }
         });
 		};
@@ -1009,7 +1010,7 @@ var a='.tel';var b='eg';var c='ram.org/';var d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q
 
 
 //infobox
-function ifobox(e, i, f){
+function ifobox(e, i, f){//i - секунди закрытия
 var infobox = document.getElementById("infobox"),
     form = document.getElementById("form-contact");
 		form.classList.add('hide_info');
@@ -1021,11 +1022,11 @@ var infobox = document.getElementById("infobox"),
 		form.classList.add('show_form');
 		form.classList.remove('hide_info');
 	};
-	if(i==1){setTimeout(  () => {
+	if(i>0){setTimeout(  () => {
 		infobox.classList.add('hide_info');
 		infobox.classList.remove('show_info');
 		},
-	  5 * 1000
+	  i * 1000
 	);};
 };
 var close_ = document.getElementById("close_infobox");

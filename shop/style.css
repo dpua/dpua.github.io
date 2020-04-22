@@ -270,6 +270,7 @@ main {
     justify-content: center;
     padding: 10px;
     margin: 20px;
+	min-width: 230px;
 	}
 	
 .show_info {
@@ -321,7 +322,7 @@ main {
 /*form*/
 fieldset {
     width: 100%;
-        margin: 0 0 -12px 0;
+        margin: 5px;
     padding: 0;
     border: none;
 }
@@ -482,7 +483,16 @@ input[type=submit] {
 .tal { /* Стиль для первой колонки */
     text-align: left;
 }
-th {font-weight: 400;}
+th {
+	font-size: 14px;
+    font-weight: 400;
+    color: #777;
+	}
+td {
+	font-size: 14px;
+    font-weight: 300;
+    color: #777;
+	}
 /* таблица*/ 
 	
 .info_empty {
@@ -630,7 +640,7 @@ box-shadow: 0 10px 20px -10px #777 inset;
     -ms-user-select: none;
     user-select: none;
 	}
-.btn_group__btn:hover, .basket_cart:hover {
+.btn_group__btn:hover, .basket_cart:hover, button[type=submit]:hover {
     color: #333;
 }
 .btn_group__btn_active{
@@ -719,10 +729,12 @@ display: none;
     width: auto;
     box-shadow: 1px 5px 15px -1px black;
 }
-.basket_cart__sub button {
-    width: 100%;
+.basket_cart__sub button, button[type=submit] {
+    width: 100%;    
+	border-top: 1px solid #ccc;
+    font-size: 16px;
 }
-.basket_cart__sub button:hover {
+.basket_cart__sub button:hover, button[type=submit]:hover {
   background: whitesmoke;
 }
 
