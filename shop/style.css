@@ -4,6 +4,14 @@ body {
     font-weight: 300;
     margin: 0;
     padding: 0;
+	
+	  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
 * {
 	outline: none;
@@ -621,6 +629,10 @@ td {
     opacity: 0.9;}
 	.add-item:hover {
     opacity: 1;}
+	
+.add-item:hover .fa-shopping-cart:before {
+    content: "\f218";
+}
 a:hover {
     background: -webkit-gradient(linear,left top,right top,from(#ff8a00),to(#e52e71));
     background: linear-gradient(90deg,#ff8a00,#e52e71);
