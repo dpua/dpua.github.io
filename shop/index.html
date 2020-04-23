@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
 	
 	
-	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+	<script src="./jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.css" />
     <script src="./nouislider.min.js"></script>
 	
@@ -18,6 +18,12 @@
 	
 	
 <script src="jquery.mask.min.js"></script>
+
+
+
+
+    <!-- <script src="./json.cat.shop.min.js"></script> -->
+	
 
   </head>
   <body>
@@ -205,13 +211,13 @@ scroll();
     <li class="item">
       <input type="checkbox" id="room-4" value="Северная_Америка">
       <label for="room-4" class="filter-item" >
-        Северная_Америка      
+        Северная Америка      
       </label>
     </li>
     <li class="item">
       <input type="checkbox" id="room-5" value="Южная_Америка">
       <label for="room-5" class="filter-item" >
-        Южная_Америка       
+        Южная Америка       
       </label>
     </li>
   </ul>
@@ -1079,9 +1085,16 @@ ifobox('<p style="text-align: justify;width: 420px;">У нас представ�
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	
+	
+	
+	
+	
+	
     <!-- Load our React component. -->	
-    <script type="text/babel">
-/* ReactDOM.render(
+	    <script type="text/babel">
+	
+ /* ReactDOM.render(
   <h1>Привет, магазин!</h1>,
   document.getElementById('root')
 ); */
@@ -1089,7 +1102,7 @@ ifobox('<p style="text-align: justify;width: 420px;">У нас представ�
 
 
 
-
+/*
 const productData = [
     {
         id: 1,
@@ -1320,10 +1333,16 @@ const productData = [
 		rating: 5
     }
 ]
-
+*/
 /* const productDataComponents = productData.map(data => <li key={data.id} id={'product_'+data.id} className={'goods-item '+data.grade+' '+data.country+' '+data.continent} tabIndex={data.id}  data-rating={data.rating} data-price={data.price} data-name={data.name} data-grade={data.grade}><div className="goods-item__img" title={data.name} data-suffix={data.suffix} data-grade={data.grade}></div><a className="goods-item__title" href={'product_'+data.id}>{data.name}</a> {data.continent}  {data.grade}<p className="goods-item__price">{data.price}<i>грн.</i></p><button className="add-item" data-id={data.id}><i className="fa fa-cart-plus"></i> в корзину</button></li>) */
+    </script>
 
-const productDataComponents = productData.map(data => <li key={data.id} id={'product_'+data.id} className={'goods-item '+data.grade+' '+data.country+' '+data.continent} tabIndex={data.id}  data-rating={data.rating} data-price={data.price} data-name={data.name} data-grade={data.grade}><div className="goods-item__img"><div className="goods-item__title"><p className='suffix'>{data.suffix}</p><a className="clickgood" data-id={data.id} href={'#product_'+data.id} >{data.name}</a><p>{data.continent}<br />100% {data.grade}</p></div><button className="add-item" data-id={data.id} data-name={data.name+' '+data.suffix+' '+data.grade} value={data.price} title='Добавить в корзину'><p className="goods-item__price">{data.price}<i>грн.</i><br /><span className="fa fa-cart-arrow-down"></span></p></button></div><div className="goods-item__list_view"><h2>{data.name} {data.suffix}</h2><span className="stars_rating" data-rating={data.rating}>{data.rating}</span><p>{data.text}</p><p>Номер товара: {data.id}</p></div></li>)
+
+
+    <script type="text/babel">
+	
+	
+const productDataComponents = productData.map(data => <li key={data.id} id={'product_'+data.id} className={'goods-item '+data.grade+' '+data.country+' '+data.continent+' available_'+data.available} tabIndex={data.id}  data-rating={data.rating} data-price={data.price} data-name={data.name} data-grade={data.grade}><div className="goods-item__img"><div className="goods-item__title"><p className='suffix'>{data.suffix}</p><a className="clickgood" data-id={data.id} href={'#product_'+data.id} >{data.name}</a><p>{data.continent}<br />100% {data.grade}</p></div><button className="add-item" data-id={data.id} data-name={data.name+' '+data.suffix+' '+data.grade} value={data.price} title='Добавить в корзину'><p className="goods-item__price">{data.price}<i>грн.</i><br /><span className="fa fa-cart-arrow-down"></span></p></button></div><div className="goods-item__list_view"><h2>{data.name} {data.suffix}</h2><span className="stars_rating" data-rating={data.rating}>{data.rating}</span><p>{data.text}</p><p>Номер товара: {data.id}</p></div></li>)
 ReactDOM.render(
   productDataComponents,
   document.getElementById('productData')

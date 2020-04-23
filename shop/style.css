@@ -522,6 +522,7 @@ td {
     /* box-shadow: 1px 1px 10px -5px black; */
     /* border-radius: 5px; */
     margin: 5px;
+    position: relative;
 }
 /* .goods-item__img{ */
 	/* background: url('./images/product.jpg'); */
@@ -538,6 +539,7 @@ td {
     background-size: cover;
     height: 423px;
     width: 270px;
+    min-width: 270px;
     display: flex;
     padding-top: 170px;
     padding-bottom: 20px;
@@ -962,3 +964,30 @@ input[type="checkbox"]:checked+label:before {
   overflow: hidden;
   position: absolute;
 }
+
+
+
+/*available_0*/
+
+.available_0:before {
+	content: "нет в наличии";
+    color: #350000;
+    width: 140px;
+    font-size: 14px;
+    font-weight: 700;
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 28px;
+    top: 36px;
+    left: -18px;
+    margin: 0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    pointer-events: none;
+}
+.available_0 button {    pointer-events: none;}
+.available_0 button span {opacity: 0;}
+
+/*available_0*/
