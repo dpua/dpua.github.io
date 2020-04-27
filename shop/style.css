@@ -17,8 +17,27 @@ body {
 	outline: none;
 }
 
-
-
+input.num {
+    width: 58px;
+    margin-left: 16px;
+    margin-right: 16px;
+    text-align: center;
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 14px;
+    height: 32px;
+    padding-left: 12px;
+    padding-right: 12px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #d2d2d2;
+    border-radius: 4px;
+    outline: 0;
+}
+	
+	
 
 
 
