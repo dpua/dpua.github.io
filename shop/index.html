@@ -915,6 +915,7 @@ var prod_view = document.getElementById("product_"+e);
 
 //меняем количество товара с карзины
 function change_shopping_cartitems(itemId, i){
+if(i<1)return false;
 var cartData = getCartData();
 cartData[itemId][1] = i;
   if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
