@@ -231,7 +231,7 @@
 <div class="flex_row">
 <div class=input_group>
 <label class="input_group__addon" for="input-limit"><i class="fa fa-eye"></i> <span class="hidden-xs hidden-sm hidden-md">Показывать:</span></label>
- <select id="input-limit" class="input_group__control" data-onchange="goodslimit(this.value)">
+ <select id="input-limit" class="input_group__control" onchange="goodslimit(this.value)">
   <option value="8">8</option>
   <option selected="selected" value="12">12</option>
   <option value="25">25</option>
@@ -243,7 +243,7 @@
 
 <div class=input_group>
 <label class="input_group__addon" for="input-sort"><i class="fa fa-sort"></i> <span class="hidden-xs hidden-sm hidden-md">Сортировать:</span></label>
- <select id="input-sort" class="input_group__control" data-onchange="sorteds(this.value, this.selectedIndex)">
+ <select id="input-sort" class="input_group__control" onchange="sorteds(this.value, this.selectedIndex)">
   <option value="data-rating">Рейтинг (низкий)</option>
   <option value="data-rating">Рейтинг (высокий)</option>
   <option value="data-price">Цена (по возрастанию)</option>
@@ -267,9 +267,7 @@
 </main>
 
 <script type="text/javascript">
-alert('---iphone: 0');
-</script>
-<script type="text/javascript">
+alert('iphone: 0');
 function scroll(e){
 var el = document.getElementById('fixed');
 if (pageYOffset > 1){
@@ -284,11 +282,6 @@ alert('iphone: 0.1:2');
 window.addEventListener('scroll', function() {scroll();});
 scroll();
 alert('iphone: 0.1');
-
-
-
-
-alert('iphone: 1');
 // Получаем данные из LocalStorage
 function getCartData(){
   return JSON.parse(localStorage.getItem('cart'));
@@ -373,22 +366,6 @@ var a=Number(productData[i].price);
   var range = document.getElementById('range');
   range.setAttribute('min', min);
   range.setAttribute('max', max);
-/*
-    $( "#range" ).slider({
-      range: true,
-      min: min,
-      max: max,
-      values: [ min, max ],
-      slide: function( event, ui ) {
-        $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-      }
-    });
-    $( "#amount" ).val( "$" + $( "#range" ).slider( "values", 0 ) +
-      " - $" + $( "#range" ).slider( "values", 1 ) );
-	  */
-
-  
- //alert('min='+min+'  max='+max);
 //\max & min price
  
 //работа с корзиной
@@ -447,8 +424,6 @@ var options = {
 };
 
 
-
-
   var cartData = getCartData(), // вытаскиваем все данные корзины
       totalItems = '',
 	  d = new Date().toLocaleString("ru", options),
@@ -464,12 +439,6 @@ var options = {
         amount = (cartData[items][1] * cartData[items][2]);
 		itemsP += amount;
       totalItems += '<tr id=shopping_cartitems'+items+'>';
-      
-	  /*for(var i = 0; i < cartData[items].length; i++){
-	    var ta=(i>0)?'tar':'tal';
-        totalItems += '<td class='+ta+'>' + cartData[items][i] + '</td>';
-      }*/
-	  
 	  totalItems += '<td class=tal>'+cartData[items][0]+'</td>';
 	  totalItems += '<td class=tal><button class="btn_group__btn" onclick="change_shopping_cartitem_i('+items+', -1)"><i class="fa fa-minus"></i></button><input oninput="change_shopping_cartitems('+items+', this.value);" value="'+cartData[items][1]+'" type="number" size="3" id="amount_n_'+items+'" step="1" min="1" max="100" data-id='+items+' class=num><button class="btn_group__btn" onclick="change_shopping_cartitem_i('+items+', 1)"><i class="fa fa-plus"></i></button></td>';
 	  totalItems += '<td class=tal>'+cartData[items][2]+'</td>';
@@ -484,15 +453,8 @@ var options = {
 	document.getElementById('guest__wish').value = stringItems;
 	// type="hidden"
 	
-
-	
-	
-	
-	
-	
-	
 	///////
-	let data_json = JSON.stringify(cartData);// мы получили строку
+	//let data_json = JSON.stringify(cartData);// мы получили строку
 	
 	//cartCont.innerHTML = totalItems+"// data1: "+data1+"// data2: "+data2; 
   ifobox(totalItems, 0, true);//вызываем диалоговое окно с сообщением	
@@ -525,12 +487,6 @@ var cartData_old = getCartData_old();
 
 reloadCart();//Отобразить количество товаров в корзине
 //\работа с корзиной
-
-
-
-
-
-
 
 //jquery filterAll
 var filterAll = $('.filter-all'),
@@ -573,12 +529,6 @@ $('input:checkbox').on('load change', function() {
   
   $('.goods-item').each(function() {
     var $this = $(this);
-
-						   //alert('/4-filter/-'+filter);
-						   //alert('/4-filtergrade/-'+filtergrade);
-    //alert($this.attr("class")+"-"+$this.data('price')+"-"+$this.data('name')+"-"+$this.data('grade')+"-/-");
-	
-       //$this.hide(); 
 	   
     if(filter.test($this.attr("class"))) { //товат прошедший проверку на континент
        if(filtergrade.test($this.attr("class"))){$this.show(); //товат прошедший проверку на сорт
@@ -594,79 +544,11 @@ $('input:checkbox').on('load change', function() {
        $this["show"]; 
     }
     }
-  });    
-  //alert( "2/// $" + $( "#range" ).slider( "values", 0 ) +" - $" + $( "#range" ).slider( "values", 1 ) );
-  /*var values = [];
- values[0] = $(".noUi-handle.noUi-handle-lower").attr("aria-valuetext");
- values[1] = $(".noUi-handle.noUi-handle-upper").attr("aria-valuetext"); 
-  range_change( values  );*/   
+  });      
   range_change($( "#range" ).slider( "values", 0 ), $( "#range" ).slider( "values", 1 ));  
   
   count_box();  
 });
-
-// Range Slider
-/*
-var range = document.getElementById('range'),
-    t = [],
-    maximum = max;//parseInt(range.attributes.max.value, 10),
-    minimum = min;//parseInt(range.attributes.min.value, 10),
-    delta = (maximum - minimum) / 4,
-    options = {
-      min: [minimum],
-      "25%": [minimum + delta * 1, 1e6],
-      "50%": [minimum + delta * 2, 1e6],
-      "75%": [minimum + delta * 3, 1e6],
-      max: [maximum]
-    };
-
-//console.log(minimum + delta * 1, 1e6);
-
-t.push(parseInt(range.attributes.min.value, 10)), 
-  t.push(parseInt(range.attributes.max.value, 10));
-var n = parseInt(range.attributes.max.value, 10); 
-// i = parseInt(range.attributes.min.value, 10),
-
-noUiSlider.create(
-  range, 
-  {
-    range: options,
-    start: t,
-    connect: !0,
-    pips: {
-      mode: "range",
-      density: 2
-    }
-  }
-);
-
-$(".noUi-value-horizontal").each(function() {
-  var range = $(this).text().split("").slice(0, -6).join("");
-  $(this).html(range);
-});
-
-function range_change(values, handle){ 
- $('.goods-item').each(function() {
-    var $this = $(this);
-        price = $this.data('price');
-    
-    var val1 =  values[0];
-    var val2 =  values[1]; 
-     
-     
-    if(price <= val2 && price >= val1 && filter.test($this.attr("class")) ) {
-      $this.show();
-    }else {
-      $this.hide();
-    } 
-    
-  }); 
-}
-range.noUiSlider.on('change', function(values, handle){ 
- range_change(values, handle); 
- count_box(); 
-});
-*/
 
     $( "#range" ).slider({
       range: true,
@@ -723,34 +605,8 @@ function count_box() {
    
    var numGoodsOfPage=$('#input-limit').val();//количество товаров на странице
    goodslimit(numGoodsOfPage); //формирование списка страниц по количеству товаров
-
 };
-
-
-
-
-
 count_box();
-
-
-
-
-
-
-/*
-//$('#amount').oninput = function(){ alert('inp2');
- range_change(); 
- count_box(); 
-};*/
-	  
-
-
-
-//   var filterSelect = $('.filter-select'),
-//     boxs = $('.goods-item'),
-//     length = boxs.length;
-//     filterSelect.text(length);
-//\//jquery filterAll
 
 };
 
@@ -788,24 +644,7 @@ var t=res[i].split('=');
 res[i]={name:t[0], value:t[1]};
 }
 return res;};
-
-//alert('кількість параметрів: '+searchURL('?id=2&top=0').length); // 2
-
-
-//var par=searchURL('?id=js');
-//alert( par[0].name+' = '+par[0].value );
 /////////////////////////
-
-
-
-
-
-
-
-
-
-
-
 
 function changePage(e, curentPage, numOfPages){
    //e - количество товаров на странице
@@ -950,8 +789,6 @@ if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
 	};
 };
 //\меняем количество товара с карзины
-
-
 
 alert('iphone: 6');
 
