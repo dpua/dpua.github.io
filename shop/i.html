@@ -231,7 +231,7 @@
 <div class="flex_row">
 <div class=input_group>
 <label class="input_group__addon" for="input-limit"><i class="fa fa-eye"></i> <span class="hidden-xs hidden-sm hidden-md">Показывать:</span></label>
- <select id="input-limit" class="input_group__control" onchange="goodslimit(this.value)">
+ <select id="input-limit" class="input_group__control" data-onchange="goodslimit(this.value)">
   <option value="8">8</option>
   <option selected="selected" value="12">12</option>
   <option value="25">25</option>
@@ -243,7 +243,7 @@
 
 <div class=input_group>
 <label class="input_group__addon" for="input-sort"><i class="fa fa-sort"></i> <span class="hidden-xs hidden-sm hidden-md">Сортировать:</span></label>
- <select id="input-sort" class="input_group__control" onchange="sorteds(this.value, this.selectedIndex)">
+ <select id="input-sort" class="input_group__control" data-onchange="sorteds(this.value, this.selectedIndex)">
   <option value="data-rating">Рейтинг (низкий)</option>
   <option value="data-rating">Рейтинг (высокий)</option>
   <option value="data-price">Цена (по возрастанию)</option>
