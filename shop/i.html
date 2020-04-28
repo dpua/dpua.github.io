@@ -153,6 +153,7 @@
 	<div class="navtoggler close"><span></span><span></span><span></span></div>
 	</nav> 
 <script>
+alert('iphone: 0');
 function scroll(e){
 var el = document.getElementById('fixed');
 if (pageYOffset > 1){
@@ -165,6 +166,7 @@ el.classList.remove("fixed");
 };
 window.addEventListener('scroll', function() {scroll();});
 scroll();
+alert('iphone: 0.1');
 </script>
 
 	
@@ -342,6 +344,7 @@ scroll();
 -->
 <script>
 
+alert('iphone: 1');
 // Получаем данные из LocalStorage
 function getCartData(){
   return JSON.parse(localStorage.getItem('cart'));
@@ -410,6 +413,7 @@ function reloadCart(e){
 };
 
 
+alert('iphone: 2');
 function loadShop(a){
 
 alert('iphone: 1');
@@ -458,7 +462,7 @@ function addEvent(elem, type, handler){ alert('iphone: 3');
   return false;
 }
 // Добавляем товар в корзину
-function addToCart(e){alert('iphone: 4');
+function addToCart(e){
   this.disabled = true; // блокируем кнопку на время операции с корзиной
   var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
       parentBox = this.parentNode, // родительский элемент кнопки "Добавить в корзину"
@@ -480,7 +484,7 @@ function addToCart(e){alert('iphone: 4');
  return false;
 }
 // Устанавливаем обработчик события на каждую кнопку "Добавить в корзину"
-for(var i = 0; i < itemBox.length; i++){alert('iphone: 5');
+for(var i = 0; i < itemBox.length; i++){
   addEvent(itemBox[i].querySelector('.add-item'), 'click', addToCart);
 //Показать карточку товара
   addEvent(itemBox[i].querySelector('.clickgood'), 'click', show_good);
@@ -810,6 +814,7 @@ count_box();
 function loc(n, v){// ?n=v&n=v 
 if(v==undefined){//если 
 };
+alert('iphone: 3');
 var params = window
     .location
     .search
@@ -827,6 +832,7 @@ var params = window
 	//alert(JSON.stringify(params));
 };
 loc();
+alert('iphone: 4');
 ///////////////////////////
 function searchURL(search){
 if( search==undefined ) search=location.search;
@@ -837,12 +843,12 @@ for(i=0;i<res.length;i++){
 var t=res[i].split('=');
 res[i]={name:t[0], value:t[1]};
 }
-return res;}
+return res;};
 
 //alert('кількість параметрів: '+searchURL('?id=2&top=0').length); // 2
 
 
-var par=searchURL('?id=js');
+//var par=searchURL('?id=js');
 //alert( par[0].name+' = '+par[0].value );
 /////////////////////////
 
@@ -1003,6 +1009,7 @@ if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
 
 
 
+alert('iphone: 6');
 
 </script>
 
@@ -1032,6 +1039,7 @@ if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
 
 
 <script>
+alert('iphone: 7');
 //form
 $(document).ready(function(){
   $('#phone-number').mask('+38 (000) 000-00-00');
@@ -1151,6 +1159,7 @@ var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
 ///form
 
 
+alert('iphone: 8');
 
 //infobox
 function ifobox(e, i, f){//i - секунди закрытия
@@ -1203,11 +1212,13 @@ ifobox('<p style="text-align: justify;width: 420px;">У нас представ�
 
     <script>
 	
+alert('iphone: 9');
 	
 const productDataComponents = productData.map(data => '<li key='+data.id+' id="product_'+data.id+'" class="goods-item '+data.grade+' '+data.country+' '+data.continent+' available_'+data.available+'" tabIndex='+data.id+'  data-rating='+data.rating+' data-price='+data.price+' data-name='+data.name+' data-grade='+data.grade+'><div class="goods-item__img"><div class="goods-item__title"><p class="suffix">'+data.suffix+'</p><a class="clickgood" data-id='+data.id+' href="#product_'+data.id+'" >'+data.name+'</a><p>'+data.continent+'<br />100% '+data.grade+'</p></div><button class="add-item" data-id='+data.id+' data-name="'+data.name+' '+data.suffix+' '+data.grade+'" value='+data.price+' title="Добавить в корзину"><p class="goods-item__price">'+data.price+'<i>грн./100г.</i><br /><span class="fa fa-shopping-cart"></span></p></button></div><div class="goods-item__list_view"><h2>'+data.name+' '+data.suffix+'</h2><span class="stars_rating" data-rating='+data.rating+'>'+data.rating+'</span><p>'+data.text+'</p><p>Номер товара: '+data.id+'</p></div></li>').join('');
 document.getElementById('productData').innerHTML=productDataComponents;
 loadShop(1);
 
+alert('iphone: 10');
 
 </script>
 
