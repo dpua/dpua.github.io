@@ -152,23 +152,6 @@
 	</ul>
 	<div class="navtoggler close"><span></span><span></span><span></span></div>
 	</nav> 
-<script>
-alert('iphone: 0');
-function scroll(e){
-var el = document.getElementById('fixed');
-if (pageYOffset > 1){
-el.classList.add("fixed");
-el.classList.remove("absolute");
-}else{
-el.classList.add("absolute");
-el.classList.remove("fixed");
-};
-alert('iphone: 0.1:2');
-};
-window.addEventListener('scroll', function() {scroll();});
-scroll();
-alert('iphone: 0.1');
-</script>
 
 	
 </header>
@@ -343,7 +326,26 @@ alert('iphone: 0.1');
 <button id="clear_cart">Очистить корзину</button>
 <div id="cart_content"></div>
 -->
+
 <script>
+alert('iphone: 0');
+function scroll(e){
+var el = document.getElementById('fixed');
+if (pageYOffset > 1){
+el.classList.add("fixed");
+el.classList.remove("absolute");
+}else{
+el.classList.add("absolute");
+el.classList.remove("fixed");
+};
+alert('iphone: 0.1:2');
+};
+window.addEventListener('scroll', function() {scroll();});
+scroll();
+alert('iphone: 0.1');
+
+
+
 
 alert('iphone: 1');
 // Получаем данные из LocalStorage
