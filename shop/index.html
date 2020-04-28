@@ -1102,7 +1102,9 @@ var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
             data: formNm.serialize(),
             success: function (data) {
 			  //$(".title")
-			  formNm.html("Заявка отправлена<br><br>С Вами свяжутся по указанному номеру: "+$("#phone-number").val());
+			  ifobox('<p>Заявка отправлена<br>С Вами свяжутся по указанному номеру:<br>'+$("#phone-number").val()+'</p>', 5);
+			    localStorage.removeItem('cart');//Очистить корзину
+				reloadCart();//Обновляем корзину
               //formNm.css("display","none");
             },
             error: function (jqXHR, text, error) {
