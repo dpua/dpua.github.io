@@ -499,12 +499,12 @@ var options = {
         totalItems += '<td class='+ta+'>' + cartData[items][i] + '</td>';
       }*/
 	  
-	  totalItems += '<td class=tal>' + cartData[items][0] + '</td>';
-	  totalItems += '<td class=tal><i class="fa fa-minus" onclick="change_shopping_cartitem_i('+items+', -1)"></i><input oninput="change_shopping_cartitems('+items+', this.value);" value="' + cartData[items][1] + '" type="number" size="3" id="amount_n_'+items+'" step="1" min="1" max="100" data-id='+items+' class=num><i class="fa fa-plus" onclick="change_shopping_cartitem_i('+items+', 1)"></i></td>';
-	  totalItems += '<td class=tal>' + cartData[items][2] + '</td>';
+	  totalItems += '<td class=tal>'+cartData[items][0]+'</td>';
+	  totalItems += '<td class=tal><button class="btn_group__btn" onclick="change_shopping_cartitem_i('+items+', -1)"><i class="fa fa-minus"></i></button><input oninput="change_shopping_cartitems('+items+', this.value);" value="'+cartData[items][1]+'" type="number" size="3" id="amount_n_'+items+'" step="1" min="1" max="100" data-id='+items+' class=num><button class="btn_group__btn" onclick="change_shopping_cartitem_i('+items+', 1)"><i class="fa fa-plus"></i></button></td>';
+	  totalItems += '<td class=tal>'+cartData[items][2]+'</td>';
 	  
 	  
-      totalItems += '<td id="shopping_cartitems_amount_'+items+'" class=tar>'+amount+'</td><td class=tar><button class="del_shopping_cartitems" onclick=del_shopping_cartitems('+items+')>X</button></td></tr>';
+      totalItems += '<td id="shopping_cartitems_amount_'+items+'" class=tar>'+amount+'</td><td class=tar><button class="btn_group__btn" onclick=del_shopping_cartitems('+items+')><i class="fa fa-times"></i></button></td></tr>';
     }
 	stringItems += ' /Всего:'+itemsN+'шт.,'+itemsP+'грн./ ';
     totalItems += '<tr><th id=itemsW>Всего:</th><th id=itemsN class=tar>'+itemsN+'шт. ('+(itemsN/10)+'кг.)</th><th  id=itemsP class=tar colspan="2">'+itemsP+'грн.</th></tr></table>';
@@ -829,6 +829,7 @@ function changePage(e, curentPage, numOfPages){
    //curentPage - текущая страница
    //numOfPages - количество страниц
    //проверка1//var datas='changePage('+e+', '+curentPage+', '+numOfPages+') ';
+   	window.scrollTo(0, 36);
    var zaq = $('#productData').find(".goods-item:visible");
    var numPage = '';
    var dis ='';//class="disabled"
@@ -903,6 +904,9 @@ e.preventDefault();
 var e = this.getAttribute('data-id');
 var prod_view = document.getElementById("product_"+e);
     prod_view.classList.toggle('productData_show_good');
+	
+var curentPage=parseInt(window.location.search.replace("?page=",""));
+history.pushState(null, null, '?page='+curentPage+'&product_'+e);
 	return false;
 };
 //\Показать карточку товара
@@ -915,7 +919,17 @@ var prod_view = document.getElementById("product_"+e);
 
 //меняем количество товара с карзины
 function change_shopping_cartitems(itemId, i){
-if(i<1)return false;
+if(!i)return false;
+if(i<1){
+	document.getElementById('amount_n_'+itemId).value=1;
+	change_shopping_cartitems(itemId, 1);
+	return false;
+	};
+if(i>100){
+	document.getElementById('amount_n_'+itemId).value=100;
+	change_shopping_cartitems(itemId, 100);
+	return false;
+	};
 var cartData = getCartData();
 cartData[itemId][1] = i;
   if(!setCartData(cartData)){ // Обновляем данные в LocalStorage

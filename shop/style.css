@@ -19,8 +19,7 @@ body {
 
 input.num {
     width: 58px;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin: 0;
     text-align: center;
     -moz-appearance: textfield;
     -webkit-appearance: none;
@@ -36,7 +35,12 @@ input.num {
     border-radius: 4px;
     outline: 0;
 }
-	
+input.num::-webkit-outer-spin-button,
+input.num::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 	
 
 
