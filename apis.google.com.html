@@ -309,6 +309,18 @@ $(document).ready(function() {
     gapi.load('auth:client', handleClientLoad);
   });
 });
+	
+	
+	
+	  
+  var request = gapi.client.request({
+        'path': '/drive/v2/files',
+        'method': 'GET',
+        'params': {'maxResults': '1'}
+        });
+		$('#request').html(request);
+		
+		
 </script>
 		
 		
