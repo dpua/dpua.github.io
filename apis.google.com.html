@@ -3,10 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Cat Cafe apis.google.com</title>
-                <script src="https://apis.google.com/js/api.js"
-			onload="this.onload=function(){}; gapi.load('client:auth2', initClient)"
-			onreadystatechange="if (this.readyState === 'complete') this.onload()">
-		</script>
+ 
 	</head>
 	<body>
 	
@@ -19,6 +16,7 @@ https://www.googleapis.com/auth/drive.file
 <script>
 //https://habr.com/ru/post/440844/
 function initClient() {
+	alert('initClient()');
     gapi.client.init({
         // Ваш ключ API
         apiKey: 'AIzaSyDOfTllRec5XpYZeGzMNah8k4GoAX6AeR0',
@@ -47,10 +45,12 @@ function initClient() {
 
 
 function isGapiLoaded() {
+	alert('isGapiLoaded()');
     return gapi && gapi.auth2
 }
 
 function logIn() {
+	alert('logIn()');
     if (isGapiLoaded()) {
         // откроется стандартное окно Google с выбором аккаунта
         gapi.auth2.getAuthInstance().signIn()
@@ -58,6 +58,7 @@ function logIn() {
 }
 
 function logOut() {
+	alert('logOut()');
     if (isGapiLoaded()) {
         gapi.auth2.getAuthInstance().signOut()
     }
@@ -67,10 +68,12 @@ function logOut() {
 
 
 function isLoggedIn() {
+	alert('isLoggedIn()');
     return isGapiLoaded() && gapi.auth2.getAuthInstance().isSignedIn.get()
 }
 
 function onSignIn() {
+	alert('onSignIn()');
     if (isLoggedIn()) {
         alert('пользователь зашел');// пользователь зашел
     } else {
@@ -85,7 +88,16 @@ function onAlert(a){
 
 
 </script>
-
+		
+		
+		
+               <script src="https://apis.google.com/js/api.js"
+			onload="this.onload=function(){}; gapi.load('client:auth2', initClient)"
+			onreadystatechange="if (this.readyState === 'complete') this.onload()">
+		</script>
+		
+		
+		
 <div onclick="logIn()">logIn()</div>
 <div onclick="logOut()">logOut()</div>
 <div onclick="onSignIn()">onSignIn()</div>
