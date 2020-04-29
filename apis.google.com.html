@@ -240,6 +240,7 @@ alert('initApp()');
 <div id="content">Files:</div>
 JS:
 
+<div id=request>//</div>
 <script>
 var CLIENT_ID = '868307068011-dqiuo42ptlos5dqv2bt124657n41fofs.apps.googleusercontent.com';
 var API_KEY = 'AIzaSyDOfTllRec5XpYZeGzMNah8k4GoAX6AeR0';
@@ -308,11 +309,9 @@ $(document).ready(function() {
   $.getScript('//apis.google.com/js/api.js', function() {
     gapi.load('auth:client', handleClientLoad);
   });
-});
-	
-	
-	
-	  
+  
+  
+  
   var request = gapi.client.request({
         'path': '/drive/v2/files',
         'method': 'GET',
@@ -321,6 +320,8 @@ $(document).ready(function() {
 		$('#request').html(request);
 		
 		
+		
+});
 </script>
 		
 		
