@@ -142,7 +142,82 @@
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdgbnZCreiaRHdB2daitsipn6Q9OSm6l6vLHoHl2B8AkcLgHA/viewform?embedded=true" width="640" height="844" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
     
     
-    
-    
+    <p> HTML for http://stefano.brilli.me/google-forms-html-exporter/ </p>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSdgbnZCreiaRHdB2daitsipn6Q9OSm6l6vLHoHl2B8AkcLgHA/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+    <fieldset>
+        <h2>Контактная информация<br><small>dpua.github.io</small></h2>
+    </fieldset>
+    <fieldset>
+        <legend for="">Email</legend>
+        <div class="form-group">
+            <input id="emailAddress" type="email" name="emailAddress" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1633920210" -->
+    <fieldset>
+        <legend for="1633920210">Имя</legend>
+        <div class="form-group">
+            <input id="2005620554" type="text" name="entry.2005620554" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "1770822543" -->
+    <fieldset>
+        <legend for="1770822543">Номер телефона</legend>
+        <div class="form-group">
+            <input id="1166974658" type="text" name="entry.1166974658" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "1846923513" -->
+    <fieldset>
+        <legend for="1846923513">Комментарии</legend>
+        <div class="form-group">
+            <textarea id="839337160" name="entry.839337160" class="form-control" ></textarea>
+        </div>
+    </fieldset>
+
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="7498664250258409520">
+    <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+    <input type="hidden" name="pageHistory" value="0">
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+ <p> JS for http://stefano.brilli.me/google-forms-html-exporter/ </p>
+    <script>  
+// This script requires jQuery and jquery-form plugin
+// You can use these ones from Cloudflare CDN:
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+//
+$('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+            alert('Form Submitted. Thanks.')
+            // You can also redirect the user to a custom thank-you page:
+            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+        }
+    })
+})
+    </script>    
   </body>
 </html>
