@@ -10,7 +10,16 @@
     <p>Запустите средство выбора файлов</p>
     <script type="text/javascript">
   function launchOneDrivePicker(){
-    var odOptions = { /* ... specify the desired options ... */ };
+    var odOptions = { 
+      /* ... specify the desired options ... */ 
+      clientId: "321dbb86-31f3-4cde-b2d6-12e1612c11ec",
+  action: "query",
+  multiSelect: true,
+  advanced: {},
+  success: function(files) { /* success handler */ },
+  cancel: function() { /* cancel handler */ },
+  error: function(error) { /* error handler */ }
+    };
     OneDrive.open(odOptions);
   }
 </script>
