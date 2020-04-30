@@ -6,6 +6,18 @@
     <script type="text/javascript" src="https://js.live.net/v7.2/OneDrive.js"></script>
   </head>
   <body>
-    <p>OneDrive JavaScript SDK</p>
+    <h1>OneDrive JavaScript SDK</h1>
+    <p>Запустите средство выбора файлов</p>
+    <script type="text/javascript">
+  function launchOneDrivePicker(){
+    var odOptions = { /* ... specify the desired options ... */ };
+    OneDrive.open(odOptions);
+  }
+</script>
+<button onClick="launchOneDrivePicker()">Open from OneDrive</button>
+    
+    
+    
+    
     
   </body>
