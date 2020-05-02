@@ -1047,7 +1047,7 @@ input[type="checkbox"]:checked+label:before {
 
 /*available_0*/
 
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5) {
+@media only screen and (max-device-width : 768px),only screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5) {
 	
 .catalog_sidebar{
 display: none;}
