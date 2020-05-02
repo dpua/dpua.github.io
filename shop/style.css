@@ -356,7 +356,7 @@ main {
 	z-index: 99;
     max-width: 90%;
 }
-#inftext {display: flex;}
+#inftext {}
 #inftext > * {margin: 10px;}
 .show_form {
     display: flex;
