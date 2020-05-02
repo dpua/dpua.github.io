@@ -107,16 +107,6 @@
 	<ul class="topmenu">
 	<li><a href="#Home">Главная</a></li>
 	<li><a href="#Shop" class="hov">Магазин</a></li>
-	<!--li class="subs"><a href="#" class="sub">Catalog</a>
-      <ul class="submenu">
-        <li><a href=""><div class="img img1"></div><p>Terrarium Decoration</p></a></li>
-        <li><a href=""><div class="img img2"></div><p>Glass Geometric Terrarium</p></a></li>
-        <li><a href=""><div class="img img1"></div><p>Terrarium Decoration</p></a></li>
-        <li><a href=""><div class="img img3"></div><p>Dahey Glass Planter</p></a></li>
-        <li><a href=""><div class="img img1"></div><p>Terrarium Decoration</p></a></li>
-        <li><a href=""><div class="img img3"></div><p>Dahey Glass Planter</p></a></li>
-      </ul>
-    </li-->
 	<li><a id=about href="#About" class="">О нас</a></li>
 	<li><a id=contacts href="#Contacts" class="">Контакты</a></li>
 	</ul>
@@ -1202,7 +1192,7 @@ ifobox('<p style="text-align: justify;width: 420px;">У нас представ�
     <script>
 	
 //(function(data){ return ... }) //(data => ...)  без стрелочной функции для ie и iphone4
-productDataComponents = productData.map(function(data){ return '<li key='+data.id+' id="product_'+data.id+'" class="goods-item '+data.grade+' '+data.country+' '+data.continent+' available_'+data.available+'" tabIndex='+data.id+'  data-rating='+data.rating+' data-price='+data.price+' data-name='+data.name+' data-grade='+data.grade+'><div class="goods-item__img"><div class="goods-item__title"><p class="suffix">'+data.suffix+'</p><a class="clickgood" data-id='+data.id+' href="#product_'+data.id+'" >'+data.name+'</a><p>'+data.continent+'<br />100% '+data.grade+'</p></div><button class="add-item" data-id='+data.id+' data-name="'+data.name+' '+data.suffix+' '+data.grade+'" value='+data.price+' title="Добавить в корзину"><p class="goods-item__price">'+data.price+'<i>грн./100г.</i><br /><span class="fa fa-shopping-cart"></span></p></button></div><div class="goods-item__list_view"><h2>'+data.name+' '+data.suffix+'</h2><span class="stars_rating" data-rating='+data.rating+'>'+data.rating+'</span><p>'+data.text+'</p><p>Номер товара: '+data.id+'</p></div></li>'}).join('');
+productDataComponents = productData.map(function(data){ return '<li key='+data.id+' id="product_'+data.id+'" class="goods-item '+data.grade+' '+data.country+' '+data.continent+' available_'+data.available+'" tabIndex='+data.id+'  data-rating='+data.rating+' data-price='+data.price+' data-name='+data.name+' data-grade='+data.grade+'><div class="goods-item__img"><div class="goods-item__title"><p class="suffix">'+data.suffix+'</p><a class="clickgood" data-id='+data.id+' href="#product_'+data.id+'" >'+data.name+'</a><p>'+data.continent+'<br />100% '+data.grade+'</p></div><button class="add-item" data-id='+data.id+' data-name="'+data.name+' '+data.suffix+' '+data.grade+'" value='+data.price+' title="Добавить в корзину"><p class="goods-item__price">'+data.price+'<i>грн./100г.</i><br /><span class="fa fa-shopping-cart"></span></p></button></div><div class="goods-item__list_view"><h2>'+data.name+' '+data.suffix+'</h2><g-review-stars><span class="stars_rating" data-rating='+data.rating+' aria-label="Оценка: '+data.rating+' из 5,"><span style="width:'+(69/5)*data.rating+'px"></span></span></g-review-stars><p>'+data.text+'</p><p>Номер товара: '+data.id+'</p></div></li>'}).join('');
 document.getElementById('productData').innerHTML=productDataComponents;
 loadShop(1);
 

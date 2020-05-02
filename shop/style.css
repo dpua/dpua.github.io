@@ -624,6 +624,26 @@ td {
 }.goods-item__price  i {
 	font-size: 18px;
 }
+.stars_rating {
+	background-image: url(./images/g_r_p.png);
+    background-size: 14px 13px;
+    height: 13px;
+    top: 1px;
+    width: 69px;
+    background-repeat: repeat-x;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+.stars_rating span {
+    background-image: url(./images/g_r_a.png);
+    background-repeat: repeat-x;
+    display: block;
+    background-size: 14px 13px;
+    height: 13px;
+    top: 1px;
+}
+	
 .add-item {
     color: #401f14;
     font-size: 14px;
@@ -1026,3 +1046,12 @@ input[type="checkbox"]:checked+label:before {
 .available_0 button span {opacity: 0;}
 
 /*available_0*/
+
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5) {
+	
+.catalog_sidebar{
+display: none;}
+	
+	
+	
+}
