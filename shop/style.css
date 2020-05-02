@@ -734,7 +734,7 @@ box-shadow: 0 10px 20px -10px #777 inset;
 	position: relative;
     cursor: pointer;  
     padding: 7px;
-    margin: 0 10px;
+    margin: 0 10px 0 5px;
     color: #777;
 }
 .new-alert {
@@ -744,7 +744,7 @@ box-shadow: 0 10px 20px -10px #777 inset;
     font-weight: bold;
     line-height: 19px;
     position: absolute;
-    /* right: -11px; */
+    right: -7px;
     text-shadow: none;
     /* top: 50%; */
     /* margin-top: -22px; */
@@ -1046,12 +1046,19 @@ input[type="checkbox"]:checked+label:before {
 .available_0 button span {opacity: 0;}
 
 /*available_0*/
-
 @media only screen and (max-device-width : 768px),only screen and (-webkit-min-device-pixel-ratio : 1.5),only screen and (min-device-pixel-ratio : 1.5) {
 	
+.logo, .logo svg {
+    width: 120px;}
 .catalog_sidebar{
 display: none;}
-	
-	
-	
+#nav .topmenu{
+display: none;}
+}
+ul.icongrp {
+margin: 0px 10px;}	
+}
+.icongrp_menu {
+    width: 30px;
+    height: 30px;
 }
