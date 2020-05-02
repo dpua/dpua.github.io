@@ -345,7 +345,8 @@ main {
     background: red;
 }
 .inftext {
-    display: table-caption;
+	position: relative;
+    display: block;
     background: white;
     border-radius: 5px;
     /* padding: 8px 10px; */
