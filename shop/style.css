@@ -337,7 +337,8 @@ main {
     font-size: 20px;
     margin: 10px;
     box-shadow: 0 0 10px black;
-	cursor: pointer;    z-index: 1;
+	cursor: pointer;    
+	z-index: 99;
 }
 #close_infobox:hover {
     color: white;
@@ -351,8 +352,11 @@ main {
     font-size: 20px;
     margin: 10px;
     box-shadow: 0 0 10px black;
-    overflow: auto;    z-index: 1;
+    overflow: auto;    
+	z-index: 99;
+    max-width: 90%;
 }
+#inftext {display: flex;}
 #inftext > * {margin: 10px;}
 .show_form {
     display: flex;
