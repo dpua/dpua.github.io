@@ -736,6 +736,7 @@ box-shadow: 0 10px 20px -10px #777 inset;
     padding: 7px;
     margin: 0 10px 0 5px;
     color: #777;
+	display: table;
 }
 .new-alert {
     border-radius: 100%;
@@ -1052,13 +1053,99 @@ input[type="checkbox"]:checked+label:before {
     width: 120px;}
 .catalog_sidebar{
 display: none;}
-#nav .topmenu{
+
+/*#nav .topmenu{
 display: none;}
-}
+*/
 ul.icongrp {
 margin: 0px 10px;}	
 }
-.icongrp_menu {
-    width: 30px;
-    height: 30px;
+}
+
+
+
+.navtoggler.close span {
+    width: 25px;
+    margin: 5px;
+    display: block;
+    height: 2px;
+    background: #777;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.navtoggler span {
+    width: 25px;
+    margin: 5px;
+    display: block;
+    height: 2px;
+    background: #777;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.navtoggler.active span:first-of-type {
+    -webkit-transform: rotate(45deg) translate3d(5px,5px,0);
+    transform: rotate(45deg) translate3d(5px,5px,0);
+}
+.navtoggler.active span:nth-of-type(2) {
+    -webkit-transform: translate3d(-200px,0px,0);
+    transform: translate3d(-200px,0px,0);
+    opacity: 0;
+}
+.navtoggler.active span:last-of-type {
+    -webkit-transform: rotate(-45deg) translate3d(5px,-5px,0px);
+    transform: rotate(-45deg) translate3d(5px,-5px,0px);
+}
+.navtoggler {
+    padding: 5px;
+    display: table;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+	z-index: 100;
+}
+@media (min-width: 700px){
+.navtoggler {
+display: none;
+}
+}
+@media (max-width: 700px){
+.hidden-xs {
+display: none;
+}
+	#nav {
+		justify-content: space-around;
+	}
+ .topmenu {
+    background: #323232;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 45px 45px 10px 10px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+	box-shadow: 100px 0px 100px 100px black;
+	opacity: 0.95;    
+	max-width: 60%;
+    flex-direction: column;
+    z-index: 1;
+}
+.topmenu.navhide {
+    margin: 0 -100%;
+    height: 100vh;
+    overflow-x: auto;
+	width: 70%;
+}
+.topmenu.navshow {
+    display: table-cell;
+    height: 100vh;
+    overflow-x: auto;    
+	width: 70%;
+}
+.topmenu a {
+    padding: 7px;
+    width: 100%;
+    display: table;
+    margin-top: 4px;
+    float: left;
+}
 }

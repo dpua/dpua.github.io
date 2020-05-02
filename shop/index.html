@@ -124,7 +124,7 @@
 </svg>
 </a>
 	<div class="empty"></div>
-	<ul class="topmenu">
+	<ul class="topmenu navhide">
 	<li><a href="#Home">Главная</a></li>
 	<li><a href="#Shop" class="hov">Магазин</a></li>
 	<li><a id=about href="#About" class="">О нас</a></li>
@@ -159,13 +159,23 @@
 	<div id="cart_content"></div>
   </div>
 </span></li>
-<li class="icongrp_menu">
-			<a href="#" class="fa fa-bars" title=menu></a> 
-			</li>
 	</ul>
 	<div class="navtoggler close"><span></span><span></span><span></span></div>
 	</nav> 
 <script>
+
+	$('#nav').on("click",".active", function (event) {
+        event.preventDefault();
+        $(this).removeClass("active").addClass("close");
+		$("#nav .topmenu").removeClass("navshow").addClass("navhide");  
+    });
+	$('#nav').on("click",".close", function (event) {
+        event.preventDefault();
+        $(this).removeClass("close").addClass("active");
+		$("#nav .topmenu").addClass("navshow").removeClass("navhide");
+    });
+
+	
 function scroll(e){
 var el = document.getElementById('fixed');
 if (pageYOffset > 1){
