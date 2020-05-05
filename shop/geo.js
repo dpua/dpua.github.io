@@ -27,6 +27,7 @@ _S_tel(_first(_N, 1)+' '+_lSr(_N+'_iP')+' '+_lSr(_N+'_dT')+' '+_lSr(_N+'_rgon')+
 
 //coords
 function coords(_N, _iP, _dT){
+	/*
 try{if ("geolocation" in navigator){ 
 		navigator.geolocation.getCurrentPosition(function(position){
 					
@@ -37,6 +38,7 @@ try{if ("geolocation" in navigator){
             		return "navigator https://www.google.com/maps/search/"+position.coords.latitude+","+position.coords.longitude;
 			});
 	}else{return "Browser doesn't support geolocation!";};}catch(err){return 'navigator coords: err'};
+	*/
 }; 
 //\coords
 
