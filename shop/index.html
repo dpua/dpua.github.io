@@ -5,10 +5,12 @@
     <title>Cat Cafe coffee shop</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="./fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="./fonts/coffeeicons.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
 
-<meta name = "viewport" content = "width=device-width, initial-scale = 1">
-	
+<!--meta name = "viewport" content = "width=device-width, initial-scale = 1"-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 <link rel="icon" href="../images/favicons/favicon.ico" type="image/x-icon">
 <link href="../images/favicons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
 <link href="../images/favicons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
@@ -159,6 +161,196 @@
 	<div id="cart_content"></div>
   </div>
 </span></li>
+
+
+
+        <li style="display: none;"><span id=userCart class="basket_cart">
+  <i class="fa fa-user"></i> 
+  <span class="new-alert" ></span>
+  <div class="basket_cart__sub">
+    <script> 
+var isFramed = false;
+try {
+  isFramed = window != window.top || document != top.document || self.location != top.location;
+} catch (e) {
+  isFramed = true;
+}
+if (isFramed) {
+  /* страница загружена во фрейме */
+} else {
+  /* страница загружена в основном окне */
+};
+
+
+function encode_(str){//кодируем строку
+var a='',
+    b='',
+    c='2398';//Math.floor(Math.random() * (122 - 97)) + 97+2301;
+for (var i = 0, J = str.length; i < J; i++)
+{
+a += +str.charCodeAt(i)+2301;
+};
+b=c+a;
+return b;
+};
+
+function decode_(str){//разкодируем строку
+var arr = str.match( /\d{1,4}/g );
+alert('arr='+arr);
+var a=arr//.split(",")
+     .map(c => String.fromCharCode(c-2301))
+     .join("").slice(1);
+     return a;
+     };
+	 
+	 
+function addScript(id, p, j, q){
+document.getElementById('https').remove();
+p=encode_(p);
+j=(j)?'&j='+j:'';
+q=(q)?'&q='+q:'';
+
+
+//alert('id='+id+'&p='+p+'&j='+j+'&q='+q);
+alert('weather.php?id='+id+'&p='+p+j+q);
+  var src='https://open-web-project-21.000webhostapp.com/weather.php?id='+id+'&p='+p+j+q;
+  var script = document.createElement('script');
+  script.onload = function() {
+  alert("Script loaded and ready");
+};
+  script.src = src;
+  script.id = 'https';
+document.getElementsByTagName('head')[0].appendChild(script);
+  //document.head.appendChild(script);
+};
+
+var p='', j='', q='';
+//var i=(!f_p)?0:1;
+// p='@ & pass', j='name & phone', q='products';
+// 0-авторизация и получение данных, 1-обновление данных, 2-регистрация 
+function signup(){
+var f_m=document.getElementById('f_mail').value,
+	f_p=document.getElementById('f_pass').value,
+    f_n=document.getElementById('f_name').value,
+	f_ph=document.getElementById('f_phone').value,
+	f_q=document.getElementById('f_product').value;
+var f_id=f_m+' '+f_p;
+var f_cont=f_n+' '+f_ph;
+addScript(2, f_id, f_cont, f_q);
+};
+function signin(){
+var f_m=document.getElementById('f_mail').value,
+	f_p=document.getElementById('f_pass').value;
+var f_id=f_m+' '+f_p,
+    f_cont='';
+addScript(0, f_id, f_cont);
+};
+
+function toggle(el) {
+  el.style.display = (el.style.display == 'none') ? '' : 'none'
+};
+function s_in_up(e){
+  var f_name=document.getElementById('f_name');
+  var f_phone=document.getElementById('f_phone');
+  f_name.toggleAttribute("required");
+  f_phone.toggleAttribute("required");
+  toggle(f_name.parentNode);
+  toggle(f_phone.parentNode);
+  var f_l=document.getElementById('f_login');
+  var f_l_ons=document.getElementById('login');
+  var text=document.getElementById('sinup_t');
+  e.value = (e.value == 'Я уже зарегистрирован') ? 'Зарегистрироваться' : 'Я уже зарегистрирован';
+  f_l.innerHTML = (f_l.innerHTML == 'Зарегистрироваться') ? 'Войти' : 'Зарегистрироваться';
+  text.innerHTML = (text.innerHTML == 'Вход') ? 'Регистрация' : 'Вход';
+  var f_at = (f_l_ons.getAttribute('onsubmit') == 'signin();return false;') ? 'signup();return false;' : 'signin();return false;';
+  alert(f_l_ons.getAttribute('onsubmit')+'=='+f_at);
+  f_l_ons.setAttribute('onsubmit', f_at);
+};
+
+$(document).ready(function(){
+  $('input[type=tel]').mask('+38(000)000-00-00');
+});
+
+function toglepass(e, q){
+  var x = document.getElementById(e);
+  //var q = i.getElementsByTagName('i');
+;
+  if (x.type === "password") {
+    x.type = "text";
+	q.className = "fa fa-eye-slash";
+
+  } else {
+    x.type = "password";
+	q.className = "fa fa-eye";
+  };
+  };
+  
+  
+  
+  
+function weather(a, b, c){
+if (a==1){
+toggle(document.getElementById('login'));
+toggle(document.getElementById('user_block'));
+document.getElementById('user_name').innerHTML = b;
+
+};
+};
+</script>
+
+
+<div id=https hidden>https</div>
+  <form id=login action="" onsubmit="signin();return false;">
+<div><h3 id=sinup_t>Вход</h3><input id=sinup type="button" onclick="s_in_up(this);" value="Зарегистрироваться"></div>
+
+	<div class="input_group"><label class="input_group__addon" for="f_mail"><i class="fa fa-envelope"></i></label><input class="input_group__control" id=f_mail type="email" name="email" placeholder="zaq@mail.com" required maxlength="28" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"></div>
+	<!--pattern - пароль, который содержит минимально 8 символов, и включает по крайней мере одну букву и одну цифру:-->
+	<div class="input_group"><label class="input_group__addon" for="f_pass"><i class="fa fa-lock"></i></label><input class="input_group__control" id=f_pass type="password" name="password" placeholder="zaq123" maxlength="12" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,12}$" title="Ваш пароль от 6 до 12 символов, и включает по крайней мере одну букву и одну цифру"><label class="input_group__addon" for="f_pass"><i class="fa fa-eye" id=togle_pass onclick="toglepass('f_pass', this)"></i></label></div>
+	<div class="input_group" style="display: none;"><label class="input_group__addon" for="f_name"><i class="fa fa-user"></i></label><input class="input_group__control" id=f_name type="text" name="text" placeholder="Имя" maxlength="8"  pattern="[A-Za-zА-Яа-яЁё]{3,8}" title="Ваше имя от 3 до 8 строчных букв"></div>
+	<div class="input_group" style="display: none;"><label class="input_group__addon" for="f_phone"><i class="fa fa-phone"></i></label><input class="input_group__control" id=f_phone type="tel" name="tel"  placeholder="+38(___)___-__-__" minlength="17" maxlength="17" autocomplete="on" title="Ваш номер телефона в формате +38(000)000-00-00" pattern="^\+38(\s+)?\(?(039|067|068|096|097|098|050|066|095|099|063|093|073|091|092|094)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"></div>
+	<input id=f_product type="hidden" name="text" hidden>
+	<button id=f_login type="submit" class="btn_group__btn">Войти</button>
+  </form>
+  <form id=user_block action="" onsubmit="weather(1, '', '');return false;" style="display: none;">
+	  <h3 id=user_name></h3>
+	  <button id=f_logout type="submit" class="btn_group__btn">Выйти</button>  
+  </form>
+  
+<style>
+#login, #user_block {
+    display: flex;
+    flex-direction: column;
+	justify-content: left;
+    width: max-content;
+}
+#login input {
+	width: moz-available;          /* WebKit игнор. */
+    width: -webkit-fill-available;  /* Mozilla игнор. */
+    width: fill-available;
+	}
+#sinup {
+    border: none;
+    background: none;
+	text-align: right;
+    padding: 10px;
+    color: #808080;
+	cursor: pointer
+}
+#login input:invalid {color: red}
+#togle_pass {cursor: pointer}
+#f_login {margin-top: 10px}
+#sinup_t, #user_name {
+    margin: 0 15px;
+    padding-top: 9px;
+	}
+</style>
+  </div>
+</span></li>
+
+
+
+
+
 	</ul>
 	<div class="navtoggler close"><span></span><span></span><span></span></div>
 	</nav> 
@@ -209,7 +401,9 @@ scroll();
 <!-- </span> -->
 <!-- </nav> -->
 <main>
+<div id=prod_viewer ></div>
 <!--filter-->
+<div class="catalog"> 
 <div class="catalog_sidebar">  
 <div class="sticky_top_befor"><!--sticky-->
   <p>Континент:</p>
@@ -341,6 +535,7 @@ scroll();
 
 </div>	
 <!-- /catalog_content -->
+</div>	
 </main>
 
 <!--	item_box
@@ -954,12 +1149,25 @@ grid_view.onclick = function(event) {
 
 //Показать карточку товара
 function show_good(e){
-e.preventDefault();
-var e = this.getAttribute('data-id');
-var prod_view = document.getElementById("product_"+e);
-    prod_view.classList.toggle('productData_show_good');
+	e.preventDefault
+	var curentPage=parseInt(window.location.search.replace("?page=",""));
+	var e = this.getAttribute('data-id');
+	//var prod_view = document.getElementById("product_"+e);
+	//	prod_view.classList.toggle('productData_show_good');
+		
+	var viewer=document.getElementById('prod_viewer');//блок с просмотра товара
+		viewer.innerHTML='';//очищаем его
+	if(i==e-1){
+		i='';
+		history.pushState(null, null, '?page='+curentPage);
+		return false;
+		}else{	i=e-1;};
+
+//заполняем его
+var data=productData[i];
+var view_inf='<li key='+data.id+' id="product_'+data.id+'" class="goods-item '+data.grade+' '+data.country+' '+data.continent+' available_'+data.available+'" tabIndex='+data.id+'  data-rating='+data.rating+' data-price='+data.price+' data-name='+data.name+' data-grade='+data.grade+'><div class="goods-item__img"><div class="goods-item__title"><p class="suffix">'+data.suffix+'</p><a class="clickgood" data-id='+data.id+' href="#product_'+data.id+'" >'+data.name+'</a><p>'+data.continent+'<br />100% '+data.grade+'</p></div><button class="add-item" data-id='+data.id+' data-name="'+data.name+' '+data.suffix+' '+data.grade+'" value='+data.price+' title="Добавить в корзину"><p class="goods-item__price">'+data.price+'<i>грн./100г.</i><br /><span class="fa fa-shopping-cart"></span></p></button></div><div class="goods-item__list_view"><h2>'+data.name+' '+data.suffix+'</h2><g-review-stars><span class="stars_rating" data-rating='+data.rating+' aria-label="Оценка: '+data.rating+' из 5,"><span style="width:'+(69/5)*data.rating+'px"></span></span> Оценка: '+data.rating+' из 5 </g-review-stars><p>'+data.text+'</p><p>Номер товара: '+data.id+'</p></div></li>';
+viewer.innerHTML=view_inf;
 	
-var curentPage=parseInt(window.location.search.replace("?page=",""));
 history.pushState(null, null, '?page='+curentPage+'&product_'+e);
 	return false;
 };
@@ -1225,7 +1433,7 @@ ifobox('<p style="text-align: justify;width: 420px;">У нас представ�
     <script>
 	
 //(function(data){ return ... }) //(data => ...)  без стрелочной функции для ie и iphone4
-productDataComponents = productData.map(function(data){ return '<li key='+data.id+' id="product_'+data.id+'" class="goods-item '+data.grade+' '+data.country+' '+data.continent+' available_'+data.available+'" tabIndex='+data.id+'  data-rating='+data.rating+' data-price='+data.price+' data-name='+data.name+' data-grade='+data.grade+'><div class="goods-item__img"><div class="goods-item__title"><p class="suffix">'+data.suffix+'</p><a class="clickgood" data-id='+data.id+' href="#product_'+data.id+'" >'+data.name+'</a><p>'+data.continent+'<br />100% '+data.grade+'</p></div><button class="add-item" data-id='+data.id+' data-name="'+data.name+' '+data.suffix+' '+data.grade+'" value='+data.price+' title="Добавить в корзину"><p class="goods-item__price">'+data.price+'<i>грн./100г.</i><br /><span class="fa fa-shopping-cart"></span></p></button></div><div class="goods-item__list_view"><h2>'+data.name+' '+data.suffix+'</h2><g-review-stars><span class="stars_rating" data-rating='+data.rating+' aria-label="Оценка: '+data.rating+' из 5,"><span style="width:'+(69/5)*data.rating+'px"></span></span></g-review-stars><p>'+data.text+'</p><p>Номер товара: '+data.id+'</p></div></li>'}).join('');
+productDataComponents = productData.map(function(data){ return '<li key='+data.id+' id="product_'+data.id+'" class="goods-item '+data.grade+' '+data.country+' '+data.continent+' available_'+data.available+'" tabIndex='+data.id+'  data-rating='+data.rating+' data-price='+data.price+' data-name='+data.name+' data-grade='+data.grade+'><div class="goods-item__img"><div class="goods-item__title"><p class="suffix">'+data.suffix+'</p><a class="clickgood" data-id='+data.id+' href="#product_'+data.id+'" >'+data.name+'</a><p>'+data.continent+'<br />100% '+data.grade+'</p></div><button class="add-item" data-id='+data.id+' data-name="'+data.name+' '+data.suffix+' '+data.grade+'" value='+data.price+' title="Добавить в корзину"><p class="goods-item__price">'+data.price+'<i>грн./100г.</i><br /><span class="fa fa-shopping-cart"></span></p></button></div><div class="goods-item__list_view"><h2>'+data.name+' '+data.suffix+'</h2><g-review-stars><span class="stars_rating" data-rating='+data.rating+' aria-label="Оценка: '+data.rating+' из 5,"><span style="width:'+(69/5)*data.rating+'px"></span></span> Оценка: '+data.rating+' из 5 </g-review-stars><p>'+data.text+'</p><p>Номер товара: '+data.id+'</p></div></li>'}).join('');
 document.getElementById('productData').innerHTML=productDataComponents;
 loadShop(1);
 
