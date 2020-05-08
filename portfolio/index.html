@@ -1,1 +1,402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cat Cafe coffee shop</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="./fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="./fonts/coffeeicons.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
 
+<!--meta name = "viewport" content = "width=device-width, initial-scale = 1"-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="icon" href="../images/favicons/favicon.ico" type="image/x-icon">
+<link href="../images/favicons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+<link href="../images/favicons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+<link href="../images/favicons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+<link href="../images/favicons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+<link href="../images/favicons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+<link href="../images/favicons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="../images/favicons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="../images/favicons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<link href="../images/favicons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+<link href="../images/favicons/favicon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+<link href="../images/favicons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png">
+<link href="../images/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+<link href="../images/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="../images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<meta content="#434d61" name="msapplication-TileColor">
+<meta content="../images/favicons/mstile-144x144.png" name="msapplication-TileImage">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cinzel:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+
+
+ body { 
+    font-family: Roboto;
+    font-style: Thin;
+    font-weight: 200;
+    color: #383838;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+background-color: #eee;
+    background: linear-gradient(112deg, #ffffff 0%, #eee 50%, #ffffff 50.1%, #eee 100%) fixed;
+}	
+p {
+    padding: 0 10px;
+    line-height: 120%;
+}
+body::before {content: '(max-width: 767px)';display: none};
+
+a {width: min-content;
+    display: contents;
+    color: #030010;}
+	
+	
+.flex {
+    position: relative;
+    height: 500px;    
+	margin: 0 auto 200px;
+    width: 543px;
+    left: -40px;
+    right: 0;
+}
+	
+.border{         
+	position: absolute;
+    bottom: 0;
+	/*border: 1px solid rgba(255, 255, 255, 0.22);*/
+    border-radius: 10px;
+    /* box-sizing: border-box; */
+    margin: 20px;
+    display: flex;
+    background: linear-gradient(0deg, #000000db 0%, #0000 100%), linear-gradient(112deg, black 0%, #555 50%, black 50.5%, #222 100%);
+    box-shadow: 0px 5px 20px -5px black, 0px 1px 3px 0px white inset;
+	}
+	
+.img { 
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0.95;    
+	background: white;
+	}
+	
+.img img {
+	width: 100%;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: -5px;
+	}
+	.xs {
+    padding: 34px 4px;
+	width: 88px;	
+    height: 127px;
+	margin-left: 280px;
+    margin-bottom: -180px;
+	}.xs::before {    
+	content: "";
+    width: 45px;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: 15px auto;
+    background: url(./images/xs_b.png) center no-repeat;
+    background-size: cover;
+	}.xs::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 8px auto;
+    background: url(./images/xs_a.png) center no-repeat;
+    background-size: cover;
+	}
+	.sm {
+    padding: 27px 21px;
+	width: 169px;	
+    height: 220px;
+	margin-left: 380px;
+    margin-bottom: -120px;
+	}.sm::before {    
+	content: "";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: 15px auto;
+    background: url(./images/sm_b.png) center no-repeat;
+    background-size: cover;
+	}.sm::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 5px auto;
+    background: url(./images/sm_a.png) center no-repeat;
+    background-size: cover;
+	}
+	.md {
+    padding: 17px;
+	width: 349px;	
+    height: 217px;
+	margin-left: -30px;
+    margin-bottom: -50px;
+	}
+	.md::after {
+	content: "";
+    width: 443px;
+    height: 23px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: -20px -30px;
+    background: url(./images/md_b.png) center no-repeat;
+filter: drop-shadow(0px 0px 12px black);
+}
+	.lg {
+    padding: 23px;
+	width: 543px;	
+    height: 305px;
+	margin-bottom: 145px;
+	}
+	.lg::after {
+	content: "";
+    width: 271px;
+    height: 125px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: -125px auto;
+    background: url(./images/lg_b.png) center no-repeat;
+filter: drop-shadow(0px 0px 12px black);
+}
+
+
+
+/* Large desktops and laptops */
+@media only screen and (min-width: 1200px) {
+body::before {content: '(min-width: 1200px)';}
+	.flex {
+    margin: 0 auto 80px;
+    left: 0;
+	}
+	.xs {
+    margin-left: 480px;
+    margin-bottom: -60px;
+	}
+	.sm {
+	margin-left: 550px;
+    margin-bottom: -40px;
+	}
+	.md {
+	margin-left: -200px;
+    margin-bottom: -40px;
+	}
+	.lg {
+	margin-bottom: 145px;
+	}
+}/* Large desktops and laptops */
+
+
+
+/* Portrait tablets and medium desktops */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+body::before {content: 'min-width: 992px) and (max-width: 1199px)';}
+	.flex {
+    margin: 0 auto 60px;
+    left: 0;
+	}
+	.xs {
+    margin-left: 480px;
+    margin-bottom: -80px;
+	}
+	.sm {
+	margin-left: 550px;
+    margin-bottom: -40px;
+	}
+	.md {
+	margin-left: -300px;
+    margin-bottom: -40px;
+	}
+	.lg {
+	margin-bottom: 145px;
+	}
+}/* Portrait tablets and medium desktops */
+
+
+
+/* Portrait tablets and small desktops */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+body::before {content: '(min-width: 768px) and (max-width: 991px)';}
+	.flex {
+    margin: 0 auto 100px;
+	}
+	.xs {
+	margin-left: 420px;
+    margin-bottom: -80px;
+	}
+	.sm {
+	margin-left: 490px;
+    margin-bottom: -40px;
+	}
+	.md {
+	margin-left: -100px;
+    margin-bottom: -40px;
+	}
+	.lg {
+	margin-bottom: 145px;
+	}
+}/* Portrait tablets and small desktops */
+h1 {
+    margin: 46px 0 33px 0;
+    font-family: Cinzel;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 110.13%;
+    text-align: center;
+    color: rgba(75, 78, 91, 0.75);
+} 
+header {    
+    background: url('../decorativeterrarium/images/jazminttquaynor-105210-unsplash.png') left bottom no-repeat, url('../decorativeterrarium/images/jazminttquaynor-105210-unsplash (1).png') right bottom no-repeat;
+	background-size: 300px;
+	background-color: white;
+    padding: 1px 0 0 0;
+    margin: 0;
+	}
+	
+header p {
+    font-family: Roboto;
+    font-style: Thin;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: center;
+    color: #9E9D9B;
+}
+section {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+	flex-direction: row;
+    Justify-content: center;
+    flex-wrap: wrap;
+}
+article {
+    width: 50%;
+    max-width: 450px;
+    min-width: 310px;
+    margin: 0
+}
+main {
+    background: url('../decorativeterrarium/images/jazminttquaynor-105210-unsplash.png') left -100px bottom 50px no-repeat, url('../decorativeterrarium/images/jazminttquaynor-105210-unsplash (1).png') right -10px bottom -480px no-repeat;
+    background-color: white;
+	box-shadow: 0 10px 10px -10px black inset;
+	}
+</style>
+	  
+</head>
+<body>
+	<header>
+		<nav id="nav"></nav>
+		<h1>decorative terrarium</h1>
+		<p>Тестовое задание на должность frontend разработчика<br><strong>ADP Solution</strong><br>26 марта 2020 г.</p>
+
+	
+
+  <div class=flex>
+  <!--lg (for laptops and desktops - screens equal to or greater than 1200px wide) 1280 × 720-->
+  <div class="border lg"> 
+  <div class="img"> 
+    <img src="./decorativeterrarium_lg.jpg">
+  </div>
+  </div>
+  <!--md (for small laptops - screens equal to or greater than 992px wide) 1024 720-->
+  <div class="border md"> 
+  <div class="img">
+    <img src="./decorativeterrarium_md.jpg">
+  </div>
+  </div>
+  <!--sm (for tablets - screens equal to or greater than 768px wide) 768	1024-->
+  <div class="border sm"> 
+  <div class="img">
+    <img src="./decorativeterrarium_sm.jpg">
+  </div>
+  </div>
+  <!--xs (for phones - screens less than 768px wide)640	960	device-width 320 480-->
+  <div class="border xs"> 
+  <div class="img">
+    <img src="./decorativeterrarium_xs.jpg">
+  </div>
+  </div>
+  
+  </div>
+  	</header>
+  
+<main>  
+<section>
+	<article>
+		<h3><strong><i class="fa fa-briefcase"></i> Поставленные задачи:</strong></h3>
+		<p>
+		— Код должен проходить W3C https://validator.w3.org/<br>
+		— Семантическая разметка html<br>
+		— Кроссбраузерность, адаптивность<br>
+		— Flexbox. Нельзя использовать bootstrap<br>
+		— Соответствие макету
+		</p>
+	</article>
+	<article>
+		<h3><strong><i class="fa fa-check-circle"></i> Что было сделано:</strong></h3>
+		<p>Адаптивная верстка первой страницы сайта (html, css, svg) с использованием Flexbox.<br>
+		Код прохел проверку валидации  W3C https://validator.w3.org/ без ошибок и предупреждений.<br>
+		Страница сайта полностью соответствует макету и поставленным задачам.
+		</p>
+	</article>
+</section>		
+<main>
+<footer>
+</footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "coffeeicons";
+  src: url("./coffeeicons.eot"); /* IE9 Compat Modes */
+  src: url("./coffeeicons.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./coffeeicons.otf") format("opentype"), /* Open Type Font */
+    url("./coffeeicons.svg") format("svg"), /* Legacy iOS */
+    url("./coffeeicons.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./coffeeicons.woff") format("woff"), /* Modern Browsers */
+    url("./coffeeicons.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+.coffeeicons {
+  font-family: "coffeeicons";
+}
