@@ -748,7 +748,8 @@ g[data-type="Не выращивают кофе"]{fill: rgb(128, 90, 59); cursor
  //document.addEventListener("mousemove", myFunction);
 var oldid_map='';
 function popover_map(e) {
-
+var name=this.getAttribute('data-name');
+if(name===null)return false;
     CurX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
     CurY = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
 	var el=document.querySelector(".popover_map");
@@ -763,7 +764,7 @@ if(this.id==oldid_map) return false;
 	var cc=this.getAttribute('data-cc');
 	type=(type)?'<br><small>'+type+'</small>':'';
 	var flag=(cc)?'<span class="flag-icon flag-icon-'+cc.toLowerCase()+'"></span> ':'';
-	document.querySelector(".popover_map-content").innerHTML = flag+this.getAttribute('data-name')+type;
+	document.querySelector(".popover_map-content").innerHTML = flag+name+type;
 };
 
 function popover_map_hide() {
@@ -798,6 +799,9 @@ function popover_map_hide() {
    var du=(countryElements[i].getAttribute('data-url'))?countryElements[i].getAttribute('data-url'):'';
    var dt=(countryElements[i].getAttribute('data-type'))?countryElements[i].getAttribute('data-type'):'';
   };
+  
+var el=document.getElementById('g6623');
+el.onclick();
 </script> 
 </body>
 </html>
