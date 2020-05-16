@@ -244,7 +244,7 @@ q=(q)?'&q='+q:'';
   var src='https://open-web-project-21.000webhostapp.com/weather.php?id='+id+'&p='+p+j+q;
   var script = document.createElement('script');
   script.onload = function() {
-  alert("Script loaded and ready");
+  //alert("Script loaded and ready");
 };
   script.src = src;
   script.id = 'https';
@@ -2107,7 +2107,7 @@ function addToCart_v(e){
 	itemTitle = data.name+' '+data.suffix+' '+data.grade, // название товара
     itemPrice = data.price,
 	i=document.getElementById('amount_n__v'+e).value; // стоимость товара
-	alert("i="+i+' itemTitle '+itemTitle);
+	//alert("i="+i+' itemTitle '+itemTitle);
   if(cartData.hasOwnProperty(e)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
     cartData[e][1] = i;
   } else { // если товара в корзине еще нет, то добавляем в объект
