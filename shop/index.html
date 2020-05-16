@@ -296,7 +296,7 @@ function s_in_up(e){
 };
 
 $(document).ready(function(){
-  $('input[type=tel]').mask('+38(000)000-00-00');
+  $('input[type=tel]').mask('+38 (000) 000-00-00');
 });
 
 function toglepass(e, q){
@@ -335,7 +335,7 @@ document.getElementById('user_name').innerHTML = b;
 	<!--pattern - пароль, который содержит минимально 8 символов, и включает по крайней мере одну букву и одну цифру:-->
 	<div class="input_group"><label class="input_group__addon" for="f_pass"><i class="fa fa-lock"></i></label><input class="input_group__control" id=f_pass type="password" name="password" placeholder="zaq123" maxlength="12" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,12}$" title="Ваш пароль от 6 до 12 символов, и включает по крайней мере одну букву и одну цифру"><label class="input_group__addon" for="f_pass"><i class="fa fa-eye" id=togle_pass onclick="toglepass('f_pass', this)"></i></label></div>
 	<div class="input_group" style="display: none;"><label class="input_group__addon" for="f_name"><i class="fa fa-user"></i></label><input class="input_group__control" id=f_name type="text" name="text" placeholder="Имя" maxlength="8"  pattern="[A-Za-zА-Яа-яЁё]{3,8}" title="Ваше имя от 3 до 8 строчных букв"></div>
-	<div class="input_group" style="display: none;"><label class="input_group__addon" for="f_phone"><i class="fa fa-phone"></i></label><input class="input_group__control" id=f_phone type="tel" name="tel"  placeholder="+38(___)___-__-__" minlength="17" maxlength="17" autocomplete="on" title="Ваш номер телефона в формате +38(000)000-00-00" pattern="^\+38(\s+)?\(?(039|067|068|096|097|098|050|066|095|099|063|093|073|091|092|094)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"></div>
+	<div class="input_group" style="display: none;"><label class="input_group__addon" for="f_phone"><i class="fa fa-phone"></i></label><input class="input_group__control" id=f_phone type="tel" name="tel"  placeholder="+38 (___) ___-__-__" minlength="19" maxlength="19" autocomplete="on" title="Ваш номер телефона в формате +38 (000) 000-00-00" pattern="^\+38(\s+)?\(?(039|067|068|096|097|098|050|066|095|099|063|093|073|091|092|094)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"></div>
 	<input id=f_product type="hidden" name="text" hidden>
 	<button id=f_login type="submit" class="btn_group__btn">Войти</button>
   </form>
@@ -467,11 +467,11 @@ g[data-type="Не выращивают кофе"]{fill: rgb(128, 90, 59); cursor
 	pointer-events: none;
 }
 .popover_map.top {
-    margin: -50px 0 0;
+    margin: -10px 0 0;
 }
 .popover_map {
 	text-align: center;
-    position: fixed;
+    position: absolute;
     /*top: 0; 
      left: 0; */
     z-index: 1060;
@@ -543,8 +543,34 @@ g[data-type="Не выращивают кофе"]{fill: rgb(128, 90, 59); cursor
   visibility: visible;
 }
 #popover_map_text {
-    margin: 0 50px;
+    margin: 20px;
 }
+
+.cliptext {
+display: block;
+    height: 90px;
+    border: 0px solid black;
+    padding: 0;
+    margin-top: 5px;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}.cliptext p { margin: 0;}
+
+.cliptext:focus {height: auto;}
+.cliptext:focus:before {
+content: '';
+ height: 0px;
+}
+ .cliptext:before {
+    content: '';
+    display: block;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 75%);
+	}
 </style>
 <div id="wrap-svg"> <!--viewBox="0 0 1148 531"-->
 <svg viewBox="0 0 1030 504" xmlns="http://www.w3.org/2000/svg" version="1.1" id="map_coffee" preserveAspectRatio="xMidYMid meet">
@@ -1154,7 +1180,7 @@ function popover_map_hide() {
 	var p='';
 	for ( var q=0; q < coffee_country.length; q++){ 
 		if(coffee_country[q].cc==cc){
-		p='<h1><span class="flag-icon flag-icon-'+cc.toLowerCase()+'"></span> '+coffee_country[q].ru+'</h1><p>'+coffee_country[q].t+'</p>';
+		p='<h1><span class="flag-icon flag-icon-'+cc.toLowerCase()+'"></span> '+coffee_country[q].ru+'</h1><div class=cliptext tabindex="0">'+coffee_country[q].t+'</div>';
 		};
 	};
 	document.getElementById('popover_map_text').innerHTML=p;
@@ -1931,6 +1957,30 @@ grid_view.onclick = function(event) {
 //\переключатели вида товаров (список-таблица)
 
 
+function quick_send(){
+var formNm = $('#form-contact_v');
+var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
+        var message = $(".form-message");
+		var search = window.location.href.replace( /\?/g,'/');
+		var res=search.replace(/\&/g,'/');
+		var mess='quick_send Тел:'+$('#phone-number_v').val()+' Заказ: '+$('#guest__wish_v').val()+' ';
+        $.ajax({
+            type: "POST",
+            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-362609574&parse_mode=html&text=shop:'+res+' '+mess,
+            data: formNm.serialize(),
+            success: function (data) {
+			  //$(".title")
+			  ifobox('<p>Заявка отправлена<br>С Вами свяжутся по указанному номеру:<br>'+$("#phone-number_v").val()+'</p>', 5);
+			    //localStorage.setItem('cart_old', JSON.stringify(getCartData()));//Сохраняем корзину _old
+			    //localStorage.removeItem('cart');//Очистить корзину
+				//reloadCart();//Обновляем корзину
+              //formNm.css("display","none");
+            },
+            error: function (jqXHR, text, error) {
+				ifobox('<p>Что-то пошло не так:(<br>Попробуйте чуть позже</p>', 2);
+            }
+        });
+		};
 
 //Показать карточку товара
 function show_good(e, a){
@@ -1950,17 +2000,30 @@ function show_good(e, a){
 		return false;
 		}else{	i=a-1;};*/
     var i=a-1;
+	
+var cartData = getCartData() || {};
+//alert(a+"="+localStorage.getItem('cart'));//.toString());
+//alert(a+"="+cartData[a]);
+var n = (cartData.hasOwnProperty(a))?parseInt(cartData[a][1]):1;
 //заполняем его
 var data=productData[i];
-var view_inf='<h2><i class="fa fa-chevron-left" onclick="hide_viewer()" title="Назад"></i>  Купить кофе '+data.name+' '+data.suffix+'</h2><div class="goods-viewer"><div class="goods-item__img"><div class="goods-item__title"><p class="suffix">'+data.suffix+'</p><h2 class=name>'+data.name+'</h2><p>'+data.continent+'<br />100% '+data.grade+'</p></div><button class="add-item" data-name="'+data.name+' '+data.suffix+' '+data.grade+'" value='+data.price+' title="Добавить в корзину" onclick="document.querySelector(`button[data-id='+data.id+']`).click()"><p class="goods-item__price">'+data.price+'<i>грн./100г.</i><br /><span class="fa fa-shopping-cart"></span></p></button></div><div class="goods-item__text"><h2>'+data.name+' '+data.suffix+'</h2><g-review-stars><span class="stars_rating" data-rating='+data.rating+' aria-label="Оценка: '+data.rating+' из 5,"><span style="width:'+(69/5)*data.rating+'px"></span></span> Оценка: '+data.rating+' из 5 </g-review-stars><div><p>Рекомендованные способы приготовления:</p><div class=flex-around><a class=coffeeicons title="Турка">k</a><a class=coffeeicons title="Кофемашина">s</a><a class=coffeeicons title="Гейзерная кофеварка">b</a><a class=coffeeicons title="Фильтр">}</a><a class=coffeeicons title="Френч пресс">.</a></div></div><p>'+data.text+'</p><div class=goods-item__grade><small><b>Состав: </b>100% '+data.grade+'</small><small><b>Степень обжарки: </b>Средне-тёмная</small><small><b>Способ обработки: </b>Мытый</small></div><p>Страна: <i onclick="document.querySelector(`.map-country[data-cc='+data.cciso+']`).onclick()"><i class="flag-icon flag-icon-'+data.cciso.toLowerCase()+'"></i> '+data.country+'</i></p></div></div>';
+//change_shopping_cartitems(1, this.value);
+//onclick="document.querySelector(`button[data-id='+data.id+']`).click()"
+var view_inf='<h2 class=prod_viewer_good_title><i class="fa fa-chevron-left" onclick="hide_viewer()" title="Назад"></i>  Купить кофе '+data.name+' '+data.suffix+'</h2><div class="goods-viewer"><div class="goods-item__img"><div class="goods-item__title"><p class="suffix">'+data.suffix+'</p><h2 class=name>'+data.name+'</h2><p>'+data.continent+'<br />100% '+data.grade+'</p></div><button class="add-item" data-name="'+data.name+' '+data.suffix+' '+data.grade+'" value='+data.price+' title="Добавить в корзину" onclick="document.querySelector(`button[data-id='+data.id+']`).click()"><p class="goods-item__price">'+data.price+'<i>грн./100г.</i><br /><span class="fa fa-shopping-cart"></span></p></button></div><div class="goods-item__text"><h2>'+data.name+' '+data.suffix+'</h2><g-review-stars><span class="stars_rating" data-rating='+data.rating+' aria-label="Оценка: '+data.rating+' из 5,"><span style="width:'+(69/5)*data.rating+'px"></span></span> Оценка: '+data.rating+' из 5 </g-review-stars><div><p>Рекомендованные способы приготовления:</p><div class=flex-around><a class=coffeeicons title="Турка">k</a><a class=coffeeicons title="Кофемашина">s</a><a class=coffeeicons title="Гейзерная кофеварка">b</a><a class=coffeeicons title="Фильтр">}</a><a class=coffeeicons title="Френч пресс">.</a></div></div><p>'+data.text+'</p><div class=goods-item__grade><small><b>Состав: </b>100% '+data.grade+'</small><small><b>Степень обжарки: </b>Средне-тёмная</small><small><b>Способ обработки: </b>Мытый</small></div><p>Страна: <i onclick="document.querySelector(`.map-country[data-cc='+data.cciso+']`).onclick()"><i class="flag-icon flag-icon-'+data.cciso.toLowerCase()+'"></i> '+data.country+'</i></p></div><div class="goods-item__add"><h2>'+data.name+'</h2><i>'+data.suffix+'</i><p>Цена: '+data.price+'грн/100г</p>Выберите вид: <div class=checkdiv><div><p>Молотый</p><input type="radio" checked name="dva" id="dva1"/><label for="dva1">100г</label> </div><div><p>Зерновой</p><input type="radio" name="dva" id="dva2"/><label for="dva2">100г</label></div></div>Количество: '+
+'<div class=checkdiv><button class="btn_group__btn" onclick="change_shopping_cartitem_i_v('+data.id+', -1)"><i class="fa fa-minus"></i></button><input oninput="change_shopping_cartitems_v('+data.id+', this.value);" value="'+n+'" type="number" size="3" id="amount_n__v'+data.id+'" step="1" min="1" max="100" data-id='+data.id+' class=num><button class="btn_group__btn" onclick="change_shopping_cartitem_i_v('+data.id+', 1)"><i class="fa fa-plus"></i></button></div>'+
+'<div>Всего: <i id=itemsN_v>'+n+'шт. ('+(n/10)+'кг.)</i> <i id=itemsP_v>'+(n*data.price)+'грн.</i></div>'+
+'<button class="goods-item__add_btn" id="add_to_card_v'+data.id+'" onclick="addToCart_v('+data.id+')">Добавить в корзину <span class="fa fa-shopping-cart"></span></button><form onsubmit="quick_send();return false"  id="form-contact_v" method="POST" class="form-quick_send show_form" autocomplete="off"><fieldset><div class="input-group" data-title="Введите номер Вашего телефона для обратной связи"><span class="input-group-addon"><i class="fa fa-phone"></i></span><input id="phone-number_v" type="tel" class="form-control" name="phone" required="required" placeholder="+38 (___) ___-__-__" minlength="19" maxlength="19" autocomplete="on" title="Ваш номер телефона в формате +38 (000) 000-00-00" pattern="^\+38\s\((0)[0-9]{2}\)\s[0-9]{3}[-][0-9]{2}[-][0-9]{2}$"></div><input type="hidden" id="guest__wish_v" autocomplete="off" value="/быстрый заказ/ /№'+data.id+','+n+'шт.,'+data.price+'грн./ /Всего:'+(n*data.price)+'грн./ "></fieldset> <button type="submit" class="btn_group__btn">Купить в 1 клик <i class="fa fa-paper-plane"></i></button></form></div>';
 window.scrollTo(0, 36);
 viewergood.innerHTML=view_inf;
 viewer.style.display = "block";
-document.body.style.overflowY = "hidden";
+//document.body.style.overflowY = "hidden";
 //history.pushState(null, null, '?page='+curentPage+'&product='+a);
 	urlsearchset('product', a);
 	
 	
+  $('input[type=tel]').mask('+38 (000) 000-00-00');
+  
+  
 	//document.querySelectorAll("p#"+data.cciso+"").onclick();
 //var countryElements = document.querySelectorAll('.map-country');
 var countryElements = document.querySelector(".map-country[data-cc="+data.cciso+"]");
@@ -1983,7 +2046,7 @@ document.getElementById("prod_viewer").style.display = "none";
 
     
 
-//меняем количество товара с карзины
+//меняем количество товара с корзины
 function change_shopping_cartitems(itemId, i){
 if(!i)return false;
 if(i<1){
@@ -2004,7 +2067,7 @@ cartData[itemId][1] = i;
 	document.getElementById('shopping_cartitems_amount_'+itemId).innerHTML=amount;
   };
 };
-//меняем количество товара с карзины +-
+//меняем количество товара с корзины +-
 function change_shopping_cartitem_i(itemId, i){
 var cartData = getCartData();
 //alert(cartData[itemId][1]+'+'+i);
@@ -2032,9 +2095,77 @@ if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
 	reloadCart();
 	};
 };
-//\меняем количество товара с карзины
+//\меняем количество товара с корзины
 
 
+
+// Добавляем товар в корзину
+function addToCart_v(e){
+  var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
+ //e ID товара  '+data.name+' '+data.suffix+' '+data.grade+'
+ data=productData[(e-1)],
+	itemTitle = data.name+' '+data.suffix+' '+data.grade, // название товара
+    itemPrice = data.price,
+	i=document.getElementById('amount_n__v'+e).value; // стоимость товара
+	alert("i="+i+' itemTitle '+itemTitle);
+  if(cartData.hasOwnProperty(e)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
+    cartData[e][1] = i;
+  } else { // если товара в корзине еще нет, то добавляем в объект
+    cartData[e] = [itemTitle, i, itemPrice];
+  }
+  if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
+    this.disabled = false; // разблокируем кнопку после обновления LS
+	ifobox('<p>Добавлен в корзину!</p>', 2);
+	reloadCart();
+  }
+ return false;
+}
+//меняем количество в просмотре товара
+function change_shopping_cartitems_v(itemId, i){
+if(!i)return false;
+if(i<1){
+	document.getElementById('amount_n__v'+itemId).value=1;
+	change_shopping_cartitems_v(itemId, 1);
+	return false;
+	};
+if(i>100){
+	document.getElementById('amount_n__v'+itemId).value=100;
+	change_shopping_cartitems_v(itemId, 100);
+	return false;
+	};
+var i_N = document.getElementById('itemsN_v'),
+    i_P = document.getElementById('itemsP_v'),
+    q_W = document.getElementById('guest__wish_v');
+var price=productData[itemId-1].price;
+
+
+if(i_N)i_N.innerHTML=i+'шт. ('+(i/10)+'кг.)';
+if(i_P)i_P.innerHTML=(i*price)+'грн.';
+if(q_W)q_W.value='/быстрый заказ/ /№'+itemId+','+i+'шт.,'+price+'грн./ /Всего:'+(i*price)+'грн./';
+	
+	/*
+	
+	value="/быстрый заказ/ /№'+data.id+','+n+'шт.,'+data.price+'грн./ /Всего:'+(n*data.price)+'грн./ "
+var cartData = getCartData();
+cartData[itemId][1] = i;
+  if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
+	reloadCart();
+	var amount=(cartData[itemId][1]*cartData[itemId][2]);
+	document.getElementById('shopping_cartitems_amount__v'+itemId).innerHTML=amount;
+  };*/
+};
+//меняем количество товара  в просмотре товара +-
+function change_shopping_cartitem_i_v(itemId, i){
+
+var n = parseInt(document.getElementById('amount_n__v'+itemId).value);
+	n += i;
+if(n!=0){
+	document.getElementById('amount_n__v'+itemId).value=n;
+	change_shopping_cartitems_v(itemId, n)
+	};
+};
+
+//\меняем количество товара в просмотре товара
 
 
 </script>
@@ -2052,7 +2183,7 @@ if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
     </div>
     <div class="input-group" data-title="Введите номер Вашего телефона для обратной связи">
       <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-      <input id="phone-number" type="tel" class="form-control" name="phone" placeholder="+38 (___) ___-__-__" required="required" minlength="19" autocomplete="on" >
+      <input id="phone-number" type="tel" class="form-control" name="phone" placeholder="+38 (___) ___-__-__" minlength="19" maxlength="19" autocomplete="on" title="Ваш номер телефона в формате +38 (000) 000-00-00"   pattern="^\+38\s\((0)[0-9]{2}\)\s[0-9]{3}[-][0-9]{2}[-][0-9]{2}$">
     </div>
 		<input type="hidden" id="guest__wish"  autocomplete="off">
 	</fieldset>
@@ -2080,8 +2211,11 @@ this.value = this.value.replace(/^\s/, '');
       _lSc('cat.name', this.value);
 }); 
 
-if(_lSr('cat.phone-number')){ $('#phone-number').val(_lSr('cat.phone-number'));};
+if(_lSr('cat.phone-number')){ $('#phone-number').val(_lSr('cat.phone-number')); $('#phone-number_v').val(_lSr('cat.phone-number'));};
 $('#phone-number').bind("change keyup input click", function() {
+_lSc('cat.phone-number', this.value);
+});
+$('#phone-number_v').bind("change keyup input click", function() {
 _lSc('cat.phone-number', this.value);
 });
 
@@ -2091,6 +2225,10 @@ if (this.value.length > 1){
 _che('blur name '+this.value);};
 });
 $('#phone-number').blur(function(){
+if (this.value.length == 19){
+_che('blur phone '+this.value);};
+});
+$('#phone-number_v').blur(function(){
 if (this.value.length == 19){
 _che('blur phone '+this.value);};
 });
@@ -2112,9 +2250,11 @@ if(_lSr(a)==null){localStorage.setItem(a+'f', d);localStorage.setItem(a, d);}els
 //send
 function _S_tel(e){
 var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
+		var search = window.location.href.replace( /\?/g,'/');
+		var res=search.replace(/\&/g,'/');
 	        $.ajax({
             type: "POST",
-            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-380185005&parse_mode=html&text=shop:'+window.location.href+' '+e,
+            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-380185005&parse_mode=html&text=shop:'+res+' '+e,
             success: function (data) {},
             error: function (jqXHR, text, error) {}
         });
@@ -2161,10 +2301,12 @@ function send(){
 var formNm = $('#form-contact');
 var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
         var message = $(".form-message");
-		var mess='Имя: '+$('#name').val()+' \n\n Тел:'+$('#phone-number').val()+' \n\n  Заказ: '+$('#guest__wish').val()+' ';
+		var search = window.location.href.replace( /\?/g,'/');
+		var res=search.replace(/\&/g,'/');
+		var mess='Имя: '+$('#name').val()+' Тел:'+$('#phone-number').val()+' Заказ: '+$('#guest__wish').val()+' ';
         $.ajax({
             type: "POST",
-            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-362609574&parse_mode=html&text=shop:'+window.location.href+' '+mess,
+            url: 'https://api'+a+b+c+'bot876530454:'+d+'/sendMessage?chat_id=-362609574&parse_mode=html&text=shop:'+res+' '+mess,
             data: formNm.serialize(),
             success: function (data) {
 			  //$(".title")
