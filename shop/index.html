@@ -340,7 +340,7 @@ document.getElementById('user_name').innerHTML = b;
 
 
 <div id=https hidden>https</div>
-  <form id=login action="" onsubmit="signin();return false;">
+  <form id=login action="#" onsubmit="signin();return false;">
 <div><h3 id=sinup_t>Вход</h3><input id=sinup type="button" onclick="s_in_up(this);" value="Зарегистрироваться"></div>
 
 	<div class="input_group"><label class="input_group__addon" for="f_mail"><i class="fa fa-envelope"></i></label><input class="input_group__control" id=f_mail type="email" name="email" placeholder="zaq@mail.com" required maxlength="28" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"></div>
@@ -351,7 +351,7 @@ document.getElementById('user_name').innerHTML = b;
 	<input id=f_product type="hidden" name="text" hidden>
 	<button id=f_login type="submit" class="btn_group__btn">Войти</button>
   </form>
-  <form id=user_block action="" onsubmit="weather(1, '', '');return false;" style="display: none;">
+  <form id=user_block action="#" onsubmit="weather(1, '', '');return false;" style="display: none;">
 	  <h3 id=user_name></h3>
 	  <button id=f_logout type="submit" class="btn_group__btn">Выйти</button>  
   </form>
