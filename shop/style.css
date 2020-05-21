@@ -105,6 +105,9 @@ ul.icongrp {
 svg path{
   /*fill: currentcolor;*/
 }
+.logo svg path{
+	fill: #72747C;
+}
 .logo svg:hover  path{
 	fill: #333;
 }
