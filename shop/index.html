@@ -133,33 +133,33 @@ history.pushState(null, null, '?'+searchParams.toString());
 </defs>
 <g id="surface1">
 <rect x="0" y="0" width="707" height="185" style="fill: rgba(255, 255, 255, 0);fill-opacity:0;stroke:none;"/>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g style="fill-opacity:1;">
   <use xlink:href="#glyph0-1" x="8.312499" y="137.999989"/>
 </g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g style="fill-opacity:1;">
   <use xlink:href="#glyph0-2" x="40.012494" y="137.999989"/>
   <use xlink:href="#glyph0-3" x="114.312488" y="137.999989"/>
 </g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g style="fill-opacity:1;">
   <use xlink:href="#glyph0-4" x="162.612475" y="137.999989"/>
 </g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g style="fill-opacity:1;">
   <use xlink:href="#glyph1-1" x="225.515612" y="137.999989"/>
 </g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g style="fill-opacity:1;">
   <use xlink:href="#glyph1-2" x="342.515602" y="137.999989"/>
 </g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g style="fill-opacity:1;">
   <use xlink:href="#glyph0-2" x="451.078093" y="137.999989"/>
   <use xlink:href="#glyph0-3" x="525.378087" y="137.999989"/>
 </g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g style="fill-opacity:1;">
   <use xlink:href="#glyph0-5" x="573.678074" y="137.999989"/>
 </g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g style="fill-opacity:1;">
   <use xlink:href="#glyph0-6" x="606.478059" y="137.999989"/>
 </g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g style="fill-opacity:1;">
   <use xlink:href="#glyph0-7" x="647.278044" y="137.999989"/>
 </g>
 </g>
@@ -2391,7 +2391,7 @@ ifobox('<p style="text-align: justify;width: 420px;">У нас представ�
     <script>
 	
 //(function(data){ return ... }) //(data => ...)  без стрелочной функции для ie и iphone4
-productDataComponents = productData.map(function(data){ return '<li key='+data.id+' id="product_'+data.id+'" class="goods-item '+data.grade+' '+data.country+' '+data.continent+' available_'+data.available+'" tabIndex='+data.id+'  data-rating='+data.rating+' data-price='+data.price+' data-name='+data.name+' data-grade='+data.grade+'><div onclick="show_good(event, '+data.id+')" class="goods-item__img"><div class="goods-item__title"><p class="suffix">'+data.suffix+'</p><a class="clickgood" data-id='+data.id+' onclick="show_good(event, '+data.id+')" href="?product='+data.id+'" >'+data.name+'</a><p>'+data.continent+'<br />100% '+data.grade+'</p></div><button class="add-item" data-id='+data.id+' data-name="'+data.name+' '+data.suffix+' '+data.grade+'" value='+data.price+' title="Добавить в корзину"><p class="goods-item__price">'+data.price+'<i>грн./100г.</i><br /><span class="fa fa-shopping-cart"></span></p></button></div><div class="goods-item__list_view"><h2>'+data.name+' '+data.suffix+'</h2><g-review-stars><span class="stars_rating" data-rating='+data.rating+' aria-label="Оценка: '+data.rating+' из 5,"><span style="width:'+(69/5)*data.rating+'px"></span></span> Оценка: '+data.rating+' из 5 </g-review-stars><p>'+data.text+'</p><div><p>Рекомендованные способы приготовления:</p><div class=flex-around><a class=coffeeicons title="Турка">k</a><a class=coffeeicons title="Кофемашина">s</a><a class=coffeeicons title="Гейзерная кофеварка">b</a><a class=coffeeicons title="Фильтр">}</a><a class=coffeeicons title="Френч пресс">.</a></div></div><div class=goods-item__grade><small><b>Состав: </b>100% '+data.grade+'</small><small><b>Степень обжарки: </b>'+data.roasting+'</small><small><b>Способ обработки: </b>Мытый</small></div><p>Номер товара: '+data.id+'</p></div></li>'}).join('');
+productDataComponents = productData.map(function(data){ return '<li key='+data.id+' id="product_'+data.id+'" class="goods-item '+data.grade+' '+data.country+' '+data.continent+' available_'+data.available+'" tabIndex='+data.id+'  data-rating='+data.rating+' data-price='+data.price+' data-name='+data.name+' data-grade='+data.grade+'><div onclick="show_good(event, '+data.id+')" class="goods-item__img"><div class="goods-item__title"><p class="suffix">'+data.suffix+'</p><a class="clickgood" data-id='+data.id+' onclick="show_good(event, '+data.id+')" href="?product='+data.id+'" >'+data.name+'</a><p>'+data.continent+'<br />100% '+data.grade+'</p></div><button class="add-item" data-id='+data.id+' data-name="'+data.name+' '+data.suffix+' '+data.grade+'" value='+data.price+' title="Добавить в корзину"><p class="goods-item__price">'+data.price+'<i>грн./100г.</i><br /><span class="fa fa-shopping-cart"></span></p></button></div><div class="goods-item__list_view"><h2 onclick="show_good(event, '+data.id+')">'+data.name+' '+data.suffix+'</h2><g-review-stars><span class="stars_rating" data-rating='+data.rating+' aria-label="Оценка: '+data.rating+' из 5,"><span style="width:'+(69/5)*data.rating+'px"></span></span> Оценка: '+data.rating+' из 5 </g-review-stars><p>'+data.text+'</p><div><p>Рекомендованные способы приготовления:</p><div class=flex-around><a class=coffeeicons title="Турка">k</a><a class=coffeeicons title="Кофемашина">s</a><a class=coffeeicons title="Гейзерная кофеварка">b</a><a class=coffeeicons title="Фильтр">}</a><a class=coffeeicons title="Френч пресс">.</a></div></div><div class=goods-item__grade><small><b>Состав: </b>100% '+data.grade+'</small><small><b>Степень обжарки: </b>'+data.roasting+'</small><small><b>Способ обработки: </b>Мытый</small></div><p>Номер товара: '+data.id+'</p></div></li>'}).join('');
 document.getElementById('productData').innerHTML=productDataComponents;
 loadShop(1);
 
@@ -2436,4 +2436,3 @@ loadShop(2);
 <script src="./geo.js"></script>
 </body>
 </html>
-
