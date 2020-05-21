@@ -1311,6 +1311,8 @@ display: none;
 	max-width: 60%;
     flex-direction: column;
     z-index: 1;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 .topmenu.navhide {
     margin: 0 -100%;
