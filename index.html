@@ -33,10 +33,12 @@ a:hover{color: white; }
 .con{
     width: 320px;
     padding: 20px;
-    background: rgba(48, 61, 68, 0.68);
+    background: rgba(48, 61, 68, 0.5);
 	border-radius: 10px;
 	box-shadow: 0px 1px 5px -1px black, 0px 10px 10px 0px rgba(0, 0, 0, 0.48);
 	transition: all 200ms;
+	-webkit-backdrop-filter: blur(10px);
+    	backdrop-filter: blur(10px);
 }
 .dashed_{border-bottom: dashed 3px white; padding: 5px 0px;}
 .center{text-align: center;}
