@@ -874,7 +874,7 @@ box-shadow: 0 10px 20px -10px #777 inset;
     color: #333;
 }
 .btn_group__btn_active{
-	color: #ceb478;
+	color: #956644;
 }
 .flex_row {
   display: flex;
@@ -1034,7 +1034,7 @@ input[type="checkbox"]:checked+label,
 .filter-item.active, 
 .filter-item:hover, 
 .filter-item:not(.active):hover {
-    background: #ceb478;
+    background: #956644;
     color: #fff;
     padding: .5rem;
 }
@@ -1310,8 +1310,7 @@ display: none;
 	opacity: 0.95;    
 	max-width: 60%;
     flex-direction: column;
-    z-index: 1;
-    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 .topmenu.navhide {
