@@ -1,4 +1,4 @@
-# Collection of Projects ??
+# Collection of Projects
 
 Hi! My name is Ivan. \
 I'm creative and self-starting **Front-End Developer** with 3+ years of programming experience. \
