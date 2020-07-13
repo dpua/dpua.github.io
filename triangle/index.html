@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Triangle type identifier</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<style>
+		body {
+			max-width: 800px;
+			min-width: 800px;
+			box-shadow: black 0px 0px 15px -5px;
+			padding: 20px 30px;
+			margin: 0px auto;
+		}
+		input {width: 100px;}
+		</style>
+	</head>
+	<body>
+		<div> 
+			<label for="a">Сторона a</label>
+			<input id=side_a type="number" value=30 step=1>
+			<label for="b">Сторона b</label>
+			<input id=side_b type="number" value=40 step=1>
+			<label for="c">Сторона c</label>
+			<input id=side_c type="number" value=50 step=1>
+			<button id=submit>submit</button>
+		</div>
+		<div id=text></div>
+		<canvas id=img width=310 height=310></canvas>
+<script>
+function num(e){
+if(e.value<1)e.value=1;
+if(e.value>100)e.value=100;
+triangle();
+};
+function triangle_tipe(a, b, c){
+	var sides=[a, b, c];
+	var d = 'Треугольник разносторонний, ';
+	sides.sort();
+	if (sides[1]==sides[0]) d = 'Треугольник равнобедренный, ';
+	if (sides[2]==sides[1]==sides[0]) d = 'Треугольник равносторонний, ';
+	if ((sides[2] ** 2)==(sides[1] ** 2)+(sides[0] ** 2)) d += 'прямоугольный';
+	if ((sides[2] ** 2)<(sides[1] ** 2)+(sides[0] ** 2)) d += 'остроугольный';
+	if ((sides[2] ** 2)>(sides[1] ** 2)+(sides[0] ** 2)) d += 'тупоугольный';
+
+return d;
+}
+var parties = document.getElementById('submit');
+	var s_a = document.getElementById('side_a');
+	var s_b = document.getElementById('side_b');
+	var s_c = document.getElementById('side_c');
+	s_a.oninput = function(){num(s_a)};
+	s_b.oninput = function(){num(s_b)};
+	s_c.oninput = function(){num(s_c)};
+	
+function triangle() {
+	
+	
+	var a = +s_a.value;
+	var b = +s_b.value;
+	var c = +s_c.value;
+	var d;
+	if (a+b>c && b+c>a && a+c>b){d=triangle_tipe(a, b, c);}else{d='вырожденный';};//вырожденным
+
+
+	var ang_a = +(Math.acos(((a**2)+(c**2)-(b**2))/(2*a*c))*57.2957795131).toFixed(2);
+	var ang_b = +(Math.acos(((a**2)+(b**2)-(c**2))/(2*a*b))*57.2957795131).toFixed(2);
+	var ang_y = +(Math.acos(((b**2)+(c**2)-(a**2))/(2*c*b))*57.2957795131).toFixed(2);
+	
+	d+='<p>Угол α:'+ang_a+'° Угол β:'+ang_b+'°  Угол γ:'+ang_y+'°</p>';
+
+	document.getElementById('text').innerHTML = '<p>'+d+'</p>';
+	
+	//Canvas
+    let A = 3 * a,
+        B = 3 * b,
+        C = 3 * c;
+    let p = (A + B + C) / 2;
+    let S = Math.sqrt(p * (p - A) * (p - B) * (p - C));
+    let SinA = 2 * S / (A * B);
+    let alpha = Math.asin(SinA);
+
+    let x = B * Math.cos(alpha),
+        y = B * Math.sin(alpha);
+
+    let ctx = img.getContext("2d");
+	ctx.clearRect(0, 0, img.width, img.height);
+    ctx.beginPath();
+    ctx.moveTo(10 + A, 310);
+    ctx.lineTo(10, 310);
+    ctx.lineTo(10 + x, 310 - y);
+    ctx.lineTo(10 + A, 310);
+    ctx.stroke();
+	//\Canvas
+	
+};
+parties.onclick = triangle();
+</script>
+	</body>
+</html>
