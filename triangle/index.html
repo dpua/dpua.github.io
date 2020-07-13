@@ -37,8 +37,8 @@ function triangle_tipe(a, b, c){
 	var sides=[a, b, c];
 	var d = 'Треугольник разносторонний, ';
 	sides.sort(function(a, b) {return a - b;});
-	if (sides[1]==sides[0]) d = 'Треугольник равнобедренный, ';
-	if (sides[2]==sides[1]==sides[0]) d = 'Треугольник равносторонний, ';
+	if (sides[1]==sides[0]||sides[1]==sides[2]) d = 'Треугольник равнобедренный, ';
+	if (sides[2]==sides[1] && sides[1]==sides[0]) d = 'Треугольник равносторонний, ';
 	if ((sides[2] ** 2)==(sides[1] ** 2)+(sides[0] ** 2)) d += 'прямоугольный';
 	if ((sides[2] ** 2)<(sides[1] ** 2)+(sides[0] ** 2)) d += 'остроугольный';
 	if ((sides[2] ** 2)>(sides[1] ** 2)+(sides[0] ** 2)) d += 'тупоугольный';
