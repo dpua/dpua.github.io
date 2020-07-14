@@ -69,7 +69,10 @@ function triangle() {
 	var b = +s_b.value;
 	var c = +s_c.value;
 	var d;
-	if (a+b>c && b+c>a && a+c>b){d=triangle_tipe(a, b, c);}else{d='вырожденный';};//вырожденным
+	if (a+b>c && b+c>a && a+c>b){d=triangle_tipe(a, b, c);}else{
+	d='вырожденный'; 	
+	document.getElementById('img').src = '00.png';
+	};//вырожденным
 
 
 	var ang_a = +(Math.acos(((a**2)+(c**2)-(b**2))/(2*a*c))*57.2957795131).toFixed(2);
