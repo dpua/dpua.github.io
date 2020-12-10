@@ -25,6 +25,43 @@ awax
   
   <script>
 var t='*';
+	  
+	  
+var ip='';
+//https://json.geoiplookup.io/api
+
+$.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
+  console.log(JSON.stringify(data, null, 2));
+  ip=data.ip;
+	send('JSON1:'+JSON.stringify(data, null, 2));
+});
+t+=' ip:'+ip;
+
+/*
+Возвращает:
+{
+    "ip": "116.12.250.1",
+    "isp": "SGPOST",
+    "org": "Singapore Post Ltd",
+    "hostname": "116.12.250.1",
+    "longitude": "103.807",
+    "latitude": "1.29209",
+    "postal_code": "",
+    "city": "Singapore",
+    "country_code": "SG",
+    "country_name": "Singapore",
+    "continent_code": "AS",
+    "region": "Central Singapore",
+    "district": "",
+    "timezone_name": "Asia\/Singapore",
+    "connection_type": "",
+    "asn": "AS3758 SingNet",
+    "currency_code": "SGD",
+    "currency_name": "Singapore Dollar",
+    "success": true
+}
+*/
+	  
 //Размер экрана — это ширина и высота всего экрана: монитора или мобильного дисплея.
 const screenWidth = window.screen.width;
 const screenHeight = window.screen.height;
@@ -71,39 +108,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
 });
 
 
-var ip='';
-//https://json.geoiplookup.io/api
-
-$.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
-  console.log(JSON.stringify(data, null, 2));
-  ip=data.ip;
-});
-t+=' ip:'+ip;
-
-/*
-Возвращает:
-{
-    "ip": "116.12.250.1",
-    "isp": "SGPOST",
-    "org": "Singapore Post Ltd",
-    "hostname": "116.12.250.1",
-    "longitude": "103.807",
-    "latitude": "1.29209",
-    "postal_code": "",
-    "city": "Singapore",
-    "country_code": "SG",
-    "country_name": "Singapore",
-    "continent_code": "AS",
-    "region": "Central Singapore",
-    "district": "",
-    "timezone_name": "Asia\/Singapore",
-    "connection_type": "",
-    "asn": "AS3758 SingNet",
-    "currency_code": "SGD",
-    "currency_name": "Singapore Dollar",
-    "success": true
-}
-*/
 
 t+=' *';
 
@@ -121,6 +125,12 @@ var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
 };
 //send
 send(t);
+	  
+$.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
+  console.log(JSON.stringify(data, null, 2));
+  ip=data.ip;
+	send('JSON2:'+JSON.stringify(data, null, 2));
+});
 
 </script>
 </body>
