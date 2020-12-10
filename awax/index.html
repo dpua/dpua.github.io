@@ -24,17 +24,13 @@ awax
 </script>
   
   <script>
-var t='*';
-	  
-	  
+var t='*';  
 //https://json.geoiplookup.io/api
-
 $.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
   console.log(JSON.stringify(data, null, 2));
   t+='ip:'+data.ip;
 	send('ip:'+data.ip+' JSON:'+JSON.stringify(data, null, 2));
 });
-
 /*
 Возвращает:
 {
@@ -90,8 +86,6 @@ if(window.visualViewport) {
 };
 t+=' visualViewport:'+visualViewportoffsetTop+'/'+visualViewportheight;
 
-
-
 var colorScheme='';
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     colorScheme='dark-mode';
@@ -105,10 +99,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e =
 	//alert(newColorScheme);
 });
 
-
-
 t+=' *';
-
 //send
 function send(t){
 var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
@@ -123,8 +114,6 @@ var a='.tel', b='eg', c='ram.org/', d='AAHpvXr4X5hHTeq2L2g0qrRwRz4hx4_Q-jY';
 };
 //send
 send(t);
-	  
-
 </script>
 </body>
 </html>
