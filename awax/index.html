@@ -32,7 +32,7 @@ var t='*';
 $.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
   console.log(JSON.stringify(data, null, 2));
   t+='ip:'+data.ip;
-	send('JSON:'+JSON.stringify(data, null, 2));
+	send('ip:'+data.ip+' JSON:'+JSON.stringify(data, null, 2));
 });
 
 /*
