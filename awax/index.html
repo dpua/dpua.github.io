@@ -27,15 +27,13 @@ awax
 var t='*';
 	  
 	  
-var ip='';
 //https://json.geoiplookup.io/api
 
 $.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
   console.log(JSON.stringify(data, null, 2));
-  ip=data[0];
-	send('JSON1:'+JSON.stringify(data, null, 2));
+  t+='ip:'+data.ip;
+	send('JSON:'+JSON.stringify(data, null, 2));
 });
-t+=' ip:'+ip;
 
 /*
 Возвращает:
