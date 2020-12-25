@@ -524,7 +524,7 @@ vAPI.setIcon = function(tabId, iconStatus, badge) {
         state.img = iconStatus;
     }
     if(state.dirty & 1) { // got a new icon?
-        chrome.browserAction.setIcon({ tabId: tabId, path: ICON_PATHS[iconStatus] }, onIconReady);
+        chrome.browserAction.setIcon({ /*tabId: tabId,*/ path: ICON_PATHS[iconStatus] }, onIconReady);
     }
     else if(state.dirty & 2) {
         chrome.browserAction.setBadgeText({ tabId: tabId, text: badge });

@@ -822,7 +822,7 @@ https://github.com/darkskyapp/string-hash/blob/master/index.js
             chrome.tabs.query({active: true}, function(tabs) {
                 if (tabs.length > 0) {
                     chrome.browserAction.setIcon({
-                        tabId: tabs[0].id, 
+                        /*tabId: tabs[0].id, */
                         path: { '19': 'img/browsericons/icon19-off.png', '38': 'img/browsericons/icon38-off.png' } });
                     }
             });
