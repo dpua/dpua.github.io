@@ -1,0 +1,114 @@
+{
+  "extName": {
+    "message": "AWAX",
+    "description": "extension name."
+  },
+  "extShortName": {
+    "message": "AWAX",
+    "description": "extension short name."
+  },
+  "extShortDesc": {
+    "message": "Наконец-то, эффективный блокировщик для браузеров, не нагружающий ЦП и оперативную память.",
+    "description": "this will be in the chrome web store: must be 132 characters or less"
+  },
+  "pickerContextMenuEntry": {
+    "message": "Заблокировать элемент",
+    "description": "English: Block element"
+  },
+  "popupBlockedOnThisPagePrompt": {
+    "message": "Заблокировано на этой странице",
+    "description": "en: Blocked on this page"
+  },
+  "popupUsesDomains": {
+    "message": "Доменов подключено",
+    "description": "ru: Доменов подключено"
+  },
+  "popupTotalBlocked": {
+    "message": "Заблокировано за все время",
+    "description": "ru - Заблокировано за все время"
+  },
+  "popupActivationTitle": {
+    "message": "Введите ключ активации",
+    "description": "ru - Введите ключ активации"
+  },
+  "popupAboutTitle": {
+    "message": "О продукте AWAX",
+    "description": "ru - About AWAX"
+  },
+  "popupAboutDescription": {
+    "message": "AWAX - это тонкий слой между сетевым интерфейсом вашего устройства и приложениями, которые вы используете.",
+    "description": "en: AWAX is a thin layer between a network interface of your device and the apps that you use. In order to filter outbound traffic, we set up."
+  },
+  "popupWithoutAd2": {
+    "message": "без",
+    "description": "ru - год без рекламмы"
+  },
+  "popupWithoutAd3": {
+    "message": "рекламмы",
+    "description": "ru - год без рекламмы"
+  },
+  "popupBuy": {
+    "message": "Купить",
+    "description": "ru - Купить"
+  },
+  "popupValidPeriod": {
+    "message": "до",
+    "description": "ru - до"
+  },
+  "popupInvalidKey": {
+    "message": "Не корректный ключ",
+    "description": "en: Invalid key"    
+  },
+  "popupSuccessKey": {
+    "message": "Вы активировали лицензию на 1 год",
+    "description": "en: Success key"    
+  },
+  "popupTrialPeriod": {
+    "message": "Пробный до",
+    "description": "en: Trial to"    
+  },
+  "M": {
+    "message": "Месяц",
+    "description": "en: Month"    
+  },
+  "MS": {
+    "message": "Месяцев",
+    "description": "en: Months"    
+  },
+  "Y": {
+    "message": "Год",
+    "description": "en: Year"    
+  },
+  "YS": {
+    "message": "Года",
+    "description": "en: Years"    
+  },
+  "UNLIM": {
+    "message": "Безлимит",
+    "description": "en: Unlimited"    
+  },
+  "ActivateM": {
+    "message": "Вы активировали лицензию на 1 месяц",
+    "description": "en: 1 Month"    
+  },
+  "Activate3MS": {
+    "message": "Вы активировали лицензию на 3 месяца",
+    "description": "en: 3 Month"    
+  },
+  "Activate6MS": {
+    "message": "Вы активировали лицензию на 6 месяцев",
+    "description": "en: 6 Month"    
+  },
+  "ActivateY": {
+    "message": "Вы активировали лицензию на 1 год",
+    "description": "en: 1 year"    
+  },
+  "Activate2YS": {
+    "message": "Вы активировали лицензию на 2 года",
+    "description": "en: Month"    
+  },
+  "ActivateUNLIM": {
+    "message": "Вы активировали лицензию Безлимит",
+    "description": "en: Month"    
+  }
+}

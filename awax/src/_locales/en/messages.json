@@ -1,0 +1,114 @@
+{
+  "extName": {
+    "message": "AWAX",
+    "description": "extension name."
+  },
+  "extShortName": {
+    "message": "AWAX",
+    "description": "extension short name."
+  },
+  "extShortDesc": {
+    "message": "A fast, effective, and free ad blocker.",
+    "description": "this will be in the chrome web store: must be 132 characters or less"
+  },
+  "pickerContextMenuEntry": {
+    "message": "Block element",
+    "description": "English: Block element"
+  },
+  "popupBlockedOnThisPagePrompt": {
+    "message": "Blocked on this page",
+    "description": "en: Blocked on this page"
+  },
+  "popupUsesDomains": {
+    "message": "Domains connected",
+    "description": "ru: Доменов подключено"
+  },
+  "popupTotalBlocked": {
+    "message": "Blocked for all time",
+    "description": "en: Blocked for all time"
+  },
+  "popupActivationTitle": {
+    "message": "Enter the activation key",
+    "description": "em - Enter the activation key"
+  },
+  "popupAboutTitle": {
+    "message": "About AWAX",
+    "description": "en: About AWAX"
+  },
+  "popupAboutDescription": {
+    "message": "AWAX is a thin layer between a network interface of your device and the apps that you use. In order to filter outbound traffic, we set up.",
+    "description": "en: AWAX is a thin layer between a network interface of your device and the apps that you use. In order to filter outbound traffic, we set up."
+  },
+  "popupWithoutAd2": {
+    "message": "without",
+    "description": "en: year without advert"
+  },
+  "popupWithoutAd3": {
+    "message": "advert",
+    "description": "en: year without advert"
+  },
+  "popupBuy": {
+    "message": "Buy",
+    "description": "en: Buy"
+  },
+  "popupValidPeriod": {
+    "message": "to",
+    "description": "en: tо"
+  },
+  "popupInvalidKey": {
+    "message": "Invalid key",
+    "description": "en: Invalid key"    
+  },
+  "popupSuccessKey": {
+    "message": "You have activated a 1 year license",
+    "description": "en: Success key"    
+  },
+  "popupTrialPeriod": {
+    "message": "Trial to",
+    "description": "en: Trial to"    
+  },
+  "M": {
+    "message": "Month",
+    "description": "en: Month"    
+  },
+  "MS": {
+    "message": "Months",
+    "description": "en: Months"    
+  },
+  "Y": {
+    "message": "Year",
+    "description": "en: Year"    
+  },
+  "YS": {
+    "message": "Years",
+    "description": "en: Years"    
+  },
+  "UNLIM": {
+    "message": "Unlimited",
+    "description": "en: Unlimited"    
+  },
+  "ActivateM": {
+    "message": "You activate licence for 1 month",
+    "description": "en: 1 Month"    
+  },
+  "Activate3MS": {
+    "message": "You activate licence for 3 months",
+    "description": "en: 3 Month"    
+  },
+  "Activate6MS": {
+    "message": "You activate licence for 6 months",
+    "description": "en: 6 Month"    
+  },
+  "ActivateY": {
+    "message": "You activate licence for 1 year",
+    "description": "en: 1 year"    
+  },
+  "Activate2YS": {
+    "message": "You activate licence for 2 years",
+    "description": "en: 2 years"    
+  },
+  "ActivateUNLIM": {
+    "message": "You activate licence Unlimited",
+    "description": "en: Unlimited"    
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AWAX</title>
+    <link rel="stylesheet" href="css/popup.css"></head>
+<body class="expand600">
+    <div class="app">
+        <!-- Add class enable_ext-->
+        <header class="header">
+            <div class="header__logo">
+                <img class="header__logo-white" src="img/popup/logo-white.svg" alt="logo">
+                <img class="header__logo-dark" src="img/popup/logo-dark.svg" alt="logo">
+            </div>
+            <div class="header__content">
+                <div class="header__box">
+                    <div class="header__box-left">
+                        <span id="period-dig">1</span>
+                        <img id="period-icon" class="block-hide" src="img/popup/diamond.svg">
+                    </div>
+                    <div class="header__box-right">
+                        <div id="period-type" class="header__text"></div>
+                        <div class="header__text" data-i18n="popupWithoutAd2"></div>
+                        <div class="header__text" data-i18n="popupWithoutAd3"></div>
+                    </div>
+                </div>
+                <div class="header__checkbox">
+                    <div id="switch-holder" class="toggle-checkbox" data-i18n-tip="popupPowerSwitchInfo">
+                        <input id="switch" class="toggle-checkbox__input" type="checkbox">
+                        <label class="toggle-checkbox__btn" for="switch">
+                            <span class="toggle-checkbox__feature"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="header__footer">
+                <div id='trial-period'>
+                    <div class="header__footer-date">
+                        <span data-i18n="popupTrialPeriod">Trial to</span>&nbsp;
+                        <span id="trial-period-date"></span>
+                    </div>
+                </div>
+                <div id='valid-period'>
+                    <span class="header__footer-img"></span>
+                    <div class="header__footer-date">
+                        <span id="valid-period-to" data-i18n="popupValidPeriod">to</span>&nbsp;<span id="valid-period-date"></span>
+                    </div>
+                </div>
+                <div id="buy-button">
+                    <span data-i18n="popupBuy"></span>
+                    <img id="arrow-buy" class="header__footer_colored-arrow" src="img/popup/arrow-buy.svg" alt="">
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="activation-block">
+                <div id="activation-block__header">
+                    <img class="activation-block__key-img" src="img/popup/key-dark.svg" alt="">
+                    <div class="activation-block__title" data-i18n="popupActivationTitle"></div>
+                    <a id="activation-arrow" class="arrow-down activation-block__arrow arrow-block-hide"></a>
+                </div>
+                <div id="activation-block-input-key" class="block-hide">
+                    <div id="input-key"></div>
+                    <div id="progress-input" class="block-hide"></div>
+                    <a id="activation-send" class="block-hide"></a>
+                    <div id="error-msg" class="key-msg block-hide" data-i18n="popupInvalidKey"></div>
+                    <div id="ok-msg" class="key-msg block-hide"></div>
+                </div>
+            </div>
+            <div class="preference-block">
+                <div class="preference-block__list">
+                    <div class="preference-block__item">
+                        <img class="preference-block__item-icon" src="img/popup/shield-1.svg" alt="">
+                        <div id="page-blocked" class="preference-block__item-count">0</div>
+                        <div class="preference-block__item-description" data-i18n="popupBlockedOnThisPagePrompt"></div>
+                    </div>
+                    <div class="preference-block__item">
+                        <img class="preference-block__item-icon" src="img/popup/shield-2.svg" alt="">
+                        <div id="domain-count" class="preference-block__item-count">0</div>
+                        <div class="preference-block__item-description" data-i18n="popupUsesDomains"></div>
+                    </div>
+                    <div class="preference-block__item">
+                        <img class="preference-block__item-icon" src="img/popup/shield-3.svg" alt="">
+                        <div id="total-blocked" class="preference-block__item-count">0</div>
+                        <div class="preference-block__item-description" data-i18n="popupTotalBlocked"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-block">
+                <div id="info-block__header" >
+                    <div class="info-block__title" data-i18n="popupAboutTitle"></div>
+                    <a id="info-arrow" class="arrow-block-hide"></a>
+                </div>
+                <div id="info-block-content">
+                    <div class="info-block__text" data-i18n="popupAboutDescription"></div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer-info"><a id="site-link" href="https://awaxtech.com/">© AWAX 2021</a></div>
+        </footer>
+    </div>
+    <script src="lib/punycode.js"></script>
+    <script src="js/vapi-common.js"></script>
+    <script src="js/vapi-client.js"></script>
+    <script src="js/vapi-popup.js"></script>
+    <script src="js/udom.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+</html>
