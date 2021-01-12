@@ -280,7 +280,7 @@ color: rgba(75, 78, 91, 0.75);
 }
 #block1 .img4 {pointer-events: none;
 position: absolute;
-margin: 20px -460px;
+margin: 20px 460px 20px -460px;
 }
 #block1 .img4:before {/*
     content: '';
@@ -886,7 +886,7 @@ line-height: 110.13%;}
 height: max-content;}
 #block1 .img4 {
     position: absolute;
-margin: 90px -320px;}
+margin: 90px 400px 90px -400px;}
 #block1 .img4 img {
     width: 430px;
 }
