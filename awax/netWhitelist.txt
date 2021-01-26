@@ -1,0 +1,11 @@
+about-scheme
+awaxtech.com
+chrome-extension-scheme
+chrome-scheme
+edge-scheme
+moz-extension-scheme
+opera-scheme
+vivaldi-scheme
+wyciwyg-scheme
+vk.com
+zaq.zqa.zaq
