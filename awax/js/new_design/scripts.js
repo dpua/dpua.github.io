@@ -1,3 +1,4 @@
+'use strict';
 $(document).ready(function () {
 
 	setTimeout(function () {
@@ -5,6 +6,75 @@ $(document).ready(function () {
 		$('#success').fadeOut(400);
 	}, 3000);
 
+function shopSliderClick(e){
+	console.log("-----afterChange init beforeChange: "+e);
+	console.log(document.querySelector(".slick-slide"));
+	
+	var group = document.querySelector(".slick-track");
+	var nodes = document.querySelectorAll(".slick-slide");
+	var total = nodes.length;
+	var ease  = Power1.easeInOut;
+	var boxes = [];
+
+	console.log("total: "+total);
+
+	for (var i = 0; i < total; i++) {
+		
+	var node = nodes[i];
+	
+	// Initialize transforms on node
+	TweenLite.set(node, { x: 0 });
+	
+	boxes[i] = {
+		transform: node._gsTransform,
+		x: node.offsetLeft,
+		y: node.offsetTop,
+		node    
+	};
+	} 
+
+
+	function layout(e) {
+		
+		document.querySelector(".shop-section").classList.toggle("shop-active"); //.add("shop-active");  //toggle("shop-active");  
+		
+		for (var i = 0; i < total; i++) {
+			
+			var box = boxes[i];
+				
+			var lastX = box.x;
+			var lastY = box.y;   
+			
+			box.x = box.node.offsetLeft;
+			box.y = box.node.offsetTop;
+			
+			// Continue if box hasn't moved
+			if (lastX === box.x && lastY === box.y) continue;
+			
+			// Reversed delta values taking into account current transforms
+			var x = box.transform.x + lastX - box.x;
+			var y = box.transform.y + lastY - box.y;  
+			
+			// Tween to 0 to remove the transforms
+			TweenLite.fromTo(box.node, 0.5, { x, y }, { x: 0, y: 0, ease });    
+		} 
+	}
+
+	nodes.forEach((item, e)=>{
+		item.addEventListener('click', (event)=> {
+			event.preventDefault();
+			layout(e);
+		});
+
+	});
+
+	// group.addEventListener("mouseenter", layout);
+	// group.addEventListener("mouseleave", layout);
+
+
+
+};
+	console.log("1");
 	$('.shop-slider').slick({
 		dots: true,
 		infinite: true,
@@ -16,7 +86,7 @@ $(document).ready(function () {
 		centerPadding: '0px',
 		responsive: [
 			{
-				breakpoint: 800,
+				breakpoint: 820,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1
@@ -24,6 +94,10 @@ $(document).ready(function () {
 			}
 		]
 	});
+	shopSliderClick(2);
+
+
+	  console.log("2");
 
 	$('.news-slider').slick({
 		dots: true,
@@ -346,23 +420,42 @@ console.log('start');
 
 
 	
-	const buyButtons=document.querySelectorAll('.click_buy'),
-	buyButtonsParent=document.querySelector('.info-block__item');
+	//const buyButtons=document.querySelectorAll('.click_buy'),
+	//buyButtonsParent=document.querySelector('.shop-section');
+	//buyButtonsParent=document.querySelector('.info-block__item');
+	//buyButtonsParent=document.getElementById("shop");
+/*
 	function showBuyBlock(i){
-		consele.log("buy"+i);
+		buyButtonsParent.classList.toggle("shop-active");
+		console.log("buy"+i);
 	}
 
+
+	buyButtons.forEach((item, i)=>{
+		//event.preventDefault();
+		item.addEventListener('click', (event)=> {
+		showBuyBlock(i);
+		});
+	
+	});
+
 	buyButtonsParent.addEventListener('click', (event)=> {
-		event.preventDefault();
-		if(event.target&&event.target.classList.contains('info-block__item-icon')){
+		if(event.target&&event.target.classList.contains('click_buy')){
 			buyButtons.forEach((item, i)=>{
-				if(event.target==item){
-					event.preventDefault();
+					//event.preventDefault();
 					showBuyBlock(i);
-				}
+				
 			});
 		};
 	});
+*/
+
+
+
+
+
+
+
 
 
 
