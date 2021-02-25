@@ -948,7 +948,7 @@ main{
 	text-align:center;
 	text-transform:uppercase;
 	font-weight:300;
-    padding: 20px;
+    padding: 0 20px;
 	margin: 0;
 }
 
@@ -4228,18 +4228,38 @@ input:-webkit-autofill:focus {
 }
 
 @media (min-width: 820px){
-	.shop-slider .slick-list {
+	.shop-section .shop-slider .slick-list {
 		overflow: visible;
 	}
-	.slick-track{
+	.shop-section .slick-slider {
+		transition: all 100ms linear;
+		position: absolute;
+		left: 0;
+		top: 130px;
+		width: 100%;
+		padding: 0 0px;
+		max-width: 970px;
+	}
+	.shop-section.shop-active .slick-slider{
+		transition: all 100ms linear;
+		position: absolute;
+		/* transform: translate(-330px, -150px); */
+		left: 0;
+		top: 30px;
+	}
+	.shop-section .slick-slide{
+		min-width: 250px;
+		max-width: 250px;
+	}
+	.shop-section .slick-track{
 		display: flex;
 		flex-direction: row;
+		justify-content: space-around;
 		/* width: max-content; */
 		height: max-content;;
 		/* transition: all 50ms linear; */
-		background: red;
 	}
-	.shop-active .slick-track{
+	.shop-section.shop-active .slick-track{
 		flex-direction: column;
 		align-items: end;  
 		height: max-content;;
@@ -4254,13 +4274,55 @@ input:-webkit-autofill:focus {
 		position: relative;
 		padding: 40px 0;
 	}
+	.shop-section .container {
+		max-width: 970px;
+		transition: all 100ms linear;
+		position: relative;
+		transition-delay: 50ms;
+	}
 	.shop-section.shop-active .container {
-		max-width: 1060px;
+		/* max-width: 1060px; */
+		max-width: 970px;
 		padding: 30px;
+		padding-left: 300px;
 		background: #FFFFFF;
 		border-radius: 8px;
+		height: 560px;
+		transition-delay: 0ms;
 	}
 
+		
+	.hidden{
+		padding: 0 30px;
+		width: 440px;
+		margin: 0 auto;
+	}
+	.shop-active .hidden{
+	}
+	.hidden .buy-block {
+		width: 100%;
+	}
+	.buy-block_button {
+		margin: 21px auto;
+	}
+
+	.shop-section .btn{
+		opacity: 1;
+		max-height: 50px;
+		transition: all 100ms linear;
+		transition-delay: 200ms;
+	}
+
+	.shop-section.shop-active .btn{
+		opacity: 0;
+		max-height: 0px;
+		transition: all 10ms linear;
+		transition-delay: 0ms;
+		overflow: hidden;
+		position: relative;
+		user-select: none;
+		pointer-events: none;
+	}
 
 
 }
