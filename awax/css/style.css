@@ -1010,14 +1010,17 @@ main{
 	right:40px;
 }
 .shop-slider-item a img{
+    margin: 0 auto;
 	max-width:80px
 }
 @media (min-width: 820px){
 	.shop-slider-item a img{
+		margin: 0 auto;
 		max-width:60px
 	}
 }
 .shop-slider-item h2{
+    margin: 0 auto;
 	font-family: Impact;
 	font-style: normal;
 	font-weight: 900;
@@ -1039,6 +1042,7 @@ main{
 }
 @media (min-width: 820px){
 	.shop-slider-item h2{
+		margin: 0 auto;
 		margin-bottom: -5px;
 	}
 	.text2 {
@@ -4187,6 +4191,7 @@ input:-webkit-autofill:focus {
 	margin-left: 14px;
 }
 .sponsored-block{
+	justify-content: space-around;
 }
 .sponsored-block_img{
 }
@@ -4244,12 +4249,13 @@ input:-webkit-autofill:focus {
 		transition: all 100ms linear;
 		position: absolute;
 		/* transform: translate(-330px, -150px); */
-		left: 0;
-		top: 30px;
+		left: 60px;
+		top: 15px;
 	}
 	.shop-section .slick-slide{
 		min-width: 250px;
 		max-width: 250px;
+		margin: 5px;
 	}
 	.shop-section .slick-track{
 		display: flex;
@@ -4270,13 +4276,13 @@ input:-webkit-autofill:focus {
 		height: 474px;
 	}
 	.shop-section.shop-active {
-		height: 920px;
+		height: 640px;
 		position: relative;
 		padding: 40px 0;
 	}
 	.shop-section .container {
 		max-width: 970px;
-		transition: all 100ms linear;
+		transition: all 350ms linear;
 		position: relative;
 		transition-delay: 50ms;
 	}
@@ -4284,7 +4290,7 @@ input:-webkit-autofill:focus {
 		/* max-width: 1060px; */
 		max-width: 970px;
 		padding: 30px;
-		padding-left: 300px;
+		padding-left: 350px;
 		background: #FFFFFF;
 		border-radius: 8px;
 		height: 560px;
@@ -4316,12 +4322,37 @@ input:-webkit-autofill:focus {
 	.shop-section.shop-active .btn{
 		opacity: 0;
 		max-height: 0px;
-		transition: all 10ms linear;
+		transition: all 100ms linear;
 		transition-delay: 0ms;
 		overflow: hidden;
 		position: relative;
 		user-select: none;
 		pointer-events: none;
+	}
+	.shop-section.shop-active .shop-slider-item .price{
+	/* opacity: 0;
+		max-height: 0px;
+		transition: all 10ms linear;
+		transition-delay: 200ms;
+		overflow: hidden;
+		position: relative;
+		user-select: none;
+		pointer-events: none; */
+	}
+	.shop-section.shop-active .shop-slider-item:hover .price:after {
+		content: "";
+		position: absolute;
+		left: 15px;
+		bottom: 1px;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		cursor: pointer;
+		width: 13.48px;
+		height: 22.89px;
+		background-image: url(../images/arrow_b.svg);
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 
 
