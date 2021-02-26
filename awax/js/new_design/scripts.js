@@ -5,12 +5,10 @@ $(document).ready(function () {
 		$('#errors').fadeOut(400);
 		$('#success').fadeOut(400);
 	}, 3000);
-
+var shopChecked=false;
 function shopSliderClick(e){
-	console.log("-----afterChange init beforeChange: "+e);
-	console.log(document.querySelector(".slick-slide"));
 	
-	var group = document.querySelector(".slick-track");
+	var group = document.querySelector(".shop-section");
 	var nodes = document.querySelectorAll(".slick-slide");
 	var total = nodes.length;
 	var ease  = Power1.easeInOut;
@@ -35,9 +33,14 @@ function shopSliderClick(e){
 
 
 	function layout(e) {
-		
-		document.querySelector(".shop-section").classList.toggle("shop-active"); //.add("shop-active");  //toggle("shop-active");  
-		
+		shopChecked=true;
+		group.classList.add("shop-active"); //.add("shop-active");  //toggle("shop-active");  
+
+
+
+
+
+
 		for (var i = 0; i < total; i++) {
 			
 			var box = boxes[i];
@@ -63,7 +66,11 @@ function shopSliderClick(e){
 	nodes.forEach((item, e)=>{
 		item.addEventListener('click', (event)=> {
 			event.preventDefault();
-			layout(e);
+			nodes.forEach((item)=>{
+				item.classList.remove("slick-slide-checked");
+			});
+			nodes[e].classList.add("slick-slide-checked");
+			return !shopChecked?layout(e):'';
 		});
 
 	});
@@ -94,10 +101,9 @@ function shopSliderClick(e){
 			}
 		]
 	});
-	shopSliderClick(2);
+	shopSliderClick(shopChecked);
 
 
-	  console.log("2");
 
 	$('.news-slider').slick({
 		dots: true,
