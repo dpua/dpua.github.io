@@ -3628,14 +3628,13 @@ input:-webkit-autofill:focus {
     font-weight: normal;
     font-size: 20px;
     line-height: 23px;
-    display: flex;
-    align-items: center;
     text-align: center;
-    color: #2B3942;
-    width: max-content;
-    margin: 12px auto 0;
-    transition: all 100ms linear;
+    color: #2B3942; 
+	margin: 12px 0 0;
+    width: 100%;
+    transition: all 150ms linear;
     cursor: pointer;
+    transform: translate(0px, 0px);
 }
 #show_list_item:hover {
     transform: translate(0px, 2px);
@@ -3643,15 +3642,20 @@ input:-webkit-autofill:focus {
 #show_list_item__ico {
     display: flex;
     align-items: center;
-    margin: 10px;
-    margin-right: 20px;
+    position: absolute;
+    left: 3px;
+    bottom: 0;
+    top: 0;
 }
 #show_list_item__ico i {
     display: block;
     width: 4px;
     height: 4px;
     background: black;
-    transition: all 400ms ease-in;
+    transition: all 150ms ease-in;
+}
+#show_list_item:hover #show_list_item__ico i {
+    background: #00f9ff;
 }
 #show_list_item__ico i:nth-child(1), #show_list_item__ico i:nth-child(5){
     transform: translate(0px,-4px);
