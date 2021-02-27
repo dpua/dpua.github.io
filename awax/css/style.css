@@ -1241,6 +1241,7 @@ main{
 @media (min-width: 820px){
 	.demo-section img{
 		max-width:420px;
+		max-height: 683px;
 		margin-left:-5%
 	}
 }
