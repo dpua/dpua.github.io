@@ -13,6 +13,5 @@
 ! The following filters were taken out of EasyList and given an entity name,
 ! which makes them candidates to be injected early in the page.
 ! Last imported: 2021-02-27
-! 2021-02-27 https://www.facebook.com
 www.facebook.com##.cxgpxx05 > div:nth-of-type(1) > span > div
 
