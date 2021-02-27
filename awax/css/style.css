@@ -3649,26 +3649,26 @@ input:-webkit-autofill:focus {
 }
 #show_list_item__ico i {
     display: block;
-    width: 4px;
-    height: 4px;
-    background: black;
+    width: 5px;
+    height: 5px;
+    background: #2b3942;
     transition: all 150ms ease-in;
 }
 #show_list_item:hover #show_list_item__ico i {
     background: #00f9ff;
 }
 #show_list_item__ico i:nth-child(1), #show_list_item__ico i:nth-child(5){
-    transform: translate(0px,-4px);
+    transform: translate(0px,-5px);
 }
 #show_list_item__ico i:nth-child(3){
-    transform: translate(0px, 4px);
+    transform: translate(0px, 5px);
 }
 
 .to_top #show_list_item__ico i:nth-child(1), .to_top #show_list_item__ico i:nth-child(5){
-    transform: translate(0px,4px);
+    transform: translate(0px,5px);
 }
 .to_top #show_list_item__ico i:nth-child(3){
-    transform: translate(0px, -4px);
+    transform: translate(0px, -5px);
 }
 
 .info-block__content {
