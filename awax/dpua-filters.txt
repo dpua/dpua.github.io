@@ -1,6 +1,6 @@
-! Title: uBlock filters
+! Title: dpua filters
 ! Expires: 4 days
-! Description: Filters optimized for uBlock, to be used along EasyList
+! Description: Filters optimized for AWAX, to be used along EasyList
 ! Homepage: https://dpua.github.io/awax
 ! Licence: https://dpua.github.io/awax/LICENSE
 ! 
