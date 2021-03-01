@@ -1,5 +1,5 @@
 ! Title: dpua filters
-! Expires: 4 days
+! Expires: 3 days
 ! Description: Filters optimized for AWAX, to be used along EasyList
 ! Homepage: https://dpua.github.io/awax
 ! Licence: https://dpua.github.io/awax/LICENSE
@@ -7,11 +7,6 @@
 ! GitHub issues: https://github.com/dpua/issues
 ! GitHub pull requests: https://github.com/dpua/pulls
 
-! https://github.com/dpua/awax/issues/57
-! https://github.com/dpua/awax/issues/98
-! New filter class: entity filters, where entity = domain minus public suffix
-! The following filters were taken out of EasyList and given an entity name,
-! which makes them candidates to be injected early in the page.
+! https://github.com/dpua/awax/
 ! Last imported: 2021-02-27
 www.facebook.com##.cxgpxx05 > div:nth-of-type(1) > span > div
-
