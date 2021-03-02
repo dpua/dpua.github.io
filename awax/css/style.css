@@ -4454,8 +4454,7 @@ input:-webkit-autofill:focus {
 	.shop-section.shop-active .shop-slider-item:hover {
 		transform: translate(7px, 0px);
 	}
-	.shop-section.shop-active .slick-slide-checked .price:after, 
-	.shop-section.shop-active .shop-slider-item:hover .price:after {
+	.shop-section.shop-active .slick-slide-checked .price:after{
 		content: "";
 		position: absolute;
 		left: 15px;
@@ -4477,4 +4476,37 @@ input:-webkit-autofill:focus {
 	}
 
 
+}
+
+
+
+.shop-section.shop-active .btn{
+	opacity: 0;
+	max-height: 0px;
+	transition: all 100ms linear;
+	transition-delay: 0ms;
+	overflow: hidden;
+	position: relative;
+	user-select: none;
+	pointer-events: none;
+}	
+.shop-section.shop-active .slick-slide-checked .price:after {
+	content: "";
+	position: absolute;
+	left: 15px;
+	bottom: 1px;
+	cursor: pointer;
+	width: 13.48px;
+	height: 22.89px;
+	background-image: url(../images/arrow_b.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	transform: translate(5px, -50%);
+}
+.shop-section.shop-active .shop-slider-item:hover .price:after {
+	transform: translate(9px, -50%);
+}
+.shop-section.shop-active .slick-slide-checked .shop-slider-item,
+.shop-section.shop-active .slick-slide-checked .shop-slider-item:hover{
+	box-shadow: 0 0 0 4px #00ebfd, 0 11px 12px 2px rgb(0 0 0 / 26%), 0 0 1px 5px rgb(0 0 0 / 26%)
 }
