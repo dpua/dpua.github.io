@@ -4081,23 +4081,23 @@ input:-webkit-autofill:focus {
 	} */
 	.android_block {
 		background-image: url(../images/img_web_devices/Android@2x.png); 
-		background-size: auto 120%;
-		background-position: top 0px left 0px;
+		background-size: auto 115%;
+		background-position: top 0px left 5%;
 	}
 	.iphone_block {
 		background-image: url(../images/img_web_devices/iOS@2x.png);
-		background-size: auto 120%;
-		background-position: top 0px left 0px;
+		background-size: auto 115%;
+		background-position: top 0px left 5%;
 	}
 	.chrome_block {
 		background-image: url(../images/img_web_devices/Chrome@2x.png);
-		    background-size: 65% AUTO;
-		background-position: center left -20%;
+		background-size: 60% AUTO;
+		background-position: center left -15%;
 	}
 	.tv_block {
 		background-image: url(../images/img_web_devices/tv@2x.png);
-		    background-size: 65% AUTO;
-		background-position: center left -25%;
+		background-size: 55% AUTO;
+		background-position: top left -10%;
 	}
 	.info-block__content {
 		align-items: flex-end;
