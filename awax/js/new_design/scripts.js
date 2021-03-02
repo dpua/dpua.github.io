@@ -386,13 +386,13 @@ $(window).on("load", function () {
 window.addEventListener('DOMContentLoaded', ()=>{
 	let toggle=false;
 	
-	$('#show_list_item').on('click', function () {
-		if(!toggle){
-			$('html,body').animate({
-				scrollTop: $("#list_info").offset().top+80
-			}, 300);
-		}
-	});
+	// $('#show_list_item').on('click', function () {
+	// 	if(!toggle){
+	// 		$('html,body').animate({
+	// 			scrollTop: $("#list_info").offset().top+80
+	// 		}, 300);
+	// 	}
+	// });
 	const infoBlock=document.querySelector('.info-block'),
 		  showListItem = document.getElementById("show_list_item");
 	function showInfoBlock(){
