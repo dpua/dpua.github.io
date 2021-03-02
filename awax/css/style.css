@@ -4001,14 +4001,16 @@ input:-webkit-autofill:focus {
     font-size: 20px;
     line-height: 23px;
     color: #2B3942;
+    z-index: 2;
 }
 .info-block__content-buy button {
-    font-family: Roboto;
+	font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
@@ -4017,11 +4019,13 @@ input:-webkit-autofill:focus {
     background: #2B3942;
     border: 2px solid #2B3942;
     box-sizing: border-box;
-    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 16px rgb(0 0 0 / 25%);
     border-radius: 10px;
     padding: 11px 20px;
-    margin: 6px;
+    margin: 6px 20px;
     transition: all 100ms ease-in;
+    width: 100%;
+	max-width: 300px;
 }
 
 .info-block__content-buy button:hover {
@@ -4043,7 +4047,7 @@ input:-webkit-autofill:focus {
 		margin: 0;
 	}
 	.info-block__show .info-block__content-block {
-		background-position: bottom 0px left 0px;
+		/* background-position: bottom 0px left 0px; */
 		background-repeat: no-repeat;
 		/* background-size: auto 80%; */
 		height: 100%;
@@ -4055,11 +4059,14 @@ input:-webkit-autofill:focus {
 		flex-direction: row;
 		align-items: center;
 		justify-content: flex-end;
+		/* background-position-y: top;
+		background-position: top 0px left 0px; */
+		margin: 0px;
 	}
 	.info-block__content-block img{
 		display: none;
 	}
-	.android_block {
+	/* .android_block {
 		background-image: url(../images/android_820.png); 
 		
 	}
@@ -4071,6 +4078,26 @@ input:-webkit-autofill:focus {
 	}
 	.tv_block {
 		background-image: url(../images/tv_820.png);
+	} */
+	.android_block {
+		background-image: url(../images/img_web_devices/Android@2x.png); 
+		background-size: auto 120%;
+		background-position: top 0px left 0px;
+	}
+	.iphone_block {
+		background-image: url(../images/img_web_devices/iOS@2x.png);
+		background-size: auto 120%;
+		background-position: top 0px left 0px;
+	}
+	.chrome_block {
+		background-image: url(../images/img_web_devices/Chrome@2x.png);
+		    background-size: 65% AUTO;
+		background-position: center left -20%;
+	}
+	.tv_block {
+		background-image: url(../images/img_web_devices/tv@2x.png);
+		    background-size: 65% AUTO;
+		background-position: center left -25%;
 	}
 	.info-block__content {
 		align-items: flex-end;
@@ -4129,7 +4156,7 @@ input:-webkit-autofill:focus {
 }
 
 @media (min-width: 920px){
-	.android_block {
+	/* .android_block {
 		background-image: url(../images/android_820.png); 
 	}
 	.iphone_block {
@@ -4140,7 +4167,19 @@ input:-webkit-autofill:focus {
 	}
 	.tv_block {
 		background-image: url(../images/tv_980.png);
+	} */
+	/* .android_block {
+		background-image: url(../images/img_web_devices/Android@2x.png); 
 	}
+	.iphone_block {
+		background-image: url(../images/img_web_devices/iOS@2x.png);
+	}
+	.chrome_block {
+		background-image: url(../images/img_web_devices/Chrome@2x.png);
+	}
+	.tv_block {
+		background-image: url(../images/img_web_devices/tv@2x.png);
+	} */
 	.info-block__content-buy {
 		margin: 54px 0;
 	}
@@ -4154,7 +4193,7 @@ input:-webkit-autofill:focus {
 	.info-block__item-icon{
 		width: 220px;
 		height: 50px;
-		margin: 13px 0px;
+		margin: 5px 0px;
 	}
 	.info-block__item {
 		justify-content: space-evenly;
