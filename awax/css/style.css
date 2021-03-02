@@ -3927,6 +3927,7 @@ input:-webkit-autofill:focus {
     left: 0;
     right: 0;
     top: 0;
+    max-height: 350px;
 }
 .android_block__txt, .iphone_block__txt, .chrome_block__txt, .tv_block__txt{
     font-family: Roboto;
