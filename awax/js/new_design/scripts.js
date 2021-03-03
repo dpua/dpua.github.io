@@ -1,4 +1,5 @@
 'use strict';
+let toggle=false;
 $(document).ready(function () {
 
 	setTimeout(function () {
@@ -238,7 +239,7 @@ function shopSliderClick(e){
 	var scrollTriggerdownload = 600,
 		backdownload = function () {
 			var scrollTop = $(window).scrollTop();
-			if (scrollTop > scrollTriggerdownload) {
+			if ((scrollTop > scrollTriggerdownload)&&!toggle) {
 				$('.download-loader').addClass('show');
 			} else {
 				$('.download-loader').removeClass('show');
@@ -384,7 +385,7 @@ $(window).on("load", function () {
 
 
 window.addEventListener('DOMContentLoaded', ()=>{
-	let toggle=false;
+
 	
 	// $('#show_list_item').on('click', function () {
 	// 	if(!toggle){
@@ -402,6 +403,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		if(toggle){
 			infoBlock.classList.add('info-block__show');
 			showListItem.classList.add('to_top');
+			$('.download-loader').removeClass('show');
 		}else{
 			infoBlock.classList.remove('info-block__show');
 			showListItem.classList.remove('to_top');
