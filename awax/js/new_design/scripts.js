@@ -412,7 +412,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	const tabs=document.querySelectorAll('.info-block__item-icon'),
 	tabsContent=document.querySelectorAll('.info-block__content-block'),
 	tabsParent=document.querySelector('.info-block__item'),
-	tabsContentParent=document.querySelectorAll('.info-block__content');
+	tabsContentParent=document.querySelector('.info-block__content');
 	var tabId=0;
 console.log('start');
 	function hideTabsContent(){
@@ -448,7 +448,7 @@ console.log('start');
 
 
 
-alert("swipe2");
+alert("swipe3");
 
 var xDown = null;                                                        
 var yDown = null;                                                        
