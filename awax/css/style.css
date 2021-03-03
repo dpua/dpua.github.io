@@ -3731,6 +3731,7 @@ input:-webkit-autofill:focus {
 }
 #info-block__title-ico{
     right: 3px;
+	display: none;
 }
 .top_ico {
     display: flex;
