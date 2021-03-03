@@ -3800,28 +3800,28 @@ input:-webkit-autofill:focus {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .info-block__item-icon.android{
-    background-image: url(../images/android.svg); 
+    background: url("../images/android.svg"); 
 }
 .info-block__item-icon.ios{
-    background-image: url(../images/ios.svg); 
+    background: url("../images/ios.svg"); 
 }
 .info-block__item-icon.chrome{
-    background-image: url(../images/chrome.svg); 
+    background: url("../images/chrome.svg"); 
 }
 .info-block__item-icon.tv{
-    background-image: url(../images/tv.svg); 
+    background: url("../images/tv.svg"); 
 }
 .info-block__item-icon.android.active{
-    background-image: url(../images/android_b.svg); 
+    background: url("../images/android_b.svg"); 
 }
 .info-block__item-icon.ios.active{
-    background-image: url(../images/ios_b.svg); 
+    background: url("../images/ios_b.svg"); 
 }
 .info-block__item-icon.chrome.active{
-    background-image: url(../images/chrome_b.svg); 
+    background: url("../images/chrome_b.svg"); 
 }
 .info-block__item-icon.tv.active{
-    background-image: url(../images/tv_b.svg); 
+    background: url("../images/tv_b.svg"); 
 }
 
 
