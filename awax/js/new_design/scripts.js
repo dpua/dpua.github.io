@@ -394,7 +394,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	// 	}
 	// });
 	const infoBlock=document.querySelector('.info-block'),
-		  showListItem = document.getElementById("show_list_item");
+		  showListItem = document.getElementById("show_list_item"),
+		  hideListItem = document.getElementById("info-block__title-ico");
 	function showInfoBlock(){
 		toggle=(toggle)?false:true;
 		console.log("toggle:"+toggle);
@@ -408,6 +409,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 	}
 	showListItem.onclick = showInfoBlock;
+	hideListItem.onclick = showInfoBlock;
 
 	const tabs=document.querySelectorAll('.info-block__item-icon'),
 	tabsContent=document.querySelectorAll('.info-block__content-block'),

@@ -497,7 +497,9 @@ main{
 	.main-banner .des{
 		display:block;
 		right:-30px;
-		position:relative;
+		position:relative;    
+		overflow: hidden;
+		bottom: -30px;
 		width:50%
 	}
 	.main-banner .des img{
@@ -513,7 +515,7 @@ main{
 		flex-direction:column;
 		-ms-flex-wrap:wrap;
 		flex-wrap:wrap;
-		height:522px;
+		height:472px;
 		-ms-flex-pack:end;
 		-webkit-box-pack:end;
 		justify-content:flex-end
@@ -526,7 +528,7 @@ main{
 }
 @media (min-width: 1000px){
 	.main-banner .container{
-		height:622px
+		height:572px
 	}
 }
 .main-banner-text{
@@ -588,7 +590,7 @@ main{
 		-ms-flex-order:2;
 		-webkit-box-ordinal-group:3;
 		order:2;
-		margin:0 0 90px
+		margin:0 0 20px;
 	}
 }
 @media screen and (max-width: 374px){
@@ -3703,7 +3705,7 @@ input:-webkit-autofill:focus {
     transform: translate(0px, 0px);
 }
 
-#show_list_item {
+#show_list_item, #info-block__title-ico {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -3713,43 +3715,52 @@ input:-webkit-autofill:focus {
     color: #2B3942; 
 	margin: 18px 0 0;
     padding: 0 15px;
-    width: 100%;
+    /* width: 100%; */
     transition: all 150ms linear;
     cursor: pointer;
     transform: translate(0px, 0px);
 }
-#show_list_item:hover {
+#show_list_item:hover{
     transform: translate(0px, 2px);
 }
-#show_list_item__ico {
+#info-block__title-ico:hover {
+    transform: translate(0px, -2px);
+}
+#show_list_item__ico{
+    left: 3px;
+}
+#info-block__title-ico{
+    right: 3px;
+}
+.top_ico {
     display: flex;
     align-items: center;
     position: absolute;
-    left: 3px;
     bottom: 0;
     top: 0;
 }
-#show_list_item__ico i {
+.top_ico i {
     display: block;
     width: 5px;
     height: 5px;
     background: #2b3942;
     transition: all 150ms ease-in;
 }
-#show_list_item:hover #show_list_item__ico i {
+#show_list_item:hover .top_ico i,
+.top_ico:hover i {
     background: #00f9ff;
 }
-#show_list_item__ico i:nth-child(1), #show_list_item__ico i:nth-child(5){
+.top_ico i:nth-child(1), .top_ico i:nth-child(5){
     transform: translate(0px,-5px);
 }
-#show_list_item__ico i:nth-child(3){
+.top_ico i:nth-child(3){
     transform: translate(0px, 5px);
 }
 
-.to_top #show_list_item__ico i:nth-child(1), .to_top #show_list_item__ico i:nth-child(5){
+.to_top .top_ico i:nth-child(1), .to_top .top_ico i:nth-child(5){
     transform: translate(0px,5px);
 }
-.to_top #show_list_item__ico i:nth-child(3){
+.to_top .top_ico i:nth-child(3){
     transform: translate(0px, -5px);
 }
 
