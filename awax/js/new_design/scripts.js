@@ -411,7 +411,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 	const tabs=document.querySelectorAll('.info-block__item-icon'),
 	tabsContent=document.querySelectorAll('.info-block__content-block'),
-	tabsParent=document.querySelector('.info-block__item');
+	tabsParent=document.querySelector('.info-block__item'),
+	tabsContentParent=document.querySelectorAll('.info-block__content');
 	var tabId=0;
 console.log('start');
 	function hideTabsContent(){
@@ -447,7 +448,7 @@ console.log('start');
 
 
 
-alert("swipe");
+alert("swipe2");
 
 var xDown = null;                                                        
 var yDown = null;                                                        
@@ -496,9 +497,9 @@ function handleTouchMove(evt) {
     yDown = null;                                             
 };
 // Вешаем на прикосновение функцию handleTouchStart
-tabsParent.addEventListener('touchstart', handleTouchStart, false);  
+tabsContentParent.addEventListener('touchstart', handleTouchStart, false);  
 // А на движение пальцем по экрану - handleTouchMove      
-tabsParent.addEventListener('touchmove', handleTouchMove, false);
+tabsContentParent.addEventListener('touchmove', handleTouchMove, false);
 
 
 
