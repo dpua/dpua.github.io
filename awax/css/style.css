@@ -3671,7 +3671,7 @@ input:-webkit-autofill:focus {
     overflow: hidden;
     display: block;
     position: relative;
-    padding: 80px 26px 50px;
+    padding: 50px 26px;
     margin: 0 auto;
     user-select: none;
 	pointer-events: none;
@@ -3712,6 +3712,7 @@ input:-webkit-autofill:focus {
     text-align: center;
     color: #2B3942; 
 	margin: 12px 0 0;
+    padding: 0 15px;
     width: 100%;
     transition: all 150ms linear;
     cursor: pointer;
@@ -3872,7 +3873,7 @@ input:-webkit-autofill:focus {
     line-height: 35px;
     display: flex;
     align-items: center;
-    
+    white-space: pre;
     color: #2B3942;
 }
 .info-block__content h2 {
@@ -4036,7 +4037,7 @@ input:-webkit-autofill:focus {
 
 @media (min-width: 820px){
 	.info-block {
-		padding: 0px 26px 0px;
+		padding: 26px;
 	}
 	.info-block__show {
 		padding: 80px 26px 50px;
