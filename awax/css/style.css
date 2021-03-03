@@ -3799,6 +3799,18 @@ input:-webkit-autofill:focus {
 .info-block__item-icon.active{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+.info-block__item-icon::before{
+    transition: all 150ms linear;
+    user-select: none;
+    pointer-events: none;
+	content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	opacity: 0;
+}
 .info-block__item-icon.android{
     background: url("../images/android.svg"); 
 }
@@ -3811,17 +3823,20 @@ input:-webkit-autofill:focus {
 .info-block__item-icon.tv{
     background: url("../images/tv.svg"); 
 }
-.info-block__item-icon.android.active{
+.info-block__item-icon.android::before{
     background: url("../images/android_b.svg"); 
 }
-.info-block__item-icon.ios.active{
+.info-block__item-icon.ios::before{
     background: url("../images/ios_b.svg"); 
 }
-.info-block__item-icon.chrome.active{
+.info-block__item-icon.chrome::before{
     background: url("../images/chrome_b.svg"); 
 }
-.info-block__item-icon.tv.active{
+.info-block__item-icon.tv::before{
     background: url("../images/tv_b.svg"); 
+}
+.info-block__item-icon.active::before{
+	opacity: 1;
 }
 
 
@@ -4226,16 +4241,16 @@ input:-webkit-autofill:focus {
 	.info-block__item-icon.tv{
 		background-image: url(../images/tv_820.svg); 
 	}
-	.info-block__item-icon.android.active{
+	.info-block__item-icon.android::before{
 		background-image: url(../images/android_820_b.svg); 
 	}
-	.info-block__item-icon.ios.active{
+	.info-block__item-icon.ios::before{
 		background-image: url(../images/ios_820_b.svg); 
 	}
-	.info-block__item-icon.chrome.active{
+	.info-block__item-icon.chrome::before{
 		background-image: url(../images/chrome_820_b.svg); 
 	}
-	.info-block__item-icon.tv.active{
+	.info-block__item-icon.tv::before{
 		background-image: url(../images/tv_820_b.svg); 
 	}
 
@@ -4263,16 +4278,16 @@ input:-webkit-autofill:focus {
 	.info-block__item-icon.tv{
 		background-image: url(../images/tv_820.svg); 
 	}
-	.info-block__item-icon.android.active{
+	.info-block__item-icon.android::before{
 		background-image: url(../images/android_820_b.svg); 
 	}
-	.info-block__item-icon.ios.active{
+	.info-block__item-icon.ios::before{
 		background-image: url(../images/ios_820_b.svg); 
 	}
-	.info-block__item-icon.chrome.active{
+	.info-block__item-icon.chrome::before{
 		background-image: url(../images/chrome_820_b.svg); 
 	}
-	.info-block__item-icon.tv.active{
+	.info-block__item-icon.tv::before{
 		background-image: url(../images/tv_820_b.svg); 
 	}
 
