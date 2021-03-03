@@ -448,8 +448,6 @@ console.log('start');
 
 
 
-alert("swipe3");
-
 var xDown = null;                                                        
 var yDown = null;                                                        
 
