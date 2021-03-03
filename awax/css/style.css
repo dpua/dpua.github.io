@@ -4039,9 +4039,6 @@ input:-webkit-autofill:focus {
 	.info-block {
 		padding: 26px;
 	}
-	.info-block__show {
-		padding: 80px 26px 50px;
-	}
 	.info-block__content-block {
 		max-width: 100%;
 		width: 100%;
