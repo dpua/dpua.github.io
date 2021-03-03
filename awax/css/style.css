@@ -3711,7 +3711,7 @@ input:-webkit-autofill:focus {
     font-weight: normal;
     font-size: 20px;
     line-height: 23px;
-    text-align: right;
+    text-align: center;
     color: #2B3942; 
 	margin: 18px 0 0;
     padding: 0 15px;
@@ -4048,6 +4048,10 @@ input:-webkit-autofill:focus {
 
 
 @media (min-width: 820px){
+	
+#show_list_item {
+    text-align: right;
+}
 	.info-block {
 		padding: 26px;
 	}
