@@ -3709,7 +3709,7 @@ input:-webkit-autofill:focus {
     font-weight: normal;
     font-size: 20px;
     line-height: 23px;
-    text-align: center;
+    text-align: right;
     color: #2B3942; 
 	margin: 12px 0 0;
     padding: 0 15px;
