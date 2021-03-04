@@ -434,6 +434,7 @@ console.log('start');
 		tabsContent[i].classList.remove('item-hide');
 		tabsContent[i].classList.add('item-show');
 		tabs[i].classList.add('active');
+		tabId=i;
 	};	
 	hideTabsContent();
 	showTabsContent();
@@ -444,8 +445,6 @@ console.log('start');
 				if(event.target===item){
 					hideTabsContent();
 					showTabsContent(i);
-					tabId=i;
-					console.log('tabId:'+tabId);
 				}
 			});
 		}
