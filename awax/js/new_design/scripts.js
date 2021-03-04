@@ -431,7 +431,6 @@ console.log('start');
 		});
 	};
 	function showTabsContent(i=0){
-		tabId=i;
 		tabsContent[i].classList.remove('item-hide');
 		tabsContent[i].classList.add('item-show');
 		tabs[i].classList.add('active');
@@ -442,13 +441,26 @@ console.log('start');
 	tabsParent.addEventListener('click', (event)=> {
 		if(event.target&&event.target.classList.contains('info-block__item-icon')){
 			tabs.forEach((item, i)=>{
-				if(event.target==item){
+				if(event.target===item){
 					hideTabsContent();
 					showTabsContent(i);
+					tabId=i;
+					console.log('tabId:'+tabId);
 				}
 			});
-		};
+		}
 	});
+
+	const installUrls=[
+		"https://play.google.com/store/apps/details?id=com.awaxtech.app",
+		"https://apps.apple.com/ru/app/awax/id1485689157", 
+		"https://chrome.google.com/webstore/detail/awax/aadlckelcockpdgplkdllgokjnckncll", 
+		"https://play.google.com/store/apps/details?id=com.awaxtech.app"
+	];
+	function installHref(){
+		window.open(installUrls[tabId], '_blank');
+	}
+	document.getElementById("install-href").onclick=installHref;
 
 
 
