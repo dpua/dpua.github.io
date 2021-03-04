@@ -4168,7 +4168,7 @@ input:-webkit-autofill:focus {
 		width: 50%;
 		flex-wrap: nowrap;
 		transform: translate(-7px, -40px);
-		margin-bottom: 50px;
+		margin-top: 50px;
 	}
 	.info-block__content-buy {
 		justify-content: end;
