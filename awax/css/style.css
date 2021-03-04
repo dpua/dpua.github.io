@@ -3715,19 +3715,18 @@ input:-webkit-autofill:focus {
     color: #2B3942; 
 	margin: 18px 0 0;
     padding: 0 15px;
-    /* width: 100%; */
     transition: all 150ms linear;
     cursor: pointer;
     transform: translate(0px, 0px);
+	display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #show_list_item:hover{
     transform: translate(0px, 2px);
 }
 #info-block__title-ico:hover {
     transform: translate(0px, -2px);
-}
-#show_list_item__ico{
-    left: 3px;
 }
 #info-block__title-ico{
     right: 3px;
@@ -3736,9 +3735,7 @@ input:-webkit-autofill:focus {
 .top_ico {
     display: flex;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    top: 0;
+    margin: 7px;
 }
 .top_ico i {
     display: block;
@@ -4063,10 +4060,18 @@ input:-webkit-autofill:focus {
 
 
 @media (min-width: 820px){
-	
-#show_list_item {
-    text-align: right;
-}
+	#show_list_item {
+		text-align: right;
+	    display: block;
+	}
+	.top_ico {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 3px;
+	}
 	.info-block {
 		padding: 26px;
 	}
