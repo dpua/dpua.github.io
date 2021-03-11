@@ -25,6 +25,21 @@
 	 <path fill="#979A9C" d="M11.8,6L8,15.1H7.1L10.8,6L11.8,6z"/>
 </svg>
     
-    
+    <script>
+	    function getHash() {
+  if (window.location.hash) {
+    var hash = window.location.hash.substring(1);
+
+    if (hash.length === 0) { 
+      return false;
+    } else { 
+      return hash; 
+    }
+  } else { 
+    return false; 
+  }
+	    }
+	  console.log(getHash());
+	  </script>
   </body>
 </html>
