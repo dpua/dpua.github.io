@@ -13,33 +13,6 @@ $(document).ready(function() {
     window.location.href = 'salir.php';
   });
 
-  var cookieContent = {};
-
-  if (idiomaEsp(navigator.language)) {
-    cookieContent = {
-      "message": "Esta web utiliza cookies para garantizar que obtenga la mejor experiencia.",
-      "dismiss": "Ok, no mostrar más",
-      "link": "Leer más"
-      // "href": "www.kk.com"
-    }
-  }
-
-  // https://cookieconsent.osano.com
-  window.cookieconsent.initialise({
-    "palette": {
-      "popup": {
-        "background": "#000"
-      },
-      "button": {
-        "background": "#f1d600"
-      },
-    },
-    "theme": "classic",
-    "content": cookieContent,
-    "position": "bottom"
-  });
-})
-
 
 function initMaterializeComponents() {
   $(".dropdown-trigger").dropdown();
@@ -82,7 +55,7 @@ function idiomaEsp(idioma) {
 function HayEspacios(pasw){
   var cont=0;
   while (cont<pasw.length){
-      if (pasw.charAt(cont) == ' '){
+      if (pasw.charAt(cont) === ' '){
           return true;
       }
       cont++;
@@ -100,7 +73,7 @@ if (textoIng) {
 } else {
   $('.mensaje-modal').text(texto).fadeOut(500).fadeIn(500);
 }
-}
+};
 
 function activarClaseActivaInputs() {
   $('input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=search], input[type=date], input[type=time], textarea').each(function (element, i) {
@@ -112,4 +85,4 @@ function activarClaseActivaInputs() {
     //     $(this).siblings('label').removeClass('active');
     // }
   });
-}
+};

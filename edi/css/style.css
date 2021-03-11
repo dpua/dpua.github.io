@@ -15,7 +15,7 @@ body {
 	min-height: 100vh;
 	flex-direction: column;
 	width: 100%;
-	background: #ececec url("../appimg/patterns/noise.webp");
+	background: #ececec url("../img/noise.webp");
 	/* background-color:#f7f7f7; */
 	/* background: #f7f7f7 url(https://hankchizljaw.imgix.net/noise.webp?auto=format); */
 }
@@ -458,7 +458,7 @@ button i.loader{
 }
 
 .no-pad-bot.index-welcome {
-	background: #ececec url(../appimg/patterns/noise.webp);
+	background: #ececec url(../img/noise.webp);
 }
 
 .linea-principal.container {
