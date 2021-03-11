@@ -3735,7 +3735,7 @@ input:-webkit-autofill:focus {
 .top_ico {
     display: flex;
     align-items: center;
-    margin: 7px;
+    margin: 0 14px 0 -7px;
 }
 .top_ico i {
     display: block;
@@ -3787,6 +3787,8 @@ input:-webkit-autofill:focus {
     margin: 13px 9px;
     transition: all 150ms linear;
     cursor: pointer;
+    position: relative;
+    background-repeat: no-repeat;
 }
 
 .info-block__item-icon:hover{
@@ -3807,30 +3809,31 @@ input:-webkit-autofill:focus {
     right: 0;
     bottom: 0;
 	opacity: 0;
+    background-repeat: no-repeat;
 }
 .info-block__item-icon.android{
-    background: url("../images/android.svg"); 
+    background-image: url("../images/android.svg"); 
 }
 .info-block__item-icon.ios{
-    background: url("../images/ios.svg"); 
+    background-image: url("../images/ios.svg"); 
 }
 .info-block__item-icon.chrome{
-    background: url("../images/chrome.svg"); 
+    background-image: url("../images/chrome.svg"); 
 }
 .info-block__item-icon.tv{
-    background: url("../images/tv.svg"); 
+    background-image: url("../images/tv.svg"); 
 }
 .info-block__item-icon.android::before{
-    background: url("../images/android_b.svg"); 
+    background-image: url("../images/android_b.svg"); 
 }
 .info-block__item-icon.ios::before{
-    background: url("../images/ios_b.svg"); 
+    background-image: url("../images/ios_b.svg"); 
 }
 .info-block__item-icon.chrome::before{
-    background: url("../images/chrome_b.svg"); 
+    background-image: url("../images/chrome_b.svg"); 
 }
 .info-block__item-icon.tv::before{
-    background: url("../images/tv_b.svg"); 
+    background-image: url("../images/tv_b.svg"); 
 }
 .info-block__item-icon.active::before{
 	opacity: 1;
