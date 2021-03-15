@@ -438,7 +438,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 // }
 function typeWriter(e, txt, s=4, i=s) {
   if (i < txt.length) {
-	let txti = txt.substring(0,s)+txt.substring(s,1+i)+'_';//.charAt(i);.substring(0,i)
+	  let a=(i < txt.length-1)?'_':'';
+	let txti = txt.substring(0,s)+txt.substring(s,1+i)+a;//.charAt(i);.substring(0,i)
 	console.log("text: "+i+" "+ txti);//.slice(0, i)
     e.innerHTML = txti;
     i++;
