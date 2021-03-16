@@ -3322,7 +3322,7 @@ input:-webkit-autofill:focus {
 	height: 17px;
 }
 
-#model-login .input-wrap .placeholder{
+.input-wrap .placeholder{
 	-webkit-transform:scale(1);
 	-ms-transform:scale(1);
 	transform:scale(1);
@@ -3331,7 +3331,7 @@ input:-webkit-autofill:focus {
 	transform-origin:center top;
 }
 
-#model-login .input-wrap input:focus+.placeholder{
+.input-wrap input:focus+.placeholder{
 	-webkit-transform:scale(0.8);
 	-ms-transform:scale(0.8);
 	transform:scale(0.8);
@@ -3361,7 +3361,7 @@ input:-webkit-autofill:focus {
 .page-link a:hover{
 	text-decoration: none;
 }
-
+/* 
 #model-password .input-wrap .placeholder {
 	-webkit-transform: scale(0.8);
 	-ms-transform: scale(0.8);
@@ -3371,7 +3371,7 @@ input:-webkit-autofill:focus {
 	transform-origin: center top;
 	color: #00ebfd;
 	top: -25px;
-}
+} */
 
 .page-form{
 	padding-top: 100px;
