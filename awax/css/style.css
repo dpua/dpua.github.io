@@ -2072,10 +2072,10 @@ main{
 	content:"";
 	position:absolute;
 	right:27%;
-	top:50%;
-	-webkit-transform:translateY(-50%);
-	-ms-transform:translateY(-50%);
-	transform:translateY(-50%);
+	/* top:50%; */
+	/* -webkit-transform:translateY(-50%);
+	-ms-transform:translateY(-50%); */
+	transform: translateX(0px);
 	cursor:pointer;
 	width:9px;
 	height:15px;
@@ -2084,12 +2084,15 @@ main{
 	background-size:cover
 }
 .menu-dropdown-link:hover::after{
-	transform: translate(9px, -50%);
+	transform: translateX(9px);
+}
+.ovh .menu-dropdown-link:after{
+	transform: rotate(180deg);
 }
 @media (min-width: 820px){
 	.menu-dropdown-link:after{
 		right:15px;
-		top:48%
+		/* top:48% */
 	}
 }
 .menu-dropdown-header.login-in .menu-dropdown-link{
@@ -2728,7 +2731,12 @@ main{
 	background-repeat:no-repeat;
 	background-size:18px;
 	top:0;
-	right:0
+	right:0;
+	transition:all 0.25s linear;
+	transform: translateX(0px);
+}
+.model-window .btn-wrap .btn:hover:after{
+transform: translateX(4px);
 }
 @media (min-width: 820px){
 	.model-window .btn-wrap .btn:after{
@@ -2787,6 +2795,9 @@ main{
 	}
 }
 .model-window .input-wrap input{
+	-webkit-transition:all .25s linear;
+	-o-transition:all .25s linear;
+	transition:all .25s linear;
 	background:none;
 	padding:0;
 	line-height:43px;
@@ -2795,8 +2806,18 @@ main{
 	display:block;
 	color:#fff;
 	width:100%;
-	margin:0
+	margin:0;
+	border-bottom: 1px solid #2b3942;
 }
+
+.model-window .input-wrap input:focus{
+	border-bottom: 3px solid #2b3942;
+}
+
+.model-window .input-wrap input:focus+label{
+	font-weight: 600;
+}
+
 @media (min-width: 820px){
 	.model-window .input-wrap input{
 		color:#2b3942
