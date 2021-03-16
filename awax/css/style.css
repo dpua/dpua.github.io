@@ -3986,6 +3986,10 @@ input:-webkit-autofill:focus {
     /* padding: 45px 0; */
     height: 305px;
 }
+
+.android_block__txt strong, .iphone_block__txt strong, .chrome_block__txt strong, .tv_block__txt strong{
+    display: contents;
+}
 .chrome_block__txt{
     transform: translate(-7px, 0px);
 }
@@ -4031,6 +4035,9 @@ input:-webkit-autofill:focus {
 .info-block__content-block p:nth-child(4){
     transition-delay: 150ms;
 }
+.info-block__content-block p:nth-child(5){
+    transition-delay: 200ms;
+}
 .info-block__content-buy{
     display: flex;
     flex-direction: row;
@@ -4064,7 +4071,7 @@ input:-webkit-autofill:focus {
     box-sizing: border-box;
     box-shadow: 0px 0px 16px rgb(0 0 0 / 25%);
     border-radius: 10px;
-    padding: 11px 20px;
+    padding: 18px 20px;
     margin: 6px 20px;
     transition: all 150ms linear;
     width: 100%;
@@ -4200,12 +4207,12 @@ input:-webkit-autofill:focus {
 	.info-block__content-buy {
 		justify-content: end;
 		width: 50%;
-		margin: 54px 0;
+		margin: 44px 0;
 		font-size: 24px;
 		line-height: 28px;
 	}
 	.info-block__content-buy button {
-		padding: 11px 32px;
+		padding: 18px 32px;
 		font-size: 16px;
 		line-height: 19px;
 	}
@@ -4238,10 +4245,10 @@ input:-webkit-autofill:focus {
 		background-image: url(../images/img_web_devices/tv@2x.png);
 	} */
 	.info-block__content-buy {
-		margin: 54px 0;
+		margin: 44px 0;
 	}
 	.info-block__content-buy button {
-		padding: 11px 42px;
+		padding: 18px 42px;
 	}
 }
 
