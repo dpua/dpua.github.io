@@ -421,21 +421,13 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	var tabId=0;
 	const description=[
 		"AWAX Android",
-		"AWAX iPhone", 
-		"AWAX PC", 
+		"AWAX блокировщик рекламы в браузере Safari", 
+		"AWAX PC ( Mac OS, Windows )", 
 		"AWAX Android TV"
 	];
 
 
 
-// function typeWriter(e, txt, i=0) {
-//   if (i < txt.length) {
-// 	  console.log("text: "+i+" "+txt.charAt(i));
-//     e.innerHTML += txt.charAt(i);
-//     i++;
-//     setTimeout(() => typeWriter(e, txt, i), 140);
-//   }
-// }
 function typeWriter(e, txt, s=4, i=s) {
   if (i < txt.length) {
 	  let a=(i < txt.length-1)?'_':'';
