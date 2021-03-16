@@ -427,16 +427,17 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	];
 
 
-
-function typeWriter(e, txt, s=4, i=s) {
-  if (i < txt.length) {
-	  let a=(i < txt.length-1)?'_':'';
-	let txti = txt.substring(0,s)+txt.substring(s,1+i)+a;//.charAt(i);.substring(0,i)
-	console.log("text: "+i+" "+ txti);//.slice(0, i)
-    e.innerHTML = txti;
-    i++;
-    setTimeout(() => typeWriter(e, txt, i), 70);
-  }
+let timer=0;
+function typeWriter(timers, e, txt, s=4, i=s) {
+	if(timer!==timers)return false;
+	if (i < txt.length) {
+		let a=(i < txt.length-1)?'_':'';
+		let txti = txt.substring(0,s)+txt.substring(s,1+i)+a;//.charAt(i);.substring(0,i)
+		console.log("text: "+i+" "+ txti);//.slice(0, i)
+		e.innerHTML = txti;
+		i++;
+		setTimeout(() => typeWriter(timers, e, txt, s, i), 70);
+	}
 }
 
 
@@ -460,7 +461,8 @@ console.log('start');
 		tabsContent[i].classList.add('item-show');
 		tabs[i].classList.add('active');
 		infoBlockDescription.innerHTML='';//description[i];
-		typeWriter(infoBlockDescription, description[i]);
+		timer=i;
+		typeWriter(timer, infoBlockDescription, description[i]);
 		tabId=i;
 	};	
 	hideTabsContent();
