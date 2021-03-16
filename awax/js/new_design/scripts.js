@@ -421,8 +421,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	var tabId=0;
 	const description=[
 		"AWAX Android",
-		"AWAX блокировщик рекламы в браузере Safari", 
-		"AWAX PC ( Mac OS, Windows )", 
+		"AWAX iOS", 
+		"AWAX PC (Mac OS/Windows)", 
 		"AWAX Android TV"
 	];
 
