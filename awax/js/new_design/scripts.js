@@ -419,6 +419,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	tabsContentParent=document.querySelector('.info-block__content'),
 	infoBlockDescription=document.getElementById('info-block-description');
 	var tabId=0;
+	let timer=0;
 	const description=[
 		"AWAX Android",
 		"AWAX iOS", 
@@ -426,25 +427,19 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		"AWAX Android TV"
 	];
 
-
-let timer=0;
-function typeWriter(timers, e, txt, s=4, i=s) {
-	if(timer!==timers)return false;
-	if (i < txt.length) {
-		let a=(i < txt.length-1)?'_':'';
-		let txti = txt.substring(0,s)+txt.substring(s,1+i)+a;//.charAt(i);.substring(0,i)
-		console.log("text: "+i+" "+ txti);//.slice(0, i)
-		e.innerHTML = txti;
-		i++;
-		setTimeout(() => typeWriter(timers, e, txt, s, i), 70);
+	function typeWriter(timers, e, txt, s=4, i=s) {
+		if(timer!==timers)return false;
+		if (i < txt.length) {
+			let a=(i < txt.length-1)?'_':'';
+			let txti = txt.substring(0,s)+txt.substring(s,1+i)+a;//.charAt(i);.substring(0,i)
+			console.log("text: "+i+" "+ txti);//.slice(0, i)
+			e.innerHTML = txti;
+			i++;
+			setTimeout(() => typeWriter(timers, e, txt, s, i), 300/(txt.length-s));//70
+		}
 	}
-}
 
-
-
-
-
-console.log('start');
+	console.log('start');
 	function hideTabsContent(){
 		tabs.forEach(i => {
 			i.classList.remove('active');
@@ -471,7 +466,7 @@ console.log('start');
 	tabsParent.addEventListener('click', (event)=> {
 		if(event.target&&event.target.classList.contains('info-block__item-icon')){
 			tabs.forEach((item, i)=>{
-				if(event.target===item){
+				if(event.target===item && i!==tabId){
 					hideTabsContent();
 					showTabsContent(i);
 				}
