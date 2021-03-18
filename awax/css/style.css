@@ -4179,23 +4179,28 @@ input:-webkit-autofill:focus {
 		background-image: url(../images/tv_820.png);
 	} */
 	.android_block {
-		background-image: url(../Screenshot_2021-03-18-15-27-21-757_com.awaxtech.app.jpg); 
-		background-size: auto 115%;
-		background-position: top 0px left 5%;
+		background-image: url('../Android_297X495px(330X530).png'); 
+		/* background-size: auto 115%; */
+		background-position: bottom 0px left 7%;
 	}
 	.iphone_block {
 		background-image: url(../images/img_web_devices/iOS@2x.png);
-		background-size: auto 115%;
-		background-position: top 0px left 5%;
+		background-image: url('../ios_297X495px(330X530).png');
+		/* background-size: auto 115%;
+		background-position: top 0px left 5%; */
+		/* background-size: auto 100%; */
+		background-position: bottom 0px left 7%;
 	}
 	.chrome_block {
-		background-image: url(../images/img_web_devices/Chrome@2x.png);
-		background-size: 60% AUTO;
+		/* background-image: url(../images/img_web_devices/Chrome@2x.png); */
+		background-image: url(../chrome520X445.png);
+		/* background-size: 60% AUTO; */
 		background-position: center left -15%;
 	}
 	.tv_block {
 		background-image: url(../images/img_web_devices/tv@2x.png);
-		background-size: 55% AUTO;
+		background-image: url("../tv (3).png");
+		/* background-size: 55% AUTO; */
 		background-position: top left -10%;
 	}
 	.info-block__content {
