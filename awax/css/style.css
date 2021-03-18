@@ -4030,7 +4030,8 @@ input:-webkit-autofill:focus {
 }
 .tv_block__txt{
     width: 100%;
-    flex-direction: revert;
+    /* flex-direction: revert; */
+    flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
     height: 148px;
@@ -4178,7 +4179,7 @@ input:-webkit-autofill:focus {
 		background-image: url(../images/tv_820.png);
 	} */
 	.android_block {
-		background-image: url(../images/img_web_devices/Android@2x.png); 
+		background-image: url(../Screenshot_2021-03-18-15-27-21-757_com.awaxtech.app.jpg); 
 		background-size: auto 115%;
 		background-position: top 0px left 5%;
 	}
@@ -4233,7 +4234,8 @@ input:-webkit-autofill:focus {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		padding-right: 65px;
+		/* padding-right: 65px; */
+		padding-right: 60px;
 		height: 272px;
 		width: 50%;
 		flex-wrap: nowrap;
