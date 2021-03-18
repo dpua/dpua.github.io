@@ -432,14 +432,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		if (i < txt.length) {
 			let a=(i < txt.length-1)?'_':'';
 			let txti = txt.substring(0,s)+txt.substring(s,1+i)+a;//.charAt(i);.substring(0,i)
-			console.log("text: "+i+" "+ txti);//.slice(0, i)
+			//console.log("text: "+i+" "+ txti);//.slice(0, i)
 			e.innerHTML = txti;
 			i++;
 			setTimeout(() => typeWriter(timers, e, txt, s, i), 300/(txt.length-s));//70
 		}
 	}
 
-	console.log('start');
+	//console.log('start');
 	function hideTabsContent(){
 		tabs.forEach(i => {
 			i.classList.remove('active');
