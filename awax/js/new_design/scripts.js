@@ -411,12 +411,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
 					infoBlock.classList.add('info-block__show');
 					showListItem.classList.add('to_top');
 					$('.download-loader').removeClass('show');
+					$('#info-block__title-logo').addClass('start');
 				}, times+100
 			);
 			
 		}else{
 			infoBlock.classList.remove('info-block__show');
 			showListItem.classList.remove('to_top');
+			$('#info-block__title-logo').removeClass('start');
 		}
 
 	}

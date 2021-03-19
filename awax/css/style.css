@@ -4692,3 +4692,88 @@ input::placeholder {
 .shop-section.shop-active .slick-slide-checked .shop-slider-item:hover{
 	box-shadow: 0 0 0 4px #00ebfd, 0 11px 12px 2px rgb(0 0 0 / 26%), 0 0 1px 5px rgb(0 0 0 / 26%)
 }
+
+
+
+
+#info-block__title-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	bottom: 0;
+	top: 0;
+	left: 3px;
+	margin: 10px;
+	width: 44px;
+	height: 44px;
+	background: #2b3942;
+	border-radius: 50%;
+}
+#info-block__title-logo i {
+	display: flex;
+	width: 4px;
+	height: 4px;
+	background: #00f9ff;
+	transition: all 150ms ease-in;
+	font-size: 0px;
+}
+
+
+#info-block__title-logo div:nth-child(1){
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+#info-block__title-logo div:nth-child(2){
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	margin: 1px;
+}
+#info-block__title-logo div:nth-child(3){
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	margin: 6px 0 4px;	
+}
+
+#info-block__title-logo.start div:nth-child(1) i:nth-child(1){
+	margin: 1px;
+	animation: 2s ease-in 0.2s 2 slidein;
+}
+#info-block__title-logo.start div:nth-child(1) i:nth-child(2){
+	margin: 1px;
+	animation: 2s ease-in 0.3s 2 slidein;
+}
+#info-block__title-logo.start div:nth-child(1) i:nth-child(3){
+	margin: 1px;
+	animation: 2s ease-in 0.4s 2 slidein;
+}
+
+#info-block__title-logo.start div:nth-child(2) i:nth-child(1),
+#info-block__title-logo.start div:nth-child(2) i:nth-child(5){
+	transform: translate(0px,-4px);
+	animation: 2s ease-in 0.9s 2 slidein;
+}
+#info-block__title-logo.start div:nth-child(2) i:nth-child(2),
+#info-block__title-logo.start div:nth-child(2) i:nth-child(4){
+	animation: 2s ease-in 0.8s 2 slidein;
+}
+#info-block__title-logo.start div:nth-child(2) i:nth-child(3){
+	transform: translate(0px,4px);
+	animation: 2s ease-in 0.7s 2 slidein;
+}
+
+#info-block__title-logo.start div:nth-child(3) i{
+	margin: 0px;
+	width: 20px;
+	height: 2px;
+}
+@keyframes slidein {
+	50% { opacity: 1; } 51% { opacity: 0.1; } 55% { opacity: 0.1; } 63% { opacity: 1; }  
+	
+}
