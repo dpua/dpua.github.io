@@ -405,13 +405,13 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			let times=300;
 			$('html,body').animate({
 				scrollTop: $("#list_info").offset().top-70//+80
-			}, times+50);
+			}, times);
 			setTimeout(
 				()=>{
 					infoBlock.classList.add('info-block__show');
 					showListItem.classList.add('to_top');
 					$('.download-loader').removeClass('show');
-				}, times
+				}, times+50
 			);
 			
 		}else{
