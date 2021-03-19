@@ -418,14 +418,29 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	tabsParent=document.querySelector('.info-block__item'),
 	tabsContentParent=document.querySelector('.info-block__content'),
 	infoBlockDescription=document.getElementById('info-block-description');
+
+	let description=[],installUrls=[];
 	var tabId=0;
 	let timer=0;
-	const description=[
-		"AWAX Android",
-		"AWAX iOS", 
-		"AWAX PC (Mac OS/Windows)", 
-		"AWAX Android TV"
-	];
+	// const description=[
+	// 	"AWAX Android",
+	// 	"AWAX iOS", 
+	// 	"AWAX PC (Mac OS/Windows)", 
+	// 	"AWAX Android TV"
+	// ];
+	// const installUrls=[
+	// 	"https://play.google.com/store/apps/details?id=com.awaxtech.app",
+	// 	"https://apps.apple.com/ru/app/awax/id1485689157", 
+	// 	"https://chrome.google.com/webstore/detail/awax/aadlckelcockpdgplkdllgokjnckncll", 
+	// 	"https://play.google.com/store/apps/details?id=com.awaxtech.app"
+	// ];
+	tabs.forEach(i => {
+		description.push(i.dataset.description);
+		installUrls.push(i.dataset.urls);
+		//data-description="" data-urls
+	});
+
+
 
 	function typeWriter(timers, e, txt, s=4, i=s) {
 		if(timer!==timers)return false;
@@ -474,12 +489,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	});
 
-	const installUrls=[
-		"https://play.google.com/store/apps/details?id=com.awaxtech.app",
-		"https://apps.apple.com/ru/app/awax/id1485689157", 
-		"https://chrome.google.com/webstore/detail/awax/aadlckelcockpdgplkdllgokjnckncll", 
-		"https://play.google.com/store/apps/details?id=com.awaxtech.app"
-	];
+
 	function installHref(){
 		window.open(installUrls[tabId], '_blank');
 	}
@@ -494,7 +504,7 @@ var yDown = null;
 function handleTouchStart(evt) {                                         
     xDown = evt.touches[0].clientX;                                      
     yDown = evt.touches[0].clientY;                                      
-};   
+} 
 
 function swipe(e){
 	let i=tabId+e;
@@ -502,7 +512,7 @@ function swipe(e){
 	if(i<0)i=(tabs.length-1);
 	hideTabsContent();
 	showTabsContent(i);
-};
+}
 
 function handleTouchMove(evt) {
     if ( ! xDown || ! yDown ) {
@@ -523,226 +533,15 @@ function handleTouchMove(evt) {
             /* right swipe */
 			swipe(-1);
         }                       
-    } else { // Это вам, в общем-то, не надо, вы ведь только влево-вправо собираетесь двигать
-        if ( yDiff > 0 ) {
-            /* up swipe */ 
-        } else { 
-            /* down swipe */
-        }                                                                 
-    }
+    } 
     /* reset values */
     xDown = null;
     yDown = null;                                             
-};
+}
 // Вешаем на прикосновение функцию handleTouchStart
 tabsContentParent.addEventListener('touchstart', handleTouchStart, false);  
 // А на движение пальцем по экрану - handleTouchMove      
 tabsContentParent.addEventListener('touchmove', handleTouchMove, false);
 
-
-
-	
-	//const buyButtons=document.querySelectorAll('.click_buy'),
-	//buyButtonsParent=document.querySelector('.shop-section');
-	//buyButtonsParent=document.querySelector('.info-block__item');
-	//buyButtonsParent=document.getElementById("shop");
-/*
-	function showBuyBlock(i){
-		buyButtonsParent.classList.toggle("shop-active");
-		console.log("buy"+i);
-	}
-
-
-	buyButtons.forEach((item, i)=>{
-		//event.preventDefault();
-		item.addEventListener('click', (event)=> {
-		showBuyBlock(i);
-		});
-	
-	});
-
-	buyButtonsParent.addEventListener('click', (event)=> {
-		if(event.target&&event.target.classList.contains('click_buy')){
-			buyButtons.forEach((item, i)=>{
-					//event.preventDefault();
-					showBuyBlock(i);
-				
-			});
-		};
-	});
-*/
-/*
-
-const arrowIco=`
-	<div class="center-con">
-		<div class="round">
-			<div class="qwert_get-img_cta">
-				<span class="arrow primera next "></span>
-				<span class="arrow segunda next "></span>
-			</div>
-		</div>
-	</div>
-`;
-function getImg() {
-	console.log("*** start node");
-	let div=document.getElementById("qwert_get-img");
-	if(!div){
-		div = document.createElement("div");
-		div.id="qwert_get-img";
-		document.body.appendChild(div);
-	}
-	function addElement(i, y, x, e) {
-
-		var el = document.createElement("a");
-			el.id="qwert_get-img"+i;
-			el.classList.add('qwert_get-img');
-			el.innerHTML = `<div class="qwert_get-img_bg" style="background-image:  url(${e});"></div>${arrowIco}`;
-			el.href=e;
-			el.setAttribute("download", true);
-			el.setAttribute("style", "top: "+y+"px; left: "+x+"px;");
-
-		div.appendChild(el);
-	}
-	document.querySelectorAll('*').forEach(function(node, i) {
-		if(node.tagName==="IMG"){		
-			console.log("*** nodeIMG: "+i);
-			console.log(node.src);
-			console.log(node.tagName);
-			let c = node.getBoundingClientRect();
-			addElement(i, c.top+pageYOffset+(node.scrollHeight/2), c.left+pageXOffset+(node.scrollWidth/2), node.src);
-		}
-		var prop = window.getComputedStyle(node).getPropertyValue('background-image');
-		var re = /url\((['"])?(.*?)\1\)/gi;
-		var matches;
-		while ((matches = re.exec(prop)) !== null) {
-			console.log("*** node: "+i);
-			console.log(matches[2]);
-			console.log(node.tagName);
-			let c = node.getBoundingClientRect();
-			addElement(i, c.top+pageYOffset+(node.scrollHeight/2), c.left+pageXOffset+(node.scrollWidth/2), matches[2]);
-		}
-	});
-	console.log("*** stop node");
-
-	var element = document.querySelector(".android_block");
-	var prop = window.getComputedStyle(element).getPropertyValue('background-image');
-	var re = /url\((['"])?(.*?)\1\)/gi;
-	var matches;
-	while ((matches = re.exec(prop)) !== null) {
-		console.log(matches[2]);
-	}
-
-	  document.head.insertAdjacentHTML("beforeend",
-		`<style data-style=qwert>
-			.qwert_get-img {
-				z-index: 999; 
-				position: absolute;  
-				filter: drop-shadow(1px 0px 2px #000);
-				transform: translateX(0px);
-			}
-			.center-con {
-				filter: drop-shadow(1px 0px 2px #000);
-			}
-			.qwert_get-img_bg{
-				position: absolute;   
-				width:0px;
-				height:0px;
-				background-repeat:no-repeat;
-				background-size:contain;
-				background-position: 10px 10px;
-				filter: drop-shadow(1px 0px 2px #000);
-			}
-			.qwert_get-img:hover {
-				z-index: 1000; 
-				width:100px;
-				height:100px;
-				transform: translateX(-50px);
-			}
-			.qwert_get-img:hover .qwert_get-img_bg {
-				width:100px;
-				height:100px;
-				background-position:center center;
-			}
-			.qwert_get-img:hover::before{    
-				content: '';
-				width: 100px;
-				height: 100px;
-				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURb+/v////5nD/3QAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAUSURBVBjTYwABQSCglEENMxgYGAAynwRB8BEAgQAAAABJRU5ErkJggg==);
-				background-repeat: repeat;
-				display: block;
-				position: absolute;
-			}
-
-			.qwert_get-img .center-con {
-				transform: rotate(90deg);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-			
-			.qwert_get-img .round {
-				position: absolute;
-				border: 2px solid #fff;
-				width: 40px;
-				height: 40px;
-				border-radius: 100%;
-				
-			}
-			
-			.qwert_get-img_cta{
-				width:100%; cursor: pointer; position: absolute;
-			}
-			
-			.qwert_get-img_cta .arrow{left: 30%;}
-			.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:12px;}
-			.segunda{margin-left: 8px;}
-			.next {
-				background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
-			}
-			
-			@keyframes bounceAlpha {
-			  0% {opacity: 1; transform: translateX(0px) scale(1);}
-			  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
-			  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
-			  55% {opacity: 1; transform: translateX(0px) scale(1);}
-			}
-			
-			.bounceAlpha {
-				animation-name: bounceAlpha;
-				animation-duration:1.4s;
-				animation-iteration-count:infinite;
-				animation-timing-function:linear;
-			}
-			
-			.arrow.primera.bounceAlpha {
-				animation-name: bounceAlpha;
-				animation-duration:1.4s;
-				animation-delay:0.2s;
-				animation-iteration-count:infinite;
-				animation-timing-function:linear;
-			}
-			
-			.qwert_get-img:hover .arrow{
-				animation-name: bounceAlpha;
-				animation-duration:1.4s;
-				animation-iteration-count:infinite;
-				animation-timing-function:linear;
-			}
-			.qwert_get-img:hover .arrow.primera{
-				animation-name: bounceAlpha;
-				animation-duration:1.4s;
-				animation-delay:0.2s;
-				animation-iteration-count:infinite;
-				animation-timing-function:linear;
-			}
-		</style>`);  
-}
-
-setTimeout(function () {
-	getImg();
-}, 1000);
-
-
-*/
 
 });
