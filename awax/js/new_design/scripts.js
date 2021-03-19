@@ -401,9 +401,19 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		toggle=(toggle)?false:true;
 		console.log("toggle:"+toggle);
 		if(toggle){
-			infoBlock.classList.add('info-block__show');
-			showListItem.classList.add('to_top');
-			$('.download-loader').removeClass('show');
+
+			let times=300;
+			$('html,body').animate({
+				scrollTop: $("#list_info").offset().top-70//+80
+			}, times+50);
+			setTimeout(
+				()=>{
+					infoBlock.classList.add('info-block__show');
+					showListItem.classList.add('to_top');
+					$('.download-loader').removeClass('show');
+				}, times
+			);
+			
 		}else{
 			infoBlock.classList.remove('info-block__show');
 			showListItem.classList.remove('to_top');
