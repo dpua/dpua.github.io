@@ -411,7 +411,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 					infoBlock.classList.add('info-block__show');
 					showListItem.classList.add('to_top');
 					$('.download-loader').removeClass('show');
-				}, times+50
+				}, times+100
 			);
 			
 		}else{
