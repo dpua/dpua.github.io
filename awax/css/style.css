@@ -3783,7 +3783,7 @@ input::placeholder {
 .top_ico {
     display: flex;
     align-items: center;
-    margin: 0 14px 0 -7px;
+	margin: 0 10px 0 -7px;
 }
 .top_ico i {
     display: block;
@@ -4127,6 +4127,12 @@ input::placeholder {
 
 
 @media (min-width: 820px){
+	
+.top_ico {
+    display: flex;
+    align-items: center;
+	margin: 0 0px 0 0px;
+}
 	#show_list_item {
 		text-align: right;
 	    display: block;
