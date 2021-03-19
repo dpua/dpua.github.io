@@ -335,7 +335,8 @@ input::-ms-clear{
 	z-index: 13;
 	margin:auto 0
 }
-.header-logo img{
+.header-logo img,
+.footer-logo img{
 	min-width:85px
 }
 @media (min-width: 820px){
