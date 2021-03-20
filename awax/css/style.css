@@ -4229,7 +4229,8 @@ input::placeholder {
 		align-items: center;
 		color: #2B3942;
 		width: 50%;
-		margin-top: 45px;
+		margin-top: 45px; 
+		padding-left: 25px;
 	}
 	.android_block__txt p, .iphone_block__txt p, .chrome_block__txt p, .tv_block__txt p {
 		font-family: Roboto;
@@ -4744,29 +4745,29 @@ input::placeholder {
 
 #info-block__title-logo.start div:nth-child(1) i:nth-child(1){
 	margin: 1px;
-	animation: 2s ease-in 0.2s 2 slidein;
+	animation: 1.5s ease-in 0.2s 2 slidein;
 }
 #info-block__title-logo.start div:nth-child(1) i:nth-child(2){
 	margin: 1px;
-	animation: 2s ease-in 0.3s 2 slidein;
+	animation: 1.5s ease-in 0.25s 2 slidein;
 }
 #info-block__title-logo.start div:nth-child(1) i:nth-child(3){
 	margin: 1px;
-	animation: 2s ease-in 0.4s 2 slidein;
+	animation: 1.5s ease-in 0.3s 2 slidein;
 }
 
 #info-block__title-logo.start div:nth-child(2) i:nth-child(1),
 #info-block__title-logo.start div:nth-child(2) i:nth-child(5){
 	transform: translate(0px,-4px);
-	animation: 2s ease-in 0.9s 2 slidein;
+	animation: 1.5s ease-in 0.55s 2 slidein;
 }
 #info-block__title-logo.start div:nth-child(2) i:nth-child(2),
 #info-block__title-logo.start div:nth-child(2) i:nth-child(4){
-	animation: 2s ease-in 0.8s 2 slidein;
+	animation: 1.5s ease-in 0.5s 2 slidein;
 }
 #info-block__title-logo.start div:nth-child(2) i:nth-child(3){
 	transform: translate(0px,4px);
-	animation: 2s ease-in 0.7s 2 slidein;
+	animation: 1.5s ease-in 0.45s 2 slidein;
 }
 
 #info-block__title-logo.start div:nth-child(3) i{
@@ -4775,6 +4776,6 @@ input::placeholder {
 	height: 2px;
 }
 @keyframes slidein {
-	50% { opacity: 1; } 51% { opacity: 0.1; } 55% { opacity: 0.1; } 63% { opacity: 1; }  
+	30% { opacity: 1; } 31% { opacity: 0.2; } 38% { opacity: 0.5; } 40% { opacity: 1; }  
 	
 }
