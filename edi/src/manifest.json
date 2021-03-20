@@ -15,34 +15,29 @@
    "content_security_policy": "script-src 'self'; object-src 'self'",
    "description": "With this ext, you can make notes on any web page, any position. when you open that page again, the notes get loaded automaticly.",
    "icons": {
-      "32": "asset/note-32.png",
-      "48": "asset/note-48.png"
+      "16": "asset/ediNotes16.png",
+      "32": "asset/ediNotes32.png",
+      "64": "asset/ediNotes64.png",
+      "128": "asset/ediNotes128.png",
+      "512": "asset/ediNotes512.png"
    },
    "manifest_version": 2,
    "name": "ediNotes",
    "options_page": "options.html",
    "permissions": [ 
-      "notifications", 
-      "*://*/*",
       "identity", 
       "identity.email",
       "contextMenus", 
-      "privacy", 
-      "storage", 
-      "activeTab",
+      "storage",
       "tabs", 
-      "unlimitedStorage", 
-      "webNavigation", 
-      "webRequest", 
-      "webRequestBlocking", 
-      "\u003Call_urls>"
-      ], 
+      "http://*/*", 
+      "https://*/*" 
   ],
   "short_name": "EDI - edite your web",
   "storage": {
      "managed_schema": "managed_storage.json"
   },
   "update_url": "https://clients2.google.com/service/update2/crx",
-  "version": "1.0.",
+  "version": "1.0.2",
   "web_accessible_resources": [ "asset/*.png" ]
 }

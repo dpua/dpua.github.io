@@ -7,11 +7,76 @@
 body{
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 12px;
+    /* background: #2b3942; */
+	background: #e8e8e8;
+	margin: 0rem;
+}
+a {
+    color: rgb(0,117,255);
+}
+#canvas{
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+    right: 0;
+    bottom: 0;
+    user-select: none;
+    pointer-events: none;
+	z-index: -1;
+}
+
+.edi-notes {
+    background-color: #fff046;
+	color: #006;
+    height: 200px;
+    padding: 0px;
+    position: absolute;
+    width: 150px;
+    -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.edi-notes:hover .closebutton {
+    display: block;
+} 
+
+.edi-notes .closebutton {
+    display: none;
+    background-image: url(deleteButton.png);
+    height: 30px;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    width: 30px;
+}
+
+.edi-notes  .edit {
+    outline: none;
+	text-align:left;
+	font-size: 14px;
+	font-family: arial, sans-serif;
+	height:190px;
+	overflow:auto;
+}
+
+.edi-notes .timestamp {
+    /* position: absolute; */
+	position: relative;
+    left: 0px;
+    right: 0px;
+    /* bottom: 0px; */
+    top: 0px;
+    font-size: 9px;
+    background-color: #db0;
+    color: white;
+    /*border-top: 1px solid #a80;*/
+    padding: 2px 4px;
+    text-align: right;
 }
 
 #container{
 	width:800px;
-	margin:0 auto;
+    margin: 15px auto;
 }
 
 #header{
@@ -28,7 +93,7 @@ body{
 }
 
 #dashboard{
-	
+	padding-top: 18px;
 }
 
 #dashboard a{
@@ -51,7 +116,7 @@ label{
 }
 
 .form-row{
-	margin:0 10px 10px;
+	margin:10px 10px 0;
 }
 
 #footer{
@@ -59,20 +124,22 @@ label{
 	color: #222;
 	bottom:0;
 	font-weight:bold;
-	margin:5px 0;
 	padding:5px;
 	text-align:right;
 	width:800px;
+    margin: 5px auto;
+    position: absolute;
 }
 
 .big{
-	height:350px;
+	height:480px;
 	width:253px;
-	padding:15px;
+	padding:0px;
 }
 
 .big .timestamp{
 	font-size:12px;
+    cursor: all-scroll;
 }
 
 img{
@@ -91,7 +158,7 @@ input.button{
 }
 
 .big .edit{
-	height:340px;
+	height:462px;
 }
 
 .big .edit li{
@@ -101,11 +168,11 @@ input.button{
 }
 
 .big .edit a{
-	color:#006;
+	color:#0075ff;
 }
 
 .big .edit a:hover{
-	color:red;
+	color:#00397b;
 }
 
 .cbox{
@@ -117,7 +184,7 @@ input.button{
 .cbox span{
 	margin-right:10px;
 	padding:2px 10px;
-	background:#006;
+	background:#0075ff;
 	color:#FFF046;
 	border-radius:5px;
 }
@@ -144,4 +211,33 @@ input.button{
 	margin: 0 5px;
 	text-decoration:none;
 	font-size:16px;
+}
+
+
+.settings-alert {
+    display: block;
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    top: 49%;
+    right: 0;
+    width: 250px;
+    max-height: 58px;
+    padding: 0px;
+    z-index: 9999;
+}
+.settings-alert .edit{
+    padding: 12px;
+    background: rgb(255, 255, 255);
+	text-align: center;
+    width: 226px;
+    max-height: 20px;
+}
+.settings-alert .timestamp {
+	user-select: none;
+	pointer-events: none;
+}
+#preview .edit{
+    padding: 8px;
+    padding-bottom: 0;
 }

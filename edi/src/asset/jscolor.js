@@ -10,8 +10,9 @@
  */
 
 
-var jscolor = {
+var jscolor = {};
 
+var jscolor2 = {
 
 	dir : '', // location of jscolor directory (leave empty to autodetect)
 	bindClass : 'color', // class name

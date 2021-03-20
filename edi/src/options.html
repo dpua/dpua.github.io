@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Notes Options Page</title>
-	<link rel="stylesheet" type="text/css" href="asset/stickies.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="asset/options.css" media="all" />
 	<script type="text/javascript" src="asset/jquery.js"></script>
 	<script type="text/javascript" src="asset/stickies_box.js"></script>
@@ -11,10 +10,11 @@
 	<script type="text/javascript" src="asset/options.js"></script>
 </head>
 <body>
+	<canvas id="canvas"></canvas>
 	<div id="container">
 		<div id="header">ediNotes</div>
 		<div class="main">
-			<div id="dashboard" class="note-anywhere" style="margin-top:15px;">
+			<div id="dashboard" class="edi-notes" style="margin-top:15px;">
 				<div class="edit" style="text-align:center;">
 					<a href="#" id="getSummaryBox">
 						<img src="asset/paper.png" style="height:55px;"/>
@@ -30,7 +30,7 @@
 				</div>
 				<div class="timestamp">click to open</div>
 			</div>
-			<div id="preview" class="note-anywhere" style="margin-top:260px;display:none;">
+			<div id="preview" class="edi-notes" style="margin-top:260px;display:none;">
 				<div class="edit" contenteditable="true">
 Hi,
 <br/><br/>
@@ -53,5 +53,6 @@ Bruno
 	<div id="settingsholder" style="display:none;">
 		
 	</div>
+	<script type="text/javascript" src="asset/animation_bg.js"></script>
 </body>
 </html>

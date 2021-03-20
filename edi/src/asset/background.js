@@ -58,12 +58,12 @@ var highestId = 0;
 
 try {
 	if (window.openDatabase) {
-		db = openDatabase("NoteAnyWhereV1", "1.0", "Note AnyWeb AnyWhere", 2000000);
+		db = openDatabase("EdiNotesV1", "1.0", "Note AnyWeb AnyWhere", 2000000);
 		if (!db)
 			console.log("Failed to open the database on disk.  This is probably because the version was bad or there is not enough space left in this domain's quota");
 		else{
 			 db.transaction(function(tx) {
-				tx.executeSql('CREATE TABLE IF NOT EXISTS WebKitStickyNotes (id REAL UNIQUE, note TEXT, timestamp REAL, left TEXT, top TEXT, zindex REAL, url TEXT)', 
+				tx.executeSql('CREATE TABLE IF NOT EXISTS WebKitEdiNotes (id REAL UNIQUE, note TEXT, timestamp REAL, left TEXT, top TEXT, width TEXT, height TEXT, zindex REAL, url TEXT)', 
 				  []);
 			  });
 		}
@@ -82,7 +82,7 @@ function skipUrl(url,notify){
 
 function findHighestId(){
 	db.transaction(function(tx) {
-		tx.executeSql("SELECT id FROM WebKitStickyNotes", [], 
+		tx.executeSql("SELECT id FROM WebKitEdiNotes", [], 
 			function(tx, result) {
 				for (var i = 0; i < result.rows.length; ++i) {
 					var row = result.rows.item(i);
@@ -129,7 +129,7 @@ function updateCount(tab,count){
 		notes = '';
 	}else{
 		db.transaction(function(tx) {
-			tx.executeSql("SELECT * FROM WebKitStickyNotes WHERE url = ?", [tab.url], function(tx, result) {
+			tx.executeSql("SELECT * FROM WebKitEdiNotes WHERE url = ?", [tab.url], function(tx, result) {
 				notes = result.rows.length;
 			});
 		});
@@ -141,20 +141,20 @@ var newNote =  function() {
 	let id = ++highestId;
 	let code = 'newNote('+id+')';
     chrome.tabs.getSelected(null, function(tab) {
-        chrome.tabs.executeScript(tab.id, {code: code});
+        chrome.tabs.executeScript(tab.id, {code: code}, () => chrome.runtime.lastError);
     });
 };
 
 var loadNotes = function(){
 	chrome.tabs.getSelected(null, function(tab) {
 		db.transaction(function(tx) {
-			tx.executeSql("SELECT * FROM WebKitStickyNotes WHERE url = ?", [tab.url], function(tx, result) {
+			tx.executeSql("SELECT * FROM WebKitEdiNotes WHERE url = ?", [tab.url], function(tx, result) {
 				var data =[];
 				for (var i = 0; i < result.rows.length; ++i){
 					data[i] = result.rows.item(i);
 				}
 				let code = 'loadNotes('+JSON.stringify(data)+')';
-				chrome.tabs.executeScript(tab.id, {code: code});
+				chrome.tabs.executeScript(tab.id, {code: code}, () => chrome.runtime.lastError);
 			}, function(tx, error) {
 				console.log('Failed to retrieve notes from database - ' + error.message);
 				return;
@@ -165,16 +165,17 @@ var loadNotes = function(){
 
 
 var loadCSS = function(){
-	let code = 'loadCSS('+JSON.stringify(localStorage)+')';
+	let code = 'loadCSS('+JSON.stringify(localStorage)+'); console.log(`executeScript`); console.log('+JSON.stringify(localStorage)+');';
+	console.log(`executeScript`); console.log(JSON.stringify(localStorage));
 	chrome.tabs.getSelected(null, function(tab) {
-		chrome.tabs.executeScript(tab.id, {code: code});
+		chrome.tabs.executeScript(tab.id, {code: code}, () => chrome.runtime.lastError);
 	});
 };
 
 var execute = function(code) {
     chrome.tabs.getSelected(null, function(tab) {
 		if(!skipUrl(tab.url))
-			chrome.tabs.executeScript(tab.id, {code: code});
+			chrome.tabs.executeScript(tab.id, {code: code}, () => chrome.runtime.lastError);
     });
 };
 
@@ -183,18 +184,18 @@ chrome.extension.onRequest.addListener(
 		if(request.command === 'save'){
 			let note = request.data;
 			db.transaction(function (tx){
-				tx.executeSql("UPDATE WebKitStickyNotes SET note = ?, timestamp = ?, left = ?, top = ?, zindex = ?, url = ? WHERE id = ?", [note.text, note.timestamp, note.left, note.top, note.zindex, note.url, note.id]);
+				tx.executeSql("UPDATE WebKitEdiNotes SET note = ?, timestamp = ?, left = ?, top = ?, width=?, height=?, zindex = ?, url = ? WHERE id = ?", [note.text, note.timestamp, note.left, note.top, note.width, note.height, note.zindex, note.url, note.id]);
 			});
 			sendResponse({message:"Saved",id:request.data.id});
 		}else if(request.command === 'saveAsNew'){
 			let note = request.data;
 			db.transaction(function (tx) {
-				tx.executeSql("INSERT INTO WebKitStickyNotes (id, note, timestamp, left, top, zindex, url) VALUES (?, ?, ?, ?, ?, ?,?)", [note.id, note.text, note.timestamp, note.left, note.top, note.zindex, note.url]);
+				tx.executeSql("INSERT INTO WebKitEdiNotes (id, note, timestamp, left, top, width, height, zindex, url) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)", [note.id, note.text, note.timestamp, note.left, note.top, note.width, note.height, note.zindex, note.url]);
 			});
 			sendResponse({message:"SavedNew",id:request.data.id});
 		}else if(request.command === 'close'){
 			db.transaction(function(tx) {
-				tx.executeSql("DELETE FROM WebKitStickyNotes WHERE id = ?", [request.data.id]);
+				tx.executeSql("DELETE FROM WebKitEdiNotes WHERE id = ?", [request.data.id]);
 			});
 			sendResponse({message:"Deleted",id:request.data.id});
 		}else if(request.command === 'updateCount'){
@@ -219,7 +220,7 @@ function getSummary(page){
 	let start = (page -1) * 12;
 	window.notesum = null;
 	db.transaction(function(tx) {
-		tx.executeSql("SELECT count(*) as c ,url FROM WebKitStickyNotes GROUP BY url ORDER BY c DESC,id LIMIT "+start+ ",13", [], function(tx, result) {
+		tx.executeSql("SELECT count(*) as c ,url FROM WebKitEdiNotes GROUP BY url ORDER BY c DESC,id LIMIT "+start+ ",13", [], function(tx, result) {
 			window.notesum = new Array();
 			for (var i = 0; i < result.rows.length; ++i){
 				window.notesum[i] = {count:result.rows.item(i).c,url:result.rows.item(i).url};

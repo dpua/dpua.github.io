@@ -1,17 +1,39 @@
 With this ext, you can make notes on any web page, any position. when you open that page again, the notes get loaded automaticly.
 
 The features:
-1) on any page, you can make note on the web page, on any position
-2) the notes get saved in real time.
-3) all notes can move by mouse: drag and drop
-4) when you go to that page again, the notes get loaded automatically.
-5) and on the logo, it show a badge indicate the note counts of that page.
-6) options to change the style of notes
-7) a notes summary feature 
+1) you can copy-paste, drag and drop text and pictures into notes directly from the site
+2) on any page, you can make note on the web page, on any position
+3) the notes get saved in real time.
+4) all notes can move by mouse: drag and drop, and resize.
+5) when you go to that page again, the notes get loaded automatically.
+6) and on the logo, it show a badge indicate the note counts of that page.
+7) options for changing the style of notes: text and background color, transparency and background blur, font selection
+8) a notes summary feature 
 
 To use the notes summary and customize note style feature, right click the icon on the tool bar. and choose 'Options'
 
-After you install it, you need open a new tab, load any website to use it. or if you want use it in existing tab, you need refresh that tab this ext works on web pages, but not on chrome:// pages(google has restrict to it)
+After you install it, you need open a new tab, load any website to use it. or if you want use it in existing tab, you need refresh that tab this ext works on web pages.
+
+
+
+
+But not on chrome:// pages(google has restrict to it)
+
+
+
+
+
+in a future version
+
+I am a very simple card. 
+I am good at containing small bits of information. 
+I am convenient because I require little markup to use effectively. 
+I am similar to what is called a panel in other frameworks.
+
+
+
+
+notebook and notes
 
 
 
@@ -19,14 +41,13 @@ We use "notifications" to improve the user experience, to create extended notifi
 
 We use "identity" to improve the user experience by storing, retrieving and tracking user preference changes when reusing a product.
 
-We use the context menu to give the user the ability to hide the selected elements on the page
+We use a context menu to give the user the ability to create notes on pages.
 
 We use "privacy" to protect users from phishing and malware.
 
 We use "storage" to improve the user experience by storing, retrieving and tracking changes to user data.
 
 We use "tabs" to interact with the browser's tab system and customize it by the user.
-
 
 We use "unlimitedStorage" for correct work with filters and user settings.
 
@@ -39,4 +60,9 @@ We use the "webRequestBlocking" to block unwanted requests configured by the use
 For the correct operation of the application, we use our own and third-party actual filters that are updated and stored on various services.
 
 For the application to work correctly, we use our own and third-party filters, which may partially contain css code and selectors.
+
+
+Обоснование (Разрешение на доступ к хостам)*
+
+For the correct operation of the application, we use host permissions for save urls and show his in a notes summary feature
 

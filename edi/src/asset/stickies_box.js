@@ -1,9 +1,40 @@
+'use strict';
 var id = 0;
 var boxes = new Array();
 var highestZ = 0;
 var notes = new Array();
 var d_pos,l_pos,r_pos;
+let captured,i,eles,form,input,opt,row,label;
 
+function hexToRgbA(hex, opacity){
+    var c;
+    if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)&&(opacity!==isNaN)){
+        c= hex.substring(1).split('');
+        if(c.length===3){
+            c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+        }
+        c= '0x'+c.join('');
+        return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+','+(opacity/100)+')';
+    }else{
+		return hex;
+	}
+    //throw new Error('Bad Hex');
+}//hexToRgbA('#fbafff', 90);
+
+
+function alertText(a){
+	$('.settings-alert .closebutton').click();
+	let e = newNoteBox('alert',r_pos);
+	let el = $(boxes[e].note);
+	console.log(el);
+	console.log($(boxes[e].closeBtn));
+	el.addClass('settings-alert');
+	el.removeClass('big');
+	el.css({"left":"0","top":"49%"});
+	$(boxes[e].editField).append(a);
+
+	setTimeout(()=>{$(boxes[e].closeBtn).click();}, 5000);
+}
 
 function getHighestZindex(){
    var highestIndex = 0;
@@ -28,26 +59,27 @@ function NoteBox()
     var self = this;
 
     var note = document.createElement('div');
-    note.className = 'note-anywhere big';
-    note.addEventListener('mousedown', function(e) { return self.onMouseDown(e) }, false);
-    note.addEventListener('click', function() { return self.onNoteClick() }, false);
+    note.className = 'edi-notes big';
+    //note.addEventListener('mousedown', function(e) { return self.onMouseDown(e); }, false);
+    note.addEventListener('click', function() { return self.onNoteClick(); }, false);
     this.note = note;
+
+    var ts = document.createElement('div');
+    ts.className = 'timestamp';
+    ts.addEventListener('mousedown', function(e) { return self.onMouseDown(e); }, false);
+    note.appendChild(ts);
+    this.lastModified = ts;
 
     var close = document.createElement('div');
     close.className = 'closebutton';
-    close.addEventListener('click', function(event) { return self.close(event) }, false);
+    close.addEventListener('click', function(event) { return self.close(event); }, false);
     note.appendChild(close);
+    this.closeBtn = close;
 
     var edit = document.createElement('div');
     edit.className = 'edit';
     note.appendChild(edit);
     this.editField = edit;
-
-    var ts = document.createElement('div');
-    ts.className = 'timestamp';
-    ts.addEventListener('mousedown', function(e) { return self.onMouseDown(e) }, false);
-    note.appendChild(ts);
-    this.lastModified = ts;
 
     document.body.appendChild(note);
     return this;
@@ -85,7 +117,7 @@ NoteBox.prototype = {
 
     set stamp(x)
     {
-        if (this._timestamp == x)
+        if (this._timestamp === x)
             return;
 
         this._timestamp = x;
@@ -94,7 +126,7 @@ NoteBox.prototype = {
 	
     set timestamp(x)
     {
-        if (this._timestamp == x)
+        if (this._timestamp === x)
             return;
 
         this._timestamp = x;
@@ -231,66 +263,70 @@ function newNoteBox(stamp,pos)
 var settingboxid = null;
 var summaryboxid = null;
 
-var options=['bg_color','t_color','bb_color', 'bt_color','font','font_size'];
-var titles=['Background Color','Text Color','Bar Background Color', 'Bar Text Color','Font','Text Size'];
+var options=['bg_color','t_color','bb_color','bt_color','bg_opacity','bg_blur','font','font_size'];
+var titles=['Background Color','Text Color','Bar Background Color','Bar Text Color','Background opacity','Background blur','Font','Text Size'];
 
-var defaults =['FFF046','000066','DDBB00', 'FFFFFF','Arial, Helvetica, sans-serif','14px'];
+var defaults =['#FFF046','#2e2e2e','#debc00','#FFFFFF','70','5','Arial, Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif','14px'];
 var font_options = {
-	'Arial':'Arial, Helvetica, sans-serif',
+	'Arial':'Arial, Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
 	'Times':'Times, serif',
 	'Georgia':'Georgia, Times, serif',
 	'Geneva':'Geneva, Arial, Helvetica, sans-serif',
 	'Helvetica':'Helvetica, Arial, Geneva',
 	'Verdana':'Verdana, Arial, Helvetica',
 	'Monospace':'monospace, courier'
-}
+};
 
 var fz_options = {
 	'Small':'12px',
 	'Medium':'14px',
 	'Large':'16px'
-}
+};
 
 function load_options(){
-	for(i = 0; i < options.length; i++) {
-		if(localStorage[options[i]])
+	for(let i = 0; i < options.length; i++) {
+		if(localStorage[options[i]]){
 			$('#'+options[i]).val(localStorage[options[i]]);
-		else
+			console.log("options["+i+"]"+defaults[i]);
+		}else{
 			$('#'+options[i]).val(defaults[i]);
-		new jscolor.color(options[i]);
+			console.log("defaults["+i+"]"+defaults[i]);}
+		//new jscolor.color(options[i]);
 	}
 	
 }
 
 function save_options(){
-	for(i = 0; i < options.length; i++) {
+	for(let i = 0; i < options.length; i++) {
 		localStorage[options[i]] = $('#'+options[i]).val();
+		console.log('options: '+options[i]+' '+$('#'+options[i]).val());
 	}
 	applyCSS();
-	console.log("Settings Saved!");
+	alertText("Settings Saved!");
 }
 
 function reset_options(){
 	load_options();
 	updatePreview();
 	applyCSS();
-	console.log("Settings revert to last save!");
+	alertText("Settings revert to last save!");
 }
 
 function default_options(){
-	for(i = 0; i < options.length; i++) {
+	for(let i = 0; i < options.length; i++) {
 		$('#'+options[i]).val(defaults[i]);
 		localStorage[options[i]] = defaults[i];
-		new jscolor.color(options[i]);
+		//new jscolor.color(options[i]);
 	}
 	updatePreview();
 	applyCSS();
-	console.log("Settings revert to default!");
+	alertText("Settings revert to default!");
 }
 
 
 function getSettingBox(){
 	updatePos();
+	let pos;
 	if(boxes[summaryboxid]){
 			if(boxes[summaryboxid].left == l_pos.left+'px')
 			pos = r_pos;
@@ -302,23 +338,28 @@ function getSettingBox(){
 		settingboxid = newNoteBox('settings',pos);
 		$(boxes[settingboxid].editField).append(getSettingForm());
 		load_options();
-		jscolor.init();
+		updateLabels();
+		//jscolor.init();
 	}else{
 		boxes[settingboxid].pos = pos;
 		boxes[settingboxid].promote();
 	}
 }
-
+//'bg_opacity','bg_blur'  <input type="range" name="cowbell" min="0" max="100" value="90" step="5">
 function getSettingForm(){
 	form = $('<form>');
 	form.submit(function(){return false;});
 	$.each(options,function(i,option){
 		row = $('<div class="form-row">');
 		label = $('<label>');
-		label.text(titles[i]);
+		// label.text(titles[i]);
 		if(option.indexOf('_color')>0){
-			input = $('<input type="text" spellcheck="false" class="color {pickerPosition:\'right\'}">');
-		}else if(option == 'font'){
+			input = $('<input type="color" spellcheck="false" class="color {pickerPosition:\'right\'}">');
+		}else if(option === 'bg_opacity'){
+			input = $('<input type="range" name="bg_opacity" min="0" max="100" value="70" step="5" >');
+		}else if(option === 'bg_blur'){
+			input = $('<input type="range" name="bg_blur" min="0" max="100" value="5" step="1" >');
+		}else if(option === 'font'){
 			input = $('<select>');
 			$.each(font_options,function(fi,font){
 				opt = $('<option>');
@@ -339,15 +380,21 @@ function getSettingForm(){
 		input.attr('id',option);
 		input.change(function(){
 			updatePreview();
+			updateLabels();
 		});
+		let elemI=$('<i>');
+		elemI.attr('id','label_'+option);
+		label.html(titles[i]);
+		label.attr('for',option);
+		label.append(elemI);
 		row.append(label);
 		row.append(input);
 		form.append(row);
 	});
-	button_row = row = $('<div class="form-row">');
-	button_save = $('<input id="save" class="button" type="submit" value="Save">');
-	button_reset = $('<input id="reset" class="button" type="submit" value="Reset">');
-	button_default = $('<input id="setdefault" class="button" type="submit" value="Default">');
+	let button_row = row = $('<div class="form-row">');
+	let button_save = $('<input id="save" class="button" type="submit" value="Save">');
+	let button_reset = $('<input id="reset" class="button" type="submit" value="Reset">');
+	let button_default = $('<input id="setdefault" class="button" type="submit" value="Default">');
 	button_save.click(function(){save_options();});
 	button_reset.click(function(){reset_options();});
 	button_default.click(function(){default_options();});
@@ -358,17 +405,31 @@ function getSettingForm(){
 	return form;
 }
 
+// function updatePreview(){
+// 	$('#preview').show();
+// 	$('#preview').css({'background-color':'#'+$('#bg_color').val(),color:'#'+$('#t_color').val()});
+// 	$('#preview .edit').css({'font-family': $('#font').val(),'font-size':$('#font_size').val()});
+// 	$('#preview .timestamp').css({'background-color':'#'+$('#bb_color').val(),color:'#'+$('#bt_color').val()});
+// }
+
+
+function updateLabels(){
+	$('#label_bg_blur').html(' '+$('#bg_blur').val()+'%');
+	$('#label_bg_opacity').html(' '+$('#bg_opacity').val()+'%');
+}
+
 function updatePreview(){
 	$('#preview').show();
-	$('#preview').css({'background-color':'#'+$('#bg_color').val(),color:'#'+$('#t_color').val()});
+	$('#preview').css({'background-color':hexToRgbA($('#bg_color').val(), $('#bg_opacity').val()),'backdrop-filter': 'blur('+$('#bg_blur').val()+'px)',color:$('#t_color').val()});//($('#bg_opacity').val()===100)?$('#bg_opacity').val():''
 	$('#preview .edit').css({'font-family': $('#font').val(),'font-size':$('#font_size').val()});
-	$('#preview .timestamp').css({'background-color':'#'+$('#bb_color').val(),color:'#'+$('#bt_color').val()});
+	$('#preview .timestamp').css({'background-color':$('#bb_color').val(),color:$('#bt_color').val()});
 }
 
 function getSummaryBox(){
 	updatePos();
+	let pos;
 	if(boxes[settingboxid]){
-		if(boxes[settingboxid].left == l_pos.left+'px')
+		if(boxes[settingboxid].left === l_pos.left+'px')
 			pos = r_pos;
 		else
 			pos = l_pos;
@@ -401,26 +462,26 @@ function refreshSummaryBox(){
 
 function sum2HTML(notesum,page){
 	window.page = page;
-	if(page == 1)
+	if(page === 1)
 		var hasPrev = false;
 	else
 		var hasPrev = true;
-	if(notesum.length==13){
+	if(notesum.length===13){
 		var hasNext = true;
 		notesum.splice(12,1);
 	}else
 		var hasNext = false;
 	
-	ul = $('<ul class="sum-list">');
+		let ul = $('<ul class="sum-list">');
 	$.each(notesum,function(i,x){
-		li = $('<li>');
-			cbox = $('<div class="cbox">');
-			cspan = $('<span>');
+		let li = $('<li>');
+			let cbox = $('<div class="cbox">');
+			let cspan = $('<span>');
 				cspan.text(x.count);
 			cbox.append(cspan);
 		li.append(cbox);
-			abox = $('<div class="abox">');
-				a = $('<a>');
+			let abox = $('<div class="abox">');
+			let a = $('<a>');
 					a.attr('href',x.url);
 					a.attr('target','_blank');
 					a.text(x.url);
@@ -429,21 +490,21 @@ function sum2HTML(notesum,page){
 		ul.append(li);
 	});
 	
-	bbox = $('<div class="bbox">');
+	let bbox = $('<div class="bbox">');
 		if(hasPrev){
-			b_prev = $('<a>');
+			let b_prev = $('<a>');
 			b_prev.attr('href','###');
 			b_prev.click(function(){updateSummaryBox(window.page - 1);});
 			b_prev.html('<img src="asset/rewind_mark.png" />');
 			bbox.append(b_prev);
 		}
-			b_refresh = $('<a>');
+		let b_refresh = $('<a>');
 			b_refresh.attr('href','###');
 			b_refresh.click(function(){refreshSummaryBox();});
 			b_refresh.html('<img src="asset/refresh.png" />');
 			bbox.append(b_refresh);
 		if(hasNext){
-			b_next = $('<a>');
+			let b_next = $('<a>');
 			b_next.attr('href','###');
 			b_next.click(function(){updateSummaryBox(window.page + 1);});
 			b_next.html('<img src="asset/forward_mark.png" />');
@@ -460,19 +521,19 @@ function updatePos(){
 }
 
 function applyCSS(){
-	if($('#customcss').length == 0){
+	if($('#customcss').length === 0){
 		var headID = $('head');         
 		var cssNode =$('<link>');
-		cssNode.attr('id','customcss')
+		cssNode.attr('id','customcss');
 		cssNode.attr('type','text/css');
 		cssNode.attr('rel','stylesheet');
 		cssNode.attr('media','screen');
 		headID.append(cssNode);
 	}
 	var newline=unescape("%"+"0A");
-	css = '.note-anywhere {background-color: #'+localStorage['bg_color']+';color: #'+localStorage['t_color']+';}'+ newline;
-	css += '.note-anywhere  .edit {font-family: '+localStorage['font']+'; font-size: '+localStorage['font_size']+'; }' +  newline;
-	css += '.note-anywhere .timestamp {background-color: #'+ localStorage['bb_color'] +';color: #'+ localStorage['bt_color'] +';}';
+	let css = '.edi-notes {background-color: '+hexToRgbA(localStorage['bg_color'], localStorage['bg_opacity'])+';color: '+localStorage['t_color']+';backdrop-filter: blur('+ localStorage['bg_blur'] +'px);}'+ newline;
+	css += '.edi-notes  .edit {font-family: '+localStorage['font']+'; font-size: '+localStorage['font_size']+'; }' +  newline;
+	css += '.edi-notes .timestamp {background-color: '+ localStorage['bb_color'] +';color: '+ localStorage['bt_color'] +';}';
 	$('#customcss').attr('href','data:text/css,'+escape(css));
 
 }
