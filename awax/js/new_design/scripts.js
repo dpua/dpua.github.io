@@ -556,4 +556,22 @@ tabsContentParent.addEventListener('touchstart', handleTouchStart, false);
 tabsContentParent.addEventListener('touchmove', handleTouchMove, false);
 
 
+const videoPlayer=document.getElementById('video-player');
+function showVideoPlayer(){
+	var iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/2BA0RFw-Zsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+	videoPlayer.innerHTML=iframe;
+	videoPlayer.classList.add('active');
+}
+function videoPlayerClose(){
+	videoPlayer.innerHTML='';
+	videoPlayer.classList.remove('active');
+}
+
+videoPlayer.onclick=videoPlayerClose;
+
+
+document.getElementById('start-video-player').onclick=showVideoPlayer;
+
+
+
 });
