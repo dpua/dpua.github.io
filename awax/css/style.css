@@ -3869,7 +3869,7 @@ input::placeholder {
 .info-block__item-icon.chrome{
     background-image: url("../images/chrome.svg"); 
 }
-.info-block__item-icon.tv{
+.info-block__item-icon.androidtv{
     background-image: url("../images/tv.svg"); 
 }
 .info-block__item-icon.android::before{
@@ -3881,7 +3881,7 @@ input::placeholder {
 .info-block__item-icon.chrome::before{
     background-image: url("../images/chrome_b.svg"); 
 }
-.info-block__item-icon.tv::before{
+.info-block__item-icon.androidtv::before{
     background-image: url("../images/tv_b.svg"); 
 }
 .info-block__item-icon.active::before{
@@ -4352,7 +4352,7 @@ input::placeholder {
 	.info-block__item-icon.chrome{
 		background-image: url(../images/chrome_820.svg); 
 	}
-	.info-block__item-icon.tv{
+	.info-block__item-icon.androidtv{
 		background-image: url(../images/tv_820.svg); 
 	}
 	.info-block__item-icon.android::before{
@@ -4364,7 +4364,7 @@ input::placeholder {
 	.info-block__item-icon.chrome::before{
 		background-image: url(../images/chrome_820_b.svg); 
 	}
-	.info-block__item-icon.tv::before{
+	.info-block__item-icon.androidtv::before{
 		background-image: url(../images/tv_820_b.svg); 
 	}
 
@@ -4389,7 +4389,7 @@ input::placeholder {
 	.info-block__item-icon.chrome{
 		background-image: url(../images/chrome_820.svg); 
 	}
-	.info-block__item-icon.tv{
+	.info-block__item-icon.androidtv{
 		background-image: url(../images/tv_820.svg); 
 	}
 	.info-block__item-icon.android::before{
@@ -4401,7 +4401,7 @@ input::placeholder {
 	.info-block__item-icon.chrome::before{
 		background-image: url(../images/chrome_820_b.svg); 
 	}
-	.info-block__item-icon.tv::before{
+	.info-block__item-icon.androidtv::before{
 		background-image: url(../images/tv_820_b.svg); 
 	}
 
