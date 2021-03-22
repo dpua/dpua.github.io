@@ -401,6 +401,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		toggle=(toggle)?false:true;
 		console.log("toggle:"+toggle);
 		if(toggle){
+			window.history.replaceState(null, null, "?device="+(1+tabId));
 
 			let times=300;
 			$('html,body').animate({
@@ -419,11 +420,28 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			infoBlock.classList.remove('info-block__show');
 			showListItem.classList.remove('to_top');
 			$('#info-block__title-logo').removeClass('start');
+			window.history.replaceState(null, null, "?");
 		}
 
 	}
 	showListItem.onclick = showInfoBlock;
 	hideListItem.onclick = showInfoBlock;
+
+
+	let InfoBlockScroll=true;
+	$(window).on('scroll', function () {
+		if(InfoBlockScroll){
+			let e = $("#list_info").offset().top-70;
+			let scrollTop = $(window).scrollTop();
+			if(scrollTop>=e){
+				InfoBlockScroll=false;
+				showInfoBlock();
+			}
+
+		}
+		
+	});
+
 
 	const tabs=document.querySelectorAll('.info-block__item-icon'),
 	tabsContent=document.querySelectorAll('.info-block__content-block'),
@@ -486,7 +504,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		timer=i;
 		typeWriter(timer, infoBlockDescription, description[i]);
 		tabId=i;
-	};	
+	}
 	hideTabsContent();
 	showTabsContent();
 	
@@ -494,6 +512,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		if(event.target&&event.target.classList.contains('info-block__item-icon')){
 			tabs.forEach((item, i)=>{
 				if(event.target===item && i!==tabId){
+					window.history.replaceState(null, null, "?device="+(1+i));
 					hideTabsContent();
 					showTabsContent(i);
 				}
@@ -501,6 +520,15 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	});
 
+	//'?q=123'
+let params = new URLSearchParams(location.search);
+let device = parseInt(params.get("device"));
+if(device){
+	InfoBlockScroll=false;
+	hideTabsContent();
+	showTabsContent(device-1);
+	showInfoBlock();
+}
 
 	function installHref(){
 		window.open(installUrls[tabId], '_blank');
