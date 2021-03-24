@@ -4576,7 +4576,14 @@ input::placeholder {
 	border: 7px solid #00F9FF;
 	filter: drop-shadow(0px 0px 21.1538px rgba(0, 0, 0, 0.75));
 }
-
+#zaqqaz{
+	
+		z-index: 10;
+		cursor: pointer;
+		color: blue;
+		position: absolute;
+	
+}
 .main-banner .header_img_group{
 	display: none;
 }
