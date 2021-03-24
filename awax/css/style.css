@@ -4577,6 +4577,9 @@ input::placeholder {
 	filter: drop-shadow(0px 0px 21.1538px rgba(0, 0, 0, 0.75));
 }
 
+.main-banner .header_img_group{
+	display: none;
+}
 .main-banner .mob_header_img_group{
 	display: block;
 	right: -30px;
@@ -4695,7 +4698,9 @@ transition: all 800ms;
 		filter: drop-shadow(0px 0px 21.1538px rgba(0, 0, 0, 0.75));
 	}
 
-
+	.main-banner .mob_header_img_group{
+		display: none;
+	}
 	.main-banner .header_img_group{
 		display: block;
 		right: -30px;
