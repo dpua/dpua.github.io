@@ -4565,7 +4565,7 @@ transition-delay: 0ms;
 transform: scale(40);
 transition: all 500ms;
 transition-delay: 0ms;
-opacity: 1;
+opacity: 0.1;
 z-index: 20;
 user-select: none;
 pointer-events: none;
