@@ -4649,7 +4649,8 @@ transition-delay: 0ms;
     transform: translate(30px, 10px);
 }
 .mob_header_img_group.active img:nth-child(2){
-    max-width: 185px;
+    /* max-width: 185px; */
+	max-width: 205px;
     transform: translate(45px, 130px);
 }
 
