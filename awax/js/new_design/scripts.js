@@ -604,12 +604,12 @@ document.getElementById('start-video-player').onclick=showVideoPlayer;
 
 
 
-});
+// });
 
 
 
 
-window.addEventListener('load', ()=>{
+// window.addEventListener('load', ()=>{
 	document.querySelector(".header_img_group").classList.add("active");
 	document.querySelector(".mob_header_img_group").classList.add("active");
 	document.getElementById('start-video-player').classList.remove("hidden");
