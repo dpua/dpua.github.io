@@ -1,7 +1,13 @@
-<svg width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0L4.48118 0V4.58597H0L0 0Z" fill="#2B3841"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M4.48145 4.58594H8.99642V9.14612H4.48145V4.58594Z" fill="#2B3841"/>
-<path d="M13.4773 9.14624H8.99609V13.7407H13.4773V9.14624Z" fill="#2B3841"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M4.48145 13.7405H8.99642V18.3007H4.48145V13.7405Z" fill="#2B3841"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 18.3005H4.48118V22.8865H0L0 18.3005Z" fill="#2B3841"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 420.6 701.1" style="enable-background:new 0 0 420.6 701.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#2B3942;}
+</style>
+<path class="st0" d="M0,0h140.2v140.2H0V0L0,0z"/>
+<path class="st0" d="M140.2,140.2h140.2v140.2H140.2V140.2z"/>
+<path class="st0" d="M140.2,420.7h140.2v140.2H140.2V420.7L140.2,420.7z"/>
+<path class="st0" d="M0,560.9h140.2v140.2H0V560.9L0,560.9z"/>
+<path class="st0" d="M280.4,280.4h140.2v140.2H280.4V280.4L280.4,280.4z"/>
 </svg>
