@@ -397,10 +397,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	const infoBlock=document.querySelector('.info-block'),
 		  showListItem = document.getElementById("show_list_item"),
 		  hideListItem = document.getElementById("info-block__title-ico");
+		  let InfoBlockScroll=true;
+		  let toggles=!InfoBlockScroll;
 	function showInfoBlock(){
-		toggle=(toggle)?false:true;
-		console.log("toggle:"+toggle);
-		if(toggle){
+		toggles=(toggles)?false:true;
+		console.log("toggle:"+toggles);
+		if(toggles){
 			window.history.replaceState(null, null, "?device="+(1+tabId));
 
 			let times=300;
@@ -428,7 +430,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 	hideListItem.onclick = showInfoBlock;
 
 
-	let InfoBlockScroll=true;
+	
 	$(window).on('scroll', function () {
 		if(InfoBlockScroll){
 			let e = $("#list_info").offset().top-70;
