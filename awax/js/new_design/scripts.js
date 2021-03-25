@@ -600,10 +600,15 @@ videoPlayer.onclick=videoPlayerClose;
 
 document.getElementById('start-video-player').onclick=showVideoPlayer;
 
-function zaqZ(){
-	document.querySelector(".header_img_group").classList.toggle("active");
-	document.querySelector(".mob_header_img_group").classList.toggle("active");
-}
-document.getElementById("zaqqaz").onclick=zaqZ;
 
+
+});
+
+
+
+
+window.addEventListener('load', ()=>{
+	document.querySelector(".header_img_group").classList.add("active");
+	document.querySelector(".mob_header_img_group").classList.add("active");
+	document.getElementById('start-video-player').classList.remove("hidden");
 });

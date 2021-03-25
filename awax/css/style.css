@@ -530,7 +530,7 @@ main{
 }
 @media (min-width: 1000px){
 	.main-banner .container{
-		height:572px
+		/* height:572px */
 	}
 }
 .main-banner-text{
@@ -4531,20 +4531,28 @@ input::placeholder {
 
 
 
+#start-video-player.hidden{
+opacity: 0;
+}
+#start-video-player.hidden::after{
+transform: rotate(-360deg) scale(4);
+}
 #start-video-player{
     position: absolute;
     margin: -200px auto;
     left: 0;
     right: 0;
-    padding: 10px;
-    width: 96.57px;
-    height: 96.57px;
+    padding: 0px;
+    width: 83px;
+    height: 83px;
     display: flex;
     justify-content: center;
     align-items: center;
     transform: translate(90px, -20px);
-    transition: all 200ms;
+    transition: all 500ms;
+    transition-delay: 700ms;
     z-index: 6;
+	opacity: 1;
 }
 #start-video-player::after{
 	content: '';
@@ -4556,6 +4564,11 @@ input::placeholder {
 	background: url('../images/header/vector.svg');
 	background-repeat: no-repeat;
 	background-position: center center;
+	
+	
+    transform: rotate(0deg) scale(1);
+    transition: all 1500ms;
+    transition-delay: 700ms;
 }
 #start-video-player::before{
 	content: '';
@@ -4577,7 +4590,6 @@ input::placeholder {
 	filter: drop-shadow(0px 0px 21.1538px rgba(0, 0, 0, 0.75));
 }
 #zaqqaz{
-	
 		z-index: 10;
 		cursor: pointer;
 		color: blue;
@@ -4663,17 +4675,10 @@ transition: all 800ms;
 	#start-video-player{
 		position: absolute;
 		margin: 200px auto;
-		left: 0;
-		right: 0;
-		padding: 10px;
-		width: 96.57px;
-		height: 96.57px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		transform: translate(300px, 80px);
-		transition: all 200ms;
 		z-index: 6;
+		transition: all 500ms;
+		transition-delay: 700ms;
 	}
 	#start-video-player::after{
 		content: '';
@@ -4715,7 +4720,7 @@ transition: all 800ms;
 		left: -30px;
 		position: relative;
 		overflow: unset;
-		bottom: -50px;
+		bottom: -20px;
 		width: 65%;
 		height: 552px;
 		z-index: 5;
