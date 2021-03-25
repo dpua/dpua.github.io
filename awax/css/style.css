@@ -4633,6 +4633,7 @@ pointer-events: none;
 	/* opacity: 0.0;
 	display: none; */
 transition: all 800ms;
+transition-delay: 0ms;
 
 }
 .mob_header_img_group.active img{
@@ -4747,11 +4748,16 @@ transition: all 800ms;
 		/* opacity: 0.0;
 		display: none; */
     transition: all 800ms;
+	transition-delay: 0ms;
 
 	}
 	.header_img_group.active img{
 		position: absolute;
 		opacity: 1;
+
+		animation-duration: 15s;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
 	}
 
 	.header_img_group img:nth-child(1){
@@ -4775,10 +4781,24 @@ transition: all 800ms;
 	.header_img_group.active img:nth-child(2){
 		max-width: 509px;
 		transform: translate(220px, 130px);
+		animation-name: bounce-3;
+		animation-duration: 25s;
+		
 	}
 	.header_img_group.active img:nth-child(3){
 		max-width: 288px;
     	transform: translate(0px, 169px);
+		animation-name: bounce-2;
+	}
+	@keyframes bounce-2 {
+		0%   { transform: translate(0px, 169px); }
+		50%  { transform: translate(-5px, 179px) scale(1.05) rotate(-5deg); }
+		100% { transform: translate(0px, 169px); }
+	}
+	@keyframes bounce-3 {
+		0%   { transform: translate(220px, 130px); }
+		50%  { transform: translate(230px, 140px) scale(0.95) rotate(5deg); }
+		100% { transform: translate(220px, 130px); }
 	}
 
 
