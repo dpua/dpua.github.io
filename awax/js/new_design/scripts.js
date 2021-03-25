@@ -589,10 +589,12 @@ function showVideoPlayer(){
 	var iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/2BA0RFw-Zsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 	videoPlayer.innerHTML=iframe;
 	videoPlayer.classList.add('active');
+	document.querySelector('#start-video-player').classList.add('active');
 }
 function videoPlayerClose(){
 	videoPlayer.innerHTML='';
 	videoPlayer.classList.remove('active');
+	document.querySelector('#start-video-player').classList.remove('active');
 }
 
 videoPlayer.onclick=videoPlayerClose;
