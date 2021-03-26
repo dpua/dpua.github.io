@@ -2285,6 +2285,7 @@ main{
 	pointer-events:auto
 }
 .download-loader a{
+	transition: all 150ms;
 	font-size:16px;
 	color:#00f9ff;
 	text-align:center;
@@ -2892,6 +2893,7 @@ transform: translateX(4px);
 	text-decoration: underline;
 }
 .cookie .accept-cookie-button {
+	transition: all 150ms;
 	margin-left: 8px;
 	background: #00f2fd;
 	padding: 4px 20px 3px;
