@@ -2274,7 +2274,7 @@ main{
 	transition:all .3s linear;
 	left:0;
 	padding:10px 5px;
-    background: #2d3c4399;
+    background: url('../images/noise.png')  #2d3c4399;
     backdrop-filter: blur(3px);
 	width:100%
 }
@@ -2874,7 +2874,7 @@ transform: translateX(4px);
 }
 
 .cookie {
-    background: #2d3c4399;
+    background: url('../images/noise.png')  #2d3c4399;
     backdrop-filter: blur(3px);
     color: #fff;
     padding: 8px;
@@ -2904,7 +2904,7 @@ transform: translateX(4px);
 	cursor: pointer;
 }
 .cookie .accept-cookie-button:hover {
-	border: 1px solid #2d3c43;
+    box-shadow: 0 0 0 2px #2d3c43, 0 0 2px 2px #fff;
 }
 
 @media (max-width: 639px) {
