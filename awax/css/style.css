@@ -2274,7 +2274,8 @@ main{
 	transition:all .3s linear;
 	left:0;
 	padding:10px 5px;
-	background:#2b3942;
+    background: #2d3c4399;
+    backdrop-filter: blur(3px);
 	width:100%
 }
 .download-loader.show{
@@ -2298,6 +2299,11 @@ main{
 	margin-right:15px;
 	background:#2b3942;
 	text-transform:uppercase
+}
+.download-loader a:hover {
+    transform: translate(0px, -2px);
+    -webkit-box-shadow: 0 3px 12px 0 rgb(39 44 48 / 50%);
+    box-shadow: 0 3px 12px 0 rgb(39 44 48 / 50%);
 }
 .download-loader .title{
 	font-size:16px;
@@ -2867,19 +2873,23 @@ transform: translateX(4px);
 }
 
 .cookie {
-	background: #2d3c43;
-	color:#fff;
-	padding: 8px;
-	text-align: center;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	font-weight: 300;
-	z-index: 8;
+    background: #2d3c4399;
+    backdrop-filter: blur(3px);
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-weight: 300;
+    z-index: 8;
 }
 .cookie a {
 	color:#fff;
 	font-weight: bold;
+}
+.cookie a:hover{
+	text-decoration: underline;
 }
 .cookie .accept-cookie-button {
 	margin-left: 8px;
@@ -2890,6 +2900,9 @@ transform: translateX(4px);
 	font-weight: 400;
 	color: #2d3c43;
 	cursor: pointer;
+}
+.cookie .accept-cookie-button:hover {
+	border: 1px solid #2d3c43;
 }
 
 @media (max-width: 639px) {

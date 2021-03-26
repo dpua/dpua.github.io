@@ -1,88 +1,12 @@
 'use strict';
-let toggle=false;
+var InfoBlockScroll=true;
+var toggle=!InfoBlockScroll;
 $(document).ready(function () {
-
 	setTimeout(function () {
 		$('#errors').fadeOut(400);
 		$('#success').fadeOut(400);
 	}, 3000);
-var shopChecked=false;
-function shopSliderClick(e){
-	
-	var group = document.querySelector(".shop-section");
-	var nodes = document.querySelectorAll(".slick-slide");
-	var total = nodes.length;
-	var ease  = Power1.easeInOut;
-	var boxes = [];
 
-	console.log("total: "+total);
-
-	for (var i = 0; i < total; i++) {
-		
-	var node = nodes[i];
-	
-	// Initialize transforms on node
-	TweenLite.set(node, { x: 0 });
-	
-	boxes[i] = {
-		transform: node._gsTransform,
-		x: node.offsetLeft,
-		y: node.offsetTop,
-		node    
-	};
-	} 
-
-
-	function layout(e) {
-		shopChecked=true;
-		group.classList.add("shop-active"); //.add("shop-active");  //toggle("shop-active");  
-
-
-
-
-
-
-		for (var i = 0; i < total; i++) {
-			
-			var box = boxes[i];
-				
-			var lastX = box.x;
-			var lastY = box.y;   
-			
-			box.x = box.node.offsetLeft;
-			box.y = box.node.offsetTop;
-			
-			// Continue if box hasn't moved
-			if (lastX === box.x && lastY === box.y) continue;
-			
-			// Reversed delta values taking into account current transforms
-			var x = box.transform.x + lastX - box.x;
-			var y = box.transform.y + lastY - box.y;  
-			
-			// Tween to 0 to remove the transforms
-			TweenLite.fromTo(box.node, 0.5, { x, y }, { x: 0, y: 0, ease });    
-		} 
-	}
-
-	nodes.forEach((item, e)=>{
-		item.addEventListener('click', (event)=> {
-			event.preventDefault();
-			nodes.forEach((item)=>{
-				item.classList.remove("slick-slide-checked");
-			});
-			nodes[e].classList.add("slick-slide-checked");
-			return !shopChecked?layout(e):'';
-		});
-
-	});
-
-	// group.addEventListener("mouseenter", layout);
-	// group.addEventListener("mouseleave", layout);
-
-
-
-};
-	console.log("1");
 	$('.shop-slider').slick({
 		dots: true,
 		infinite: true,
@@ -102,9 +26,6 @@ function shopSliderClick(e){
 			}
 		]
 	});
-	shopSliderClick(shopChecked);
-
-
 
 	$('.news-slider').slick({
 		dots: true,
@@ -221,7 +142,7 @@ function shopSliderClick(e){
 			$(".language-dropdown").hide();
 			$(".language").removeClass("show");
 			$("body").addClass("ovh");
-		}else{
+		} else {
 			$(this).removeClass('active');
 			$(this).addClass('close');
 			//$("#model-reg,#model-password").hide();
@@ -239,7 +160,7 @@ function shopSliderClick(e){
 	var scrollTriggerdownload = 600,
 		backdownload = function () {
 			var scrollTop = $(window).scrollTop();
-			if ((scrollTop > scrollTriggerdownload)&&!toggle) {
+			if ((scrollTop > scrollTriggerdownload) && !toggle) {
 				$('.download-loader').addClass('show');
 			} else {
 				$('.download-loader').removeClass('show');
@@ -366,11 +287,10 @@ $(window).on("load", function () {
 	$('.input-wrap.error input').each(function () {
 		var input = $(this);
 		input.parent().addClass("anim");
-		console.log(input);
 		$("label[for='" + input.attr('id') + "']").addClass("animate-label");
 	});
 
-	if($(window).width() < 820) {
+	if ($(window).width() < 820) {
 		$(".language").on('click', function () {
 			$(".language").toggleClass('show');
 			$(".language-dropdown").toggle();
@@ -378,59 +298,69 @@ $(window).on("load", function () {
 	} else {
 		// change functionality for larger screens
 	}
+	initChooseDevice();
+	initHeader();
 });
 
+function initHeader(){
+	const videoPlayer=document.getElementById('video-player');
+	function showVideoPlayer(){
+		var iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/2BA0RFw-Zsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+		videoPlayer.innerHTML=iframe;
+		videoPlayer.classList.add('active');
+		document.querySelector('#start-video-player').classList.add('active');
+	}
+	function videoPlayerClose(){
+		videoPlayer.innerHTML='';
+		videoPlayer.classList.remove('active');
+		document.querySelector('#start-video-player').classList.remove('active');
+	}
+
+	videoPlayer.onclick=videoPlayerClose;
+
+	document.getElementById('start-video-player').onclick=showVideoPlayer;
+
+	document.querySelector(".header_img_group").classList.add("active");
+	document.querySelector(".mob_header_img_group").classList.add("active");
+	document.getElementById('start-video-player').classList.remove("hidden");
+}
+
+function initChooseDevice() {
 
 
+	const infoBlock = document.querySelector('.info-block'),
+		showListItem = document.getElementById("show_list_item"),
+		hideListItem = document.getElementById("info-block__title-ico");
 
-
-window.addEventListener('DOMContentLoaded', ()=>{
-
-	
-	// $('#show_list_item').on('click', function () {
-	// 	if(!toggle){
-	// 		$('html,body').animate({
-	// 			scrollTop: $("#list_info").offset().top+80
-	// 		}, 300);
-	// 	}
-	// });
-	const infoBlock=document.querySelector('.info-block'),
-		  showListItem = document.getElementById("show_list_item"),
-		  hideListItem = document.getElementById("info-block__title-ico");
-		  let InfoBlockScroll=true;
-		  let toggles=!InfoBlockScroll;
-	function showInfoBlock(){
-		toggles=(toggles)?false:true;
-		console.log("toggle:"+toggles);
-		if(toggles){
+	function showInfoBlock() {
+		toggle = (toggle) ? false : true;
+		if (toggle) {
 			window.history.replaceState(null, null, "?device="+(1+tabId));
 
-			let times=300;
+			var times = 300;
 			$('html,body').animate({
-				scrollTop: $("#list_info").offset().top-70//+80
+				scrollTop: $("#list_info").offset().top - 70//+80
 			}, times);
 			setTimeout(
-				()=>{
+				() => {
 					infoBlock.classList.add('info-block__show');
 					showListItem.classList.add('to_top');
 					$('.download-loader').removeClass('show');
 					$('#info-block__title-logo').addClass('start');
-				}, times+100
+				}, times + 100
 			);
-			
-		}else{
+
+		} else {
 			infoBlock.classList.remove('info-block__show');
 			showListItem.classList.remove('to_top');
 			$('#info-block__title-logo').removeClass('start');
 			window.history.replaceState(null, null, "?");
 		}
-
 	}
+
 	showListItem.onclick = showInfoBlock;
 	hideListItem.onclick = showInfoBlock;
 
-
-	
 	$(window).on('scroll', function () {
 		if(InfoBlockScroll){
 			let e = $("#list_info").offset().top-70;
@@ -439,55 +369,36 @@ window.addEventListener('DOMContentLoaded', ()=>{
 				InfoBlockScroll=false;
 				showInfoBlock();
 			}
-
 		}
-		
 	});
 
+	const tabs = document.querySelectorAll('.info-block__item-icon'),
+		tabsContent = document.querySelectorAll('.info-block__content-block'),
+		tabsParent = document.querySelector('.info-block__item'),
+		tabsContentParent = document.querySelector('.info-block__content'),
+		infoBlockDescription = document.getElementById('info-block-description');
 
-	const tabs=document.querySelectorAll('.info-block__item-icon'),
-	tabsContent=document.querySelectorAll('.info-block__content-block'),
-	tabsParent=document.querySelector('.info-block__item'),
-	tabsContentParent=document.querySelector('.info-block__content'),
-	infoBlockDescription=document.getElementById('info-block-description');
+	let description = [], installUrls = [];
+	var tabId = 0;
+	let timer = 0;
 
-	let description=[],installUrls=[];
-	var tabId=0;
-	let timer=0;
-	// const description=[
-	// 	"AWAX Android",
-	// 	"AWAX iOS", 
-	// 	"AWAX PC (Mac OS/Windows)", 
-	// 	"AWAX Android TV"
-	// ];
-	// const installUrls=[
-	// 	"https://play.google.com/store/apps/details?id=com.awaxtech.app",
-	// 	"https://apps.apple.com/ru/app/awax/id1485689157", 
-	// 	"https://chrome.google.com/webstore/detail/awax/aadlckelcockpdgplkdllgokjnckncll", 
-	// 	"https://play.google.com/store/apps/details?id=com.awaxtech.app"
-	// ];
 	tabs.forEach(i => {
 		description.push(i.dataset.description);
 		installUrls.push(i.dataset.urls);
-		//data-description="" data-urls
 	});
 
-
-
-	function typeWriter(timers, e, txt, s=4, i=s) {
-		if(timer!==timers)return false;
+	function typeWriter(timers, e, txt, s = 4, i = s) {
+		if (timer !== timers) return false;
 		if (i < txt.length) {
-			let a=(i < txt.length-1)?'_':'';
-			let txti = txt.substring(0,s)+txt.substring(s,1+i)+a;//.charAt(i);.substring(0,i)
-			//console.log("text: "+i+" "+ txti);//.slice(0, i)
+			let a = (i < txt.length - 1) ? '_' : '';
+			let txti = txt.substring(0, s) + txt.substring(s, 1 + i) + a;
 			e.innerHTML = txti;
 			i++;
-			setTimeout(() => typeWriter(timers, e, txt, s, i), 300/(txt.length-s));//70
+			setTimeout(() => typeWriter(timers, e, txt, s, i), 300 / (txt.length - s));
 		}
 	}
 
-	//console.log('start');
-	function hideTabsContent(){
+	function hideTabsContent() {
 		tabs.forEach(i => {
 			i.classList.remove('active');
 		});
@@ -497,23 +408,24 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			i.classList.remove('blockLeft');
 			i.classList.remove('blockRight');
 		});
-	};
-	function showTabsContent(i=0){
+	}
+
+	function showTabsContent(i = 0) {
 		tabsContent[i].classList.remove('item-hide');
 		tabsContent[i].classList.add('item-show');
 		tabs[i].classList.add('active');
-		infoBlockDescription.innerHTML='';//description[i];
-		timer=i;
+		infoBlockDescription.innerHTML = '';//description[i];
+		timer = i;
 		typeWriter(timer, infoBlockDescription, description[i]);
-		tabId=i;
+		tabId = i;
 	}
 	hideTabsContent();
 	showTabsContent();
-	
-	tabsParent.addEventListener('click', (event)=> {
-		if(event.target&&event.target.classList.contains('info-block__item-icon')){
-			tabs.forEach((item, i)=>{
-				if(event.target===item && i!==tabId){
+
+	tabsParent.addEventListener('click', (event) => {
+		if (event.target && event.target.classList.contains('info-block__item-icon')) {
+			tabs.forEach((item, i) => {
+				if (event.target === item && i !== tabId) {
 					window.history.replaceState(null, null, "?device="+(1+i));
 					hideTabsContent();
 					showTabsContent(i);
@@ -522,97 +434,61 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		}
 	});
 
-	//'?q=123'
-let params = new URLSearchParams(location.search);
-let device = parseInt(params.get("device"));
-if(device){
-	InfoBlockScroll=false;
-	hideTabsContent();
-	showTabsContent(device-1);
-	showInfoBlock();
-}
+	let params = new URLSearchParams(location.search);
+	let device = parseInt(params.get("device"));
+	if(device){
+		InfoBlockScroll=false;
+		hideTabsContent();
+		showTabsContent(device-1);
+		showInfoBlock();
+	}
 
-	function installHref(){
+
+	function installHref() {
 		window.open(installUrls[tabId], '_blank');
 	}
-	document.getElementById("install-href").onclick=installHref;
+
+	document.getElementById("install-href").onclick = installHref;
 
 
+	var xDown = null;
+	var yDown = null;
 
+	function handleTouchStart(evt) {
+		xDown = evt.touches[0].clientX;
+		yDown = evt.touches[0].clientY;
+	}
 
-var xDown = null;                                                        
-var yDown = null;                                                        
+	function swipe(e) {
+		let i = tabId + e;
+		if (i > (tabs.length - 1)) i = 0;
+		if (i < 0) i = (tabs.length - 1);
+		hideTabsContent();
+		showTabsContent(i);
+	}
 
-function handleTouchStart(evt) {                                         
-    xDown = evt.touches[0].clientX;                                      
-    yDown = evt.touches[0].clientY;                                      
-} 
+	function handleTouchMove(evt) {
+		if (!xDown || !yDown) {
+			return;
+		}
 
-function swipe(e){
-	let i=tabId+e;
-	if(i>(tabs.length-1))i=0;
-	if(i<0)i=(tabs.length-1);
-	hideTabsContent();
-	showTabsContent(i);
+		var xUp = evt.touches[0].clientX;
+		var yUp = evt.touches[0].clientY;
+
+		var xDiff = xDown - xUp;
+		var yDiff = yDown - yUp;
+		if (Math.abs(xDiff) > Math.abs(yDiff)) {
+			if (xDiff > 0) {
+				swipe(1);
+			} else {
+				swipe(-1);
+			}
+		}
+		/* reset values */
+		xDown = null;
+		yDown = null;
+	}
+	tabsContentParent.addEventListener('touchstart', handleTouchStart, false);
+	tabsContentParent.addEventListener('touchmove', handleTouchMove, false);
+
 }
-
-function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
-        return;
-    }
-
-    var xUp = evt.touches[0].clientX;                                    
-    var yUp = evt.touches[0].clientY;
-
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
-    // немного поясню здесь. Тут берутся модули движения по оси абсцисс и ординат (почему модули? потому что если движение сделано влево или вниз, то его показатель будет отрицательным) и сравнивается, чего было больше: движения по абсциссам или ординатам. Нужно это для того, чтобы, если пользователь провел вправо, но немного наискосок вниз, сработал именно коллбэк для движения вправо, а ни как-то иначе.
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
-            /* left swipe */ 
-			swipe(1);
-        } else {
-            /* right swipe */
-			swipe(-1);
-        }                       
-    } 
-    /* reset values */
-    xDown = null;
-    yDown = null;                                             
-}
-// Вешаем на прикосновение функцию handleTouchStart
-tabsContentParent.addEventListener('touchstart', handleTouchStart, false);  
-// А на движение пальцем по экрану - handleTouchMove      
-tabsContentParent.addEventListener('touchmove', handleTouchMove, false);
-
-
-const videoPlayer=document.getElementById('video-player');
-function showVideoPlayer(){
-	var iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/2BA0RFw-Zsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-	videoPlayer.innerHTML=iframe;
-	videoPlayer.classList.add('active');
-	document.querySelector('#start-video-player').classList.add('active');
-}
-function videoPlayerClose(){
-	videoPlayer.innerHTML='';
-	videoPlayer.classList.remove('active');
-	document.querySelector('#start-video-player').classList.remove('active');
-}
-
-videoPlayer.onclick=videoPlayerClose;
-
-
-document.getElementById('start-video-player').onclick=showVideoPlayer;
-
-
-
-// });
-
-
-
-
-// window.addEventListener('load', ()=>{
-	document.querySelector(".header_img_group").classList.add("active");
-	document.querySelector(".mob_header_img_group").classList.add("active");
-	document.getElementById('start-video-player').classList.remove("hidden");
-});
