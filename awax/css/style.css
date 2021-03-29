@@ -4294,23 +4294,44 @@ input::placeholder {
 }
 @media (min-width: 820px){
 
-	.android_block {
-		background-image: url(../images/img_web_devices/Android@2x.png); 
+	.lang_en .android_block {
+		background-image: url(../images/img_web_devices/Android_en@2x.png); 
 		background-size: auto 115%;
 		background-position: top 0px left 5%;
 	}
-	.iphone_block {
-		background-image: url(../images/img_web_devices/iOS@2x.png);
+	.lang_en .iphone_block {
+		background-image: url(../images/img_web_devices/iOS_en@2x.png);
 		background-size: auto 115%;
 		background-position: top 0px left 5%;
 	}
-	.chrome_block {
-		background-image: url(../images/img_web_devices/Chrome@2x.png);
+	.lang_en .chrome_block {
+		background-image: url(../images/img_web_devices/Chrome_en@2x.png);
 		background-size: 60% AUTO;
 		background-position: center left -15%;
 	}
-	.tv_block {
-		background-image: url(../images/img_web_devices/tv@2x.png);
+	.lang_en .tv_block {
+		background-image: url(../images/img_web_devices/tv_en@2x.png);
+		background-size: 55% AUTO;
+		background-position: top left -10%;
+	}
+
+	.lang_ru .android_block {
+		background-image: url(../images/img_web_devices/Android_ru@2x.png); 
+		background-size: auto 115%;
+		background-position: top 0px left 5%;
+	}
+	.lang_ru .iphone_block {
+		background-image: url(../images/img_web_devices/iOS_ru@2x.png);
+		background-size: auto 115%;
+		background-position: top 0px left 5%;
+	}
+	.lang_ru .chrome_block {
+		background-image: url(../images/img_web_devices/Chrome_ru@2x.png);
+		background-size: 60% AUTO;
+		background-position: center left -15%;
+	}
+	.lang_ru .tv_block {
+		background-image: url(../images/img_web_devices/tv_ru@2x.png);
 		background-size: 55% AUTO;
 		background-position: top left -10%;
 	}
@@ -4556,7 +4577,7 @@ transform: rotate(-360deg) scale(4);
 }
 #start-video-player{
     position: absolute;
-    margin: -200px auto;
+    margin: 0px auto;
     left: 0;
     right: 0;
     padding: 0px;
@@ -4565,7 +4586,7 @@ transform: rotate(-360deg) scale(4);
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translate(90px, -20px);
+    transform: translate(90px, -220px);
     transition: all 500ms;
     transition-delay: 500ms;
     z-index: 6;
@@ -4715,8 +4736,8 @@ transition-delay: 0ms;
 
 	#start-video-player{
 		position: absolute;
-		margin: 200px auto;
-		transform: translate(300px, 100px);
+		margin: 0px auto;
+    	transform: translate(300px, -100px);
 		z-index: 6;
 		transition: all 500ms;
 		transition-delay: 700ms;
