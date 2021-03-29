@@ -8,7 +8,9 @@
 ! GitHub pull requests: https://github.com/dpua/pulls
 
 ! https://github.com/dpua/awax/
-! Last imported: 2021-02-27
+! Last imported: 2021-03-29
+! 2021-03-29 https://www.facebook.com
+www.facebook.com##.l9j0dhe7.buofh1pr.cbu4d94t.j83agx80 > .cxgpxx05 > div > span
 www.facebook.com##.cxgpxx05 > div:nth-of-type(1) > span > div
 ||api-read.facebook.com/restserver.php?api_key=$third-party
 ||api.facebook.com^$third-party
