@@ -418,6 +418,11 @@ input::-ms-clear{
 	background:#2b3942;
 	
 }
+.menu.close{
+    background: rgb(43 57 66 / 0%);
+	transition-delay: 200ms;
+
+}
 .menu.close span {
     width: 25px;
     margin: 5px;
@@ -957,6 +962,42 @@ main{
     transition: all 150ms linear;
 	transform: translate(0px, 0px);
 }
+.works-section .shop-slider-item {
+    background: #2b3841;
+    border-radius: 10px;
+    padding: 20px 20px 0;
+    overflow: hidden;
+    -webkit-box-shadow: 0 11px 12px 0 rgba(0, 0, 0, 0.26);
+    box-shadow: 0 11px 12px 0 rgba(0, 0, 0, 0.26);
+    transition: all 150ms linear;
+    transform: translate(0px, 0px);
+    width: 300px;
+}
+.works-section .row img {
+    min-width: 76px;
+    margin: 15px auto;
+    max-width: 80px;
+}
+
+.works-section .shop-slider-item .btn {
+    margin: 0 -35px;
+}
+.works-section .shop-slider-item .btn:after {
+    content: "";
+    position: absolute;
+    right: 45px;
+    transform: translateY(50%);
+    cursor: pointer;
+    width: 13.48px;
+    height: 22.89px;
+    background-image: url(../images/arrow.svg);
+    transition: all 100ms linear;
+    background-size: cover;
+}
+
+
+
+
 .shop-slider-item:hover{
 	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.26);
     transform: translate(0px, -2px);
