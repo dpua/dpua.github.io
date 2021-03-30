@@ -4738,6 +4738,7 @@ transform: rotate(-360deg) scale(4);
     transition: all 500ms;
     z-index: 6;
 	opacity: 1;
+    transition-delay: 0ms;
 }
 #start-video-player.active::after{
 transform: rotate(-45deg);
@@ -4819,21 +4820,25 @@ transition-delay: 0ms;
 
 .mob_header_img_group img:nth-child(1){
     max-width: 750px;
+    -webkit-transform: translate(-900px, 120px);
     transform: translate(-900px, 120px);
 }
 .mob_header_img_group img:nth-child(2){
 	max-width: 370px;
+	-webkit-transform: translate(1000px, 600px);
 	transform: translate(1000px, 600px);
 }
 
 
 .mob_header_img_group.active img:nth-child(1){
     max-width: 375px;
+    -webkit-transform: translate(30px, 10px);
     transform: translate(30px, 10px);
 }
 .mob_header_img_group.active img:nth-child(2){
     /* max-width: 185px; */
 	max-width: 205px;
+    -webkit-transform: translate(45px, 130px);
     transform: translate(45px, 130px);
 }
 
@@ -4870,6 +4875,7 @@ transition-delay: 0ms;
 	background-position: left center;
 }
 #video-player.active::after{
+	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 #video-player iframe {
@@ -4884,9 +4890,13 @@ transition-delay: 0ms;
 	#start-video-player{
 		position: absolute;
 		margin: 0px auto;
+		-webkit-transform: translate(300px, -100px);
     	transform: translate(300px, -100px);
 		z-index: 6;
 		transition: all 500ms;
+		transition-delay: 0ms;
+	}	
+	#start-video-player.delay{
 		transition-delay: 700ms;
 	}
 	#start-video-player::after{
@@ -4952,27 +4962,32 @@ transition-delay: 0ms;
 
 	.header_img_group img:nth-child(1){
 		max-width: 294px;
+		-webkit-transform: translate(25px, 1000px);
 		transform: translate(25px, 1000px);
 	}
 	.header_img_group img:nth-child(2){
 		max-width: 1018px;
+		-webkit-transform: translate(1500px, 1000px);
 		transform: translate(1500px, 1000px);
 	}
 	.header_img_group img:nth-child(3){
 		max-width: 576px;
+		-webkit-transform: translate(-1500px, 1000px);
     	transform: translate(-1500px, 1000px);
 	}
 
 
 	.header_img_group.active img:nth-child(1){
 		max-width: 588px;
+		-webkit-transform: translate(25px, 0px);
 		transform: translate(25px, 0px);
 	}
 	.header_img_group.active img:nth-child(2){
 		max-width: 509px;
+		-webkit-transform: translate(220px, 130px);
 		transform: translate(220px, 130px);
-		animation-name: bounce-3;
-		animation-delay: 0.5s;
+		animation-name: animation_header_pc;
+		animation-delay: 1s;
 		animation-duration: 28s;
 		animation-iteration-count: infinite;
 		animation-timing-function: ease-in-out;
@@ -4980,22 +4995,41 @@ transition-delay: 0ms;
 	}
 	.header_img_group.active img:nth-child(3){
 		max-width: 288px;
+		-webkit-transform: translate(0px, 169px);
     	transform: translate(0px, 169px);
-		animation-name: bounce-2;
+		animation-name: animation_header_phone;
 		animation-delay: 1s;
 		animation-duration: 19s;
 		animation-iteration-count: infinite;
 		animation-timing-function: ease-in-out;
 	}
-	@keyframes bounce-2 {
-		0%   { transform: translate(0px, 169px); }
-		50%  { transform: translate(-5px, 179px) scale(1.05) rotate(-5deg); }
-		100% { transform: translate(0px, 169px); }
+	@keyframes animation_header_phone {
+		0%   { 
+			-webkit-transform: translate(0px, 169px) scale(1) rotate(0deg); 
+			transform: translate(0px, 169px) scale(1) rotate(0deg); 
+		}
+		50%  { 
+			-webkit-transform: translate(-5px, 179px) scale(1.05) rotate(-5deg); 
+			transform: translate(-5px, 179px) scale(1.05) rotate(-5deg); 
+		}
+		100% { 
+			-webkit-transform: translate(0px, 169px) scale(1) rotate(0deg); 
+			transform: translate(0px, 169px) scale(1) rotate(0deg); 
+		}
 	}
-	@keyframes bounce-3 {
-		0%   { transform: translate(220px, 130px); }
-		50%  { transform: translate(230px, 140px) scale(0.95) rotate(5deg); }
-		100% { transform: translate(220px, 130px); }
+	@keyframes animation_header_pc {
+		0%   { 
+			-webkit-transform:  translate(220px, 130px) scale(1) rotate(0deg); 
+			transform: translate(220px, 130px) scale(1) rotate(0deg); 
+		}
+		50%  { 
+			-webkit-transform:  translate(230px, 140px) scale(0.95) rotate(5deg); 
+			transform: translate(230px, 140px) scale(0.95) rotate(5deg); 
+		}
+		100% { 
+			-webkit-transform: translate(220px, 130px) scale(1) rotate(0deg); 
+			transform: translate(220px, 130px) scale(1) rotate(0deg); 
+		}
 	}
 
 
