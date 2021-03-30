@@ -564,6 +564,9 @@ main{
 	.main-banner-text{
 		font-size:50px
 	}
+	.lang_ru .main-banner-text{
+		font-size:45px
+	}
 }
 .main-banner img{
 	max-width:100%;
@@ -4961,7 +4964,7 @@ transition-delay: 0ms;
 	}
 
 	.header_img_group img:nth-child(1){
-		max-width: 294px;
+		max-width: 588px;
 		-webkit-transform: translate(25px, 1000px);
 		transform: translate(25px, 1000px);
 	}
