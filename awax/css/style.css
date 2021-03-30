@@ -4676,6 +4676,9 @@ input::placeholder {
 #start-video-player.hidden{
 opacity: 0;
 }
+#start-video-player.delay{
+    transition-delay: 500ms;
+}
 #start-video-player.hidden::after{
 transform: rotate(-360deg) scale(4);
 }
@@ -4692,7 +4695,6 @@ transform: rotate(-360deg) scale(4);
     align-items: center;
     transform: translate(90px, -220px);
     transition: all 500ms;
-    transition-delay: 500ms;
     z-index: 6;
 	opacity: 1;
 }
@@ -4720,10 +4722,10 @@ pointer-events: none;
 	background: url('../images/header/vector.svg');
 	background-repeat: no-repeat;
 	background-position: center center;
-	
-	
     transform: rotate(0deg) scale(1);
     transition: all 1500ms;
+}
+#start-video-player.delay::after{
     transition-delay: 700ms;
 }
 #start-video-player::before{
@@ -4894,11 +4896,9 @@ transition-delay: 0ms;
 	
 	.header_img_group img{
 		position: absolute;
-		/* opacity: 0.0;
-		display: none; */
-    transition: all 800ms;
-	transition-delay: 0ms;
-
+		opacity: 0;
+		transition: all 800ms;
+		transition-delay: 0ms;
 	}
 	.header_img_group.active img{
 		position: absolute;

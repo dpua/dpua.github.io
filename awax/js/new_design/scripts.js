@@ -307,6 +307,7 @@ function initHeader(){
 	function showVideoPlayer(){
 		var iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/2BA0RFw-Zsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 		videoPlayer.innerHTML=iframe;
+		document.querySelector('#start-video-player').classList.remove('delay');
 		videoPlayer.classList.add('active');
 		document.querySelector('#start-video-player').classList.add('active');
 	}
@@ -332,15 +333,18 @@ function initChooseDevice() {
 		showListItem = document.getElementById("show_list_item"),
 		hideListItem = document.getElementById("info-block__title-ico");
 
-	function showInfoBlock() {
+	function showInfoBlock(iScroll) {
 		toggle = (toggle) ? false : true;
 		if (toggle) {
 			window.history.replaceState(null, null, "?device="+(1+tabId));
-
-			var times = 300;
-			$('html,body').animate({
-				scrollTop: $("#list_info").offset().top - 70//+80
-			}, times);
+			
+			var times = 0;
+			if(iScroll){
+				times = 300;
+				$('html,body').animate({
+					scrollTop: $("#list_info").offset().top - 70//+80
+				}, times);
+			}
 			setTimeout(
 				() => {
 					infoBlock.classList.add('info-block__show');
@@ -358,7 +362,7 @@ function initChooseDevice() {
 		}
 	}
 
-	showListItem.onclick = showInfoBlock;
+	showListItem.onclick = ()=>showInfoBlock(true);
 	hideListItem.onclick = showInfoBlock;
 
 	$(window).on('scroll', function () {
