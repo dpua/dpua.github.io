@@ -977,8 +977,8 @@ main{
     width: 300px;
 }
 .works-section .row img {
-    min-width: 76px;
-    margin: 15px auto;
+    /* min-width: 76px;
+    margin: 15px auto; */
     max-width: 80px;
 }
 
@@ -986,9 +986,10 @@ main{
     margin: 0 -35px;
 }
 .works-section .shop-slider-item .btn:after {
-    content: "";
+	content: "";
     position: absolute;
     right: 45px;
+    top: auto;
     transform: translateY(50%);
     cursor: pointer;
     width: 13.48px;
@@ -1051,14 +1052,17 @@ main{
 	font-size:40px;
 	line-height:1.1
 }
-.lang_en #slick-slide00 .text2{
-	letter-spacing: 14px;
-}
-.lang_en #slick-slide01 .text2{
+.lang_en .shop-slider-item .text2{
 	letter-spacing: 8px;
 }
-.lang_en #slick-slide02 .text2{
+.lang_en #slick-slide00 .text2{
+	letter-spacing: 8px;
+}
+.lang_en #slick-slide01 .text2{
 	letter-spacing: 2px;
+}
+.lang_en #slick-slide02 .text2{
+	letter-spacing: 14px;
 }
 .lang_en .shop-slider-item .text3{
 	letter-spacing: 4px;
@@ -1068,15 +1072,18 @@ main{
 .lang_ru .shop-slider-item .text1{
 	letter-spacing: 0px;
 }
-.lang_ru #slick-slide00 .text2{
-	letter-spacing: 18px;
-    margin-right: -12px;
-}
-.lang_ru #slick-slide01 .text2{
+.lang_ru .shop-slider-item .text2{
     letter-spacing: 6.5px;
 }
-.lang_ru #slick-slide02 .text2{
+.lang_ru #slick-slide00 .text2{
+    letter-spacing: 6.5px;
+}
+.lang_ru #slick-slide01 .text2{
 	letter-spacing: 2.5px;
+}
+.lang_ru #slick-slide02 .text2{
+	letter-spacing: 18px;
+    margin-right: -12px;
 }
 .lang_ru .shop-slider-item .text3{
     letter-spacing: -2px;
@@ -1096,13 +1103,13 @@ main{
 	}
 	
 	.lang_en [data-slick-index="0"] .text2{
-		letter-spacing: 10px;
-	}
-	.lang_en [data-slick-index="1"] .text2{
 		letter-spacing: 5.5px;
 	}
-	.lang_en [data-slick-index="2"] .text2{
+	.lang_en [data-slick-index="1"] .text2{
 		letter-spacing: 1px;
+	}
+	.lang_en [data-slick-index="2"] .text2{
+		letter-spacing: 10px;
 	}
 	.lang_en .shop-slider-item .text3{ 
 		letter-spacing: -2px;
@@ -1114,13 +1121,13 @@ main{
 		font-size: 22px;
 	}
 	.lang_ru [data-slick-index="0"] .text2{
-		letter-spacing: 14px;
-	}
-	.lang_ru [data-slick-index="1"] .text2{
 		letter-spacing: 5.5px;
 	}
-	.lang_ru [data-slick-index="2"] .text2{
+	.lang_ru [data-slick-index="1"] .text2{
 		letter-spacing: 2px;
+	}
+	.lang_ru [data-slick-index="2"] .text2{
+		letter-spacing: 14px;
 	}
 	.lang_ru .shop-slider-item .text3{ 
 		letter-spacing: 0.5px;
