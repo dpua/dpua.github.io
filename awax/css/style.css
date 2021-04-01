@@ -3504,7 +3504,24 @@ input:-webkit-autofill:focus {
 	transform-origin:center top;
 }
 .input-wrap input:focus+.placeholder,
-.input-wrap input:not(:placeholder-shown)+.placeholder{
+.input-wrap input:not(:placeholder-shown)+.placeholder,
+.model-window .input-wrap input:focus+.placeholder,
+.model-window .input-wrap input:not(:placeholder-shown)+.placeholder{
+	-webkit-transform:scale(0.8);
+	-ms-transform:scale(0.8);
+	transform:scale(0.8);
+	-webkit-transform-origin:center top;
+	-ms-transform-origin:center top;
+	transform-origin:center top;
+	/* color: #2b3942; */
+	top:-25px
+}
+
+input:-webkit-autofill+.placeholder,
+.model-window .input-wrap input:-webkit-autofill+.placeholder,
+.input-wrap input:-webkit-autofill:hover+.placeholder,
+.input-wrap input:-webkit-autofill:focus+.placeholder{
+	/* input:autofill+.placeholder */
 	-webkit-transform:scale(0.8);
 	-ms-transform:scale(0.8);
 	transform:scale(0.8);
@@ -3629,7 +3646,7 @@ input::placeholder {
 .page-form .input-wrap.error{
 	border-bottom:1px solid red
 }
-.page-form .input-wrap.anim .placeholder{
+/* .page-form .input-wrap.anim .placeholder{
 	-webkit-transform:scale(0.8);
 	-ms-transform:scale(0.8);
 	transform:scale(0.8);
@@ -3638,7 +3655,7 @@ input::placeholder {
 	transform-origin:center top;
 	color:#2b3942;
 	top:-25px
-}
+} */
 @media (min-width: 820px){
 	.page-form .input-wrap.anim .placeholder{
 		color:#2b3942
@@ -3674,7 +3691,7 @@ input::placeholder {
 	width:100%;
 	margin:0
 }
-.page-form .input-wrap .placeholder {
+/* .page-form .input-wrap .placeholder {
 	-webkit-transform: scale(0.8);
 	-ms-transform: scale(0.8);
 	transform: scale(0.8);
@@ -3682,7 +3699,7 @@ input::placeholder {
 	-ms-transform-origin: center top;
 	transform-origin: center top;
 	top: -25px;
-}
+} */
 .page-form  input:-webkit-autofill, .page-form  input:-webkit-autofill:hover, .page-form  input:-webkit-autofill:focus {
 	-webkit-text-fill-color: #2b3942;
 	-webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
