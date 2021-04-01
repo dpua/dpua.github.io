@@ -305,11 +305,17 @@ $(window).on("load", function () {
 function initHeader(){
 	const videoPlayer=document.getElementById('video-player');
 	function showVideoPlayer(){
-		var iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/2BA0RFw-Zsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-		videoPlayer.innerHTML=iframe;
+		//var iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/2BA0RFw-Zsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+		//videoPlayer.innerHTML=iframe;
 		document.querySelector('#start-video-player').classList.remove('delay');
 		videoPlayer.classList.add('active');
 		document.querySelector('#start-video-player').classList.add('active');
+		setTimeout(
+			() => {
+				var iframe = '<iframe width="560" height="315" src="https://www.youtube.com/embed/2BA0RFw-Zsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+				videoPlayer.innerHTML=iframe;
+			}, 300
+		);
 	}
 	function videoPlayerClose(){
 		videoPlayer.innerHTML='';
