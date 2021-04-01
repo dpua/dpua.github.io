@@ -1027,13 +1027,12 @@ main{
 }
 @media (min-width: 820px){
 	.shop-slider-item .text{
-		/* font-size:22px */
 		font-family: Roboto;
 		font-style: normal;
 		font-weight: 300;
-		font-size: 24px;
+		font-size: 20px;
 		line-height: 28px;
-		letter-spacing: -0.065em;
+		letter-spacing: 0.5px;
 	}
 }
 .shop-slider-item .text1,.shop-slider-item .text2,.shop-slider-item .text3{
@@ -1117,8 +1116,8 @@ main{
 	
 	
 	.lang_ru .shop-slider-item .text1{
-		letter-spacing: -2px;
-		font-size: 22px;
+		letter-spacing: 0.3px;
+		font-size: 18px;
 	}
 	.lang_ru [data-slick-index="0"] .text2{
 		letter-spacing: 5.5px;
@@ -4776,7 +4775,7 @@ transition-delay: 0ms;
 transform: scale(40);
 transition: all 500ms;
 transition-delay: 0ms;
-opacity: 0.1;
+opacity: 0;
 z-index: 20;
 user-select: none;
 pointer-events: none;
