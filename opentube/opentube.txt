@@ -12,11 +12,6 @@ or
 
 cd C:\Users\ULTRA\OneDrive\IT\GitHub\dpua.github.io\opentube\
 
-!!!!!!!
-https://www.npmjs.com/package/react-input-mask
-npm i react-input-mask
-!!!!!!!!!!!
-
     npm start
 	
 \\Когда ваше приложение готово для разворачивания на продакшене, нужно запустить команду 
@@ -27,40 +22,6 @@ cd C:\OD\OneDrive\IT\reactapp\opentube
 npm start
 
 
+https://lokalise.com/blog/react-i18n-intl/?utm_source=google&utm_medium=cpc&utm_campaign=GENERIC_i18n-reactintl&gclid=CjwKCAjwgZuDBhBTEiwAXNofRO9QE_4trCVGNJmn0kTkL2fbdX63R-s1_sleX3KaW40WdYPbNi3AkhoCDkMQAvD_BwE
 
-
-
-
-
-
-
-
-npm i --save @fortawesome/fontawesome-svg-core
-  npm install --save @fortawesome/free-solid-svg-icons
-  npm install --save @fortawesome/react-fontawesome
-  
-  npm install --save @fortawesome/free-brands-svg-icons
-  npm install --save @fortawesome/free-regular-svg-icons
-
-
-
-
-
-
-
- npm install --save react@^16.0.0 react-dom@^16.0.0
-https://ru.reactjs.org/blog/2017/09/26/react-v16.0.html
-
-
-
-
-/// npm i react-sort-search-table
- npm i react-imageloader
-
-
-
-//
-search list for keywords in react
-https://stackoverflow.com/questions/54994248/search-list-for-keywords-in-react
-//
 
