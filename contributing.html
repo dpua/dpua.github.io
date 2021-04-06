@@ -11,5 +11,14 @@
 		<p>
 			dpua.github.io is an open source projects so if you feel you have some relevant skills and are interested in contributing then please do get in touchdo not hesitate to contact me at dp.ua@mail.com or phone number +380953835669.
 		</p>
+<script>
+fetch("https://site.spilka.dp.ua/users.php")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  });
+</script>
     </body>
 </html>
