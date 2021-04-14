@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) Bruno_x -->
+<svg width="150mm" height="150mm" version="1.1" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" style="transform: rotate(-120deg);">
+ <defs>
+  <linearGradient id="linearGradient_01" x1="65.622" x2="29.274" y1="54.041" y2="80.512" gradientTransform="matrix(.87539 0 0 .87539 26.906 7.1745)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#DA1C5C" offset="0"/>
+   <stop stop-color="#9E1F63" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient_02" x1="-20.479" x2="60.6" y1="87.435" y2="115" gradientTransform="matrix(.87539 0 0 .87539 26.906 7.1764)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#EE4168" offset="0"/>
+   <stop stop-color="#9E1F63" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient_03" x1="97.439" x2="52.196" y1="61.342" y2="129.43" gradientTransform="matrix(.87539 0 0 .87539 26.903 7.1785)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#DA1C5C" offset="0"/>
+   <stop stop-color="#9E1F63" offset="1"/>
+  </linearGradient>
+ </defs>
+    <g id="svg_background">
+        <path class="st0" d="m150 0.004687-149.99-0.0047-0.01694 150.01 150-3.1e-4z" fill="url(#linearGradient_01)"/>
+        <path class="st1" d="m79.77 150.01-79.773-7e-3 0.02146-129.5 79.935 87.332z" fill="url(#linearGradient_02)"/>
+        <path class="st2" d="m72.322 150s0.71281-110.99 0.51553-149.93l77.16-0.06189-3e-3 150z" fill="url(#linearGradient_03)"/>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
+  <path d="m1 0.1c-0.1-0.08-0.3-0.1-0.4-0.1-0.2 0-0.4 0.07-0.5 0.2-0.04 0.06-0.06 0.1-0.07 0.2-3e-3 0.07 9e-3 0.2 0.04 0.2 0.09-0.3 0.4-0.5 0.7-0.5 0 0-0.3 0.07-0.5 0.3l-6e-3 9e-3c-0.04 0.05-0.07 0.1-0.09 0.2-0.04 0.09-0.08 0.2-0.08 0.4h0.1s-0.02-0.1 0.01-0.3c0.06 7e-3 0.1 0.01 0.1 0.01 0.1 0 0.2-0.02 0.3-0.08 0.05-0.05 0.08-0.1 0.1-0.2 0.05-0.1 0.1-0.2 0.3-0.3 9e-3 -5e-3 0.02-0.02 0.02-0.02s-4e-3 -0.02-0.01-0.03"/>
+ </clipPath>
+ <path class="st0" d="m93 38-55-32c-5-3-10-3-14 0-5 3-7 7-7 12v63c0 5 3 10 7 12 2 1 5 2 7 2 2 0 5-0.7 7-2l55-32c5-3 7-7 7-12 0-5-3-10-7-12zm-6 15-55 32c-1 0.8-2 0.2-3 0-0.4-0.2-1-1-1-3v-63c0-1 1-2 1-3 0.2-0.2 0.8-0.4 1-0.4 0.4 0 0.9 0.1 1 0.4l55 32c1 0.8 1 2 1 3-0.06 0.5-0.2 2-1 3z" fill="#f00" stroke-width=".6"/>
+</svg>

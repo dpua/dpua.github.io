@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="150mm" height="150.01mm" version="1.1" viewBox="0 0 150 150.01" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="SVGID_1_" x1="65.622" x2="29.274" y1="54.041" y2="80.512" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#DA1C5C" offset="0"/>
+   <stop stop-color="#9E1F63" offset="1"/>
+  </linearGradient>
+  <linearGradient id="SVGID_2_" x1="-20.479" x2="57.774" y1="87.435" y2="125.33" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#EE4168" offset="0"/>
+   <stop stop-color="#9E1F63" offset="1"/>
+  </linearGradient>
+  <linearGradient id="SVGID_3_" x1="99.467" x2="75.262" y1="41.735" y2="149.43" gradientTransform="translate(14.544 18.18)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#DA1C5C" offset="0"/>
+   <stop stop-color="#9E1F63" offset="1"/>
+  </linearGradient>
+  <linearGradient id="SVGID_2_-7-1" x1="-20.479" x2="60.6" y1="87.435" y2="115" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#EE4168" offset="0"/>
+   <stop stop-color="#9E1F63" offset="1"/>
+  </linearGradient>
+  <linearGradient id="SVGID_3_-0-6" x1="97.439" x2="52.196" y1="61.342" y2="129.43" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#DA1C5C" offset="0"/>
+   <stop stop-color="#9E1F63" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5555" x1="65.622" x2="29.274" y1="54.041" y2="80.512" gradientUnits="userSpaceOnUse" xlink:href="#SVGID_1_"/>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-54.357 -66.977)">
+  <g transform="matrix(.26458 0 0 .26458 187.17 42.546)" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
+   <rect id="Icons" x="-1216" y="-64" width="1280" height="800" fill="none"/>
+   <g serif:id="Icons">
+    <g transform="matrix(3.7795 0 0 3.7795 -501.99 92.354)">
+     <g transform="translate(-.0024109 .35937)" display="none">
+      <circle cx="74.987" cy="74.656" r="74.819" fill="#2f51a8" fill-opacity=".56281" fill-rule="evenodd" stroke-width=".61981"/>
+      <g transform="matrix(2.2702 0 0 2.2702 23.44 7.9889)" stroke-miterlimit="4" stroke-width=".044049">
+       <g stroke-miterlimit="4" stroke-width=".044049">
+        <path d="m52.524 23.925-40.017-23.101c-1.907-1.1-4.376-1.097-6.276 0-1.938 1.116-3.143 3.201-3.143 5.44v46.205c0 2.24 1.204 4.325 3.131 5.435 0.953 0.555 2.042 0.848 3.149 0.848 1.104 0 2.192-0.292 3.141-0.843l40.017-23.103c1.936-1.119 3.138-3.203 3.138-5.439-1e-3 -2.233-1.202-4.317-3.14-5.442zm-3 5.687-40.02 23.104c-0.082 0.047-0.18 0.052-0.279-5e-3 -0.084-0.049-0.137-0.142-0.137-0.242v-46.206c0-0.1 0.052-0.192 0.14-0.243 0.042-0.025 0.09-0.038 0.139-0.038 0.051 0 0.099 0.013 0.142 0.038l40.01 23.098c0.089 0.052 0.145 0.147 0.145 0.249-1e-3 0.103-0.053 0.194-0.14 0.245z" stroke-miterlimit="4" stroke-width=".044049"/>
+       </g>
+      </g>
+     </g>
+     <g transform="translate(-.0024109 .35937)" display="none" opacity=".65">
+      <g transform="matrix(.87321 0 0 .87321 27.233 7.7142)" display="inline">
+       <g transform="matrix(1.0039 0 0 1.0039 -.43542 -.98298)">
+        <path class="st0" d="m128.2 56.4-72.1-41.7-19.8-11.4c-7.6-4.4-16.6-4.4-24.2 0-7.6 4.3-12.1 12.2-12.1 20.9v106.2c0 8.7 4.5 16.6 12.1 20.9 3.8 2.2 7.9 3.3 12.1 3.3 4.1 0 8.3-1.1 12.1-3.3l15.9-9.2 21.8-12.6 54.2-31.3c7.6-4.4 12.1-12.2 12.1-20.9s-4.5-16.6-12.1-20.9zm-9.7 25.1-57.9 33.5-7.7 4.5-26.3 15.2c-2.2 1.3-4.1 0.4-4.8 0s-2.4-1.7-2.4-4.2v-106.3c0-2.5 1.7-3.7 2.4-4.2 0.4-0.3 1.3-0.7 2.4-0.7 0.7 0 1.5 0.2 2.4 0.7l28.9 16.7 63.1 36.4c2.2 1.3 2.4 3.3 2.4 4.2-0.1 0.8-0.3 2.9-2.5 4.2z" fill="url(#linearGradient5555)"/>
+       </g>
+      </g>
+     </g>
+     <g display="none">
+      <g transform="matrix(.87539 0 0 .87539 26.91 7.1696)">
+       <path class="st0" d="m128.2 56.4-72.1-41.7-19.8-11.4c-7.6-4.4-16.6-4.4-24.2 0-7.6 4.3-12.1 12.2-12.1 20.9v106.2c0 8.7 4.5 16.6 12.1 20.9 3.8 2.2 7.9 3.3 12.1 3.3 4.1 0 8.3-1.1 12.1-3.3l15.9-9.2 21.8-12.6 54.2-31.3c7.6-4.4 12.1-12.2 12.1-20.9s-4.5-16.6-12.1-20.9zm-9.7 25.1-57.9 33.5-7.7 4.5-26.3 15.2c-2.2 1.3-4.1 0.4-4.8 0s-2.4-1.7-2.4-4.2v-106.3c0-2.5 1.7-3.7 2.4-4.2 0.4-0.3 1.3-0.7 2.4-0.7 0.7 0 1.5 0.2 2.4 0.7l28.9 16.7 63.1 36.4c2.2 1.3 2.4 3.3 2.4 4.2-0.1 0.8-0.3 2.9-2.5 4.2z" fill="url(#SVGID_1_)"/>
+       <path class="st1" d="m74 129.5-37.8 21.8c-3.8 2.2-7.9 3.3-12.1 3.3s-8.3-1.1-12.1-3.3c-7.5-4.4-12-12.2-12-20.9v-81.2l19.4 21v60.2c0 2.5 1.7 3.7 2.4 4.2 0.7 0.4 2.6 1.3 4.8 0l34-19.6z" fill="url(#SVGID_2_)"/>
+       <linearGradient id="SVGID_3_-0" x1="99.467" x2="75.262" y1="41.735" y2="149.43" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#DA1C5C" offset="0"/>
+        <stop stop-color="#9E1F63" offset="1"/>
+       </linearGradient>
+       <path class="st2" d="m140.3 77.3c0 8.7-4.5 16.6-12.1 20.9l-54.2 31.3-21.9 12.6 0.7-22.8 7.7-4.5 57.9-33.5c2.2-1.3 2.4-3.3 2.4-4.2 0-0.8-0.2-2.9-2.4-4.2l-63-36.2 0.7-22 72.1 41.6c7.6 4.4 12.1 12.3 12.1 21z" fill="url(#SVGID_3_-0)"/>
+      </g>
+     </g>
+     <g transform="matrix(.87539 0 0 .87539 26.91 7.1696)">
+      <path class="st0" d="m140.62-8.1904-171.34-0.00536-0.01935 171.36 171.35-3.6e-4z" fill="url(#linearGradient5555)"/>
+      <path class="st1" d="m60.389 163.17-91.128-8e-3 0.02451-147.93 91.314 99.764z" fill="url(#SVGID_2_-7-1)"/>
+      <path class="st2" d="m51.884 163.15s0.81428-126.79 0.58892-171.27l88.144-0.070695-3e-3 171.35z" fill="url(#SVGID_3_-0-6)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+ <style type="text/css">.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:url(#SVGID_3_);}</style>
+ <style type="text/css">.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:url(#SVGID_3_);}</style>
+ <style type="text/css">.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:url(#SVGID_3_);}</style>
+</svg>
