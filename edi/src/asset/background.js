@@ -48,7 +48,7 @@ chrome.identity.getProfileUserInfo((userInfo) => {
 });
 
 chrome.runtime.onInstalled.addListener(function (){
-  chrome.tabs.create({url: "https://dpua.github.io/edi/?edi=ediNotes"});
+  //chrome.tabs.create({url: "https://dpua.github.io/edi/?edi=ediNotes"});
 });
 
 var db;
@@ -137,9 +137,9 @@ function updateCount(tab,count){
 	chrome.browserAction.setBadgeText({text:""+notes,tabId:tab.id});
 }
 
-var newNote =  function() {
+var newNote =  function(e='') {
 	let id = ++highestId;
-	let code = 'newNote('+id+')';
+	let code = 'newNote('+id+', "'+e+'")';
     chrome.tabs.getSelected(null, function(tab) {
         chrome.tabs.executeScript(tab.id, {code: code}, () => chrome.runtime.lastError);
     });
@@ -231,3 +231,37 @@ function getSummary(page){
 		window.notesum = false;
 	});
 }
+
+function HTMLEncode(str) {
+    var i = str.length,
+        aRet = [];
+
+    while (i--) {
+        var iC = str[i].charCodeAt();
+        if (iC < 65 || iC > 127 || (iC>90 && iC<97)) {
+            aRet[i] = '&#'+iC+';';
+        } else {
+            aRet[i] = str[i];
+        }
+    }
+    return aRet.join('');
+}
+
+
+const CONTEXT_MENU_ID = "MY_CONTEXT_MENU";
+function getword(info,tab) {
+  if (info.menuItemId !== CONTEXT_MENU_ID) {
+    return;
+  }
+  //newNote(info.selectionText.replace(/\"/g, "&quot;"))
+  newNote(HTMLEncode(info.selectionText));
+//   chrome.tabs.create({  
+//     url: "http://www.google.com/search?q=" + info.selectionText
+//   });
+}
+chrome.contextMenus.create({
+  title: "Insert text into new note", 
+  contexts:["selection"], 
+  id: CONTEXT_MENU_ID
+});
+chrome.contextMenus.onClicked.addListener(getword)

@@ -382,7 +382,7 @@ function modifiedString(date)
     return  date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
 }
 
-function newNote(id)
+function newNote(id, text)
 {
     var note = new Note();
     note.id = id;
@@ -392,6 +392,7 @@ function newNote(id)
     note.editField.style.width = '290px';
     note.editField.style.height = '170px';
     note.zIndex = ++highestZ;
+    note.text = text;
     note.saveAsNew();
 	notes[notes.length] = note.id;
 	chrome.extension.sendRequest({command:"updateCount",data:notes.length});
