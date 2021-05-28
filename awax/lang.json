@@ -1,0 +1,12 @@
+{
+  "user": {
+    "username": "ImANewUser",
+    "email": "email@email.email",
+    "password": "password"
+  },
+  "accessToken": "aaaaaaa.bbbbbbbb.ccccccc",
+  "jwt": "aaaaaaa.bbbbbbbb.ccccccc",
+  "id": "id123",
+  "email": "email123",
+  "roles": ["role1", "role2"]
+}
