@@ -7,9 +7,11 @@ www.worldsport.ge##.leftContent > div:nth-of-type(2)
 www.worldsport.ge##div.mainContent:nth-of-type(3) > table > tbody > tr > td:nth-of-type(3) > div:nth-of-type(1)
 www.worldsport.ge##td:nth-of-type(3) > div:nth-of-type(3)
 
-
 ! 2021-07-20 https://www.imovies.cc
 www.imovies.cc##.ggg-container
+
+! 2021-07-20 https://www.bpn.ge
+www.bpn.ge##div.block_three_four
 
 ! 2021-07-20 http://intermedia.ge
 intermedia.ge##.article_page_right
