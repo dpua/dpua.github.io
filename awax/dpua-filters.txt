@@ -1,3 +1,63 @@
+! 2021-07-20 https://www.adjaranet.com
+www.adjaranet.com##.kgKsto.sc-1a0vp7y-0
+www.adjaranet.com##.gUoXDz.sc-1a0vp7y-0
+
+! 2021-07-20 https://www.myvideo.ge
+www.myvideo.ge###mv_leaderboard
+www.myvideo.ge##.fluid.mv_banner_600x100
+
+! 2021-07-20 https://www.myauto.ge
+www.myauto.ge###P1
+www.myauto.ge##div.mb-40.banner
+
+! 2021-07-20 https://www.ambebi.ge
+www.ambebi.ge##.rssvertblockitem
+www.ambebi.ge##.rss_block_shopzoo.rssverticalblock
+www.ambebi.ge##div.rssitem
+www.ambebi.ge##.rsshorizontal
+
+! 2021-07-20 https://www.imovies.cc
+www.imovies.cc##.spinner-banner
+www.imovies.cc##.playlist-banner-cont
+www.imovies.cc##.ggg-container
+
+! 2021-07-20 https://beta.mymarket.ge
+beta.mymarket.ge##.px-md-0.col-12.banner-cont
+
+! 2021-07-20 https://movie.ge
+movie.ge##.fullbanner-item
+
+! 2021-07-20 http://intermedia.ge
+||intermedia.ge/images/mkurnali_new_logo.png$image
+||intermedia.ge/images/rss_hotsale_logo.png$image
+||intermedia.ge/images/mkurnali_new_logo.png$image
+||intermedia.ge/images/palitra_logo_new.png$image
+intermedia.ge##.last.item.inforent_rss
+intermedia.ge##.first.item.inforent_rss
+||intermedia.ge/images/palitra_logo_new.png$image
+intermedia.ge##div.item.inforent_rss
+
+! 2021-07-20 https://www.myhome.ge
+www.myhome.ge##.align-items-center.d-flex.fb-liker
+www.myhome.ge##.h-banners
+www.myhome.ge###T
+
+! 2021-07-20 https://goal.ge
+goal.ge##app-web-sidebar-promotion
+goal.ge##.web-top.web-promotion
+goal.ge##.web-news-bottom.web-promotion
+
+! 2021-07-20 https://www.live.ge
+www.live.ge###random_banner_widget-2
+www.live.ge###random_banner_widget-3
+
+! 2021-07-20 https://www.bpn.ge
+www.bpn.ge##.ambebi_blk
+www.bpn.ge##.rssvertical
+
+
+
+
 ! 2021-03-20 https://www.worldsport.ge
 www.worldsport.ge##.td1
 www.worldsport.ge##[href^="/adv.php"]
@@ -18,9 +78,6 @@ barcamania.ge##.msgavsi-full-17
 
 ! 2021-03-20 https://www.imovies.cc
 www.imovies.cc##.ggg-container
-
-! 2021-03-20 https://www.bpn.ge
-www.bpn.ge##div.block_three_four
 
 ! 2021-03-20 http://intermedia.ge
 intermedia.ge##.article_page_right
