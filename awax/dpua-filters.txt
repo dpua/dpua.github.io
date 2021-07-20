@@ -1,3 +1,41 @@
+! 2021-07-20 https://www.imovies.cc
+www.imovies.cc##.ggg-container
+
+! 2021-07-20 http://intermedia.ge
+intermedia.ge##.article_page_right
+intermedia.ge##div.custom_channall_all_block
+
+! 2021-07-20 https://www.myhome.ge
+www.myhome.ge##.text-center.full-banner
+www.myhome.ge##.banner.a-banners
+
+! 2021-07-20 https://goal.ge
+goal.ge##.web-popup.web-promotion
+
+! 2021-07-20 https://forum.ge
+forum.ge##.w3-hide-medium.w3-hide-small > table
+forum.ge###advert-three
+
+! 2021-07-20 https://bm.ge
+bm.ge##.top-banner
+bm.ge##.second-s
+
+! 2021-07-20 http://www.file.ge
+www.file.ge##[href^="https://www.crystalbet.com/Pages/AdsRedirect.aspx"]
+||www.file.ge/wp-content/themes/fspring/images/bg.png$image
+www.file.ge##.banner
+www.file.ge##[src="banner_host.gif"]
+www.file.ge##[src="/ads/tombanner.gif"]
+www.file.ge##[src="/ads/datobanner.gif"]
+www.file.ge###sidebar > li
+www.file.ge##[src="http://www.file.ge/ads/Reklama250x350.jpg"]
+
+! 2021-07-20 https://www.hr.ge
+www.hr.ge##div.right-top-banner:nth-of-type(3)
+www.hr.ge##div.right-top-banner
+www.hr.ge###wide-banner-href
+
+
 ! Title: dpua filters
 ! Expires: 3 days
 ! Description: Filters optimized for AWAX, to be used along EasyList
@@ -92,4 +130,6 @@ www.facebook.com##.cxgpxx05 > div:nth-of-type(1) > span > div
 !
 /cdn-cgi/pe/bag2?*connect.facebook.com
 /cdn-cgi/pe/bag2?*connect.facebook.net
+
+
 
