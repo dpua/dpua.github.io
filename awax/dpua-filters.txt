@@ -4,6 +4,11 @@ www.imovies.cc##.ggg-container
 ! 2021-07-20 http://intermedia.ge
 intermedia.ge##.article_page_right
 intermedia.ge##div.custom_channall_all_block
+intermedia.ge###fb_like_page_div
+intermedia.ge##.last.item.inforent_rss.mkurnali_rss
+intermedia.ge##div.item.inforent_rss.mkurnali_rss:nth-of-type(2)
+intermedia.ge##.first.item.inforent_rss.mkurnali_rss
+||intermedia.ge/images/wedder_logo2.png$image
 
 ! 2021-07-20 https://www.myhome.ge
 www.myhome.ge##.text-center.full-banner
