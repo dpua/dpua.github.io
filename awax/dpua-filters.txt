@@ -54,7 +54,10 @@ www.live.ge###random_banner_widget-3
 ! 2021-07-20 https://www.bpn.ge
 www.bpn.ge##.ambebi_blk
 www.bpn.ge##.rssvertical
+www.bpn.ge##.block_five
 
+! 2021-07-20 http://www.halamadrid.ge
+www.halamadrid.ge##.banner
 
 
 
