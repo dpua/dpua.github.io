@@ -1,3 +1,11 @@
+[dpua filters]
+! Version: 20210721
+! Title: dpua filters 2021
+! Last modified: 21 Jul 2021 13:40 UTC
+! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
+! Homepage: https://dpua.github.io/awax
+! Description: Filters optimized for AWAX, to be used along EasyList
+! Licence: https://dpua.github.io/awax/LICENSE
 ! 2021-07-21 http://www.halamadrid.ge
 halamadrid.ge##.banner
 halamadrid.ge##.block:has(> .blockcont a[href="/ads.pdf"])
@@ -127,17 +135,9 @@ www.hr.ge##div.right-top-banner
 www.hr.ge###wide-banner-href
 
 
-! Title: dpua filters
-! Expires: 3 days
-! Description: Filters optimized for AWAX, to be used along EasyList
-! Homepage: https://dpua.github.io/awax
-! Licence: https://dpua.github.io/awax/LICENSE
-! 
-! GitHub issues: https://github.com/dpua/issues
-! GitHub pull requests: https://github.com/dpua/pulls
 
-! https://github.com/dpua/awax/
-! Last imported: 2021-03-29
+
+
 ! 2021-03-29 https://www.facebook.com
 www.facebook.com##.l9j0dhe7.buofh1pr.cbu4d94t.j83agx80 > .cxgpxx05 > div > span
 www.facebook.com##.cxgpxx05 > div:nth-of-type(1) > span > div
