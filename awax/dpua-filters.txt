@@ -1,11 +1,25 @@
 [dpua filters]
-! Version: 20210721
+! Version: 20210721.2
 ! Title: dpua filters 2021
 ! Last modified: 21 Jul 2021 13:40 UTC
 ! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://dpua.github.io/awax
 ! Description: Filters optimized for AWAX, to be used along EasyList
 ! Licence: https://dpua.github.io/awax/LICENSE
+
+! 2021-07-21 https://www.live.ge
+www.live.ge###bsa-html
+
+! 2021-07-21 https://beta.mymarket.ge
+beta.mymarket.ge##.product-top-banner
+beta.mymarket.ge##div.banner-box
+
+! 2021-07-21 https://www.adjaranet.com
+adjaranet.com##.zoruuo-0 div:has(> iframe[src^="https://bms1.adjarabet.com/"])
+adjaranet.com##.zoruuo-0 div:has(> a[href^="https://open5.myvideo.ge/"])
+adjaranet.com##.zoruuo-0 div:has(> img[src^="https://open5.myvideo.ge/"])
+
+
 ! 2021-07-21 http://www.halamadrid.ge
 halamadrid.ge##.banner
 halamadrid.ge##.block:has(> .blockcont a[href="/ads.pdf"])
