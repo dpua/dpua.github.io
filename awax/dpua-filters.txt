@@ -1,3 +1,6 @@
+! 2021-07-21 http://www.halamadrid.ge
+www.halamadrid.ge##.block:has(> .blockcont a[href="/ads.pdf"])
+
 ! 2021-07-20 https://www.adjaranet.com
 www.adjaranet.com##.kgKsto.sc-1a0vp7y-0
 www.adjaranet.com##.gUoXDz.sc-1a0vp7y-0
