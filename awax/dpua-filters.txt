@@ -1,6 +1,9 @@
 ! 2021-07-21 http://www.halamadrid.ge
 www.halamadrid.ge##.banner
 www.halamadrid.ge##.block:has(> .blockcont a[href="/ads.pdf"])
+www.halamadrid.ge##.block:has(> .blockcont iframe[src^="https://ad.doubleclick.net/"])
+www.halamadrid.ge##.block:has(> .blockcont span script[src^="http://counter.top.ge/"])
+www.halamadrid.ge##.block:has(> .blockcont .fb-like-box)
 
 ! 2021-07-20 https://www.adjaranet.com
 www.adjaranet.com##.kgKsto.sc-1a0vp7y-0
