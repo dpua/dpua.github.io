@@ -1,11 +1,15 @@
 [dpua filters]
-! Version: 20210722.02
+! Version: 20210726.01
 ! Title: dpua filters 2021
-! Last modified: 21 Jul 2022 17:00 UTC
+! Last modified: 26 Jul 2022 15:40 UTC
 ! Expires: 2 days (фильтр обновляется автоматически каждые 2 дня)
 ! Homepage: https://dpua.github.io/awax
 ! Description: Filters optimized for AWAX, to be used along EasyList
 ! Licence: https://dpua.github.io/awax/LICENSE
+
+
+! 2021-07-26 https://www.facebook.com
+! www.facebook.com##.cxgpxx05 > div:nth-of-type(1) > span > div
 
 ! 2021-07-22 https://video.ambebi.ge/
 |https://video.ambebi.ge/
@@ -160,7 +164,6 @@ www.hr.ge###wide-banner-href
 
 ! 2021-03-29 https://www.facebook.com
 www.facebook.com##.l9j0dhe7.buofh1pr.cbu4d94t.j83agx80 > .cxgpxx05 > div > span
-www.facebook.com##.cxgpxx05 > div:nth-of-type(1) > span > div
 ||api-read.facebook.com/restserver.php?api_key=$third-party
 ||api.facebook.com^$third-party
 ||badge.facebook.com^$third-party
