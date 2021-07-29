@@ -3,7 +3,7 @@
 		"content": "internal",
 		"updateAfter": 13,
 		"contentURL": [
-			"ttps://dpua.github.io/awax/assets.json",
+			"https://dpua.github.io/awax/assets.json",
 			"assets/assets.json"
 		]
 	},
