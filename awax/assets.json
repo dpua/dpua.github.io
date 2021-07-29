@@ -1,7 +1,7 @@
 {
 	"assets.json": {
 		"content": "internal",
-		"updateAfter": 13,
+		"updateAfter": 7,
 		"contentURL": [
 			"https://dpua.github.io/awax/assets.json",
 			"assets/assets.json"
