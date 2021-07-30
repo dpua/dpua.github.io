@@ -24,13 +24,14 @@
 			"assets/awax/badlists.txt"
 		]
 	},
-	"dpua-filters": {
+	"awax-default-filters": {
 		"content": "filters",
 		"group": "default",
-		"title": "dpua filters",
+		"title": "Awax default filters",
 		"contentURL": [
 			"https://dpua.github.io/awax/dpua-filters.txt",
-			"assets/awax/dpua-filters.txt"
+			"https://dpua.github.io/awax/awax-default-filters.txt",
+			"assets/awax/awax-default-filters.txt"
 		],
 		"supportURL": "https://github.com/dpua/awax"
 	},
