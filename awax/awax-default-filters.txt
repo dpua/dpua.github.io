@@ -1,0 +1,293 @@
+[awax-default-filters]
+! Version: 20210727.01
+! Title: awax default filters 2021
+! Last modified: 27 Jul 2022 20:30 UTC
+! Expires: 1 days (фильтр обновляется автоматически каждый день)
+! Homepage: https://dpua.github.io/awax
+! Description: Filters optimized for AWAX, to be used along EasyList
+! Licence: https://dpua.github.io/awax/LICENSE
+
+! 2021-07-27 https://www.imovies.cc
+www.imovies.cc##.mobile-baber
+
+! 2021-07-27 https://www.myvideo.ge
+www.myvideo.ge##.leaderboard-mobile-random-inner
+www.myvideo.ge##.leaderboard-mobile-random
+www.myvideo.ge##.leaderboard
+
+! 2021-07-27 https://m.myauto.ge
+m.myauto.ge##.insurance-new
+m.myauto.ge##.insurance-new-search
+
+! 2021-07-27 https://www.ambebi.ge
+www.ambebi.ge##div.banneronlymobile
+www.ambebi.ge##.rssitems
+
+! 2021-07-27 https://www.mymarket.ge
+www.mymarket.ge##.px-md-0.col-12.banner-cont
+www.mymarket.ge##.bg-gray.justify-content-end.d-flex.position-fixed.cat-fish-box
+www.mymarket.ge##.swiper-slide-next.vip-card.swiper-slide > .h-100.cursor-pointer.position-relative.slider-card > .text-decoration-none.d-inherit > .mt-8px.card-info > .text-blue-gray.font-size-12.line-height-11.font-bold.sl-card-price
+
+! 2021-07-27 https://amindi.ge
+amindi.ge##.right.px-2.col-md-3 > div.mt-3 > .radio
+
+! 2021-07-27 https://on.ge
+on.ge##.x-margin-top.x-padding-vert.mobile-only
+on.ge##.onad_mobile.onad.x-clear-both.x-margin-auto-horiz.x-padding-top
+
+! 2021-07-27 https://www.myhome.ge
+www.myhome.ge##.swoop
+
+! 2021-07-27 https://m.goal.ge
+m.goal.ge##app-mobile-catfish-promotion
+m.goal.ge##.mobile-home-top.mobile-promotion
+m.goal.ge##.mobile-news-top.mobile-promotion
+m.goal.ge##.mobile-news-bottom.mobile-promotion
+m.goal.ge##.mobile-scroll-promotion-spacer
+
+! 2021-07-27 https://forum.ge
+forum.ge###advert-once
+forum.ge##.w3-hide-large > td
+forum.ge##[src="trash/Proservice_domain.png"]
+
+! 2021-07-27 https://bm.ge
+bm.ge###news-feed
+bm.ge##.fb-share-container
+
+! 2021-07-27 https://www.bpn.ge
+www.bpn.ge##div.rss_module
+
+! 2021-07-27 http://halamadrid.ge
+halamadrid.ge##[src="http://halamadrid.ge/ads/"]
+
+||halamadrid.ge/ads/*
+||barcamania.ge/ad/*
+
+! 2021-07-27 https://www.worldsport.ge
+www.worldsport.ge##.banner32
+||www.worldsport.ge/htmladv.php$subdocument
+
+! 2021-07-22 https://video.ambebi.ge/
+|https://video.ambebi.ge/
+
+! 2021-07-22 https://va.da.ge/
+|https://va.da.ge/
+
+! 2021-07-21 https://www.live.ge
+www.live.ge###bsa-html
+
+! 2021-07-21 https://beta.mymarket.ge
+beta.mymarket.ge##.product-top-banner
+beta.mymarket.ge##div.banner-box
+! 2021-07-20 https://beta.mymarket.ge
+beta.mymarket.ge##.px-md-0.col-12.banner-cont
+
+! 2021-07-21 https://www.adjaranet.com
+adjaranet.com##.zoruuo-0 div:has(> iframe[src^='https://bms1.adjarabet.com/'])
+adjaranet.com##.zoruuo-0 div:has(> a[href^='https://open5.myvideo.ge/'])
+adjaranet.com##.zoruuo-0 div:has(> img[src^='https://open5.myvideo.ge/'])
+! 2021-07-20 https://www.adjaranet.com
+www.adjaranet.com##.kgKsto.sc-1a0vp7y-0
+www.adjaranet.com##.gUoXDz.sc-1a0vp7y-0
+
+
+! 2021-07-21 http://www.halamadrid.ge
+halamadrid.ge##.banner
+halamadrid.ge##.block:has(> .blockcont a[href='/ads.pdf'])
+halamadrid.ge##.block:has(> .blockcont iframe[src^='https://ad.doubleclick.net/'])
+halamadrid.ge##.block:has(> .blockcont span script[src^='http://counter.top.ge/'])
+halamadrid.ge##.block:has(> .blockcont .fb-like-box)
+halamadrid.ge##.player_container:has(> a[href^='https://bms1.adjarabet.com/'])
+
+
+! 2021-07-20 https://www.myvideo.ge
+www.myvideo.ge###mv_leaderboard
+www.myvideo.ge##.fluid.mv_banner_600x100
+
+! 2021-07-20 https://www.myauto.ge
+www.myauto.ge###P1
+www.myauto.ge##div.mb-40.banner
+
+! 2021-07-20 https://www.ambebi.ge
+www.ambebi.ge##.rssvertblockitem
+www.ambebi.ge##.rss_block_shopzoo.rssverticalblock
+www.ambebi.ge##div.rssitem
+www.ambebi.ge##.rsshorizontal
+
+! 2021-07-20 https://www.imovies.cc
+www.imovies.cc##.spinner-banner
+www.imovies.cc##.playlist-banner-cont
+www.imovies.cc##.ggg-container
+
+! 2021-07-20 https://movie.ge
+movie.ge##.fullbanner-item
+
+! 2021-07-20 http://intermedia.ge
+||intermedia.ge/images/mkurnali_new_logo.png$image
+||intermedia.ge/images/rss_hotsale_logo.png$image
+||intermedia.ge/images/mkurnali_new_logo.png$image
+||intermedia.ge/images/palitra_logo_new.png$image
+intermedia.ge##.last.item.inforent_rss
+intermedia.ge##.first.item.inforent_rss
+||intermedia.ge/images/palitra_logo_new.png$image
+intermedia.ge##div.item.inforent_rss 
+! 2021-03-20 http://intermedia.ge
+intermedia.ge##.article_page_right
+intermedia.ge##div.custom_channall_all_block
+intermedia.ge###fb_like_page_div
+intermedia.ge##.last.item.inforent_rss.mkurnali_rss
+intermedia.ge##div.item.inforent_rss.mkurnali_rss:nth-of-type(2)
+intermedia.ge##.first.item.inforent_rss.mkurnali_rss
+||intermedia.ge/images/wedder_logo2.png$image
+
+! 2021-07-20 https://www.myhome.ge
+www.myhome.ge##.align-items-center.d-flex.fb-liker
+www.myhome.ge##.h-banners
+www.myhome.ge###T
+! 2021-03-20 https://www.myhome.ge
+www.myhome.ge##.text-center.full-banner
+www.myhome.ge##.banner.a-banners
+
+! 2021-07-20 https://goal.ge
+goal.ge##.app-web-sidebar-promotion
+goal.ge##.web-top.web-promotion
+goal.ge##.web-news-bottom.web-promotion
+! 2021-03-20 https://goal.ge
+goal.ge##.web-popup.web-promotion
+
+! 2021-07-20 https://www.live.ge
+www.live.ge###random_banner_widget-2
+www.live.ge###random_banner_widget-3
+
+! 2021-07-20 https://www.bpn.ge
+www.bpn.ge##.ambebi_blk
+www.bpn.ge##.rssvertical
+www.bpn.ge##.block_five
+
+! 2021-03-20 https://www.worldsport.ge
+www.worldsport.ge##.td1
+www.worldsport.ge##[href^='/adv.php']
+||www.worldsport.ge/htmladv.php?id=447$subdocument
+www.worldsport.ge##table.adv_freeSpace
+www.worldsport.ge##[src='/htmladv.php?id=409']
+www.worldsport.ge##div.mainContent:nth-of-type(3) > table > tbody > tr > td:nth-of-type(3) > div:nth-of-type(1)
+www.worldsport.ge##td:nth-of-type(3) > div:nth-of-type(3)
+
+! 2021-03-20 https://www.barcamania.ge
+www.barcamania.ge##.baner-1.baner-colo-1
+
+! 2021-03-20 https://barcamania.ge
+barcamania.ge##.msgavsi-full-17
+barcamania.ge##.baner-1.baner-colo-1
+barcamania.ge##.player_link
+barcamania.ge##.msgavsi-full-17
+
+! 2021-03-20 https://forum.ge
+forum.ge##.w3-hide-medium.w3-hide-small > table
+forum.ge###advert-three
+
+! 2021-03-20 https://bm.ge
+bm.ge##.top-banner
+bm.ge##.second-s
+
+! 2021-03-20 http://www.file.ge
+www.file.ge##[href^='https://www.crystalbet.com/Pages/AdsRedirect.aspx']
+||www.file.ge/wp-content/themes/fspring/images/bg.png$image
+www.file.ge##.banner
+www.file.ge##[src='banner_host.gif']
+www.file.ge##[src='/ads/tombanner.gif']
+www.file.ge##[src='/ads/datobanner.gif']
+www.file.ge###sidebar > li
+www.file.ge##[src='http://www.file.ge/ads/Reklama250x350.jpg']
+
+! 2021-03-20 https://www.hr.ge
+www.hr.ge##div.right-top-banner:nth-of-type(3)
+www.hr.ge##div.right-top-banner
+www.hr.ge###wide-banner-href
+
+
+! 2021-07-26 https://www.facebook.com
+! www.facebook.com##.cxgpxx05 > div:nth-of-type(1) > span > div
+
+! 2021-03-29 https://www.facebook.com
+www.facebook.com##.l9j0dhe7.buofh1pr.cbu4d94t.j83agx80 > .cxgpxx05 > div > span
+||api-read.facebook.com/restserver.php?api_key=$third-party
+||api.facebook.com^$third-party
+||badge.facebook.com^$third-party
+||connect.facebook.com^$third-party,domain=~facebook.net|~fb.com
+||connect.facebook.net^$third-party,domain=~facebook.com|~fb.com
+||facebook.com/connect/$third-party
+||facebook.com/dialog/oauth?display=popup$popup,domain=humorhub.org
+||facebook.com/plugins/activity.php?$third-party
+||facebook.com/plugins/comments.php?$third-party
+||facebook.com/plugins/facepile.php?$third-party
+||facebook.com/plugins/fan.php?$third-party
+||facebook.com/plugins/follow.php$third-party
+||facebook.com/plugins/like.php?$third-party
+||facebook.com/plugins/like_box.php$third-party
+||facebook.com/plugins/likebox.php?$third-party
+||facebook.com/plugins/post.php?$third-party
+||facebook.com/plugins/recommendations.php?$third-party
+||facebook.com/plugins/recommendations_bar.php?$third-party
+||facebook.com/plugins/send.php?$third-party
+||facebook.com/plugins/share_button.php?$third-party
+||facebook.com/plugins/subscribe.php$third-party
+||facebook.com/plugins/subscribe?$third-party
+||facebook.com/restserver.php?*.getStats&$third-party
+||facebook.com/whitepages/wpminiprofile.php$third-party
+||facebook.com/widgets/activity.php?$third-party
+||facebook.com/widgets/fan.php?$third-party
+||facebook.com/widgets/like.php?$third-party
+||facebook.com/widgets/recommendations.php?$third-party
+||fbcdn-profile-a.akamaihd.net^$third-party,domain=~facebook.com
+||google.com/js/client:plusone.js$third-party
+||google.com/js/plusone.js$third-party
+||graph.facebook.com/?id=$third-party
+||graph.facebook.com^$third-party,xmlhttprequest
+||profile.ak.fbcdn.net^$third-party,domain=~facebook.com
+||scontent-a.*.fbcdn.net^$third-party,domain=~facebook.com
+||spot.im/embed/scripts/launcher.js$third-party
+||static.ak.fbcdn.net^$third-party,domain=~facebook.com
+!
+! Test Filters (For Gannett sites, which don't work anyways with Facebook blocked)
+!
+##.util-bar-module-firefly-visible
+!
+! Whitelist Filters
+!
+@@/cdn-cgi/pe/bag2?*connect.facebook.net$domain=forwardprogressives.com|onhax.net|opensubtitles.org|viralthread.com|youngcons.com
+@@||akamaihd.net/rsrc.php/$domain=facebook.com
+@@||channel.facebook.com^$domain=facebook.com
+@@||connect.facebook.com^*/AudienceNetworkPrebid.js$domain=vice.com
+@@||facebook.com/ajax/browse/$domain=facebook.com
+@@||facebook.com/ajax/bz$domain=facebook.com
+@@||facebook.com/ajax/chat/buddy_list.php$domain=facebook.com
+@@||facebook.com/ajax/chat/hovercard/$domain=facebook.com
+@@||facebook.com/ajax/hovercard/$domain=facebook.com
+@@||facebook.com/ajax/litestand/$domain=facebook.com
+@@||facebook.com/ajax/notifications/$domain=facebook.com
+@@||facebook.com/ajax/pagelet/$domain=facebook.com
+@@||facebook.com/ajax/photos/$domain=facebook.com
+@@||facebook.com/ajax/presence/$domain=facebook.com
+@@||facebook.com/ajax/typeahead/$domain=facebook.com
+@@||facebook.com/ajax/webstorage/$domain=facebook.com
+@@||facebook.com/chat/$domain=facebook.com
+@@||facebook.com/images/$domain=facebook.com
+@@||fbcdn-photos-*.akamaihd.net^$domain=facebook.com
+@@||fbcdn-profile-*.akamaihd.net^$domain=facebook.com
+@@||fbcdn-sphotos-*.akamaihd.net^$domain=facebook.com
+@@||fbexternal-*.akamaihd.net^$domain=facebook.com
+@@||scontent-*.fbcdn.net^$domain=facebook.com
+!
+! Problematic sites
+!
+@@||connect.facebook.com^*/audiencenetworkprebid.js$script,domain=screenrant.com
+@@||connect.facebook.net^$script,domain=id.logi.com|tinder.com|abc.go.com|adultswim.com|contv.com|damnyouautocorrect.com|embedly.com|fitbit.com|instagram.com|interviewmagazine.com|noovo.ca|pogo.com|reddit.com|salon.com|sci2.tv|southpark.cc.com|southpark.de|upi.com
+@@||google.com/js/plusone.js$domain=abcnews.go.com|watch.nba.com
+@@||graph.facebook.com^$xmlhttprequest,domain=theguardian.com
+@@||staticxx.facebook.com/connect/$domain=embedly.com
+!
+! Cloudflare CDN
+!
+/cdn-cgi/pe/bag2?*connect.facebook.com
+/cdn-cgi/pe/bag2?*connect.facebook.net
